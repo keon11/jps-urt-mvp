@@ -1,0 +1,16 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ default services are local and FHIR R4 adapters have separate endpoints (1.245836ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (12.600124ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (0.976519ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (1.283898ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374.803301

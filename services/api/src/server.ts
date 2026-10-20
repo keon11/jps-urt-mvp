@@ -1,0 +1,56 @@
+import express from 'express';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {randomBytes} from 'node:crypto';
+import {config} from './config.js';
+import {initDb,pool} from './db.js';
+import {login,verifyToken,serviceStatus} from './adapters.js';
+import {fixtureIds,makeFixture} from './fixtures.js';
+import {getCase,listCases,intake,HttpError,type Actor} from './store.js';
+const app=express();
+app.disable('x-powered-by');
+app.use(express.json({limit:'256kb'}));
+app.use((req,res,next)=>{
+ res.set({'X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Cache-Control':'no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'"});
+ if(req.method!=='GET'&&req.headers.origin&&req.headers.origin!==`http://localhost:${config.port}`&&req.headers.origin!==`http://127.0.0.1:${config.port}`)return res.status(403).json({error:'Origin not allowed'});
+ next();
+});
+const actor=(res:express.Response)=>res.locals.actor as Actor;
+const allow=(roles:string[])=> (_req:express.Request,res:express.Response,next:express.NextFunction)=>roles.some(r=>actor(res).roles.includes(r))?next():next(new HttpError(403,'This role cannot perform that action'));
+const failures=new Map<string,{count:number;until:number}>();
+app.get('/health',async(_req,res)=>{await pool.query('SELECT 1');res.json({ok:true,syntheticOnly:true});});
+app.post('/api/session',async(req,res)=>{
+ const ip=req.ip||'local',now=Date.now(),previous=failures.get(ip);
+ if(previous&&previous.until>now&&previous.count>=10)throw new HttpError(429,'Too many login attempts; retry in one minute');
+ if(typeof req.body?.username!=='string'||typeof req.body?.password!=='string')throw new HttpError(400,'Username and password required');
+ try{
+  const t=await login(req.body.username,req.body.password);const user=await verifyToken(t.access_token);
+  failures.delete(ip);res.cookie('ur_session',t.access_token,{httpOnly:true,sameSite:'strict',secure:process.env.COOKIE_SECURE==='true',maxAge:Math.min(t.expires_in,900)*1000,path:'/'});res.json(user);
+ }catch{failures.set(ip,{count:previous&&previous.until>now?previous.count+1:1,until:now+60000});throw new HttpError(401,'Sign-in failed');}
+});
+app.delete('/api/session',(_req,res)=>{res.clearCookie('ur_session',{path:'/'});res.json({ok:true});});
+app.use('/api',async(req,res,next)=>{
+ const bearer=req.headers.authorization?.startsWith('Bearer ')?req.headers.authorization.slice(7):undefined;
+ const cookie=req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('ur_session='))?.slice(11);
+ try{res.locals.actor=await verifyToken(bearer||decodeURIComponent(cookie||''));next();}catch{next(new HttpError(401,'Sign in to continue'));}
+});
+app.get('/api/me',(_req,res)=>res.json(actor(res)));
+app.get('/api/services',async(_req,res)=>res.json(await serviceStatus()));
+app.get('/api/fixtures',(_req,res)=>res.json(fixtureIds));
+app.get('/api/fixtures/:id',(req,res)=>{if(!fixtureIds.includes(req.params.id))throw new HttpError(404,'Fixture not found');res.json(makeFixture(req.params.id));});
+app.post('/api/intake',allow(['admin','reviewer']),async(req,res)=>{
+ const key=req.headers['idempotency-key'];if(typeof key!=='string'||!key.length||key.length>128)throw new HttpError(400,'Idempotency-Key header required (max 128 characters)');
+ const result=await intake(req.body,key,actor(res));res.status(result.duplicate?200:201).json(result);
+});
+app.get('/api/cases',async(_req,res)=>res.json(await listCases()));
+app.get('/api/cases/:id',async(req,res)=>res.json(await getCase(req.params.id)));
+app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(req.params.id);res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[req.params.id])).rows);});
+app.use(express.static(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../dist')));
+app.get('/',(_req,res)=>res.sendFile(path.resolve('dist/index.html')));
+app.use((err:any,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{
+ const status=err.status||502;if(status>=500)console.error(err.message);res.status(status).json({error:status>=500?'A dependency failed. No success is claimed; retry after checking service health.':err.message});
+});
+await initDb();
+const server=app.listen(config.port,'0.0.0.0',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
+async function shutdown(){server.close();await pool.end();process.exit(0);}
+process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

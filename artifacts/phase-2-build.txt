@@ -1,0 +1,13 @@
+
+> hospital-ur-ai-mvp@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.1.10 building for production...
+transforming...
+✓ 1578 modules transformed.
+rendering chunks...
+computing gzip size...
+../../dist/index.html                   0.47 kB │ gzip:  0.32 kB
+../../dist/assets/index-CiOl7pbH.css   13.14 kB │ gzip:  3.66 kB
+../../dist/assets/index-DFVWPhxW.js   210.72 kB │ gzip: 65.67 kB
+✓ built in 2.42s
