@@ -1,0 +1,34 @@
+# Security, compliance and production readiness assessment
+
+**Classification: synthetic demonstration only. Not approved for clinical use, coverage determinations, PHI or production deployment. No HIPAA/HITECH compliance certification is claimed.**
+
+## Implemented and verified controls
+
+- Only the six exact, fictional fixture bundles are accepted at intake. All resources carry synthetic classification tags. Clinical update fields are numeric and human/payer reasons are predefined choices; the demo does not ingest real clinical notes or call JPS/Epic systems.
+- API and published service ports bind to loopback. Clinical and payer actions remain internal. The only model calls target the local CPU service; no paid model provider, telemetry containing patient content or external model training is configured.
+- Keycloak JWT verification checks signature, expiry, issuer, audience and application role. Server-side route restrictions separate reviewer and advisor actions. No Medplum service secret is sent to the browser.
+- Session cookies are HttpOnly and SameSite=Strict. Origin checking, a restrictive content policy, frame protection, body-size limits and basic sign-in throttling are present. API responses are not cached.
+- Audit events include actors, timestamps, inputs/outputs, evidence versions and model/rule lineage. Appends are serialized and hash-chained; a database trigger rejects audit updates/deletes. The complete chain can be verified independently by script.
+- Missing/stale/invalid clinical evidence prevents an affirmative clinical recommendation. Invalid/unavailable AI becomes a clearly labeled rules-only fallback; CQF failure does not create a successful assessment. Human decisions require current assessment and active escalation; overrides need an explicit reason.
+- The Grafana database role can select only an aggregate view. Live tests confirm denial of direct access to case/audit tables. Dependencies are pinned, the model is checksum-verified, and npm audit results are retained.
+
+## Material gaps before any real data or production use
+
+| Area | Current limitation | Required production work |
+|---|---|---|
+| Clinical criteria | All thresholds and payer windows fabricated for demonstration | Obtain authorized criteria (e.g. licensed tools where chosen), validate local/payer/regulatory rules with clinicians, version and approve changes |
+| AI validity | Tiny local model demonstrates orchestration; no accuracy/calibration evidence | Representative evaluation, bias analysis, clinician review, adversarial testing, model risk management, drift/performance monitoring and approved release gates |
+| Clinical safety | Advisory workflows and preset reasons only | Approved operating procedures, trained staff, richer clinical context, missing-data policy, escalation SLAs, human factors validation and safety incident process |
+| Identity | Keycloak development mode and direct password grants; public demo credentials | Enterprise SSO with authorization code + PKCE, MFA, lifecycle management, session/revocation policy, least privilege and secrets rotation |
+| Network/encryption | Local HTTP and plaintext development database volumes | TLS/mTLS where appropriate, managed encryption at rest, key management, segmentation, private endpoints, controlled egress and hardened service configurations |
+| Service privilege | Medplum bootstrap super-admin client and application PostgreSQL owner/superuser | Separate provisioning/migration identities and tightly scoped runtime credentials; dedicated least-privilege FHIR project/client |
+| Audit durability | Database owner can disable trigger or rewrite chain; no external anchor | Immutable retention/WORM storage, external hash anchoring, independent access review, time synchronization and security monitoring |
+| Interoperability | Synthetic FHIR subset; PAS-inspired simulator only | Epic/ADT integration, consent/access controls, terminology licensing, FHIR/profile validation, real payer/clearinghouse transport and interoperability certification where applicable |
+| Data consistency | FHIR and workflow commits span separate systems; no subscription reconciliation | Transactional outbox, durable jobs, retries/backoff, reconciliation, event deduplication and direct-write version/stale review handling |
+| Reliability | Single-node services; HAPI in-memory reasoning store; no HA/DR | Redundancy, load/performance tests, capacity planning, backups and restore exercises, disaster recovery, patching, incident response and support SLAs |
+| Governance/legal | No BAA, legal review, vendor onboarding or security certification | HIPAA/HITECH risk assessment and contracts, privacy/security officer review, retention/deletion rules, procurement documentation and RFP security/AI questionnaires |
+| Vulnerabilities/licenses | npm audit is limited; upstream image tags except model runtime; no container scan/legal opinion | Container/SBOM scanning, remediation, supply-chain verification, license/notice and terminology review; retain AGPL obligations for Grafana modifications |
+| Reporting | Current synthetic state and event counts only | Validated measures, real outcome feeds, enterprise analytics, timeliness/denial/appeal definitions and longitudinal model outcome reporting |
+| Deployment | Local isolated demo; no public hosting | Reviewed hardened deployment, access restrictions, secrets provisioning and change management before any external environment |
+
+All Compose credentials are intentionally public, synthetic-demo-only values. They must never be reused outside an isolated local demonstration. The demo does not autonomously change source patient status or take real payer actions. No legal commitment, proposal submission or addendum acknowledgment has been made.

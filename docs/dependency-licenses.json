@@ -19,9 +19,10 @@
   },
   {
     "repository": "HL7/davinci-pas",
-    "license": "NOASSERTION",
+    "license": "CC0-1.0 (repository LICENSE text)",
     "url": "https://github.com/HL7/davinci-pas",
-    "verified_at": "2026-10-20"
+    "verified_at": "2026-10-20",
+    "license_source": "https://raw.githubusercontent.com/HL7/davinci-pas/master/LICENSE"
   },
   {
     "repository": "keycloak/keycloak",
@@ -36,15 +37,22 @@
     "verified_at": "2026-10-20"
   },
   {
-    "repository": "ollama/ollama",
-    "license": "MIT",
-    "url": "https://github.com/ollama/ollama",
+    "repository": "valkey-io/valkey",
+    "license": "BSD-3-Clause",
+    "url": "https://github.com/valkey-io/valkey",
     "verified_at": "2026-10-20"
   },
   {
-    "repository": "QwenLM/Qwen2.5",
-    "license": null,
-    "url": "https://github.com/QwenLM/Qwen3",
+    "repository": "ggml-org/llama.cpp",
+    "license": "MIT",
+    "url": "https://github.com/ggml-org/llama.cpp",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "license": "apache-2.0",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
     "verified_at": "2026-10-20"
   }
 ]

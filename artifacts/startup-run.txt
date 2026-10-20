@@ -1,0 +1,78 @@
+npm warn deprecated prom-client@15.1.3: prom-client has been replaced by @prometheus-io/client
+
+added 133 packages in 10s
+Verified qwen2.5-0.5b-instruct-q4_k_m.gguf: 74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db
+ Container hospital-ur-ai-mvp-keycloak-1  Running
+ Container hospital-ur-ai-mvp-postgres-1  Running
+ Container hospital-ur-ai-mvp-local-model-1  Running
+ Container hospital-ur-ai-mvp-grafana-1  Running
+ Container hospital-ur-ai-mvp-cqf-1  Running
+ Container hospital-ur-ai-mvp-redis-1  Recreate
+ Container hospital-ur-ai-mvp-redis-1  Recreated
+ Container hospital-ur-ai-mvp-medplum-1  Running
+ Container hospital-ur-ai-mvp-redis-1  Starting
+ Container hospital-ur-ai-mvp-redis-1  Started
+ Container hospital-ur-ai-mvp-postgres-1  Waiting
+ Container hospital-ur-ai-mvp-redis-1  Waiting
+ Container hospital-ur-ai-mvp-postgres-1  Healthy
+ Container hospital-ur-ai-mvp-redis-1  Healthy
+
+> hospital-ur-ai-mvp@0.1.0 bootstrap
+> tsx scripts/bootstrap.ts
+
+{
+  "medplum": {
+    "persisted": true,
+    "version": "a8106d93-e7c4-49b5-8394-dc233944d430"
+  },
+  "cqf": 25,
+  "cqfFhirData": true,
+  "keycloak": {
+    "verified": true,
+    "roles": [
+      "reviewer"
+    ]
+  },
+  "localModel": {
+    "ready": true,
+    "model": "qwen2.5:0.5b"
+  }
+}
+
+> hospital-ur-ai-mvp@0.1.0 seed
+> tsx scripts/seed.ts
+
+respiratory already exists
+observation already exists
+continued-stay already exists
+documentation already exists
+authorization already exists
+advisor already exists
+
+> hospital-ur-ai-mvp@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 1578 modules transformed.
+rendering chunks...
+computing gzip size...
+../../dist/index.html                   0.47 kB │ gzip:  0.32 kB
+../../dist/assets/index-DEdT8TUX.css   18.19 kB │ gzip:  4.73 kB
+../../dist/assets/index-DPhUH1c2.js   223.53 kB │ gzip: 69.35 kB
+✓ built in 2.59s
+
+> hospital-ur-ai-mvp@0.1.0 demo
+> tsx scripts/prepare-demo.ts
+
+respiratory current assessment preserved
+observation current assessment preserved
+continued-stay current assessment preserved
+documentation current assessment preserved
+authorization current assessment preserved
+advisor current assessment preserved
+
+> hospital-ur-ai-mvp@0.1.0 start
+> tsx services/api/src/server.ts
+
+Synthetic UR demo listening on http://localhost:3000

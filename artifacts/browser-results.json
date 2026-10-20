@@ -1,0 +1,210 @@
+{
+  "config": {
+    "configFile": "/workspace/hospital-ur-ai-mvp/playwright.config.ts",
+    "rootDir": "/workspace/hospital-ur-ai-mvp/tests/browser",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/workspace/hospital-ur-ai-mvp/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/hospital-ur-ai-mvp/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 300000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "demo.spec.ts",
+      "file": "demo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all eight synthetic utilization review scenarios work end to end",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1. Synthetic intake and persisted FHIR evidence",
+                      "duration": 1644
+                    },
+                    {
+                      "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
+                      "duration": 11870
+                    },
+                    {
+                      "title": "4. Continued-stay review responds to synthetic clinical changes",
+                      "duration": 11176
+                    },
+                    {
+                      "title": "5. Authorization, payer responses and notification tracking",
+                      "duration": 2671
+                    },
+                    {
+                      "title": "6. Potential denial-risk identification is explained and labeled illustrative",
+                      "duration": 585
+                    },
+                    {
+                      "title": "7. Physician advisor escalation and role-restricted human override",
+                      "duration": 1982
+                    },
+                    {
+                      "title": "8. Dashboards, explanations and audit trails",
+                      "duration": 1176
+                    }
+                  ],
+                  "startTime": "2026-10-20T17:39:14.726Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05384557491ebd602dd7-88c66971b0dc4fc4a449",
+          "file": "demo.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "invalidated session returns to sign-in instead of leaving unusable controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T17:39:47.616Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05384557491ebd602dd7-5ccfd3d356e1a1ccfca5",
+          "file": "demo.spec.ts",
+          "line": 213,
+          "column": 1
+        },
+        {
+          "title": "Grafana renders live aggregate reporting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3934,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T17:39:49.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05384557491ebd602dd7-2cade4e9188b6da8a60e",
+          "file": "demo.spec.ts",
+          "line": 239,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-20T17:39:13.455Z",
+    "duration": 39864.039000000004,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

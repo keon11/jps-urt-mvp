@@ -1,0 +1,26 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:integration
+> tsx --test --test-concurrency=1 tests/*.integration.test.ts
+
+✔ CQF outage returns an error and preserves previous assessment and audit (2913.453885ms)
+✔ Medplum outage returns an error and preserves previous assessment and audit (1860.137655ms)
+✔ real Keycloak authentication protects API (410.409151ms)
+✔ repeat intake preserves one case and FHIR source versions (507.272909ms)
+✔ malformed payloads, conflicting idempotency keys, and advisor intake are rejected (183.038708ms)
+✔ intake audit includes versioned FHIR source evidence and database rejects audit edits (30.49582ms)
+✔ reports match persisted cases and Prometheus exposition serves real counts (859.967005ms)
+✔ Grafana account can read only aggregate view, not source records or audit (44.047169ms)
+✔ actual Grafana datasource queries the provisioned operational dashboard (104.540102ms)
+✔ real CQF and local inference produce traceable initial recommendations (56498.54394ms)
+✔ continued-stay review responds to new clinical versions and invalidates old assessment (43287.574888ms)
+✔ stable initial review suggests observation; missing documentation raises risk (22750.859621ms)
+✔ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (10371.585962ms)
+✔ physician escalation enforces roles, override reasons, and source status preservation (20306.448556ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 165903.84484

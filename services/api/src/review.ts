@@ -35,7 +35,7 @@ export function clinicalResult(f:ReturnType<typeof facts>,unstable:boolean,needs
  const priority=Math.min(100,20+(unstable?35:0)+(signals.some(s=>s.code==='status-mismatch')?15:0)+(signals.some(s=>s.code==='observation-outlier')?10:0)+(!f.documented?10:0)+(authorization==='denied'?20:authorization==='approved'?0:10)+(f.missing.length?15:0));
  return {recommendation,continuedStay:f.missing.length?'Insufficient evidence':needsStay?'Continued-stay review suggested':'Reassess continued-stay need',baselinePriority:priority,signals,denialRisk:{label:!f.documented||authorization==='denied'||authorization==='expired'?'Elevated illustrative risk':signals.some(s=>s.code==='status-mismatch')?'Review needed':'Monitor',probability:null,explanation:'Illustrative risk signals only; not a validated prediction or probability.'},missing:f.missing};
 }
-export async function localTriage(input:{baselinePriority:number;signals:Signal[];evidence:string[]},endpoint=config.ollama){
+export async function localTriage(input:{baselinePriority:number;signals:Signal[];evidence:string[]},endpoint=config.modelUrl){
  const candidates=input.signals.length?input.signals:[{code:'routine',label:'Routine review of supplied synthetic evidence',evidence:input.evidence}];
  const schema={type:'object',additionalProperties:false,required:['urgency','rationaleCode','evidence'],properties:{urgency:{type:'string',enum:['urgent','high','routine']},rationaleCode:{type:'string',enum:candidates.map(s=>s.code)},evidence:{type:'array',minItems:1,maxItems:1,items:{type:'string',enum:input.evidence}}}};
  try{
@@ -65,7 +65,8 @@ export async function assess(id:string,actor:Actor,kind='initial'){
  return transaction(async tx=>{
   const locked=(await tx.query('SELECT * FROM cases WHERE id=$1 FOR UPDATE',[id])).rows[0];
   if(new Date(locked.updated_at).getTime()!==new Date(row.updated_at).getTime()||hash(locked.workflow)!==hash(row.workflow)||hash(locked.bundle)!==hash(row.bundle))throw new HttpError(409,'Case changed during assessment; rerun against the latest case');
-  const workflow={...locked.workflow,state:locked.workflow.state==='escalated'?'escalated':locked.workflow.humanDecision?'reviewed':'assessed'};
+  const humanDecision=locked.workflow.humanDecision?.assessmentSourceHash===assessment.sourceHash?locked.workflow.humanDecision:null;
+  const workflow={...locked.workflow,humanDecision,state:locked.workflow.state==='escalated'?'escalated':humanDecision?.disposition==='Request more information'?'awaiting-information':humanDecision?'reviewed':'assessed'};
   const {rows}=await tx.query('UPDATE cases SET bundle=$2,assessment=$3,workflow=$4,updated_at=now() WHERE id=$1 RETURNING *',[id,bundle,{...assessment,provenance:'Provenance/'+provenance.id},workflow]);
   await audit(tx,id,actor.name,kind==='continued-stay'?'continued-stay-review':'initial-review',assessment);
   return rows[0];

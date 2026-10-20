@@ -1,0 +1,22 @@
+
+> hospital-ur-ai-mvp@0.1.0 bootstrap
+> tsx scripts/bootstrap.ts
+
+{
+  "medplum": {
+    "persisted": true,
+    "version": "ac47ed1a-c37b-4713-a858-42c74cc1350b"
+  },
+  "cqf": 25,
+  "cqfFhirData": true,
+  "keycloak": {
+    "verified": true,
+    "roles": [
+      "reviewer"
+    ]
+  },
+  "localModel": {
+    "ready": true,
+    "model": "qwen2.5:0.5b"
+  }
+}

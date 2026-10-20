@@ -1,4 +1,5 @@
 import express from 'express';
+import {report,metrics,registry} from './reporting.js';
 import {z} from 'zod';
 import {authorizationEvent,operational,escalate,decide} from './workflow.js';
 import {assess,updateVitals,rules} from './review.js';
@@ -21,6 +22,7 @@ app.use((req,res,next)=>{
 const actor=(res:express.Response)=>res.locals.actor as Actor;
 const allow=(roles:string[])=> (_req:express.Request,res:express.Response,next:express.NextFunction)=>roles.some(r=>actor(res).roles.includes(r))?next():next(new HttpError(403,'This role cannot perform that action'));
 const failures=new Map<string,{count:number;until:number}>();
+app.get('/metrics',async(_req,res)=>{res.type(registry.contentType).send(await metrics());});
 app.get('/health',async(_req,res)=>{await pool.query('SELECT 1');res.json({ok:true,syntheticOnly:true});});
 app.post('/api/session',async(req,res)=>{
  const ip=req.ip||'local',now=Date.now(),previous=failures.get(ip);
@@ -58,6 +60,8 @@ app.post('/api/cases/:id/authorization',allow(['reviewer','admin']),async(req,re
 app.post('/api/cases/:id/escalations',allow(['reviewer','admin']),async(req,res)=>res.json(await escalate(String(req.params.id),req.body,actor(res))));
 app.post('/api/cases/:id/decisions',allow(['advisor','admin']),async(req,res)=>res.json(await decide(String(req.params.id),req.body,actor(res))));
 app.get('/api/audit',async(_req,res)=>res.json((await pool.query('SELECT * FROM audit ORDER BY sequence DESC LIMIT 250')).rows));
+app.get('/api/reports',async(_req,res)=>res.json(await report()));
+app.get('/api/openapi.json',(_req,res)=>res.sendFile(path.resolve('docs/openapi.json')));
 app.use(express.static(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../dist')));
 app.get('/',(_req,res)=>res.sendFile(path.resolve('dist/index.html')));
 app.use((err:any,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{

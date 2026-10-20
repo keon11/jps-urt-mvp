@@ -1,0 +1,66 @@
+{
+  "unit": {
+    "passed": 14,
+    "failed": 0,
+    "evidence": "artifacts/phase-5-unit-tests.txt"
+  },
+  "integration": {
+    "passed": 14,
+    "failed": 0,
+    "evidence": "artifacts/final-integration-tests.txt"
+  },
+  "browser": {
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "artifacts/browser-results.json"
+  },
+  "audit": {
+    "verified": true,
+    "events": 130,
+    "lastHash": "2bdf0c7636ad1aefd5a605b93ede96ff5df3e32f51e820163a03362c121ba5dd",
+    "checkedAt": "2026-10-20T17:43:36.266Z"
+  },
+  "readiness": {
+    "checkedAt": "2026-10-20T17:43:38.243Z",
+    "syntheticCases": 6,
+    "currentLocalModelAssessments": 6,
+    "freshDemonstrationWorkflow": true,
+    "services": {
+      "medplum": "ready",
+      "cqf": "ready",
+      "identity": "ready",
+      "localModel": "ready"
+    },
+    "passed": true
+  },
+  "cleanPostgresInit": {
+    "passed": true,
+    "databases": [
+      "medplum",
+      "ur"
+    ],
+    "medplumRoleCreated": true,
+    "isolatedEmptyDataDirectory": true,
+    "at": "2026-10-20T17:28:55.664998+00:00"
+  },
+  "fullNpmAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "productionNpmAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "verifiedAt": "2026-10-20T17:44:58.872499+00:00",
+  "sourceSha256": "219453c6880111739cd9cc3aa8ea4190dbb5c9691e0dc695e1355b416e20d598",
+  "gitHubRemoteCreated": false
+}

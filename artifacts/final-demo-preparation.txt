@@ -1,0 +1,10 @@
+
+> hospital-ur-ai-mvp@0.1.0 demo
+> tsx scripts/prepare-demo.ts --reset
+
+respiratory Inpatient review suggested local-model
+observation Observation review suggested local-model
+continued-stay Observation review suggested local-model
+documentation Inpatient review suggested local-model
+authorization Inpatient review suggested local-model
+advisor Inpatient review suggested local-model

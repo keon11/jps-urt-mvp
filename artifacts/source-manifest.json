@@ -1,0 +1,186 @@
+{
+  "at": "2026-10-20T17:43:38.571387+00:00",
+  "combinedSha256": "219453c6880111739cd9cc3aa8ea4190dbb5c9691e0dc695e1355b416e20d598",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "c7a04a63d87ba78e2a890fdb83f72e63dccdbd8130946f54c981fe93453c1805"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "722c90f7ec130344cda83789e29df7f3ea88ac840c1295f6a431d34f5113eb16"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "871d477e4ae8520b1aae1087b44b587a2dbc54f0574edd07f4b9aca4ac31897e"
+    },
+    {
+      "path": "apps/web/src/style.css",
+      "sha256": "e0e3229f6d53c16e5724697abcbeda1a63f98e21732a0b3e57e3a1a167387e1e"
+    },
+    {
+      "path": "compose.yaml",
+      "sha256": "c9d4a0ebd63a1c3393aa2d9a3bb309edf65a908c109b2d00bbc2ef101835636a"
+    },
+    {
+      "path": "docs/model-lock.json",
+      "sha256": "73d3580e5117e806df222fbbd61c5914c4b314899a3d35ccec13110ba73d0e8d"
+    },
+    {
+      "path": "docs/openapi.json",
+      "sha256": "65922636dd08d45568e41756758e62bd15c1b057328cd0849d5692a4f13a6b77"
+    },
+    {
+      "path": "infra/init.sql",
+      "sha256": "c969610d3413cd451f1e1f93b4c966b5f9b770fc41dafe3c07f7596f6ac1ac78"
+    },
+    {
+      "path": "infra/medplum.json",
+      "sha256": "6fa88d172dec50bd018d5e05864c49f9080bc66f51054edf5c7a87ecdc862ec8"
+    },
+    {
+      "path": "infra/observability/grafana/dashboards/provider.yml",
+      "sha256": "602b8b0080baee2db7e0e07a017301ed0d31aee0750e3c32ac12e12b06b32d7c"
+    },
+    {
+      "path": "infra/observability/grafana/dashboards/ur.json",
+      "sha256": "813681d50d146095d6663ae4995a1d238abb5677964ba1d32b0f8f7f0a71e219"
+    },
+    {
+      "path": "infra/observability/grafana/datasources/datasource.yml",
+      "sha256": "72fa2f1b1bb35c07d0932e60139e4431145e0e35f4a11679ae83fc274205dad2"
+    },
+    {
+      "path": "infra/prometheus.yml",
+      "sha256": "33a9efe4e573761a07edfe080db6f32ff31ff07e29ba61f969fd8cff32b4f873"
+    },
+    {
+      "path": "infra/realm.json",
+      "sha256": "ee04baef57973189f40c638641148048aebb4c7f0d2999d2dceca9ef6062789b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "4232875fa9c072b97834db41caa5f5675991aefb99441469333ed3c377a8f955"
+    },
+    {
+      "path": "package.json",
+      "sha256": "01948f5ecb8f19b7dd187ae1d5022c2f6677c712ac3700bceef8a24c73716f90"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "fe1cb072eee8d1ccade3f807e18b1aefe8d2886c756e6445557abafb72d17ad1"
+    },
+    {
+      "path": "scripts/bootstrap.ts",
+      "sha256": "47d802b3d8f434c8d7a1f6fbcbd6aafec94397b74eb179536517c8e1d5f519c7"
+    },
+    {
+      "path": "scripts/download-model.py",
+      "sha256": "115922ffdc34f98394b5aae756fe14f9e8c65d758678f3f1e61558200a15806a"
+    },
+    {
+      "path": "scripts/prepare-demo.ts",
+      "sha256": "b2c418e4e28c1efd70e907c9a04a240dca5f3c3c780423a4b293c42f8c931c28"
+    },
+    {
+      "path": "scripts/seed.ts",
+      "sha256": "d77146ca38f7fe1eee363dfa2174b5b565e6edde32f7214ca1bb58b060f72694"
+    },
+    {
+      "path": "scripts/start-demo.sh",
+      "sha256": "b31204eb4ba12e9ea6603f4b569b4753f904d5fbc13ab9c49713a9f52c2a22cc"
+    },
+    {
+      "path": "scripts/test-clean-init.py",
+      "sha256": "9c36e1fbb6225ea77167ca913b38ca2a6cb6db82123ab015d38ebe740ed4b0c1"
+    },
+    {
+      "path": "scripts/verify-audit.ts",
+      "sha256": "e8af14e0a69addd879ce6c5424179e37e39cd7e479d3763002b654a9a85cc27e"
+    },
+    {
+      "path": "services/api/src/adapters.ts",
+      "sha256": "91b56d981fd7f1babe04a56b66c8fdd254288dca8dd317843057e0409b23d916"
+    },
+    {
+      "path": "services/api/src/config.ts",
+      "sha256": "1f744db4c372446b8f472b0d88d57c8acff5c4a67f61e29cba07bfe03c55a234"
+    },
+    {
+      "path": "services/api/src/db.ts",
+      "sha256": "4cd8b94cb8e7508a90f546a394c12e25af22707a8f99c2861d543a3276556ed2"
+    },
+    {
+      "path": "services/api/src/fixtures.ts",
+      "sha256": "0e248b3cb34b25b766e45eb49ac878fb22cc65598ff79603d2e49e288e94be50"
+    },
+    {
+      "path": "services/api/src/reporting.ts",
+      "sha256": "563d04e56c0323cb98f840af1fff37fa978dc446ad6cf0429937acd45c18f9ce"
+    },
+    {
+      "path": "services/api/src/review.ts",
+      "sha256": "e8c69ad1e8fcc633880c1a17b99c1087c0e33e778ddd571695a68e1ee7babe82"
+    },
+    {
+      "path": "services/api/src/server.ts",
+      "sha256": "d214a763ed282e117a33abf969c26d4a247705ded871f979f7dd4e51952d4f02"
+    },
+    {
+      "path": "services/api/src/store.ts",
+      "sha256": "1c01c5fe036e9406080c6f8f43747cf3dd5cfd499b043dae0f0cb8c152abbf13"
+    },
+    {
+      "path": "services/api/src/workflow.ts",
+      "sha256": "fbafa1317a4034296733b909739185d3712d341605bff422c1b39691a6a3f1ea"
+    },
+    {
+      "path": "services/api/test/foundation.test.ts",
+      "sha256": "a85da86ef28ad9825a0ab02379a3fb3c7b035119248e6ab5783b12c97b93efe6"
+    },
+    {
+      "path": "services/api/test/intake.test.ts",
+      "sha256": "a64f5b1ddcd719aa9f132baf5a73b9b0ae0651093a23c365f5480c4625960203"
+    },
+    {
+      "path": "services/api/test/review.test.ts",
+      "sha256": "943e4514b58dae3208f863a54cb654077ebaf1dd27f58c527ef4bd4018433fba"
+    },
+    {
+      "path": "services/api/test/workflow.test.ts",
+      "sha256": "48ce6950b3c5723fda8eda08f81a40b94d3f671a1f9db83476ee6ee5625d50da"
+    },
+    {
+      "path": "tests/browser/demo.spec.ts",
+      "sha256": "d8b24909a368a83c72344f51eebb6e0a10f7c6db36d0ac6e1ace6508e64eb7c4"
+    },
+    {
+      "path": "tests/dependency-failures.integration.test.ts",
+      "sha256": "096049df673880061b3eae30a99cf301361824727182724402b4f811abfcd8ef"
+    },
+    {
+      "path": "tests/intake.integration.test.ts",
+      "sha256": "b6915afda8a3864098dfb876bb3645e8e2f7570c47add313a9f167f2a71dd485"
+    },
+    {
+      "path": "tests/reporting.integration.test.ts",
+      "sha256": "9a59d068b8d2fc285b1046771239e2893b63dc8c894718de106ed54625308135"
+    },
+    {
+      "path": "tests/review.integration.test.ts",
+      "sha256": "8768b502c7112d3c6fbdd93e58eef42b7674aa84e1bfca90f71d310c8fa0f20d"
+    },
+    {
+      "path": "tests/workflow.integration.test.ts",
+      "sha256": "6b12d1b1cf49c1a8a9a81cdcc787ea163b4375b5f1c65b739ed0397cdc919ed2"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "030491009fd5be56d3cbdf96f8aa9708e4180c1a006e6fd3588bfc024716a98d"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "fd3051e887f9181fe369ee11e0f7bbfea79beac28e67d417a8087651cc1f5a72"
+    }
+  ]
+}

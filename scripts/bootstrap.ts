@@ -24,7 +24,7 @@ const token=await login('reviewer','Synthetic-demo-only-2026!');
 const user=await verifyToken(token.access_token);
 if(!user.roles.includes('reviewer'))throw new Error('Keycloak reviewer role missing');
 checks.keycloak={verified:true,roles:user.roles.filter(x=>['reviewer','advisor','admin'].includes(x))};
-const model=await jsonFetch(config.ollama+'/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:config.model,messages:[{role:'user',content:'Return JSON with status equal to ready.'}],temperature:0,max_tokens:30,response_format:{type:'json_object'}})},60000);
+const model=await jsonFetch(config.modelUrl+'/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:config.model,messages:[{role:'user',content:'Return JSON with status equal to ready.'}],temperature:0,max_tokens:30,response_format:{type:'json_object'}})},60000);
 const ack=JSON.parse(model.choices[0].message.content);
 if(ack.status!=='ready')throw new Error('Local model check failed');
 checks.localModel={ready:true,model:config.model};

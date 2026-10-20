@@ -6,6 +6,6 @@ export const config = {
  medplumSecret:process.env.MEDPLUM_CLIENT_SECRET || 'synthetic-service-local-only',
  cqf:process.env.CQF_URL || 'http://localhost:8080/fhir',
  keycloak:process.env.KEYCLOAK_URL || 'http://localhost:8081/realms/ur-demo',
- ollama:process.env.OLLAMA_URL || 'http://localhost:11434',
- model:process.env.OLLAMA_MODEL || 'qwen2.5:0.5b',
+ modelUrl:process.env.LOCAL_MODEL_URL || 'http://localhost:11434',
+ model:process.env.LOCAL_MODEL_NAME || 'qwen2.5:0.5b',
 };

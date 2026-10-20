@@ -20,4 +20,17 @@ export async function initDb(){
  DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname='audit_immutable') THEN
  CREATE TRIGGER audit_immutable BEFORE UPDATE OR DELETE ON audit FOR EACH ROW EXECUTE FUNCTION immutable_audit();
  END IF; END $$;`);
+ await pool.query(`CREATE OR REPLACE VIEW ur_operational_metrics AS SELECT
+ count(*)::int AS active_encounters,
+ count(*) FILTER (WHERE assessment IS NOT NULL AND COALESCE(assessment->>'triageStale','false')!='true')::int AS current_assessments,
+ count(*) FILTER (WHERE (assessment->>'priority')::int>=70 AND COALESCE(assessment->>'triageStale','false')!='true')::int AS priority_review,
+ count(*) FILTER (WHERE workflow->>'state'='escalated')::int AS escalated,
+ count(*) FILTER (WHERE workflow->>'state'='reviewed')::int AS reviewed,
+ count(*) FILTER (WHERE workflow->>'authorization'!='approved')::int AS authorization_attention
+ FROM cases;
+ DO $$ BEGIN IF NOT EXISTS(SELECT 1 FROM pg_roles WHERE rolname='ur_metrics') THEN
+ CREATE ROLE ur_metrics LOGIN PASSWORD 'synthetic-metrics-local-only'; END IF; END $$;
+ GRANT USAGE ON SCHEMA public TO ur_metrics;
+ GRANT SELECT ON ur_operational_metrics TO ur_metrics;`);
+
 }

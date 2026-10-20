@@ -32,6 +32,9 @@ test('physician escalation enforces roles, override reasons, and source status p
  await call('advisor','/reviews',{kind:'initial'});
  await call('advisor','/escalations',{reason:'status-mismatch'});
  await call('advisor','/decisions',{disposition:'Observation',reason:'clinical-judgment-override'},reviewer,403);
+ const provisional=await call('advisor','/decisions',{disposition:'Request more information',reason:'additional-documentation-required'},advisor);assert.equal(provisional.workflow.state,'awaiting-information');
+ const reassessed=await call('advisor','/reviews',{kind:'initial'});assert.equal(reassessed.workflow.state,'awaiting-information','A provisional information request must not become a completed human review');
+ await call('advisor','/escalations',{reason:'status-mismatch'});
  await call('advisor','/decisions',{disposition:'Observation',reason:'evidence-supports-recommendation'},advisor,422);
  const result=await call('advisor','/decisions',{disposition:'Observation',reason:'clinical-judgment-override'},advisor);assert.equal(result.workflow.state,'reviewed');assert.equal(result.workflow.humanDecision.by,'advisor');assert.equal(result.workflow.humanDecision.assessmentSourceHash,result.assessment.sourceHash);
  const client=await fhirClient(),enc=await client.readResource('Encounter',result.encounter_id);assert.equal(enc.class.code,'OBSENC');

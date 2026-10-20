@@ -13,6 +13,7 @@ test('real CQF and local inference produce traceable initial recommendations',as
  const client=await fhirClient();assert.equal((await client.readResource('Provenance',a.provenance.split('/')[1])).resourceType,'Provenance');
 });
 test('continued-stay review responds to new clinical versions and invalidates old assessment',async()=>{
+ await request('continued-stay','synthetic-vitals',{spo2:95,systolic:114,expectedNights:1});
  const initial=await request('continued-stay','reviews',{kind:'initial'});
  assert.equal(initial.assessment.continuedStay,'Reassess continued-stay need');
  await request('continued-stay','synthetic-vitals',{spo2:85,systolic:88,expectedNights:3});

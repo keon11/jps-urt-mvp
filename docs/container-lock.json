@@ -1,0 +1,58 @@
+[
+  {
+    "image": "medplum/medplum-server:5.2.6",
+    "id": "sha256:8ad06f67041ce07ca92a185941621491ac3d0461be44732524630fb1dc871cad",
+    "digests": [
+      "medplum/medplum-server@sha256:2968c9aeb85d03968370855a5dc409a6f28ef5abda0996e353be06c525b61216"
+    ]
+  },
+  {
+    "image": "hapiproject/hapi:v8.6.5-1",
+    "id": "sha256:b6e05e63ba29c4fa8ea6a7e4eaa5df6b70790bd70930f8e128dd06cb726fc1f1",
+    "digests": [
+      "hapiproject/hapi@sha256:d5fae63f8a375eb3a682f7326269d8f316e5dc609f729de3985cde1f82143a60"
+    ]
+  },
+  {
+    "image": "quay.io/keycloak/keycloak:26.4.2",
+    "id": "sha256:a4d1af9d8ef78f34922a9b9813f21ed782d0de2fe5bb3659119ec2ca8ac11034",
+    "digests": [
+      "quay.io/keycloak/keycloak@sha256:3617b09bb4b7510a8d8d9b9fc5707399e2d70688dbcc2f8fb013a144829be1b9"
+    ]
+  },
+  {
+    "image": "postgres:16.10",
+    "id": "sha256:23ab7b9541a25c07fd6f64c6021b5389908e62bb9ff24364c9d3c3aacb8b9963",
+    "digests": [
+      "postgres@sha256:21f6013073bc6b92830a2129570e2f5ec42a6c734b5a985a41e83aa58f54c3c1"
+    ]
+  },
+  {
+    "image": "grafana/grafana:12.2.1",
+    "id": "sha256:bac4f177a0d5a5f8539398abee9c956472c55d98a4438e1c3d03247c3a302b19",
+    "digests": [
+      "grafana/grafana@sha256:35c41e0fd0295f5d0ee5db7e780cf33506abfaf47686196f825364889dee878b"
+    ]
+  },
+  {
+    "image": "ghcr.io/ggml-org/llama.cpp:server",
+    "id": "sha256:521a6d74176d88e1bc20c9a4e87a9433a8354b69cc3ee85a060d732662eb91f1",
+    "digests": [
+      "ghcr.io/ggml-org/llama.cpp@sha256:9fbaa06d7f4449e2ae0d02b40e0431f7c212dcf231c9e3a7777a6afc2cc8f312"
+    ]
+  },
+  {
+    "image": "prom/prometheus:v3.7.1",
+    "id": "sha256:e2099aa7746307794beea951bab7457ae82378ed65fbb3d464de43c5c3c48431",
+    "digests": [
+      "prom/prometheus@sha256:ff7e389acbe064a4823212a500393d40a28a8f362e4b05cbf6742a9a3ef736b2"
+    ]
+  },
+  {
+    "image": "valkey/valkey:8.1.10-alpine",
+    "id": "sha256:09f1cebdbddf5d5c6e7521bd66e488a55bc11c47736572c101d9d0cf628121d0",
+    "digests": [
+      "valkey/valkey@sha256:081c2f5cb575efc901aa80ff9cdbd1ec6a301682fd35e1ebb4b0990a4a4a8507"
+    ]
+  }
+]

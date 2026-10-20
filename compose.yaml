@@ -14,8 +14,12 @@ services:
       interval: 5s
       retries: 20
   redis:
-    image: redis:7.4.6
-    command: ['redis-server','--save','','--appendonly','no']
+    image: valkey/valkey:8.1.10-alpine
+    command: ['valkey-server','--save','','--appendonly','no']
+    healthcheck:
+      test: ['CMD','valkey-cli','ping']
+      interval: 2s
+      retries: 30
   medplum:
     image: medplum/medplum-server:5.2.6
     command: ['file:/usr/src/medplum/medplum.config.json']
@@ -25,7 +29,7 @@ services:
       - medbinary:/var/medplum/binary
     depends_on:
       postgres: {condition: service_healthy}
-      redis: {condition: service_started}
+      redis: {condition: service_healthy}
   cqf:
     image: hapiproject/hapi:v8.6.5-1
     ports: ['127.0.0.1:8080:8080']
@@ -49,6 +53,7 @@ services:
     volumes: ['./.runtime/models:/models:ro']
     command: ['-m','/models/qwen2.5-0.5b-instruct-q4_k_m.gguf','--host','0.0.0.0','--port','8080','--ctx-size','4096','--threads','4','--alias','qwen2.5:0.5b']
   prometheus:
+    profiles: [prometheus]
     image: prom/prometheus:v3.7.1
     volumes: ['./infra/prometheus.yml:/etc/prometheus/prometheus.yml:ro']
     extra_hosts: ['host.docker.internal:host-gateway']
@@ -58,8 +63,13 @@ services:
       GF_SECURITY_ADMIN_USER: demo-admin
       GF_SECURITY_ADMIN_PASSWORD: synthetic-grafana-local-only
       GF_AUTH_ANONYMOUS_ENABLED: 'false'
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_ANALYTICS_REPORTING_ENABLED: 'false'
+      GF_ANALYTICS_CHECK_FOR_UPDATES: 'false'
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: 'false'
+      GF_PLUGINS_PUBLIC_KEY_RETRIEVAL_DISABLED: 'true'
     ports: ['127.0.0.1:3001:3000']
-    volumes: ['./infra/grafana:/etc/grafana/provisioning:ro']
+    volumes: ['./infra/observability/grafana:/etc/grafana/provisioning:ro']
 volumes:
   pgdata:
   medbinary:

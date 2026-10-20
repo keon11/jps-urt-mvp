@@ -1,9 +1,9 @@
 {
-  "at": "2026-10-20T16:59:29.784Z",
+  "at": "2026-10-20T17:35:03.495Z",
   "checks": {
     "medplum": {
       "persisted": true,
-      "version": "e498be34-65f4-412f-8032-6c8bd3dab5b1"
+      "version": "a8106d93-e7c4-49b5-8394-dc233944d430"
     },
     "cqf": 25,
     "cqfFhirData": true,

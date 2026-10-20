@@ -1,0 +1,12 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:browser
+> playwright test
+
+
+Running 3 tests using 1 worker
+
+  ✓  1 tests/browser/demo.spec.ts:33:1 › all eight synthetic utilization review scenarios work end to end (32.5s)
+  ✓  2 tests/browser/demo.spec.ts:213:1 › invalidated session returns to sign-in instead of leaving unusable controls (1.5s)
+  ✓  3 tests/browser/demo.spec.ts:239:1 › Grafana renders live aggregate reporting (3.9s)
+
+  3 passed (39.9s)

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "databases": [
+    "medplum",
+    "ur"
+  ],
+  "medplumRoleCreated": true,
+  "isolatedEmptyDataDirectory": true,
+  "at": "2026-10-20T17:28:55.664998+00:00"
+}

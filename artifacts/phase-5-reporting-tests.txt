@@ -1,0 +1,11 @@
+✔ reports match persisted cases and Prometheus exposition serves real counts (184.103159ms)
+✔ Grafana account can read only aggregate view, not source records or audit (61.936494ms)
+✔ actual Grafana datasource queries the provisioned operational dashboard (91.082795ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 989.985413

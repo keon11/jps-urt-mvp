@@ -1,0 +1,821 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Clarity UR Synthetic Demonstration API",
+    "version": "0.1.0",
+    "description": "Fictional data only. Illustrative, unvalidated decision support. No JPS/payer production integration. See docs/API.md for response fields and role restrictions."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "security": [
+    {
+      "cookieAuth": []
+    },
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/session": {
+      "post": {
+        "summary": "Sign in to the local Keycloak demo",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Clear the browser session",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "security": []
+      }
+    },
+    "/me": {
+      "get": {
+        "summary": "Current authenticated identity",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    },
+    "/fixtures": {
+      "get": {
+        "summary": "List six fictional fixtures",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    },
+    "/fixtures/{id}": {
+      "get": {
+        "summary": "Download an allowlisted fictional FHIR Bundle",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/intake": {
+      "post": {
+        "summary": "Idempotently ingest an unmodified shipped fixture",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          },
+          "201": {
+            "description": "New case persisted"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyntheticBundle"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        ]
+      }
+    },
+    "/cases": {
+      "get": {
+        "summary": "List cases ordered by current priority",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    },
+    "/cases/{id}": {
+      "get": {
+        "summary": "Read case and operational flags",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/cases/{id}/reviews": {
+      "post": {
+        "summary": "Run advisory CQF and local-model review",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Review"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cases/{id}/synthetic-vitals": {
+      "post": {
+        "summary": "Update fictional observations and invalidate prior assessment",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Vitals"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cases/{id}/authorization": {
+      "post": {
+        "summary": "Record an internal simulated payer event",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizationEvent"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cases/{id}/escalations": {
+      "post": {
+        "summary": "Escalate to physician advisor",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Escalation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cases/{id}/decisions": {
+      "post": {
+        "summary": "Record role-restricted human disposition",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Decision"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cases/{id}/audit": {
+      "get": {
+        "summary": "Read case audit events",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/audit": {
+      "get": {
+        "summary": "Read latest 250 audit events",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    },
+    "/reports": {
+      "get": {
+        "summary": "Read current operational aggregates",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    },
+    "/rules": {
+      "get": {
+        "summary": "Read versioned illustrative rule thresholds",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    },
+    "/services": {
+      "get": {
+        "summary": "Check local dependency readiness",
+        "responses": {
+          "200": {
+            "description": "Success; advisory and synthetic only"
+          },
+          "401": {
+            "description": "Sign-in required"
+          },
+          "403": {
+            "description": "Role or origin forbidden"
+          },
+          "409": {
+            "description": "Stale assessment, invalid transition or conflicting event/key"
+          },
+          "422": {
+            "description": "Invalid input"
+          },
+          "502": {
+            "description": "Dependency failed; no successful result claimed"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "cookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "ur_session"
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "Login": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string",
+            "enum": [
+              "reviewer",
+              "advisor",
+              "admin"
+            ]
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      },
+      "SyntheticBundle": {
+        "type": "object",
+        "description": "Only the six exact shipped fictional transaction bundles are accepted; download from /fixtures/{id}.",
+        "required": [
+          "resourceType",
+          "type",
+          "identifier",
+          "entry"
+        ],
+        "properties": {
+          "resourceType": {
+            "const": "Bundle"
+          },
+          "type": {
+            "const": "transaction"
+          },
+          "identifier": {
+            "type": "object"
+          },
+          "entry": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "Review": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "initial",
+              "continued-stay"
+            ]
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "Vitals": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "spo2": {
+            "type": "number",
+            "minimum": 50,
+            "maximum": 100
+          },
+          "systolic": {
+            "type": "number",
+            "minimum": 40,
+            "maximum": 240
+          },
+          "expectedNights": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 30
+          }
+        },
+        "required": [
+          "spo2",
+          "systolic",
+          "expectedNights"
+        ]
+      },
+      "AuthorizationEvent": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "submit",
+              "payer-response",
+              "notify",
+              "simulate-expiry"
+            ]
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "pending-information",
+              "approved",
+              "partial-approved",
+              "denied"
+            ]
+          },
+          "eventId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "action",
+          "eventId"
+        ]
+      },
+      "Escalation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "status-mismatch",
+              "continued-stay",
+              "documentation-gap",
+              "authorization-risk",
+              "clinical-uncertainty"
+            ]
+          }
+        },
+        "required": [
+          "reason"
+        ]
+      },
+      "Decision": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "Inpatient",
+              "Observation",
+              "Request more information"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "evidence-supports-recommendation",
+              "clinical-judgment-override",
+              "additional-documentation-required"
+            ]
+          }
+        },
+        "required": [
+          "disposition",
+          "reason"
+        ]
+      }
+    }
+  }
+}

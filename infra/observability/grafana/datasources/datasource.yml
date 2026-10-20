@@ -1,0 +1,16 @@
+apiVersion: 1
+datasources:
+  - name: UR Synthetic Metrics
+    uid: ur-postgres
+    type: postgres
+    url: postgres:5432
+    user: ur_metrics
+    secureJsonData:
+      password: synthetic-metrics-local-only
+    jsonData:
+      database: ur
+      sslmode: disable
+      postgresVersion: 1600
+      maxOpenConns: 2
+    isDefault: true
+    editable: false
