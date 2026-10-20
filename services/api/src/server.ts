@@ -1,5 +1,6 @@
 import express from 'express';
 import {z} from 'zod';
+import {authorizationEvent,operational,escalate,decide} from './workflow.js';
 import {assess,updateVitals,rules} from './review.js';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -34,7 +35,7 @@ app.delete('/api/session',(_req,res)=>{res.clearCookie('ur_session',{path:'/'});
 app.use('/api',async(req,res,next)=>{
  const bearer=req.headers.authorization?.startsWith('Bearer ')?req.headers.authorization.slice(7):undefined;
  const cookie=req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('ur_session='))?.slice(11);
- try{res.locals.actor=await verifyToken(bearer||decodeURIComponent(cookie||''));next();}catch{next(new HttpError(401,'Sign in to continue'));}
+ try{res.locals.actor=await verifyToken(bearer||decodeURIComponent(cookie||''));if(!['reviewer','advisor','admin'].some(r=>actor(res).roles.includes(r)))return next(new HttpError(403,'No utilization review role assigned'));next();}catch{next(new HttpError(401,'Sign in to continue'));}
 });
 app.get('/api/me',(_req,res)=>res.json(actor(res)));
 app.get('/api/services',async(_req,res)=>res.json(await serviceStatus()));
@@ -44,8 +45,8 @@ app.post('/api/intake',allow(['admin','reviewer']),async(req,res)=>{
  const key=req.headers['idempotency-key'];if(typeof key!=='string'||!key.length||key.length>128)throw new HttpError(400,'Idempotency-Key header required (max 128 characters)');
  const result=await intake(req.body,key,actor(res));res.status(result.duplicate?200:201).json(result);
 });
-app.get('/api/cases',async(_req,res)=>res.json(await listCases()));
-app.get('/api/cases/:id',async(req,res)=>res.json(await getCase(String(req.params.id))));
+app.get('/api/cases',async(_req,res)=>res.json((await listCases()).map(operational)));
+app.get('/api/cases/:id',async(req,res)=>res.json(operational(await getCase(String(req.params.id)))));
 app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(String(req.params.id));res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[String(req.params.id)])).rows);});
 app.get('/api/rules',(_req,res)=>res.json(rules));
 app.post('/api/cases/:id/reviews',allow(['reviewer','advisor','admin']),async(req,res)=>{
@@ -53,6 +54,10 @@ app.post('/api/cases/:id/reviews',allow(['reviewer','advisor','admin']),async(re
  res.json(await assess(String(req.params.id),actor(res),input.kind));
 });
 app.post('/api/cases/:id/synthetic-vitals',allow(['reviewer','admin']),async(req,res)=>res.json(await updateVitals(String(req.params.id),req.body,actor(res))));
+app.post('/api/cases/:id/authorization',allow(['reviewer','admin']),async(req,res)=>res.json(await authorizationEvent(String(req.params.id),req.body,actor(res))));
+app.post('/api/cases/:id/escalations',allow(['reviewer','admin']),async(req,res)=>res.json(await escalate(String(req.params.id),req.body,actor(res))));
+app.post('/api/cases/:id/decisions',allow(['advisor','admin']),async(req,res)=>res.json(await decide(String(req.params.id),req.body,actor(res))));
+app.get('/api/audit',async(_req,res)=>res.json((await pool.query('SELECT * FROM audit ORDER BY sequence DESC LIMIT 250')).rows));
 app.use(express.static(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../dist')));
 app.get('/',(_req,res)=>res.sendFile(path.resolve('dist/index.html')));
 app.use((err:any,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{

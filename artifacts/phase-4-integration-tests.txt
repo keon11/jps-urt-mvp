@@ -1,0 +1,10 @@
+✔ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (11661.356423ms)
+✔ physician escalation enforces roles, override reasons, and source status preservation (11978.593935ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 24261.77528

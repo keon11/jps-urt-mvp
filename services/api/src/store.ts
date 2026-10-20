@@ -16,7 +16,7 @@ export async function transaction<T>(fn:(tx:PoolClient)=>Promise<T>):Promise<T>{
  const tx=await pool.connect();try{await tx.query('BEGIN');const result=await fn(tx);await tx.query('COMMIT');return result;}catch(e){await tx.query('ROLLBACK');throw e;}finally{tx.release();}
 }
 export async function getCase(id:string){const {rows}=await pool.query('SELECT * FROM cases WHERE id=$1',[id]);if(!rows[0])throw new HttpError(404,'Case not found');return rows[0];}
-export async function listCases(){return (await pool.query("SELECT * FROM cases ORDER BY COALESCE((assessment->>'priority')::int,0) DESC,created_at ASC")).rows;}
+export async function listCases(){return (await pool.query("SELECT * FROM cases ORDER BY CASE WHEN assessment->>'triageStale'='true' THEN 0 ELSE COALESCE((assessment->>'priority')::int,0) END DESC,created_at ASC")).rows;}
 export async function intake(value:unknown,key:string,actor:Actor){
  const bundle=validateFixture(value),id=bundle.identifier!.value!,digest=hash(bundle);
  return transaction(async tx=>{

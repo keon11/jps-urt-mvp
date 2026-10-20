@@ -37,12 +37,12 @@ export function clinicalResult(f:ReturnType<typeof facts>,unstable:boolean,needs
 }
 export async function localTriage(input:{baselinePriority:number;signals:Signal[];evidence:string[]},endpoint=config.ollama){
  const candidates=input.signals.length?input.signals:[{code:'routine',label:'Routine review of supplied synthetic evidence',evidence:input.evidence}];
- const schema={type:'object',additionalProperties:false,required:['urgency','rationaleCode','evidence'],properties:{urgency:{type:'string',enum:['urgent','high','routine']},rationaleCode:{type:'string',enum:candidates.map(s=>s.code)},evidence:{type:'array',minItems:1,maxItems:3,items:{type:'string',enum:input.evidence}}}};
+ const schema={type:'object',additionalProperties:false,required:['urgency','rationaleCode','evidence'],properties:{urgency:{type:'string',enum:['urgent','high','routine']},rationaleCode:{type:'string',enum:candidates.map(s=>s.code)},evidence:{type:'array',minItems:1,maxItems:1,items:{type:'string',enum:input.evidence}}}};
  try{
   if(!input.evidence.length)throw new Error('No evidence for model triage');
   const prompt='Classify this fictional utilization-review case for human queue triage. Do not make coverage or clinical determinations. Choose urgency urgent for severe vital-sign signals, high for status mismatch or delayed review, routine otherwise. Choose one rationaleCode from the supplied signals and cite supplied evidence references. All criteria are illustrative. Input: '+JSON.stringify(input);
-  const result=await jsonFetch(endpoint+'/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:config.model,messages:[{role:'system',content:'You classify synthetic case priority using supplied facts only. Return the required JSON.'},{role:'user',content:prompt}],temperature:0,max_tokens:180,response_format:{type:'json_schema',json_schema:{name:'triage',strict:true,schema}}})},90000);
-  const output=z.object({urgency:z.enum(['urgent','high','routine']),rationaleCode:z.string(),evidence:z.array(z.string()).min(1).max(3)}).strict().parse(JSON.parse(result.choices[0].message.content));
+  const result=await jsonFetch(endpoint+'/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:config.model,messages:[{role:'system',content:'You classify synthetic case priority using supplied facts only. Return the required JSON.'},{role:'user',content:prompt}],temperature:0,max_tokens:120,response_format:{type:'json_schema',json_schema:{name:'triage',strict:true,schema}}})},90000);
+  const output=z.object({urgency:z.enum(['urgent','high','routine']),rationaleCode:z.string(),evidence:z.array(z.string()).min(1).max(1)}).strict().parse(JSON.parse(result.choices[0].message.content));
   const reason=candidates.find(s=>s.code===output.rationaleCode);
   if(!reason||output.evidence.some(e=>!input.evidence.includes(e)))throw new Error('Unverifiable model evidence');
   return {mode:'local-model',model:config.model,output,summary:`Local model selected ${output.urgency} urgency: ${reason.label}. Human review required.`,promptHash:hash(prompt),adjustment:output.urgency==='urgent'?10:output.urgency==='high'?5:0,limitations:'Small local model demonstrates the integration pipeline; no clinical calibration or performance claims.'};
@@ -80,7 +80,8 @@ export async function updateVitals(id:string,input:unknown,actor:Actor){
   const client=await fhirClient(),bundle=await freshBundle(current);
   const updates:Record<string,number>={'59408-5':data.spo2,'8480-6':data.systolic,'expected-nights':data.expectedNights};
   for(const entry of bundle.entry!){const r=entry.resource;if(r?.resourceType==='Observation'){const code=r.code.coding?.[0]?.code;if(code&&code in updates){r.valueQuantity!.value=updates[code];r.effectiveDateTime=demoNow().toISOString();entry.resource=await client.updateResource(r);}}}
-  await tx.query('UPDATE cases SET bundle=$2,assessment=NULL,updated_at=now() WHERE id=$1',[id,bundle]);
+  const workflow={...current.workflow,state:current.workflow.state==='escalated'?'escalated':'awaiting-review',humanDecision:null};
+  await tx.query('UPDATE cases SET bundle=$2,assessment=NULL,workflow=$3,updated_at=now() WHERE id=$1',[id,bundle,workflow]);
   await audit(tx,id,actor.name,'synthetic-vitals-updated',{...data,note:'Previous assessment invalidated; rerun continued-stay review.'});return {ok:true};
  });
 }
