@@ -1,0 +1,50 @@
+[
+  {
+    "repository": "medplum/medplum",
+    "license": "Apache-2.0",
+    "url": "https://github.com/medplum/medplum",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "hapifhir/hapi-fhir",
+    "license": "Apache-2.0",
+    "url": "https://github.com/hapifhir/hapi-fhir",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "cqframework/clinical-reasoning",
+    "license": "Apache-2.0",
+    "url": "https://github.com/cqframework/clinical-reasoning",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "HL7/davinci-pas",
+    "license": "NOASSERTION",
+    "url": "https://github.com/HL7/davinci-pas",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "keycloak/keycloak",
+    "license": "Apache-2.0",
+    "url": "https://github.com/keycloak/keycloak",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "grafana/grafana",
+    "license": "AGPL-3.0",
+    "url": "https://github.com/grafana/grafana",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "ollama/ollama",
+    "license": "MIT",
+    "url": "https://github.com/ollama/ollama",
+    "verified_at": "2026-10-20"
+  },
+  {
+    "repository": "QwenLM/Qwen2.5",
+    "license": null,
+    "url": "https://github.com/QwenLM/Qwen3",
+    "verified_at": "2026-10-20"
+  }
+]

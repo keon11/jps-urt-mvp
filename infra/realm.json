@@ -1,0 +1,96 @@
+{
+  "realm": "ur-demo",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "roles": {
+    "realm": [
+      {
+        "name": "reviewer"
+      },
+      {
+        "name": "advisor"
+      },
+      {
+        "name": "admin"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "ur-web",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": false,
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.client.audience": "ur-web",
+            "access.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "reviewer",
+      "enabled": true,
+      "firstName": "Reviewer",
+      "lastName": "Demo",
+      "email": "reviewer@example.invalid",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Synthetic-demo-only-2026!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "reviewer"
+      ]
+    },
+    {
+      "username": "advisor",
+      "enabled": true,
+      "firstName": "Advisor",
+      "lastName": "Demo",
+      "email": "advisor@example.invalid",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Synthetic-demo-only-2026!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "advisor"
+      ]
+    },
+    {
+      "username": "admin",
+      "enabled": true,
+      "firstName": "Admin",
+      "lastName": "Demo",
+      "email": "admin@example.invalid",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Synthetic-demo-only-2026!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "admin"
+      ]
+    }
+  ]
+}

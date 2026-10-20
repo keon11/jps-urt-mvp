@@ -1,0 +1,10 @@
+{
+ "port":8103,"baseUrl":"http://localhost:8103/","appBaseUrl":"http://localhost:3000/",
+ "binaryStorage":"file:/var/medplum/binary/","storageBaseUrl":"http://localhost:8103/storage/",
+ "supportEmail":"demo@example.invalid","emailProvider":"none","registerEnabled":false,
+ "defaultSuperAdminEmail":"synthetic-admin@example.invalid","defaultSuperAdminPassword":"Synthetic-demo-only-2026!",
+ "defaultSuperAdminClientId":"11111111-1111-4111-8111-111111111111","defaultSuperAdminClientSecret":"synthetic-service-local-only",
+ "database":{"host":"postgres","port":5432,"dbname":"medplum","username":"medplum","password":"synthetic-local-only"},
+ "redis":{"host":"redis","port":6379},"allowedOrigins":"http://localhost:3000","rateLimitsEnabled":true,
+ "bullmq":{"removeOnFail":{"count":20},"removeOnComplete":{"count":20}}
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-20T16:59:29.784Z",
+  "checks": {
+    "medplum": {
+      "persisted": true,
+      "version": "e498be34-65f4-412f-8032-6c8bd3dab5b1"
+    },
+    "cqf": 25,
+    "cqfFhirData": true,
+    "keycloak": {
+      "verified": true,
+      "roles": [
+        "reviewer"
+      ]
+    },
+    "localModel": {
+      "ready": true,
+      "model": "qwen2.5:0.5b"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+name: hospital-ur-ai-mvp
+services:
+  postgres:
+    image: postgres:16.10
+    environment:
+      POSTGRES_USER: ur
+      POSTGRES_PASSWORD: synthetic-local-only
+    ports: ['127.0.0.1:5433:5432']
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ['CMD-SHELL','pg_isready -U ur']
+      interval: 5s
+      retries: 20
+  redis:
+    image: redis:7.4.6
+    command: ['redis-server','--save','','--appendonly','no']
+  medplum:
+    image: medplum/medplum-server:5.2.6
+    command: ['file:/usr/src/medplum/medplum.config.json']
+    ports: ['127.0.0.1:8103:8103']
+    volumes:
+      - ./infra/medplum.json:/usr/src/medplum/medplum.config.json:ro
+      - medbinary:/var/medplum/binary
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_started}
+  cqf:
+    image: hapiproject/hapi:v8.6.5-1
+    ports: ['127.0.0.1:8080:8080']
+    environment:
+      HAPI_FHIR_FHIR_VERSION: R4
+      HAPI_FHIR_CR_ENABLED: 'true'
+      JAVA_TOOL_OPTIONS: '-Xms256m -Xmx1536m -XX:ActiveProcessorCount=2'
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.2
+    command: ['start-dev','--import-realm']
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: demo-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: synthetic-admin-local-only
+    ports: ['127.0.0.1:8081:8080']
+    volumes:
+      - ./infra/realm.json:/opt/keycloak/data/import/realm.json:ro
+      - keycloakdata:/opt/keycloak/data
+  local-model:
+    image: ghcr.io/ggml-org/llama.cpp:server@sha256:9fbaa06d7f4449e2ae0d02b40e0431f7c212dcf231c9e3a7777a6afc2cc8f312
+    ports: ['127.0.0.1:11434:8080']
+    volumes: ['./.runtime/models:/models:ro']
+    command: ['-m','/models/qwen2.5-0.5b-instruct-q4_k_m.gguf','--host','0.0.0.0','--port','8080','--ctx-size','4096','--threads','4','--alias','qwen2.5:0.5b']
+  prometheus:
+    image: prom/prometheus:v3.7.1
+    volumes: ['./infra/prometheus.yml:/etc/prometheus/prometheus.yml:ro']
+    extra_hosts: ['host.docker.internal:host-gateway']
+  grafana:
+    image: grafana/grafana:12.2.1
+    environment:
+      GF_SECURITY_ADMIN_USER: demo-admin
+      GF_SECURITY_ADMIN_PASSWORD: synthetic-grafana-local-only
+      GF_AUTH_ANONYMOUS_ENABLED: 'false'
+    ports: ['127.0.0.1:3001:3000']
+    volumes: ['./infra/grafana:/etc/grafana/provisioning:ro']
+volumes:
+  pgdata:
+  medbinary:
+  keycloakdata:

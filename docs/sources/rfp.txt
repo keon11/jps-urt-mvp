@@ -1,0 +1,501 @@
+TARRANT COUNTY 
+HOSPITAL DISTRICT d/b/a
+JPS HEALTH NETWORK
+REQUEST FOR PROPOSAL #20261404054Utilization Review Technology and Optimization Partner (URT)
+
+
+The Tarrant County Hospital District d/b/a JPS Health Network (the “District”) is seeking proposals for the provision of Utilization Review Technology and Optimization Partner (URT)
+.
+
+The District will reject any proposal that fails to comply in all respects with the instructions set forth herein for responding to this Solicitation. NO EXCEPTIONS WILL BE MADE, even if you are a current or prior vendor for the District. The contract awarded, if any, under and pursuant to this Solicitation shall supersede any previous contract, bid, or GPO agreement for the products or services described herein. 
+ 
+
+Release Date: 09/29/2026
+Response Deadline: 10/20/2026, 2:00 p.m. CST 
+
+OVERVIEW
+
+INTRODUCTION AND OVERVIEW
+The District desires to award a contract or contracts based upon vendor proposals (“Solicitation Response(s)”) to this Solicitation (“Solicitation”). The District is soliciting vendor proposals from vendors capable of supplying the District with Utilization Review Technology and Optimization Partner (URT) (the “Product(s)”), as set forth and specified herein (See Section  REF _Ref66699916 \w \p \h II below,  REF _Ref66699916 \h  \* MERGEFORMAT BUSINESS REQUIREMENTS, attached hereto and incorporated herein for all purposes). All Solicitation Responses must be delivered to the District by the date and time, and in the manner specified in Section  REF _Ref66699951 \w \h I.B hereof to be considered a Solicitation Response by the District. 
+A Solicitation Response does not commit the District to accept such Solicitation Response or to award a contract based on any Solicitation Response (“Contract Award”) merely because a Solicitation Response may propose the lowest price for the Products.  The District expressly reserves the right to base any Contract Award hereunder upon its evaluation of all relevant factors regarding the vendor, including, but not limited to, Product pricing and terms, management experience and expertise, industry reputation and profile, performance history, support services, location and accessibility, and any other information relevant to its evaluation. Qualifications and omissions will be considered when evaluating vendor solicitation responses. A Solicitation Response that does not meet the minimum requirements set forth in Section  REF _Ref66699916 \w \p \h II below,  REF _Ref66699916 \h  \* MERGEFORMAT BUSINESS REQUIREMENTS, will be disqualified.
+This Solicitation is not an order and does not commit the District to pay for any costs incurred by the prospective vendor in the preparation or submission of the Solicitation or in the procurement of the Product.  Product quantity estimates used herein may or may not reflect actual quantities needed or used by the District in the future, and do not commit the District to order specific Product quantities. Any Solicitation Response accompanied by terms and conditions that conflict with this Solicitation may be rejected by the District.
+The District reserves the right to reject any or all Solicitation Responses and to issue a Contract Award or not to issue a Contract Award based solely on the Solicitation Responses received by the District in response to this Solicitation.  However, prior to making any award hereunder, the District also reserves the right to engage in additional discussions with one or more of the vendors responding to this Solicitation. 
+Any prospective Respondent may request an explanation or interpretation of any portion of this Solicitation by complying with the request procedure described in Section  REF _Ref66699862 \w \p \h I.C.2 below. The responses, if any, of the District to such requests are subject to and will be in the form of amendment to the Solicitation and will comply with the provisions of Section  REF _Ref66699862 \w \p \h  \* MERGEFORMAT I.C.2 below. The District may elect not to respond to any or all such requests received from prospective Respondents. 
+SMALL OR HISTORICALLY UNDERUTILIZED BUSINESS PARTICIPATION
+The District maintains a policy of encouraging and engaging in business transactions with vendors who are small or historically underutilized businesses.  The District establishes a 25% good faith target goal.  The District also encourages its vendors to utilize subcontractors and vendors who qualify and are certified under applicable law as HUBs.  HUB Respondents are also strongly encouraged to subcontract to other HUBs to expand HUB participation beyond Respondent’s own self-performance.  HUB Respondents should identify and list HUB subcontractors and other relevant information under the appropriate Solicitation Response section(s) and on the Good Faith Form (Exhibit F). Prior to the Contract Award, a Respondent’s good faith efforts to utilize HUB subcontractors and vendors in its business transactions shall be part of the criteria under which the vendor proposals will be considered.  Each Respondent will be required to show in its Solicitation Response its efforts to utilize HUB subcontractors and vendors in its business transactions. 
+VENDOR PORTAL
+Prior to the District’s consideration of a Respondent’s Solicitation Response each Respondent is required to register as a vendor in the District’s online vendor portal, B2Gnow, located on the District’s Website at: https://jpshealth.gob2g.com.  
+The District will monitor contract compliance via B2GNow. The prime vendor and any subcontractors awarded contracts as a result of this Solicitation are required to use the secure web-based system to submit project information including, but not limited to, monthly progress payment reports and other information related to HUB participation. The District may require additional information related to the contract to be provided electronically through the system at any time before, during, or after contract award. Noncompliance may result in exclusion of a vendor from future contract opportunities with the District.
+COMPLIANCE WITH TEXAS GOVERNMENT CODE SECTION 2252.908
+Please note that Texas Government Code Section 2252.908 does not require any action until after a vendor has been awarded and a contract is ready for the District’s Board of Managers approval. Form 1295s require the District’s contract tracking number, which does not exist until after a vendor has been awarded.
+Texas Government Code Section 2252.908 (“Section 2252.908”) states that a governmental entity or state agency may not enter into certain contracts with a business entity unless the business entity submits Form 1295, a disclosure of interested parties, to the governmental entity or state agency at the time the business entity submits the signed contract to the governmental entity or state agency.  Section 2252.908 applies to all contracts entered into from and after January 1, 2016 between business entities and Texas governmental entities and state agencies which meet either one of the following criteria:
+1. the contract requires a vote of the governing body of the Texas governmental entity, or
+2. the contract has a contractual value of at least $1 Million.
+The Texas Ethics Commission has adopted a Certificate of Interested Parties form (“Form 1295”) and has made it available on the TEC website.  
+In 2017 Section 2252.908 was amended to provide that the requirements of Section 2252.908 do not apply to the following contracts entered into or amended after January 1, 2018:
+1. a contract with a publicly traded business entity, including a wholly owned subsidiary of the business entity;
+2. a contract with an electric utility, as that term is defined by Section 31.002, Texas Utilities Code; or
+3. a contract with a gas utility, as that term is defined by Section 121.001, Texas Utilities Code.
+In the event a Contract Award is issued pursuant to this Solicitation, the Respondent receiving the Contract Award shall be required to comply with the provisions of Section 2252.908, Texas Government Code, and the Chapter 46 Rules of the TEC, prior to entry into a contract with the District.  The TEC has posted a video tutorial to its website for business entity filings of Form 1295. The TEC video provides step-by-step tutorials for creating login accounts for the business entity for completing and filing Form 1295. The TEC video tutorials can be viewed on its website at:
+https://www.ethics.state.tx.us/whatsnew/elf_info_form1295.htm 
+The TEC’s FAQs are posted on its website at:
+https://www.ethics.state.tx.us/resources/FAQs/FAQ_Form1295.php 
+COMPLIANCE WITH TEXAS GOVERNMENT CODE CH. 2271 (Boycott of Israel Prohibited)
+In 2017 Texas Government Code Section 2271.001 et seq. was enacted to provide that a Texas governmental entity is prohibited from entering into a contract with a company unless the contract contains a written verification by the company that (i) the company does not boycott Israel, and (ii) the company will not boycott Israel during the term of the contract. The requirement was modified in 2019 to apply only to contracts with a value of $100,000 or more that are made with a company (not including sole proprietorships) with 10 or more full-time employees. The term “boycott Israel” is defined in Section 808.001(1) of the Texas Government Code and means refusing to deal with, terminating business activities with, or otherwise taking any action that is intended to penalize, inflict harm on, or limit commercial relationships specifically with Israel, or with a person or entity doing business in Israel or in an Israel-controlled territory, but does not include an action made for ordinary business purposes. Any awarded contract must comply with the verification requirements in Texas Government Code Section 2271.001, and a Respondent’s failure or refusal to comply will result in the withdrawal of the Contract Award. Respondents should ensure they and their affiliates do not appear on the Texas Comptroller’s List of Companies that Boycott Israel.
+COMPLIANCE WITH TEXAS GOVERNMENT CODE SECTIONS 2252.151 et seq. (Scrutinized Business Operations in Sudan, Iran, or with Designated Foreign Terrorist Organizations Prohibited)
+In 2017 Texas Government Code Chapter 2252 was amended by adding Sections 2252.151 et seq. to provide that a Texas governmental entity is prohibited from entering into a contract with a company that engages in certain scrutinized business operations in Sudan, Iran, or with foreign terrorist organizations. A Texas government entity may not enter into a contract with a “scrutinized company” as defined in Section 2270.0001(9) of the Texas Government Code. Respondents should ensure that they and their affiliates do not appear on the Texas Comptroller’s Scrutinized Companies Lists. The District is prohibited by law from entering into a contract with a company on such a list (including a company with any affiliate on the list). 
+COMPLIANCE WITH TEXAS GOVERNMENT CODE CH. 2274 (Discrimination Against Firearm Entities or Firearm Trade Associations Prohibited)
+In 2021, Texas Government Code Chapter 2274 was enacted to provide that a Texas governmental entity is prohibited from entering into a contract with a company unless the contract contains a written verification by the company that (i) the company does not have a practice, policy, guidance, or directive that discriminates against a firearm entity or firearm trade association, and (ii) the company will not discriminate against a firearm entity or firearm trade association during the term of the contract.  The requirement applies only to contracts with a value of $100,000 or more that are made with a company (not including sole proprietorships) with 10 or more full-time employees.  The requirement does not apply to sole source contracts or competitive solicitations-related contracts where no respondent can provide the verification required.  (See Sec. 2274.002(c)). The term “discriminate against a firearm entity or firearm trade association” is defined in Texas Government Code Section 2274.001(3) and means, with respect to the entity or association, to: (i) refuse to engage in the trade of any goods or services with the entity or association based solely on its status as a firearm entity or firearm trade association; (ii) refrain from continuing an existing business relationship with the entity or association based solely on its status as a firearm entity or firearm trade association; or (iii) terminate an existing business relationship with the entity or association based solely on its status as a firearm entity or firearm trade association; the term does not include: (i) the established policies of a merchant, retail seller, or platform that restrict or prohibit the listing or selling of ammunition, firearms, or firearm accessories; and (ii) a company’s refusal to engage in the trade of any goods or services, decision to refrain from continuing an existing business relationship, or decision to terminate an existing business relationship: (aa) to comply with federal, state, or local law, policy, or regulations or a directive by a regulatory agency; or (bb) for any traditional business reason that is specific to the customer or potential customer and not based solely on an entity’s or association’s status as a firearm entity or firearm trade association. Any awarded contract must comply with the verification requirements in Texas Government Code Section 2274.002, and a Respondent’s failure or refusal to comply will result in the withdrawal of the Contract Award.
+COMPLIANCE WITH TEXAS GOVERNMENT CODE CH. 2276 (Boycott of Certain Energy Companies Prohibited)
+In 2021, Texas Government Code Chapter 2276 was enacted to provide that a Texas governmental entity is prohibited from entering into a contract with a company unless the contract contains a written verification by the company that (i) the company does not boycott energy companies, and (ii) the company will not boycott energy companies during the term of the contract.  The requirement applies only to contracts with a value of $100,000 or more that are made with a company (not including sole proprietorships) with 10 or more full-time employees.  The term “boycott energy company” is defined in Section 809.001(1) of the Texas Government Code and means, without an ordinary business purpose, refusing to deal with, terminating business activities with, or otherwise taking any action that is intended to penalize, inflict economic harm on, or limit commercial relations with a company because the company: (A) engages in the exploration, production, utilization, transportation, sale, or manufacturing of fossil fuel-based energy and does not commit or pledge to meet environmental standards beyond applicable federal and state law; or (B) does business with a company described by subsection (A). Any awarded contract must comply with the verification requirements in Texas Government Code Section 2276.002, and a Respondent’s failure or refusal to comply will result in the withdrawal of the Contract Award.
+TEXAS PUBLIC INFORMATION ACT
+Each Respondent acknowledges that the District is a governmental body operating under and subject to the provisions of the Texas Public Information Act (“TPIA”) (Chapter 552 of the Texas Government Code) and thereby acknowledges that certain information collected, assembled, or maintained in connection with the transaction of official business by a governmental body is considered public information potentially subject to disclosure pursuant to a valid TPIA request. Respondent is responsible for challenging any requests for information it considers confidential under the TPIA. The requirements of Subchapter J, Chapter 552 of the Texas Government Code apply to this bid, and the contractor or vendor agrees that that the contract can be terminated if the contractor or vendor knowingly or intentionally fails to comply with a requirement of that subchapter. Respondents should consult the Attorney General’s website (https://www.texasattorneygeneral.gov/open-government/office-attorney-general-and-public-information-act) for information concerning the application of the provisions of the TPIA to proposals and proprietary vendor information.  
+SOLICITATION RESPONSE REQUIREMENTS, CONDITIONS AND RELATED INFORMATION
+Preparation of Solicitation Response.
+Each Respondent should carefully examine and familiarize itself with this Solicitation and all exhibits, drawings, specifications, and instructions included in this Solicitation. Each Respondent, by submitting a Solicitation Proposal, represents that Respondent has read and understands this Solicitation and the drawings, exhibits attached to this Solicitation.
+Each Solicitation Response shall be fully completed, shall contain all the information required from the Respondent by this Solicitation, including the Vendor Certification Form attached hereto as Exhibit D (“Required Information”), and shall be signed and executed, on the Signature Form attached hereto as Exhibit B by an officer or other authorized representative of the Respondent.  Each page of a Solicitation Response shall contain the company name of the Respondent.  A Respondent’s failure to provide any of the Required Information in its Solicitation Response, or the failure of the Solicitation Response to contain the signature of Respondent’s officer or other duly authorized representative, may result in the District’s disqualification of such Solicitation Response. The Required Information shall include detailed information regarding the Respondent’s historical efforts (for the last year) to utilize HUB subcontractors and vendors in its prior business transactions and shall include such detailed information in its Solicitation Response.
+Each Respondent shall be responsible for and shall bear all costs for the preparation and presentation of its Solicitation Response.  Unless otherwise designated by Respondent and agreed by the District, the Solicitation Response and all drawings, materials, supporting documentation, manuals, etc. submitted with any Solicitation Response (“Submitted Materials”) will, immediately upon submission, become the property of the District.  After the date upon which the final vendor is selected (See Section  REF _Ref66700208 \w \p \h I.C.1 below) Respondents may request the return of the Submitted Materials.  However, all costs associated with returning the Submitted Materials to a Respondent shall be born and paid in advance by the Respondent.
+The District does not guarantee the confidentiality of any Submitted Materials.  Each Respondent, by submitting a Solicitation Response, acknowledges and agrees that any Submitted Materials will be distributed or made available to appropriate District personnel and consultants involved in this Solicitation process, and further understands that the Submitted Materials may be subject to disclosure pursuant to the TPIA.  Information considered proprietary by a Respondent should be clearly marked “Proprietary” when submitted with a Solicitation Response.
+The District reserves the right to modify and/or supplement this Solicitation by amendment issued by the District prior to the date and time of the Response Deadline (defined herein). Any such amendments will be posted online prior to the Response Deadline at the same District internet site where this Solicitation is kept available for solicitation of Solicitation Responses. It is the responsibility of each Respondent to check that internet site frequently to determine if any amendments have been issued.
+The District reserves the right to withdraw this Solicitation, at its sole discretion, from any or all prospective vendors and Respondents at any time, before or after the Response Deadline. The withdrawal, if ever, of this Solicitation shall be effective upon the District’s issuance of written notice posted online at the same District internet site where this Solicitation is kept available for solicitation of Solicitation Responses, which notice may also be sent by the District to the prospective Respondents in any manner deemed reasonable by the District.
+Form of Contract.
+Any Respondent awarded a contract with the District for the purchase and sale of the products and/or services pursuant to this Solicitation shall be required to execute an agreement between the Respondent and the District which shall in all material respects contain the terms and conditions set forth in Exhibit C (Contract Terms), which is attached hereto and incorporated herein for all purposes. 
+Respondents may not request additional changes to the Contract Terms after the Solicitation Response has been submitted to the District, nor will the District agree to negotiate any requested changes to the Contract Terms which are not included with the Solicitation Response in the manner and form set forth above in this section  REF _Ref66702907 \w \h I.B.2 and in Exhibit C.
+Submission of Solicitation Responses.
+All Solicitation Responses shall be submitted to the District as follows:
+All Solicitation Responses must be electronically submitted via file upload at this website: https://f1.jpshealth.org/form/RFPResponseForm.  Please ensure this RFP# is entered in the “Bidding Opportunity Num” field on the Response Form, as well as in the file name(s) of each uploaded file. The proposal must include an electronic, editable, unlocked/unsecured copy of your proposed contract (e.g., PDF or TIFF is not acceptable). If you submit a redline of the Contract Terms in response to Exhibit C, you must provide an editable, unlocked/unsecured version of the redline with your Solicitation Response (preferably in track changes). The rest of your response must be submitted in a format that preserves the original graphic appearance, such as portable document format (PDF) or other digital image format that is platform-independent and easily readable without purchased software.
+will be deemed invalid if the Respondent, upon award of a contract (if ever), is not registered with JPS Vendor Portal (https://jpshealth.gob2g.com/) or is not in compliance with the District’s requirements for vendor credentialing.
+Respondents must submit the Solicitation Response as follows: the file name(s) of each file making up the Solicitation Response must begin with (i) the RFP# followed by (ii) the Respondent’s name. Also, the cover page of the Solicitation Response must state the following: (i) the name and address of the Respondent, (ii) the Response Deadline, and (iii) the RFP#. Please put the RFP# in the “Bidding Opportunity Num” field on the Response Form.
+Unless otherwise expressly provided in this Solicitation or in any amendment to this Solicitation, no Respondent shall modify or cancel the Solicitation Response or any part thereof for thirty (30) days after the Response Deadline. Respondents may withdraw Solicitation Proposals at any time before the Solicitation Proposals are opened by the District, but may not resubmit them.  No Solicitation Proposal may be withdrawn or modified after the Solicitation Proposal deadline.
+Solicitation Proposals will not be considered if they show any omissions, alterations of required forms, additions or conditions not requested or irregularities of any kind.  However, the District reserves the right to waive any irregularities and to make the award in the best interest of the District.
+The Respondent acknowledges the right of the District to reject any or all Solicitation Responses and to waive any informality or irregularity in any Solicitation Response received.  In addition, the District reserves the right to reject any Solicitation Response if the Respondent failed to submit the data, information or documents required by this Solicitation, or if the Solicitation Proposal is in any way incomplete or irregular.
+Failure to follow the instructions regarding the submission of Solicitation Responses may result in the District’s disqualification of such Solicitation Responses.
+Solicitation Responses are due on or before 10/20/2026, 2:00 p.m. CST (“Response Deadline”).  The Response Deadline may be extended by the District upon amendment to this Solicitation issued prior to the then-existing Response Deadline. Solicitation Responses are not scheduled for public opening.  No email, telephone, telephonic, or FAX Solicitation Responses will be accepted.  The District will not be responsible for missing, lost, or late deliveries.  Solicitation Proposals delivered after the Response Deadline will not be accepted or considered under any circumstances.
+Each Solicitation Response shall contain the completed form entitled, “Vendor Certification Form” set forth on Exhibit D which is attached hereto and incorporated herein for all purposes.
+SOLICITATION SCHEDULE AND RELATED INFORMATION
+Estimated Schedule
+Milestone
+Date
+Solicitation Issued
+09/29/2026
+Deadline for Questions Submitted by Respondents 
+10/07/2026, 2:00 p.m. CST
+Pre-Proposal Conference
+No Pre-proposal Conference
+Response Deadline
+10/20/2026, 2:00 p.m. CST
+Solicitation Evaluation Period 
+TBD
+Pre-Proposal Conference.  No Pre-Proposal Conference will be conducted.
+Milestone Dates.  Milestone Dates are estimated for planning purposes only and are subject to change. 
+District Solicitation Contact
+Respondents may, in the manner prescribed herein, present requests (“Submission Questions”) for an explanation, clarification or interpretation of the  REF _Ref66699916 \h  \* MERGEFORMAT BUSINESS REQUIREMENTS in this Solicitation and/or other requirements for submission of Solicitation Responses to the Solicitation Contact identified below during the proposal submission period.  All Submission Questions must be submitted in a Questions Submission Form (attached to the Bidding Opportunity) as an editable Excel document. All Submission Questions must be electronically submitted via file upload at this website: https://f1.jpshealth.org/form/RFPResponseForm, and must reference the appropriate pages and sections number of this Solicitation that are the subject of such Submission Questions. The file name of the Questions Submission Form must begin with (i) the RFP# followed by (ii) the Respondent’s name. The final date and time to submit Submission Questions is 10/07/2026, 2:00 p.m. Central Time.  NO PHONE CALLS PLEASE. Confirmation of the delivery of Submission Questions to the District is the sole responsibility of the Respondent. The District may, in its sole discretion, elect not to answer or respond to any or all Submission Questions it receives, and the failure of refusal of the District to answer or respond to any Submission Question will not affect, in any way, this Solicitation.  Submission Questions may be informally addressed during the Pre-Proposal Conference; provided, however, that no answer or response to any Submission Question by any representative of the District shall be effective unless and until it is issued by the District in writing in the form of one or more addenda to the Solicitation, and has been posted to the District’s Solicitation website link prior to the Response Deadline.  It is the responsibility of each Respondent to check the website for all addenda to the Solicitation up to the Response Deadline.  Prospective vendors are advised that no District employee other than the Solicitation Contact is empowered to make binding statements regarding this Solicitation, and no statements, clarifications, or corrections regarding this Solicitation are valid or binding on the District except those issued in writing by the Solicitation Contact as addenda to the Solicitation.  
+Contact between Respondents and the District, other than in the manner described and set forth in this Section  REF _Ref66699862 \w \h I.C.2, during the Solicitation Response submission period or evaluation period is prohibited.  Any attempt by a Respondent to engage in prohibited contact with the District or the Solicitation Contact may result in disqualification of its Solicitation Response.
+The Solicitation Contact is:
+David Flores Sourcing & Contracts Specialist
+Supply Chain Department 
+
+JPS Health Network
+JPS Purchasing Office
+1500 S. Main Street
+Fort Worth, TX 76104
+
+Email: Bid_Submissions@jpshealth.org 
+District’s Solicitation website link: https://www.jpshealthnet.org/vendors/open-rfpsrfbsrfqs
+Solicitation Response submission website link: https://f1.jpshealth.org/form/RFPResponseForm
+
+
+BUSINESS REQUIREMENTS
+INTRODUCTION
+JPS seeks proposals for an AI-enabled Utilization Management (UM) solution that integrates with Epic and related enterprise systems to support timely, consistent, and prioritized UM review across inpatient and observation encounters. The solution should analyze available clinical, utilization, payer, authorization, and encounter data to generate actionable, explainable recommendations for admission status review, continued-stay review, payer authorization needs, and physician advisor escalation. The goal is to improve review timeliness, status accuracy, regulatory compliance, revenue integrity, and throughput by moving UM workflows from primarily manual queue review to intelligent, risk-stratified prioritization.
+BACKGROUND
+The Tarrant County Hospital District, known as JPS Health Network (“District”), is a tax-supported organization serving the healthcare needs of families across Tarrant County. JPS provides adult inpatient care at John Peter Smith Hospital, a facility licensed for 582 beds and located in Fort Worth, Texas. JPS has served as a Level I Trauma Center for Tarrant County for over a decade and is currently the largest training institution in Fort Worth.
+
+The health network offers comprehensive services including primary care, specialty care, and pharmacy at more than 25 community locations. JPS is dedicated to providing a full continuum of behavioral health services, including inpatient services at Trinity Springs Pavilion, emergency behavioral health services at our Psychiatric Emergency Center, outpatient services at our JPS clinics, and mental health services for children and adolescents through programs like TCHATT.
+JPS is governed by an eleven (11) member Board of Managers, whose members are appointed by the Tarrant County Commissioners Court.
+PROJECT SCOPE
+JPS manages a high volume of inpatient and observation encounters across complex Medicare, Medicare Advantage, Medicaid, managed care, and commercial payer requirements. Current UM workflows depend heavily on manual work queues and human triage to identify which encounters require immediate review, which cases are at risk for status mismatch, which observation patients require escalation, and which inpatient stays may require continued-stay or denial-prevention intervention. As admission volumes fluctuate and patient stays shorten, it can be difficult to consistently identify the highest-risk cases early enough in the hospitalization, and some encounters may reach discharge before the UM review process is fully completed.
+
+Key opportunities for process improvement include earlier initial status assessment, more reliable prioritization of observation and short-stay encounters, proactive identification of payer authorization and notification requirements, streamlined physician advisor referral, and better operational visibility into UM work queue performance. JPS needs an AI-enabled UM platform that continuously analyzes relevant encounter data, identifies cases requiring urgent review or escalation, and provides explainable, criteria-aligned recommendations while preserving JPS clinical, regulatory, and operational oversight. The solution should support more consistent application of UM criteria, improved alignment between patient status and clinical need, reduced avoidable denials, and earlier resolution of status and authorization barriers that can affect patient progression.
+
+This solution should meet the following goals: 
+Improve timeliness and prioritization of initial UM review for new inpatient and observation encounters.
+Support consistent, explainable, criteria-aligned recommendations for inpatient versus observation status and continued-stay review.
+Identify encounters requiring physician advisor escalation, payer authorization action, or denial-prevention intervention earlier in the hospital stay.
+Improve operational visibility through real-time dashboards, alerts, worklists, and performance reporting.
+Strengthen compliance, revenue integrity, and throughput by reducing missed, delayed, or low-priority manual review activity.
+
+The selected vendor shall provide, implement, integrate, and support an AI-enabled Utilization Management platform for JPS. The scope includes discovery, workflow design, technical integration, configuration, testing, training, go-live support, reporting, and ongoing optimization. The solution must support UM review workflows across initial admission review, observation management, continued-stay review, payer authorization and notification monitoring, denial-risk identification, and physician advisor escalation.
+The platform must integrate with Epic and other relevant JPS systems to ingest timely encounter, ADT, order, clinical documentation, laboratory, imaging, medication, procedure, payer, authorization, and utilization data as applicable. The vendor must configure role-based workflows for UM reviewers, physician advisors, case management leaders, and operational leaders. The solution must present prioritized worklists, explainable AI-generated recommendations, source-data transparency, alerts, audit trails, and dashboards that allow users to understand why a case is prioritized and what action is recommended.
+The vendor shall support payer-specific rules, regulatory requirements, and local workflow configuration. The solution must function as a decision-support tool and shall not autonomously change patient status, submit payer actions, or replace required clinical and regulatory review. Final determinations and external payer actions must remain under JPS-approved workflows.
+
+
+
+#
+Key Metrics
+a.
+Observation rate
+b.
+Total inpatient and observation encounters reviewed
+c.
+Initial UM review timeliness
+d.
+Encounters discharged before initial UM review completion
+e.
+Average time from admission/order placement to UM review
+f.
+Physician advisor escalation volume and turnaround time
+g.
+Denial and appeal performance related to medical necessity/status/authorization
+h.
+Authorization and notification performance
+i.
+AI recommendation performance
+
+#
+Deliverable
+a.
+Implementation plan and workflow design for UM admission review, observation management, continued stay, payer authorization, denial-risk review, and physician advisor escalation.
+b.
+Production-ready AI-prioritized worklists and dashboards integrated with Epic and relevant JPS data sources.
+c.
+Configurable criteria, payer rules, prioritization logic, alerts, documentation support, and audit trail functionality.
+d.
+Training, user adoption support, go-live support, and role-based education for UM reviewers, physician advisors, leaders, and other approved users.
+e.
+Post-implementation reporting package and optimization plan comparing baseline metrics to current performance.
+
+Proposed Solution must deliver the following capabilities: 
+• AI-driven prioritization of new admissions, observation encounters, short-stay encounters, continued-stay reviews, and denial-risk cases.
+• Explainable recommendations for patient status review and continued-stay review, including the relevant clinical data, payer logic, and criteria elements supporting the recommendation.
+• Configurable rules for Medicare, Medicare Advantage, Medicaid, managed care, commercial payers, and JPS-specific UM workflows.
+• Role-based worklists for UM reviewers, physician advisors, case management leadership, and operational leaders.
+• Alerts for delayed reviews, high-priority cases, observation outliers, authorization risk, avoidable denial risk, and cases requiring escalation.
+• Dashboards and exportable reports for operational monitoring, compliance oversight, performance improvement, and executive reporting.
+• Audit trails, user action tracking, override documentation, and recommendation-performance monitoring.
+• Secure integration with Epic and relevant enterprise systems using healthcare interoperability standards.
+
+
+MINIMUM REQUIREMENTS
+System Architecture
+The solution must be built on a cloud-based or cloud-ready enterprise architecture that supports scalability, high availability, secure deployment, and rapid configuration across UM workflows. The architecture should be API-first and support secure bidirectional integration with Epic, ADT feeds, clinical documentation, payer and authorization data, criteria tools, enterprise reporting tools, and other systems identified by JPS. The platform must support role-based access, single sign-on where applicable, audit logging, data lineage, model monitoring, configurable workflows, and reliable performance for near real-time operational use.
+Integration
+The solution must integrate with JPS’s existing technology environment, including Epic and relevant clinical, operational, financial, and payer-related systems, to provide a unified, near real-time view of encounters requiring UM action. Integrations should support admission status review, observation management, continued-stay review, payer authorization and notification tracking, denial-risk identification, physician advisor escalation, and reporting. Data exchange should support operational decision-making with sufficient timeliness for users to intervene before status, authorization, or review delays affect patient progression or revenue integrity.
+Security
+• The vendor must describe in detail how the solution protects data confidentiality, integrity, and availability across all environments, integrations, users, and workflows.
+• The solution must fully comply with HIPAA and HITECH requirements for handling PHI and must support execution of a Business Associate Agreement with JPS.
+• The solution must use encryption in transit and at rest, role-based access controls, least-privilege access, audit logging, secure authentication, and appropriate session management.
+• The vendor must describe data retention, backup, disaster recovery, incident response, vulnerability management, penetration testing, and business continuity practices.
+• The vendor must disclose whether PHI is used for model training, tuning, monitoring, or third-party processing and must not use JPS data for external model training or secondary purposes without explicit JPS approval.
+• The vendor should provide current security certifications, attestations, or independent audit reports, such as SOC 2 Type II, HITRUST, ISO 27001, or equivalent documentation, if available.
+Technology
+a. Functional Requirements (list all that apply)
+Vendor shall provide a fully functional AI-enabled Utilization Management platform supporting:
+• AI-driven case prioritization for UM review.
+• Admission status review support for inpatient versus observation determination.
+• Observation management and short-stay prioritization.
+• Continued-stay review prioritization and alerts.
+• Denial-risk prediction related to medical necessity, patient status, documentation, and authorization issues.
+• Payer authorization and notification tracking, including pending, expiring, or delayed items.
+• Physician advisor referral prioritization, worklist management, and recommendation tracking.
+• Support for JPS-selected criteria and payer-specific rules where available and applicable.
+• Real-time or near real-time dashboards for UM operations, leadership reporting, and performance monitoring.
+• Role-based workflows for UM reviewers, physician advisors, case management leadership, and approved operational users.
+• Explainability, source-data transparency, audit trail, and override reason capture.
+• Reporting and analytics for observation rate, review timeliness, denials, PA escalation, authorization performance, and AI recommendation outcomes.
+• Seamless integration with Epic and other enterprise systems identified by JPS.
+b. Technical Requirements
+• The proposed AI-enabled UM platform must meet enterprise-grade technical requirements to    ensure secure, scalable, reliable, and high-performing operations across JPS.
+• The solution must support healthcare interoperability standards and secure data exchange methods, including APIs, HL7, FHIR, flat-file exchange, or other methods approved by JPS IT.
+• The platform must support configurable workflows, rules, alerts, dashboards, user roles, permission sets, and reporting logic without excessive custom development.
+• The platform must provide high availability, disaster recovery, monitoring, support procedures, upgrade management, issue escalation, and service-level reporting.
+• The vendor must provide transparent model governance, including model versioning, performance monitoring, drift monitoring, bias or fairness evaluation where applicable, and a process for review of recommendation logic.
+• The solution must maintain complete auditability of AI recommendations, user actions, source data displayed, overrides, and outcome tracking for compliance and quality review.
+Vendor Value Added with Product/Service
+Implementing an AI-enabled Utilization Management solution would provide significant strategic, operational, clinical, compliance, and financial value to JPS. The solution would help JPS move from a primarily reactive, manually prioritized UM workflow to a proactive, data-driven model that identifies high-impact cases earlier and directs attention to encounters most likely to require status intervention, payer action, denial-prevention work, or physician advisor review.
+Expected value includes improved initial review timeliness, more consistent status recommendations, stronger observation management, earlier recognition of payer authorization risk, improved physician advisor prioritization, better denial prevention, and more transparent UM performance reporting. By aligning clinical data, payer requirements, UM criteria, and operational workflow in a single intelligent platform, JPS can strengthen compliance and revenue integrity while supporting patient progression through earlier resolution of status and authorization barriers.
+
+REQUIRED INFORMATION
+Solicitation Response – NTE 25 Pages
+Exhibit A- Spreadsheet – Please do not deviate from format and return the completed Excel Spreadsheet filled out with your commercial offer.
+Exhibit B: Return a signed document
+Exhibit C – Indicate that you either accept JPS terms contained in Exhibit C or propose a redlined version of exhibit C in your response. 
+Exhibit D - Signed
+Exhibit E – Not Utilized 
+Exhibit F – Return a signed document
+Exhibit G – Return Completed Questionnaires
+AI Supplemental Questionnaire
+Vendor Security and Data Governance Questionnaire
+Bid Addendums – Prior to returning your bid, ensure to check the JPS public bid posting for any bid addendums that were posted after the initial posting date.   Return a signed addendum(s) with your bid proposal. Failure to return the signed addendum(s) will eliminate your proposal for consideration. 
+
+PRICE QUOTES
+Price quotes shall remain firm during Solicitation evaluation and for an additional 120 days after recommendation for award.  Pricing must remain fixed for the initial term of the agreement. Respondents must include all costs associated with use of the items. Any costs not included in the Solicitation response cannot be charged to the District. Respondents may propose pricing increases for the optional renewal terms with set caps (e.g., no more than 1% to 3% annually). Use the spreadsheet attached as Exhibit A to this Solicitation to provide line-item pricing in your Response.
+CONTRACT TERM
+The proposed term of the contract is three (3) years with two (2) additional one-year renewal options. The District may exercise the renewal options by providing vendor with written notice (email notice will be acceptable) of renewal no less than thirty (30) days prior to the expiration of the then-current term. The contract will be subject to cancellation by the District for any reason, at any time, and without penalty of any kind upon furnishing thirty (30) days’ advance written notification to vendor.  At the end of the term, the District reserves the right to extend the contract for up to 180 days to provide an opportunity to bring a new contract into place with another vendor.  
+SELECTION AND EVALUATION PROCESS
+Selection ProcessThe Solicitation Contact shall designate an evaluation committee (“Evaluation Committee”) which will be composed of employees from the District. The District reserves the right to add, delete or substitute members of the Evaluation Committee as it deems necessary. The Evaluation Committee will narrow the field of submitted Solicitation responses to those which best meet the requirements of this Solicitation and which best meet the complete needs of the District.  Each such Solicitation Response will then be evaluated according to the criteria set forth herein.
+Evaluation Criteria Specific to This Solicitation The Evaluation Committee will conduct a comprehensive, fair, and impartial evaluation of all proposals received in response to this Solicitation. The evaluation of Solicitation Responses will involve scoring each Solicitation Response in the areas listed and set forth  REF _Ref46998358 \p \h below in Section  REF _Ref46998358 \r \h I (Evaluation Factors). The District’s evaluation of the Solicitation Responses will be based upon each Respondent’s response to the evaluation factors stated in this Solicitation.   Any Respondent’s failure to provide complete and full responses to the requested information may lead to disqualification of such Solicitation Response.
+EVALUATION FACTORS
+In determining how to award a contract or contracts in conjunction with the Solicitation, the District may consider the following:
+Price
+The reputation of the Respondent and of the Respondent’s goods and/or services. 
+The extent to which the goods and/or services meet the District’s needs.
+Quality of Respondent’s goods and/or services.
+Historically Underutilized or Small Business Participation – the utilization of historically underutilized or small businesses.
+SOLICITATION RESPONSE CONTENT
+The overall Solicitation Response should not exceed 25 pages total, excluding exhibits. The District’s security system will recognize most common filename extensions, including: .xlsx (Excel), .docx (Word), Adobe PDF, and image files including .jpg, .tiff, and .gif. Any message containing an unknown or prohibited file extension will be quarantined (e.g., .numbers, representative of Apple Numbers application). 
+Executive Summary
+Provide a synopsis of the highlights of the proposal and overall benefits of the proposal to the District. This synopsis should not exceed two pages in length and should be easily understood. 
+Company Background
+How the Proposed Solution Meets the District’s Needs
+[Describe how the proposed solution meets the minimum requirements in Section D above. Provide the information requested in Section E above. Provide specification sheets for each product bid. Include service and warranty information. ]
+Pricing
+[Use the spreadsheet in Exhibit A to list line item pricing for all [products/services] you can provide. Add lines as needed for additional [products/services] not already included.]
+References
+Provide a minimum of three references. [Can include specific types of references needed, if applicable; e.g., other Texas customers, other hospital systems, etc.] Include name, telephone number, and email address. The District will contact the references provided to determine Respondent’s performance record for products/services similar to that described in this request.
+Historically Underutilized or Small Business Participation
+Provide a discussion on how the Respondent intends to meet the District’s goal of 25% HUB participation for the scope/specifications of this Solicitation.  Discuss any HUB management partners the Respondent plans to team with to provide the scope/specifications.  (Maximum 1 page)
+The District strongly encourages the utilization of historically underutilized or small businesses. 
+A. Submit certificate if Respondent is a certified HUB (do not submit an expired certificate).
+OR
+B. Communication Outreach – Attach the written notification of the subcontracting opportunity and list of three agencies and /or organizations notified regarding the interest in HUB participation in this contract; and
+C. Plan of Action – List the subcontractors selected for participation, their certification, and approximate dollar value of the work to be subcontracted and the expected percentage of the total contract amount.
+Required Forms
+a.    Exhibit A: Pricing
+b.Exhibit B: Signature Form 
+c. Exhibit C: Contract Terms (include an editable, unlocked/unsecured redline in track changes if proposing changes to Exhibit C, Contract Terms)
+d. Exhibit D: Vendor Certification Form
+e.Exhibit E: Not Used
+f. Exhibit F: Good Faith Form
+g.Exhibit G: JPS Security Risk Assessment Forms
+
+EVALUATION CRITERIA SCORE SHEET
+EVALUATION CRITERIA
+Possible Points
+Vendor
+Score
+Price – Best Value
+Pricing will be scored according to the pricing formula: (Lowest Responsive Price / Price of Respondent Being Evaluated) x Possible Points = Vendor Score
+20
+  
+THIS SECTION WILL BE SCORED BY THE EVALUATION COMMITTEE
+The extent to which the goods and/or services meet the District’s needs.
+30
+  
+Quality of Respondent’s goods and/or services.  
+30
+  
+The reputation of the Respondent and the Respondent’s goods and/or services.  
+20
+  
+SMALL OR HISTORICALLY UNDERUTILIZED BUSINESS PARTICIPATION 
+This Section is evaluated but not weighted or scored:
+Is the Respondent a certified small or historically underutilized business (HUB)?
+ Y
+N
+MAXIMUM TOTAL POSSIBLE POINTS
+100
+
+Company Name:     __________________________________________
+
+Evaluator ID:              _____________________________________
+RFP # 20261404054 Utilization Review Technology and Optimization Partner (URT)
+Exhibit A
+Price Sheet
+RFP #20261404054 Utilization Review Technology and Optimization Partner (URT)
+See attached Spreadsheet
+
+
+
+
+
+Exhibit B
+Signature Form
+
+Respondent shall signify Respondent’s acceptance of and compliance with the requirements, terms, and conditions of this Solicitation by signing in the signature space set forth below.
+Respondent warrants that Respondent has examined and is familiar with this Solicitation and its terms and conditions. Respondent warrants that Respondent does not engage in scrutinized business operations in Sudan, Iran or with foreign terrorist organizations, does not engage in any prohibited boycott, and that Respondent does not appear (nor does any affiliate appear) on any Texas Comptroller Divestment Statute Lists.
+Respondent warrants that it has the necessary experience, knowledge, abilities, skills, and resources to satisfactorily finance and complete the products and services in its Solicitation Response.
+Respondent certifies that the individual signing this Solicitation Response is authorized to sign such documents on behalf of the Respondent entity and to bind Respondent and is authorized to bind the Respondent in this Solicitation Response.
+RESPONDENT AGREES TO DEFEND, INDEMNIFY, AND HOLD HARMLESS THE DISTRICT AND ALL OF ITS OFFICERS, AGENTS AND EMPLOYEES FROM AND AGAINST ALL CLAIMS, ACTIONS, SUITS, DEMANDS, PROCEEDINGS, COSTS, DAMAGES, AND LIABILITIES, ARISING OUT OF CONNECTED WITH, OR RESULTING FROM ANY ACTS OF OMISSIONS OF RESPONDENT OR ANY AGENT, EMPLOYEE, SUBCONTRACTOR, OR SUPPLIER OF RESPONDENT IN THE EXECUTION OR PERFORMANCE OF ANY AGREEMENTS OR OTHER CONTRACTUAL ARRANGEMENTS WHICH MAY RESULT FROM THE SUBMISSION OF THE SOLICITATION RESPONSE AND/OR THE AWARD OF A CONTRACT THEREON BY THE DISTRICT.
+
+RFP #20261404054 Utilization Review Technology and Optimization Partner (URT)
+
+Respondent (Company) Name: 
+247650127000
+
+By: _____________________________________
+
+Date: 
+Printed Name:  Title: 
+Telephone: Email: 
+Exhibit C
+Contract 
+RFP #20261404054 Utilization Review Technology and Optimization Partner (URT)
+See Attached – Exhibit C
+Exhibit D
+Vendor Certification Form
+RFP #20261404054 Utilization Review Technology and Optimization Partner (URT)
+Instructions:
+Vendors doing business with the District are requested to complete this form in its entirety.  If you are a Disadvantaged Business Enterprise, the requested information pertains to the owner(s) of the company.  This form must be signed and dated by an authorized representative of your company.
+
+Respondent’s Name: 
+
+Years in business under same name:   Previous Name:  
+
+General E-mail Address:   
+
+Current Address: 
+
+Sales Rep/Customer Service Name: 
+
+E-mail Address: 
+
+Authorized Signatory:   Email Address: 
+
+Fax#: 
+
+Accounts Receivable Contact Name: 
+
+Phone #   TCHD Account #  
+List your major commodities:                     
+Check all that apply with respect to major commodity:
+☐Supply  formcheckbox  ☐Equipment formcheckbox    ☐Service formcheckbox   (List type of service, i.e., temp. agency, surveyor, etc.: _______
+
+☐Consultantformcheckbox    ☐Distributor formcheckbox   ☐Manufacturerformcheckbox    ☐Contractorformcheckbox    ☐Subcontractorformcheckbox 
+Approximate dollar volume of business with the District in past twelve (12) months: $____________
+
+ETHNICITY OF company’S American OWNERSHIP (Please place an X in the appropriate box: 
+
+☐ Asian Pacific                           formcheckbox 
+☐ African American                formcheckbox 
+☐ Caucasian                                formcheckbox 
+☐ Hispanic                                     formcheckbox 
+☐ Native American                  formcheckbox 
+
+☐ Other formcheckbox  ____________ (SPECIFY)
+
+
+Public OWN STOCK:
+☐ yES formcheckbox     ☐ nO formcheckbox 
+
+
+
+MAJORITY OWNER:    
+☐ mALE formcheckbox    ☐ fEMALE formcheckbox            
+INCLUDE THE FOLLOWING:
+Copy of certificate(s) (State of Texas, North Central Texas Regional Certification Agency (NCTRCA), Historically Underutilized Businesses (HUB), or any agency confirming your business as being a historically underutilized or small business enterprise.
+signature: ________________________________________ Title: ______________
+
+Print Name: __________________________________________ Date: ____________
+Exhibit F
+Good Faith Form 
+
+Respondents: Please complete the following questions as applicable to your organization:
+
+[rest of page left intentionally blank, continue below]
+
+
+Exhibit F
+Good Faith Form
+
+RFP # or Name of Contract:
+   RFP #20261404054 Utilization Review Technology and Optimization Partner (URT)
+
+Prime Vendor Name:
+   
+Prime Vendor address:
+   
+Prime Vendor UCM ID:
+
+
+Are you a historically underutilized or small business (HUB)?
+☐If yes, please attach your updated certification form (Stop Here)
+☐ If no, please continue to #2 below
+List all participating HUB agencies/organizations contacted regarding subcontracting and/or partnership opportunities for this contract.  (Insert additional rows as needed.)
+
+Subcontractor Company Name
+Email / Phone
+Certification Type and Number
+Total Contract Value
+HUB
+Subcontract Value
+% of Total Contract
+
+
+
+
+
+
+
+
+
+
+
+
+
+If no HUB participation is listed above, have you checked the JPS Vendor portal at https://jpshealth.gob2g.com/ ?    The vendor portal is a directory of certified HUB businesses        Ex: Support services to participate under the contract
+☐ If you searched the vendor portal, list HUB company name(s) and contact information below
+
+Subcontractor Company Name
+Email / Phone
+Certification Type and Number
+Total Contract Value
+HUB
+Subcontract Value
+% of Total Contract
+
+
+
+
+
+
+
+
+
+
+
+
+If you are not a HUB and do not have a HUB subcontractor, please provide a statement regarding steps that your company has taken to demonstrate your commitment to Supplier Diversity: 
+(insert additional rows as needed)
+Please provide an explanation as to how you plan to identify HUB participation on this contract: (insert additional rows as needed)
+
+
+
+
+
+
+       
+
+
+Name of Vendor (Print)
+
+Vendor Signature
+             
+
+       
+Date
+
+Vendor Phone
+
+Exhibit G
+JPS Security Risk Assessment 
+RFP #20261404054 Utilization Review Technology and Optimization Partner (URT)
+
+Fill out the following forms attached to the Solicitation website. Upon completion, these should be saved as PDFs and uploaded with the Solicitation Response.
+
+Vendor Security & Data Governance Questionnaire for ITS Product & Services
+This will assist us in completing a comprehensive security assessment and in understanding how your team uses our data and follows compliance. Data leaving the organization must be documented on how the data is being used, stored, returned/destroyed, and other factors associated with the type of data being shared.
+Ex: SOC2, ISO9001, and any related security policies, data management policies, how data is processed and managed during the contract, and how data is handled after contract.
+
+B.Supplemental Vendor Questionnaire for Artificial Intelligence Supported Systems or Software
+If your product has an AI component, please fill out this Questionnaire for us to review.
+Ex: Any AI policies, including large language model, and supporting policies.
+
+
+
+
+
+
+27622511430000Did you complete, sign, and submit all required forms? 
+If not, your Proposal will be rejected
+*Please ensure this RFP# is included in the “Bidding Opportunity Num” field of the RFP Response Form, as well as in the file name(s) of each uploaded file.*
