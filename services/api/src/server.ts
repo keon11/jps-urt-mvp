@@ -1,4 +1,6 @@
 import express from 'express';
+import {z} from 'zod';
+import {assess,updateVitals,rules} from './review.js';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {randomBytes} from 'node:crypto';
@@ -37,20 +39,26 @@ app.use('/api',async(req,res,next)=>{
 app.get('/api/me',(_req,res)=>res.json(actor(res)));
 app.get('/api/services',async(_req,res)=>res.json(await serviceStatus()));
 app.get('/api/fixtures',(_req,res)=>res.json(fixtureIds));
-app.get('/api/fixtures/:id',(req,res)=>{if(!fixtureIds.includes(req.params.id))throw new HttpError(404,'Fixture not found');res.json(makeFixture(req.params.id));});
+app.get('/api/fixtures/:id',(req,res)=>{if(!fixtureIds.includes(String(req.params.id)))throw new HttpError(404,'Fixture not found');res.json(makeFixture(String(req.params.id)));});
 app.post('/api/intake',allow(['admin','reviewer']),async(req,res)=>{
  const key=req.headers['idempotency-key'];if(typeof key!=='string'||!key.length||key.length>128)throw new HttpError(400,'Idempotency-Key header required (max 128 characters)');
  const result=await intake(req.body,key,actor(res));res.status(result.duplicate?200:201).json(result);
 });
 app.get('/api/cases',async(_req,res)=>res.json(await listCases()));
-app.get('/api/cases/:id',async(req,res)=>res.json(await getCase(req.params.id)));
-app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(req.params.id);res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[req.params.id])).rows);});
+app.get('/api/cases/:id',async(req,res)=>res.json(await getCase(String(req.params.id))));
+app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(String(req.params.id));res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[String(req.params.id)])).rows);});
+app.get('/api/rules',(_req,res)=>res.json(rules));
+app.post('/api/cases/:id/reviews',allow(['reviewer','advisor','admin']),async(req,res)=>{
+ const input=z.object({kind:z.enum(['initial','continued-stay'])}).strict().parse(req.body);
+ res.json(await assess(String(req.params.id),actor(res),input.kind));
+});
+app.post('/api/cases/:id/synthetic-vitals',allow(['reviewer','admin']),async(req,res)=>res.json(await updateVitals(String(req.params.id),req.body,actor(res))));
 app.use(express.static(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../dist')));
 app.get('/',(_req,res)=>res.sendFile(path.resolve('dist/index.html')));
 app.use((err:any,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{
- const status=err.status||502;if(status>=500)console.error(err.message);res.status(status).json({error:status>=500?'A dependency failed. No success is claimed; retry after checking service health.':err.message});
+ const status=err instanceof z.ZodError?422:err.status||502;if(status>=500)console.error(err.message);res.status(status).json({error:status>=500?'A dependency failed. No success is claimed; retry after checking service health.':err.message});
 });
 await initDb();
-const server=app.listen(config.port,'0.0.0.0',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
+const server=app.listen(config.port,process.env.BIND_HOST||'127.0.0.1',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
 async function shutdown(){server.close();await pool.end();process.exit(0);}
 process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

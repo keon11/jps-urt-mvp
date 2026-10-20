@@ -28,3 +28,13 @@ Da Vinci PAS is used as a reference for request/response and authorization lifec
 Grafana AGPL-3.0 is run unmodified as a separate service. Preserve upstream notices and offer corresponding source if distributing modified versions. This is an engineering license inventory, not legal certification. Transitive npm dependencies are recorded by package-lock.json and audited; containers require separate vulnerability assessment before production.
 
 All Compose published ports bind to loopback. The application and services intentionally use public demo credentials; this configuration must never be exposed to untrusted networks or supplied PHI.
+
+## Review behavior
+
+A fixed synthetic clinical clock (`DEMO_NOW`, default 2026-10-20T12:00:00Z) makes age and deadline scenarios reproducible. Wall-clock event timestamps remain real. UI date refers to the synthetic clock; do not confuse it with production real-time ingestion.
+
+Rules `illustrative-1.0.0` use oxygen saturation <90%, systolic pressure <90 mmHg, expected nights >=2, and observation duration >=24 hours as fabricated teaching examples, not validated medical-necessity or Medicare rules. Observation units, timestamps and required inputs are checked; missing/stale data produces insufficient evidence. A lightweight adapter extracts numeric features from the latest Medplum resources and constructs CQL expressions; HAPI/CQF evaluates these with the source bundle supplied and server data disabled. It does not yet execute authored payer-specific CQL libraries or terminology services.
+
+Local AI chooses urgency, a rationale from existing signals, and source references using grammar-constrained JSON. The response is validated again server-side; unrecognized references/reasons fail closed into a labeled rules-only fallback. Explanations are assembled from verified reason labels rather than accepting free-form clinical assertions from the small model. Urgent/high model classifications add a bounded 10/5 points to the illustrative baseline queue score. Denial signals are not probability estimates. No model accuracy, safety or financial outcome is asserted.
+
+Synthetic observation updates invalidate the prior assessment. Reviews preserve rule version, source resource versions, prompt hash, model output, CQL expressions, demo as-of time, real evaluation time and FHIR Provenance. Optimistic case-change detection prevents an in-flight model result overwriting a newly changed workflow or input snapshot. FHIR and application transactions are separate; reconciliation remains a production requirement.

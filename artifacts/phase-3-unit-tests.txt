@@ -1,0 +1,22 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ default services are local and FHIR R4 adapters have separate endpoints (3.70212ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (12.511656ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (0.695575ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (2.82671ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (5.634111ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.329746ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (0.649513ms)
+✔ missing physician documentation raises illustrative risk (0.209568ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (4.185056ms)
+✔ model responses with fabricated evidence are rejected (52.906451ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1200.515224

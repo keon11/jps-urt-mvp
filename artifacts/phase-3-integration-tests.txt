@@ -1,0 +1,11 @@
+✔ real CQF and local inference produce traceable initial recommendations (13374.099882ms)
+✔ continued-stay review responds to new clinical versions and invalidates old assessment (66042.858716ms)
+✔ stable initial review suggests observation; missing documentation raises risk (62515.537854ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142598.006967
