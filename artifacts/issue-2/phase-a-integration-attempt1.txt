@@ -1,0 +1,123 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:integration
+> tsx --test --test-concurrency=1 tests/*.integration.test.ts
+
+✔ CQF outage returns an error and preserves previous assessment and audit (5364.532164ms)
+✔ Medplum outage returns an error and preserves previous assessment and audit (1986.166062ms)
+✔ real Keycloak authentication protects API (658.887195ms)
+✔ repeat intake preserves one case and FHIR source versions (85.923227ms)
+✔ malformed payloads, conflicting idempotency keys, and advisor intake are rejected (20.806752ms)
+✔ intake audit includes versioned FHIR source evidence and database rejects audit edits (19.938783ms)
+✔ reports match persisted cases and Prometheus exposition serves real counts (369.435206ms)
+✔ Grafana account can read only aggregate view, not source records or audit (111.300573ms)
+✔ actual Grafana datasource queries the provisioned operational dashboard (126.405466ms)
+✖ real CQF and local inference produce traceable initial recommendations (374.960799ms)
+✖ continued-stay review responds to new clinical versions and invalidates old assessment (538.991251ms)
+✖ stable initial review suggests observation; missing documentation raises risk (96.853628ms)
+✖ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (386.373034ms)
+✖ physician escalation enforces roles, override reasons, and source status preservation (82.644002ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 9
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21761.866006
+
+✖ failing tests:
+
+test at tests/review.integration.test.ts:1:660
+✖ real CQF and local inference produce traceable initial recommendations (374.960799ms)
+  AssertionError [ERR_ASSERTION]: {"error":"A dependency failed. No success is claimed; retry after checking service health."}
+  
+  502 !== 200
+  
+      at request (/workspace/hospital-ur-ai-mvp/tests/review.integration.test.ts:6:205)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/tests/review.integration.test.ts:10:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review.integration.test.ts:1:1348
+✖ continued-stay review responds to new clinical versions and invalidates old assessment (538.991251ms)
+  AssertionError [ERR_ASSERTION]: {"error":"A dependency failed. No success is claimed; retry after checking service health."}
+  
+  502 !== 200
+  
+      at request (/workspace/hospital-ur-ai-mvp/tests/review.integration.test.ts:6:205)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/tests/review.integration.test.ts:17:16)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review.integration.test.ts:1:2570
+✖ stable initial review suggests observation; missing documentation raises risk (96.853628ms)
+  AssertionError [ERR_ASSERTION]: {"error":"A dependency failed. No success is claimed; retry after checking service health."}
+  
+  502 !== 200
+  
+      at request (/workspace/hospital-ur-ai-mvp/tests/review.integration.test.ts:6:205)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/tests/review.integration.test.ts:29:15)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/workflow.integration.test.ts:1:796
+✖ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (386.373034ms)
+  AssertionError [ERR_ASSERTION]: {"error":"A dependency failed. No success is claimed; retry after checking service health."}
+  
+  502 !== 200
+  
+      at call (/workspace/hospital-ur-ai-mvp/tests/workflow.integration.test.ts:5:277)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/tests/workflow.integration.test.ts:9:2)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/workflow.integration.test.ts:1:3190
+✖ physician escalation enforces roles, override reasons, and source status preservation (82.644002ms)
+  AssertionError [ERR_ASSERTION]: {"error":"A dependency failed. No success is claimed; retry after checking service health."}
+  
+  502 !== 200
+  
+      at call (/workspace/hospital-ur-ai-mvp/tests/workflow.integration.test.ts:5:277)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/tests/workflow.integration.test.ts:32:2)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

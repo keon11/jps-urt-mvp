@@ -2,7 +2,7 @@ import { demonstrationPassword } from "./local-account";
 import { test, expect, type Page } from "@playwright/test";
 async function shot(page: Page, path: string, fullPage = true) {
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.screenshot({ path, fullPage });
+  await page.screenshot({ path: path.replace("artifacts/",`artifacts/issue-2/${process.env.SCREENSHOT_RUN||"workstation"}/`), fullPage });
 }
 async function signIn(page: Page, role = "reviewer") {
   await page.goto("/");
@@ -256,7 +256,7 @@ test("Grafana renders live aggregate reporting", async ({ page }) => {
   await page.goto("http://localhost:3001/d/ur-synthetic-operations");
   await expect(
     page
-      .getByText("Clarity UR · Synthetic Operations", { exact: true })
+      .getByText("Hospital · Synthetic Operations", { exact: true })
       .first(),
   ).toBeVisible();
   await expect(

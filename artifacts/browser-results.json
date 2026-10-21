@@ -81,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 18687,
+                  "duration": 26248,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -89,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 617
+                      "duration": 903
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 6610
+                      "duration": 9594
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 6232
+                      "duration": 9289
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 1859
+                      "duration": 2047
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 443
+                      "duration": 457
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 1444
+                      "duration": 1665
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 761
+                      "duration": 991
                     }
                   ],
-                  "startTime": "2026-10-21T00:47:26.106Z",
+                  "startTime": "2026-10-21T14:02:33.557Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -145,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 926,
+                  "duration": 1004,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T00:47:44.951Z",
+                  "startTime": "2026-10-21T14:03:00.344Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -179,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3204,
+                  "duration": 5606,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T00:47:45.900Z",
+                  "startTime": "2026-10-21T14:03:01.369Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -221,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3900,
+                  "duration": 5287,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T00:47:49.143Z",
+                  "startTime": "2026-10-21T14:03:07.021Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -255,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6268,
+                  "duration": 5351,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T00:47:53.061Z",
+                  "startTime": "2026-10-21T14:03:12.328Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -278,8 +278,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T00:47:25.180Z",
-    "duration": 34370.222,
+    "startTime": "2026-10-21T14:02:32.210Z",
+    "duration": 45673.956,
     "expected": 5,
     "skipped": 0,
     "unexpected": 0,

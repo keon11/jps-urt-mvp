@@ -61,7 +61,7 @@ export async function assess(id:string,actor:Actor,kind='initial'){
  const ai=await localTriage({baselinePriority:clinical.baselinePriority,signals:clinical.signals,evidence:f.evidence});
  const assessment={...clinical,ai,priority:Math.min(100,clinical.baselinePriority+ai.adjustment),kind,ruleVersion:rules.version,criteriaLabel:rules.label,engine:f.missing.length?'not-evaluated-missing-evidence':'HAPI/CQF CQL',expressions,sourceHash:hash(bundle),sources:f.resources.map(r=>({reference:r.resourceType+'/'+r.id,version:r.meta?.versionId})),evaluatedAt:new Date().toISOString(),demoAsOf:demoNow().toISOString()};
  const client=await fhirClient();
- const provenance=await client.createResource({resourceType:'Provenance',target:assessment.sources.map(s=>({reference:s.reference+'/_history/'+s.version})),recorded:assessment.evaluatedAt,activity:{text:`${kind} review, ${rules.version}; synthetic illustrative decision support`},agent:[{who:{display:'Clarity UR synthetic review service'}}]});
+ const provenance=await client.createResource({resourceType:'Provenance',target:assessment.sources.map(s=>({reference:s.reference+'/_history/'+s.version})),recorded:assessment.evaluatedAt,activity:{text:`${kind} review, ${rules.version}; synthetic illustrative decision support`},agent:[{who:{display:'Synthetic utilization review service'}}]});
  return transaction(async tx=>{
   const locked=(await tx.query('SELECT * FROM cases WHERE id=$1 FOR UPDATE',[id])).rows[0];
   if(new Date(locked.updated_at).getTime()!==new Date(row.updated_at).getTime()||hash(locked.workflow)!==hash(row.workflow)||hash(locked.bundle)!==hash(row.bundle))throw new HttpError(409,'Case changed during assessment; rerun against the latest case');

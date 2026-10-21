@@ -249,7 +249,7 @@ function App() {
           }}
         >
           <div className="brand">
-            Clarity <span>UR</span>
+            Utilization Review
           </div>
           <h1>Hospital utilization review</h1>
           <p>
@@ -304,7 +304,7 @@ function App() {
       </a>
       <aside className="sidebar">
         <div className="brand">
-          Clarity <span>UR</span>
+          Utilization Review
         </div>
         <span className="side-caption">CARE OPERATIONS</span>
         <nav>
@@ -380,11 +380,11 @@ function App() {
         <main id="workspace" aria-busy={busy || loading}>
           <div className="page-top">
             <div>
-              <div className="eyebrow">UTILIZATION MANAGEMENT</div>
+              <div className="eyebrow">CLINICAL OPERATIONS · SYNTHETIC WORKSPACE</div>
               <h1>{tab}</h1>
               <p>
                 {tab === "Review queue"
-                  ? "Prioritized encounters for clinical and authorization review."
+                  ? "Encounter worklist · Select an encounter to open the clinical workbench."
                   : "Connected workflows with traceable human oversight."}
               </p>
             </div>
@@ -435,36 +435,7 @@ function App() {
               {notice}
             </div>
           )}
-          <section className="metrics">
-            <Metric
-              label="Active encounters"
-              value={cases.length}
-              hint="Synthetic inpatient & observation"
-              icon={<Inbox size={19} />}
-            />
-            <Metric
-              label="Priority review"
-              value={count(
-                (c) =>
-                  c.assessment?.priority >= 70 && !c.assessment?.triageStale,
-              )}
-              hint="Illustrative risk score ≥ 70"
-              tone="amber"
-              icon={<Activity size={19} />}
-            />
-            <Metric
-              label="Authorization attention"
-              value={count((c) => c.workflow.authorization !== "approved")}
-              hint="Action or documentation needed"
-              icon={<ShieldCheck size={19} />}
-            />
-            <Metric
-              label="Advisor escalations"
-              value={count((c) => c.workflow.state === "escalated")}
-              hint="Awaiting physician review"
-              icon={<Stethoscope size={19} />}
-            />
-          </section>
+          <div className="census-strip" aria-label="Worklist census"><strong>{cases.length} encounters</strong><span>{count(c=>c.assessment?.priority>=70&&!c.assessment?.triageStale)} high priority</span><span>{count(c=>c.workflow.authorization!=='approved')} authorization follow-ups</span><span>{count(c=>c.workflow.state==='escalated')} advisor escalations</span><span>FHIR R4 · Illustrative review criteria</span></div>
           {!row &&
             ["Review queue", "Authorizations", "Physician advisor"].includes(
               tab,
@@ -704,7 +675,7 @@ function App() {
               }}
             />
           )}
-          {row && (
+          {row && (<div className="clinical-workbench"><aside className="encounter-rail" aria-label="Encounter list"><h2>Encounters</h2><p>Current synthetic census</p>{cases.map(c=><button key={c.id} aria-label={'Open '+c.label} aria-pressed={c.id===row.id} onClick={()=>{setSelected(c.id);setDetail(tab==='Authorizations'?'Authorization':tab==='Physician advisor'?'Advisor review':'Overview');}}><strong>{c.label}</strong><small>{c.id} · {c.workflow.state.replaceAll('-',' ')}</small><span>{c.assessment?.recommendation||'Awaiting assessment'}</span><small>{c.bundle.entry.find((e:any)=>e.resource.resourceType==='Coverage')?.resource.payor[0].display}</small></button>)}</aside>
             <section className="panel case-detail">
               <div className="panel-heading">
                 <div>
@@ -806,7 +777,7 @@ function App() {
                       )}
                     </div>
                     <div>
-                      <h3>Encounter context</h3>
+                      <h3>Source clinical evidence</h3><table className="compact-evidence"><thead><tr><th>Observation</th><th>Value</th></tr></thead><tbody>{row.bundle.entry.filter((e:any)=>e.resource.resourceType==='Observation').map((e:any)=><tr key={e.resource.id}><td>{e.resource.code.coding[0].display}<small>FHIR version {e.resource.meta?.versionId}</small></td><td>{e.resource.valueQuantity.value} {e.resource.valueQuantity.unit}</td></tr>)}</tbody></table><h3>Encounter context</h3>
                       <dl>
                         <dt>FHIR patient</dt>
                         <dd className="mono">{row.patient_id}</dd>
@@ -949,7 +920,7 @@ function App() {
                 )}
                 {detail === "Audit history" && <Audit events={audit} />}
               </div>
-            </section>
+            </section></div>
           )}
           <div className="service-strip">
             <span>
@@ -966,7 +937,7 @@ function App() {
             ))}
           </div>
           <footer>
-            Clarity UR · Independent synthetic demonstration
+            Independent hospital utilization review demonstration
             <span>JPS RFP #20261404054 · Illustrative decision support</span>
           </footer>
         </main>
@@ -1723,7 +1694,7 @@ function Audit({ events }: { events: any[] }) {
               </small>
               <details>
                 <summary>Event details</summary>
-                <pre>{JSON.stringify(e.detail, null, 2)}</pre>
+                <pre>{JSON.stringify(e.detail, null, 2).replaceAll("Clarity UR", "Utilization Review")}</pre>
               </details>
               <small className="mono">SHA-256 {e.hash}</small>
             </div>

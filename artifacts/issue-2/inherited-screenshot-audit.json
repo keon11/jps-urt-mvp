@@ -1,0 +1,74 @@
+[
+  {
+    "path": "artifacts/00-review-queue.png",
+    "dev/autonomous-mvp": "cb00411a79bf20c24a61e0a148d4bfbd3e388f6fab82d26e9f9cef70faeb7e83",
+    "dev/desktop-hospital-workspace": "d7109f38df240326db5bb587072b3a6e62600e395ecb6961b4eaf026957d8092",
+    "identical": false
+  },
+  {
+    "path": "artifacts/01-fhir-evidence.png",
+    "dev/autonomous-mvp": "84ed073bf82b0baeeaab55d563c6b05bbee72f9c7bd637c64dafe8c40b843a5a",
+    "dev/desktop-hospital-workspace": "8fa1d045dfe5923fed320c49f2fc7d4ad5f75a3195e428025af5b22ef31d5cf1",
+    "identical": false
+  },
+  {
+    "path": "artifacts/02-ai-review.png",
+    "dev/autonomous-mvp": "d90c5b3587f6323822f06c1dbf258fb19139ef32ab3c18dc6b0558da2db411d2",
+    "dev/desktop-hospital-workspace": "e8307eb2937e2291f9096ffd107f604c526f4f710730ab833314089d8f562fb7",
+    "identical": false
+  },
+  {
+    "path": "artifacts/03-continued-stay.png",
+    "dev/autonomous-mvp": "cd44f2df9742821073fc21022c414f145c75419bcf1d1b0af92afdfd37ba79e4",
+    "dev/desktop-hospital-workspace": "b7905997ef0a92a1f8ed479fd5be8f0ebb22725708f6ea5551c68cbc536c45ef",
+    "identical": false
+  },
+  {
+    "path": "artifacts/04-authorization.png",
+    "dev/autonomous-mvp": "9b9f430a4223dac2efc896c520fae70ffaedf83c70a6d1f412276c0ded95af03",
+    "dev/desktop-hospital-workspace": "2c36d86c47fcb27566fca3bdd276382081b619a0824609cdc7b613d3aab450b9",
+    "identical": false
+  },
+  {
+    "path": "artifacts/05-denial-risk.png",
+    "dev/autonomous-mvp": "6d6ffa005a1e89ce81a13e3ca3022530f74568a40c0462092327f8a20e07f929",
+    "dev/desktop-hospital-workspace": "0ef810aab442db2fdf09bb566119aa5572b647a3231586c7e78208dbd5382286",
+    "identical": false
+  },
+  {
+    "path": "artifacts/06-physician-advisor.png",
+    "dev/autonomous-mvp": "1d9cf68a0e29c89a9eb37b9002a6b1315a0129062b0920eaa0a00c7125fcb3d0",
+    "dev/desktop-hospital-workspace": "0320428cd26e9a45ec897fb3400a697beb9a19243391fbaab6cf96e210a8c576",
+    "identical": false
+  },
+  {
+    "path": "artifacts/07-operations.png",
+    "dev/autonomous-mvp": "d7802778963bd3035999c88beaa7aaeaa78a33592dd5d2fc1003436e51d45846",
+    "dev/desktop-hospital-workspace": "b1a858b84306c0c31f7a680d7f72dfc51bbdc1da3d7dde64284142a741d0f4c6",
+    "identical": false
+  },
+  {
+    "path": "artifacts/08-audit.png",
+    "dev/autonomous-mvp": "03fcabbe592cbb142ec6c08ad7e62922bf5464712383fac52a0bf75ab3bed32a",
+    "dev/desktop-hospital-workspace": "ffff8ef0a42991680b6f94a8e0c1fe0903bfa90d682dac119cad09507dfca202",
+    "identical": false
+  },
+  {
+    "path": "artifacts/09-mobile.png",
+    "dev/autonomous-mvp": "1cfcad2d131fded087d7ffac7f39893c8805f49f481ca705b2e6e0a94304b6c4",
+    "dev/desktop-hospital-workspace": null,
+    "identical": false
+  },
+  {
+    "path": "artifacts/10-grafana.png",
+    "dev/autonomous-mvp": "3612e043189cf16ea39709b79e320802a7aae9e7ae381a5c69d86279a08e7d2b",
+    "dev/desktop-hospital-workspace": "3612e043189cf16ea39709b79e320802a7aae9e7ae381a5c69d86279a08e7d2b",
+    "identical": true
+  },
+  {
+    "path": "artifacts/login.png",
+    "dev/autonomous-mvp": "fe74c06ae0ae6a93589f2174e15ec7281f6c0231891a4056ed80907f79d217a7",
+    "dev/desktop-hospital-workspace": "fe74c06ae0ae6a93589f2174e15ec7281f6c0231891a4056ed80907f79d217a7",
+    "identical": true
+  }
+]

@@ -30,7 +30,7 @@ for (const width of [1440, 1920]) {
       expect(small).toEqual([]);
       await page.evaluate(() => scrollTo(0, 0));
       await page.screenshot({
-        path: `artifacts/desktop-redesign/${width}/${name}.png`,
+        path: `artifacts/issue-2/${process.env.SCREENSHOT_RUN||"workstation"}/${width}/${name}.png`,
         fullPage: name !== "audit",
       });
     };
@@ -40,6 +40,7 @@ for (const width of [1440, 1920]) {
     await page.keyboard.press('Tab');await expect(page.getByLabel('Demonstration scenario')).toBeFocused();
     await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);
     await expect(page.getByRole('button',{name:'Synthetic intake',exact:true})).toBeFocused();
+    await expect(page.locator("body")).not.toContainText(/clarity/i);
     await capture("queue");
     await page
       .getByRole("textbox", { name: "Search encounters" })
