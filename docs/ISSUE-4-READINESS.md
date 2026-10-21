@@ -10,7 +10,7 @@ All patients and labels are artificial. The committed Synthea projection is not 
 
 Payer cases use owned fictional rules/approval flags and independently written engineering expectations. Metrics classify workflow risk flags, not medical necessity or adjudication accuracy. Calibration is unsupported because no insurer outcome probabilities/representative labels exist. Unknown private criteria remain unknown. Current active case risk is based only on the existing published illustrative registry and never submits anything or changes clinical source status.
 
-The hour benchmark is the same bounded queue workload used in Phase 3: cloned queue records, 25 same-role sessions, paginated authenticated reads. It is not Synthea clinical-inference throughput or concurrent human workflow capacity. It is **RUNNING**, not passed, until 3600 seconds and all predeclared gates are verified. No HA, enterprise SLA, independent clinical accuracy or HIPAA compliance claim.
+The hour benchmark is the same bounded queue workload used in Phase 3: cloned queue records, 25 same-role sessions, paginated authenticated reads. It is not Synthea clinical-inference throughput or concurrent human workflow capacity. It now **PASSED** its 3600.160-second continuous gate with independently recomputed raw measurements: 255,665 requests, 71.01 requests/s, p95 626.12ms and 21 timeouts (0.008214%). API restart was 2.03s. The first interrupted attempt remains incomplete and separate. Final fault/full-regression/restore gates are still pending. No HA, enterprise SLA, independent clinical accuracy or HIPAA compliance claim.
 
 ## EXTERNAL VALIDATION REQUIRED
 
