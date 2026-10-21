@@ -1,0 +1,34 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:integration
+> tsx --test --test-concurrency=1 tests/*.integration.test.ts
+
+✔ CQF outage returns an error and preserves previous assessment and audit (2334.954803ms)
+✔ Medplum outage returns an error and preserves previous assessment and audit (2081.790753ms)
+✔ real Keycloak authentication protects API (328.49979ms)
+✔ repeat intake preserves one case and FHIR source versions (73.777885ms)
+✔ malformed payloads, conflicting idempotency keys, and advisor intake are rejected (24.298073ms)
+✔ intake audit includes versioned FHIR source evidence and database rejects audit edits (18.841762ms)
+✔ authenticated policy evidence exposes versioned synthetic candidates, while anonymous requests fail (244.7787ms)
+✔ policy evidence originals are immutable in the application database (73.910208ms)
+✔ governance roles, independent approvals and pending-rule isolation use real authenticated identities (1191.927393ms)
+✔ publication detects stale competing changes, enforces effective version, and supports suspension and immutable rollback (475.913727ms)
+✔ internal authorization review is idempotent, evidence-linked, role restricted and never an insurer determination (576.767464ms)
+✔ missing assessment permits an information request and unchanged-source reassessment preserves that pending request (7781.306236ms)
+✔ reports match persisted cases and Prometheus exposition serves real counts (220.05693ms)
+✔ Grafana account can read only aggregate view, not source records or audit (49.585764ms)
+✔ actual Grafana datasource queries the provisioned operational dashboard (118.683191ms)
+✔ real CQF and local inference produce traceable initial recommendations (7557.96699ms)
+✔ continued-stay review responds to new clinical versions and invalidates old assessment (28566.414897ms)
+✔ stable initial review suggests observation; missing documentation raises risk (24159.558954ms)
+✔ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (10047.531471ms)
+✔ physician escalation enforces roles, override reasons, and source status preservation (29368.213184ms)
+✔ authenticated bounded worklist summaries match persisted cases and keep source bundles private (223.53028ms)
+✔ operational alerts and source-free request metrics expose real runtime state (160.865976ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132250.532129

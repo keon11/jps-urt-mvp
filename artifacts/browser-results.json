@@ -81,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 45109,
+                  "duration": 28299,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -89,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 906
+                      "duration": 1701
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 9680
+                      "duration": 10690
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 20947
+                      "duration": 9092
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 7263
+                      "duration": 2604
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 686
+                      "duration": 484
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 2885
+                      "duration": 1831
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 1161
+                      "duration": 873
                     }
                   ],
-                  "startTime": "2026-10-21T14:51:51.880Z",
+                  "startTime": "2026-10-21T15:08:49.624Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -126,7 +126,7 @@
           ],
           "id": "05384557491ebd602dd7-88c66971b0dc4fc4a449",
           "file": "demo.spec.ts",
-          "line": 37,
+          "line": 38,
           "column": 1
         },
         {
@@ -145,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1387,
+                  "duration": 1186,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:52:37.582Z",
+                  "startTime": "2026-10-21T15:09:18.105Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -160,7 +160,7 @@
           ],
           "id": "05384557491ebd602dd7-5ccfd3d356e1a1ccfca5",
           "file": "demo.spec.ts",
-          "line": 212,
+          "line": 213,
           "column": 1
         },
         {
@@ -179,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4382,
+                  "duration": 4945,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:52:38.990Z",
+                  "startTime": "2026-10-21T15:09:19.327Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -194,7 +194,7 @@
           ],
           "id": "05384557491ebd602dd7-2cade4e9188b6da8a60e",
           "file": "demo.spec.ts",
-          "line": 238,
+          "line": 239,
           "column": 1
         }
       ]
@@ -221,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5148,
+                  "duration": 4873,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:52:43.428Z",
+                  "startTime": "2026-10-21T15:09:24.341Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -236,7 +236,7 @@
           ],
           "id": "12cc77c408bab7a1d6ba-aebd9977daf3d5bf5ccc",
           "file": "desktop.spec.ts",
-          "line": 4,
+          "line": 5,
           "column": 3
         },
         {
@@ -255,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6953,
+                  "duration": 4599,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:52:48.607Z",
+                  "startTime": "2026-10-21T15:09:29.230Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -270,7 +270,7 @@
           ],
           "id": "12cc77c408bab7a1d6ba-144f78cf82b966bf1d8b",
           "file": "desktop.spec.ts",
-          "line": 4,
+          "line": 5,
           "column": 3
         }
       ]
@@ -297,12 +297,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10234,
+                  "duration": 7024,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:52:55.597Z",
+                  "startTime": "2026-10-21T15:09:33.862Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -312,7 +312,7 @@
           ],
           "id": "bd80fa2e263003b85faf-77211073d68b05274cbc",
           "file": "governance.spec.ts",
-          "line": 32,
+          "line": 33,
           "column": 1
         }
       ]
@@ -339,12 +339,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3870,
+                  "duration": 1704,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:53:06.098Z",
+                  "startTime": "2026-10-21T15:09:40.929Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -362,8 +362,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T14:51:49.962Z",
-    "duration": 80330.85,
+    "startTime": "2026-10-21T15:08:48.222Z",
+    "duration": 54591.907,
     "expected": 7,
     "skipped": 0,
     "unexpected": 0,

@@ -1,0 +1,182 @@
+{
+  "capturedAt": "2026-10-21T15:09:43.033Z",
+  "sourceBaseCommit": "253f12315033fded5fb15a04002c7e0f6f907962",
+  "workingSourceHashes": {
+    "apps/web/src/main.tsx": "e9582c13d9604088abcae6e0117233520c0c916eab8852686347e4176d859e29",
+    "apps/web/src/style.css": "973315b1c9e042c98df401675009b82390f10f1d271d68a5dccf660c4b31309e",
+    "apps/web/index.html": "944e5eb1536d8117812cfced90806764ad454bfa62a7ab2727cf2cadafb59a2e",
+    "apps/web/src/preview.ts": "0977b74e5143307e6e68ff9750eb64e10cec5570c555d6a9fbb2345bc5fbdb02",
+    "apps/web/src/preview-data.json": "f0334447b88751dd9d78bcf2bfd7ad38ac53ce31f73eab2b3774a83821cea949",
+    "apps/web/src/PolicyCenter.tsx": "291e14472e7c9a3b850d793d4e44a4b933b964fd06acedab188167f1db051dcf"
+  },
+  "images": [
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/00-review-queue.png",
+      "width": 1440,
+      "height": 1005,
+      "sha256": "ee5f38e750da17d45ffa376f8cf1f9864b4a4ce0e7a87af7ff09fc79927b441d"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/01-fhir-evidence.png",
+      "width": 1440,
+      "height": 1181,
+      "sha256": "c1d6bf25528e6faff88e95d2a5ca7b81ae9f547fc030a6dfe35e368f41b0e489"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/02-ai-review.png",
+      "width": 1440,
+      "height": 1789,
+      "sha256": "8e4bce12b5a7f82d54b6ee65f2e759ea862fdc52a9d7bfe0c1e1433a33d7bcf9"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/03-continued-stay.png",
+      "width": 1440,
+      "height": 1762,
+      "sha256": "632b24901fb8b591e9692f0630a95bc645117f44215ad695adf4c189394d657a"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/04-authorization.png",
+      "width": 1440,
+      "height": 1181,
+      "sha256": "72ebd4019b20229e1fc36d4d7dbfd7729f59e3a942ad4df2e54b32f1dda9ced0"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/05-denial-risk.png",
+      "width": 1440,
+      "height": 1780,
+      "sha256": "be2133934109263948eb53698bb49207fb97aae8ba2da792a91d72e41dbe391a"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/06-physician-advisor.png",
+      "width": 1440,
+      "height": 1181,
+      "sha256": "3d6eab9a1bf38a34926cec46e04e5cd5c0ef186771a1af41ea79d24c34cf4f4a"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/07-operations.png",
+      "width": 1440,
+      "height": 1929,
+      "sha256": "e2b13d5baaf9408c0b0ec468716247a569d9e041821af223e032dfc14151ea01"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/08-audit.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b41dc548d1e827a3e5c37003536cbbab926ca666015bd0a7fb0a29277ab70edb"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/10-grafana.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f38ea24453472e1968a7dba7aa89668a0d23d79f09917128ab6bc0e2f59c4139"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/advisor.png",
+      "width": 1440,
+      "height": 1122,
+      "sha256": "65d64efc0da7024be5b95fcc73507802ea678b5a837c9a966e6ff4372fd6d4e3"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/ai-review.png",
+      "width": 1440,
+      "height": 1730,
+      "sha256": "e71d7b46ed2d371fb45c9f685803414e6e4b39059b62dfea1cb6642fe0652776"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/audit.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "d099c0ca699172c2aad9a493688f2649874a99d56106e1abc7a991e19a9ccb3b"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/authorization.png",
+      "width": 1440,
+      "height": 1122,
+      "sha256": "cbb5b8ec4c1548d3acb510daa64710192b185cff773822795d8b9c71bed4450a"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/evidence.png",
+      "width": 1440,
+      "height": 1122,
+      "sha256": "dd319fb18889a190784f23a453eccd86aad9e2717e4b1add1680ca3cbb0bbeb5"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/internal-authorization.png",
+      "width": 1440,
+      "height": 1434,
+      "sha256": "a22c893d4c6d8c436fff93bd3a4c281161cd50ffdb0a0f08ffef46997dabd1cf"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/operations.png",
+      "width": 1440,
+      "height": 1870,
+      "sha256": "fca789fa820bcf31a7d8e9884b32cdb82a3d7cd448470829ddb50351e8f8a1d4"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/policy-center.png",
+      "width": 1440,
+      "height": 2116,
+      "sha256": "cd9e0da0dc14769f2770dc26a858f7268a9a1b82b33307a7cf4d9d3c7d049526"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1440/queue.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "ccc085aafc6a44029e87795c2914b459be509abc04693e5152022a0f449f814e"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/advisor.png",
+      "width": 1920,
+      "height": 1126,
+      "sha256": "dce258228f49a1f801f69facf8fd1e39bf076ddccfe30688208d3970f74214f3"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/ai-review.png",
+      "width": 1920,
+      "height": 1549,
+      "sha256": "699b592b502da107bc8242ca4ca909c458c9a21c33e09cc69d361643bdf1f428"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/audit.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "5d4111c11615ad6a08cc3893cad93a0ed13170b158f03f3f141814d5557d2332"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/authorization.png",
+      "width": 1920,
+      "height": 1126,
+      "sha256": "a8a14ba83fb5ac8c0f0a1b6e7379e782b47446cd78d0d10d57ed9410cff50ace"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/evidence.png",
+      "width": 1920,
+      "height": 1126,
+      "sha256": "3940c1d584cf1b4b4486caf1a194cadb3caf05bcd44e5836ccc882134b12c8a6"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/internal-authorization.png",
+      "width": 1920,
+      "height": 1407,
+      "sha256": "90cc3f694dee5a7add031ad81c7cf6729c40db0414fdbf1efdb489cdf972478d"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/operations.png",
+      "width": 1920,
+      "height": 1878,
+      "sha256": "58e4235e2c76d510df6c129940377771058517748457987cf9b5168746ebea2b"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/policy-center.png",
+      "width": 1920,
+      "height": 2051,
+      "sha256": "29b5bb0339e54b1bbab864263ba54d230a6b71a597e2d4b4e2ca6926be2f5ace"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-final-253f123-20261021T150846Z/1920/queue.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "9d56d76ffccd3eafc1a64a4378ba89a528e4e7d4afa6f8e103c03eaec03f87e5"
+    }
+  ]
+}

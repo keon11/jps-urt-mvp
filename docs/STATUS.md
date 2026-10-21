@@ -35,3 +35,15 @@
 - First new desktop checks failed because the focus assertion used programmatic focus following a mouse click. Corrected the test to exercise actual Tab navigation. Screenshot review also found active-navigation hover contrast and excessive audit page length; both were repaired and retested.
 - Vercel team lookup succeeded, but link-only project creation was rejected with 403 forbidden. There is no independently authorized CLI credential available and the failing tool has no mapped CLI fallback. Deployment, repository linkage and remote protection verification remain BLOCKED. No paid service, public backend, production deployment or default-branch merge was performed.
 - Detailed changes, real screenshot index, reproducible commands and remaining deployment steps: [DESKTOP-REDESIGN.md](DESKTOP-REDESIGN.md). Current test results: [TEST-RESULTS.md](TEST-RESULTS.md). Local acceptance and remote deployment acceptance are recorded separately.
+
+## Issue #2 execution (2026-10-21)
+
+Execution mode enabled; read branch AGENTS.md and Issues #1/#2. Used only existing `dev/issue-2-execution`, preserving the tested desktop/autonomous branches and all five original phase commits.
+
+- Phase A: committed 22189a4 — unnamed workstation, top task navigation, persistent encounter rail and source evidence. Build/unit/integration/browser gates passed after CQF cold-start readiness repair. Fresh screenshots and inherited-image hash comparison recorded.
+- Phase B: committed 101a501 — immutable policy evidence, permitted-source attempt, two explicitly synthetic revisions and source-linked candidate comparison. 17 unit/16 integration tests passed. Official revision/date completeness remains unresolved; later CMS robots check returned 403.
+- Phase C: committed 0719fef — functional policy-center buttons, distinct synthetic clerk/supervisor/clinical authority/publisher controls, conflict/suspension/rollback and separate internal Authorization Review. 20 unit/20 integration/6 browser tests passed.
+- Phase D: committed 253f123 — actual fault injection found duplicate FHIR side effects, repaired with durable intent identity plus conditional receipts. Two load runs failed and were retained; generated priority/covering index/materialized projection then passed the original load gates (61.96 requests/s, p95 743ms, zero errors). Backup/restore, restart, actual FHIR/model outage, alerts and local trace proofs are recorded. 21 unit/22 integration/7 browser tests passed; jsdiff patched and final audit has zero reported vulnerabilities.
+- Phase E: final dependency-set regression, fixture-only preview, fresh screenshots, full-table restore proof, delivery report and CI verification. Vercel link-only project creation again returned 403; no hosted preview, protection or live backend connection is claimed. Refer to ISSUE-2-REPORT.md for final evidence and exact remaining blockers.
+
+No merge to main, paid service, PHI, real payer submission or external production connection occurred. Founder visual approval and independent clinical validation remain pending.

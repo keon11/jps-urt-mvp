@@ -1,0 +1,141 @@
+{
+  "verifiedAt": "2026-10-21T15:14:18.742626+00:00",
+  "sourceBaseCommit": "253f12315033fded5fb15a04002c7e0f6f907962",
+  "tests": {
+    "unit": 21,
+    "integration": 22,
+    "liveBrowser": {
+      "startTime": "2026-10-21T15:08:48.222Z",
+      "duration": 54591.907,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "fixtureBrowser": {
+      "startTime": "2026-10-21T15:13:31.894Z",
+      "duration": 5666.343,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "build": "passed",
+  "previewArtifactScan": "passed",
+  "npmAuditVulnerabilities": 0,
+  "benchmark": {
+    "startedAt": "2026-10-21T14:42:04.217Z",
+    "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+    "thresholds": {
+      "rows": 10000,
+      "sessions": 25,
+      "seconds": 120,
+      "p95Ms": 1000,
+      "errorFraction": 0.01,
+      "minThroughput": 20,
+      "apiRecoverySeconds": 15,
+      "restoreSeconds": 120
+    },
+    "host": {
+      "node": "v24.19.0",
+      "logicalCPUs": 5,
+      "totalMemoryBytes": 18882674688
+    },
+    "database": "ur_issue2_1792593144631",
+    "restore": {
+      "target": "ur_issue2_verify_1792593724218",
+      "seconds": 2.6574089380000006,
+      "originalBackupRestoreSeconds": 1.644887195,
+      "cases": 6,
+      "audit": {
+        "verified": true,
+        "events": 413,
+        "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+      }
+    },
+    "load": {
+      "requests": 7457,
+      "seconds": 120.35833602700001,
+      "throughputPerSecond": 61.956655817567714,
+      "p50Ms": 392.3928539999979,
+      "p95Ms": 743.2259219999978,
+      "p99Ms": 1119.0034840000008,
+      "maxMs": 2589.0412389999983,
+      "errors": {},
+      "failedRequests": 0,
+      "errorFraction": 0,
+      "peakApiRssBytes": 178880512,
+      "apiAverageCpuPercent": 19.068060225468404,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "apiRestartSeconds": 2.3192491490000102,
+    "liveMvpUnchanged": true,
+    "passed": true
+  },
+  "faultRecovery": "passed",
+  "reconciliation": "passed",
+  "finalRestore": {
+    "createdAt": "2026-10-21T15:09:45.204Z",
+    "sourceDatabase": "ur",
+    "restoreDatabase": "ur_issue2_final_1792595385204",
+    "dumpPath": ".runtime/issue2-final-checkpoint.dump",
+    "publiclyDistributed": false,
+    "seconds": 4.030167791999999,
+    "tables": {
+      "audit": {
+        "rows": 587,
+        "sha256": "247459658535413db9763c7d9b070234c2f29144bfa3443ef3e9da49231f29cc"
+      },
+      "authorization_intents": {
+        "rows": 43,
+        "sha256": "0f5e93a0affd08024f92af139366af036b6aa4d6586a93a136a4b6da06d46130"
+      },
+      "cases": {
+        "rows": 6,
+        "sha256": "d5d67736910143719aaf48ad8d38d454039adb45a7616020dd0d96e18d93c16a"
+      },
+      "governance_commands": {
+        "rows": 135,
+        "sha256": "b09c7e2dc261edfa8c26dc3c707b4fff5408bf849a68a04d3cb8721dddcc9d2f"
+      },
+      "idempotency": {
+        "rows": 27,
+        "sha256": "7a9badaf9bc55a0e8d51c296c34c926a1630873dadb698b0a7baeaca6dfd9e57"
+      },
+      "internal_authorization_reviews": {
+        "rows": 15,
+        "sha256": "c2f95d2dd84bd17a3a213a8f88cc55c26f15f1ebc0ef2bd61ec6e788a09a2435"
+      },
+      "policy_changes": {
+        "rows": 16,
+        "sha256": "799f227853b00f9b6bf78083cbbd06b12a38c2a785b777c00713ea7b153f3f8d"
+      },
+      "policy_documents": {
+        "rows": 3,
+        "sha256": "8ffc31b144974832bac656d57f67ddb2270b66db334374b05055868a39c90388"
+      },
+      "policy_publications": {
+        "rows": 16,
+        "sha256": "790a86c1fa6837dbda1f8ebd0bd96c197fc8ccff4d9154b831125463807d8c0e"
+      },
+      "policy_registry": {
+        "rows": 1,
+        "sha256": "147c2075c71b8e36d86077a8394a3a390497dc20ed933c6c9c04c1467fe863a3"
+      }
+    },
+    "audit": {
+      "verified": true,
+      "events": 587,
+      "lastHash": "3317e59b10cdf37b795d0802203248999c8629f31143c9e67decac6cc1d14a59"
+    },
+    "dumpSha256": "ed76026dc6cb498c6675c4b5dc5a0f34d79baf4e4a344467c501cde3c5b75c75",
+    "restoredApplicationReadVerified": true,
+    "passed": true
+  },
+  "liveScreenshotManifest": "phase-e-final-253f123-20261021T150846Z/manifest.json",
+  "fixtureScreenshotManifest": "phase-e-preview-final-20261021T151319Z/manifest.json",
+  "vercelDeployment": "blocked: project permissions HTTP 403",
+  "founderVisualAcceptance": "pending",
+  "independentClinicalValidation": "not performed"
+}

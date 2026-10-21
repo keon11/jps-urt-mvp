@@ -1,3 +1,4 @@
+import { screenshotRun } from "./artifact-run";
 import { demonstrationPassword } from "./local-account";
 import { test, expect } from "@playwright/test";
 for (const width of [1440, 1920]) {
@@ -30,16 +31,26 @@ for (const width of [1440, 1920]) {
       expect(small).toEqual([]);
       await page.evaluate(() => scrollTo(0, 0));
       await page.screenshot({
-        path: `artifacts/issue-2/${process.env.SCREENSHOT_RUN||"workstation"}/${width}/${name}.png`,
+        path: `artifacts/issue-2/${screenshotRun}/${width}/${name}.png`,
         fullPage: name !== "audit",
       });
     };
-    expect(await page.locator('.table-scroll').evaluate(n=>n.scrollWidth<=n.clientWidth)).toBe(true);
-    await page.getByRole('button',{name:'Synthetic intake',exact:true}).click();
-    await expect(page.getByRole('dialog')).toBeFocused();
-    await page.keyboard.press('Tab');await expect(page.getByLabel('Demonstration scenario')).toBeFocused();
-    await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);
-    await expect(page.getByRole('button',{name:'Synthetic intake',exact:true})).toBeFocused();
+    expect(
+      await page
+        .locator(".table-scroll")
+        .evaluate((n) => n.scrollWidth <= n.clientWidth),
+    ).toBe(true);
+    await page
+      .getByRole("button", { name: "Synthetic intake", exact: true })
+      .click();
+    await expect(page.getByRole("dialog")).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.getByLabel("Demonstration scenario")).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await expect(
+      page.getByRole("button", { name: "Synthetic intake", exact: true }),
+    ).toBeFocused();
     await expect(page.locator("body")).not.toContainText(/clarity/i);
     await capture("queue");
     await page
@@ -72,8 +83,10 @@ for (const width of [1440, 1920]) {
     await page
       .getByRole("button", { name: "Authorization", exact: true })
       .click();
-    await page.getByRole('button',{name:'Authorizations',exact:true}).click();
-    await page.getByRole('button',{name:'Open Isla Fictional'}).click();
+    await page
+      .getByRole("button", { name: "Authorizations", exact: true })
+      .click();
+    await page.getByRole("button", { name: "Open Isla Fictional" }).click();
     await capture("authorization");
     await page
       .getByRole("button", { name: "Advisor review", exact: true })
@@ -91,11 +104,17 @@ for (const width of [1440, 1920]) {
       .getByRole("button", { name: "Audit trail", exact: true })
       .click();
     await capture("audit");
-    const first=await page.locator('.audit-item').first().innerText();
-    await page.getByRole('button',{name:'Next events',exact:true}).click();
-    expect(await page.locator('.audit-item').first().innerText()).not.toBe(first);
-    await page.getByRole('button',{name:'Previous events',exact:true}).click();
-    expect(await page.locator('.audit-item').first().innerText()).toBe(first);
+    const first = await page.locator(".audit-item").first().innerText();
+    await page
+      .getByRole("button", { name: "Next events", exact: true })
+      .click();
+    expect(await page.locator(".audit-item").first().innerText()).not.toBe(
+      first,
+    );
+    await page
+      .getByRole("button", { name: "Previous events", exact: true })
+      .click();
+    expect(await page.locator(".audit-item").first().innerText()).toBe(first);
     await page.setViewportSize({ width: 1280, height: 1000 });
     await page.getByRole("button", { name: /^Review queue/ }).click();
     expect(

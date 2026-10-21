@@ -703,8 +703,12 @@ function App() {
               report={report}
               cases={cases}
               openCase={(id) => {
-                setTab("Review queue");
-                setSelected(id);
+                setTab(
+                  id.startsWith("policy:")
+                    ? "Policy management"
+                    : "Review queue",
+                );
+                setSelected(id.startsWith("policy:") ? null : id);
                 setDetail("Overview");
               }}
             />

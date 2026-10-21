@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-21T15:01:01.294Z",
+  "sourceBaseCommit": "253f12315033fded5fb15a04002c7e0f6f907962",
+  "workingSourceHashes": {
+    "apps/web/src/main.tsx": "2c6f6c0ce0cfe27004635477d71bda9c89378ef7d9610428013e4da404df3c60",
+    "apps/web/src/style.css": "7d6343d22d85fea50786027b15c1ff72ed21482e285c46c65f14ff5ae78a7ed3",
+    "apps/web/index.html": "944e5eb1536d8117812cfced90806764ad454bfa62a7ab2727cf2cadafb59a2e",
+    "apps/web/src/preview.ts": "4da8b7f89fa215d8e887020b14981798770acad97e1cff7788d00827c69d58fd",
+    "apps/web/src/preview-data.json": "2f7937b441224bfb03ab2bdd7689815bcdbad859434c9254f203e5e3feff0591",
+    "apps/web/src/PolicyCenter.tsx": "e5e6e1ab8579a993b8a3ca76a684982cd6c1ef3daeeb48d10c8f23ea0d3a81bc"
+  },
+  "images": [
+    {
+      "file": "artifacts/issue-2/phase-e-preview-initial-253f123-20261021T145754Z/fixture-preview-audit.png",
+      "width": 1440,
+      "height": 2028,
+      "sha256": "ccedb4326ae917e23e58988402e36d535cccdd2ce95254b679d8477221d83aef"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-preview-initial-253f123-20261021T145754Z/fixture-preview-policy.png",
+      "width": 1440,
+      "height": 2028,
+      "sha256": "ccedb4326ae917e23e58988402e36d535cccdd2ce95254b679d8477221d83aef"
+    },
+    {
+      "file": "artifacts/issue-2/phase-e-preview-initial-253f123-20261021T145754Z/fixture-preview-workstation.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "fe53aa3632b22555b05ee99618197b1c51c3dbf9650ff42e58c87ea53ed7e3b2"
+    }
+  ]
+}

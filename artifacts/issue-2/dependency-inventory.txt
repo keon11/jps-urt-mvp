@@ -1,0 +1,1 @@
+Recorded installed versions, declared licenses and available license-file hashes for 27 direct dependencies. Transitive and container legal review remains a production requirement.

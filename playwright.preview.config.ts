@@ -7,7 +7,7 @@ export default defineConfig({
     ["list"],
     [
       "json",
-      { outputFile: "artifacts/desktop-redesign/preview-browser-results.json" },
+      { outputFile: "artifacts/issue-2/phase-e-preview-browser-results.json" },
     ],
   ],
   use: { viewport: { width: 1440, height: 1080 }, headless: true },

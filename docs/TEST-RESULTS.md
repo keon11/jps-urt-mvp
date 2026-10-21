@@ -46,3 +46,7 @@ These results supersede the historical mobile presentation checks. Mobile is out
 The first new focus assertion was corrected to test actual keyboard Tab navigation. Visual inspection led to repairs for active navigation contrast and unbounded audit/authorization history. Final browser captures include the corrected UI. Credential values are absent from the public frontend build; no protected service was exposed. Existing local demo defaults remain in original history and backend fixture configuration and must not be reused for a public service.
 
 Local implementation acceptance passes. End-to-end **remote preview deployment acceptance is incomplete** until an authorized Vercel connection can create/link the project, protection is verified, the exact development commit is deployed as a preview, and the actual hosted URL is tested. A local fixture test is not evidence of a live Vercel deployment or live backend integration.
+
+## Issue #2 evidence
+
+The current report is [ISSUE-2-REPORT.md](ISSUE-2-REPORT.md); detailed phase results and preserved failures are under `artifacts/issue-2/`. Final suites cover 21 unit tests, 22 real-service integration tests, seven live browser scenarios/tests (including the original eight-workflow walkthrough), and the isolated read-only fixture browser check. Phase counts increased as the policy, governance, retry and bounded-worklist checks were added. The report distinguishes local passes from Vercel 403, founder visual approval, Epic/JPS access, authentic policy revision completeness and clinical-validation gaps.

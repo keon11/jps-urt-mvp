@@ -21,7 +21,7 @@ export function PolicyCenter({ request, roles, preview }: Props) {
     [reason, setReason] = useState("documentation-requirement-update");
   const refresh = () => request("/policy-center").then(setData);
   useEffect(() => {
-    if (!preview) refresh().catch((e) => setError(e.message));
+    refresh().catch((e) => setError(e.message));
   }, [preview]);
   async function act(fn: () => Promise<any>, message: string) {
     setError("");
@@ -37,21 +37,6 @@ export function PolicyCenter({ request, roles, preview }: Props) {
       setBusy(false);
     }
   }
-  if (preview)
-    return (
-      <section className="panel">
-        <div className="panel-heading">
-          <h2>Policy Management Center</h2>
-        </div>
-        <div className="detail-body">
-          <p>
-            Read-only fixture preview. Policy approvals and clinical authority
-            are demonstrated only in the separate local backend. No rule can be
-            published here.
-          </p>
-        </div>
-      </section>
-    );
   if (!data)
     return (
       <div
@@ -264,6 +249,7 @@ export function PolicyCenter({ request, roles, preview }: Props) {
               </form>
             )}
             {!data.changes.length && <p>No visible correction requests.</p>}
+            <div className="change-request-list" tabIndex={0} aria-label="Policy correction request history">
             {data.changes.map((c: any) => (
               <article className="change-request" key={c.id}>
                 <h3>
@@ -308,6 +294,7 @@ export function PolicyCenter({ request, roles, preview }: Props) {
                 </div>
               </article>
             ))}
+            </div>
           </div>
         </section>
       </div>
@@ -322,12 +309,14 @@ export function PolicyCenter({ request, roles, preview }: Props) {
               demonstration baseline.
             </p>
           )}
+          <div className="publication-list" tabIndex={0} aria-label="Policy publication history">
           {data.publications.map((p: any) => (
             <p key={p.sequence}>
               {p.action} · {p.from_document} → {p.to_document} · {p.actor} ·{" "}
               {p.at}
             </p>
           ))}
+          </div>
         </div>
       </section>
     </div>
@@ -354,15 +343,8 @@ export function AuthorizationReview({
     request("/cases/" + caseId + "/authorization-review").then(setData);
   useEffect(() => {
     setData(null);
-    if (!preview) load().catch((e) => setError(e.message));
+    load().catch((e) => setError(e.message));
   }, [caseId, preview]);
-  if (preview)
-    return (
-      <p>
-        Read-only fixture preview. Internal authorization decisions require the
-        separate local backend.
-      </p>
-    );
   async function decide(action: string) {
     setBusy(true);
     setError("");
@@ -477,6 +459,7 @@ export function AuthorizationReview({
       {!data.history.length && (
         <p>No internal authorization decisions recorded.</p>
       )}
+      <div className="internal-history" tabIndex={0} aria-label="Internal authorization decision history">
       {data.history.map((h: any) => (
         <div className="timeline-event" key={h.eventId}>
           <strong>
@@ -491,6 +474,7 @@ export function AuthorizationReview({
           </small>
         </div>
       ))}
+      </div>
     </div>
   );
 }

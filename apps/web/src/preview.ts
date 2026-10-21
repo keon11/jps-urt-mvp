@@ -11,6 +11,12 @@ export async function previewApi(
     );
   if (url === "/me") return { name: "Fixture preview", roles: ["read-only"] };
   if (url === "/cases") return snapshot.cases;
+  if (url === "/policy-center") return snapshot.policyCenter;
+  const internal = url.match(/^\/cases\/([^/]+)\/authorization-review$/);
+  if (internal)
+    return snapshot.authorizationReviews[
+      internal[1] as keyof typeof snapshot.authorizationReviews
+    ];
   if (url === "/reports") return snapshot.reports;
   if (url === "/services")
     return {

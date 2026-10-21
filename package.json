@@ -18,7 +18,12 @@
     "demo": "tsx scripts/prepare-demo.ts",
     "start:demo": "bash scripts/start-demo.sh",
     "build:preview": "tsc --noEmit && vite build --mode preview",
-    "test:preview": "npm run build:preview && node scripts/verify-preview.mjs && playwright test --config playwright.preview.config.ts"
+    "test:preview": "npm run build:preview && node scripts/verify-preview.mjs && playwright test --config playwright.preview.config.ts",
+    "capture:preview": "tsx scripts/capture-preview.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "test:recovery": "tsx scripts/fault-recovery.ts",
+    "test:reconciliation": "tsx scripts/reconcile-proof.ts",
+    "checkpoint:verify": "tsx scripts/final-checkpoint.ts"
   },
   "dependencies": {
     "@medplum/core": "5.2.6",
@@ -50,5 +55,8 @@
     "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vite": "7.3.7"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
