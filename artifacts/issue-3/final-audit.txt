@@ -1,0 +1,10 @@
+
+> hospital-ur-ai-mvp@0.1.0 verify:audit
+> tsx scripts/verify-audit.ts
+
+{
+  "verified": true,
+  "events": 717,
+  "lastHash": "c5cd9d3b33d17b5465717e8a2576620632c5be2ced3c65fcffa485759f28b1dd",
+  "checkedAt": "2026-10-21T19:17:28.766Z"
+}

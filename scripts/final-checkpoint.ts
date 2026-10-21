@@ -34,7 +34,7 @@ async function snapshot(db: pg.Pool) {
 }
 const before = await snapshot(pool),
   audit = await verifyAudit(pool),
-  dump = ".runtime/issue2-final-checkpoint.dump",
+  dump = process.argv.includes("--issue-3")?".runtime/issue3-final-checkpoint.dump":".runtime/issue2-final-checkpoint.dump",
   target = "ur_issue2_final_" + Date.now();
 const url = new URL(config.database);
 let restored: pg.Pool | undefined, child: any;
@@ -87,7 +87,7 @@ try {
   if (restored) await restored.end();
   await pool.end();
   await writeFile(
-    "artifacts/issue-2/final-restore-proof.json",
+    process.argv.includes("--issue-3")?"artifacts/issue-3/final-restore-proof.json":"artifacts/issue-2/final-restore-proof.json",
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

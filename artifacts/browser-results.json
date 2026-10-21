@@ -81,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 28299,
+                  "duration": 24856,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -89,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 1701
+                      "duration": 1307
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 10690
+                      "duration": 7735
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 9092
+                      "duration": 8361
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 2604
+                      "duration": 2260
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 484
+                      "duration": 607
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 1831
+                      "duration": 1978
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 873
+                      "duration": 1064
                     }
                   ],
-                  "startTime": "2026-10-21T15:08:49.624Z",
+                  "startTime": "2026-10-21T19:16:32.925Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -145,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1186,
+                  "duration": 1089,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T15:09:18.105Z",
+                  "startTime": "2026-10-21T19:16:58.469Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -179,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4945,
+                  "duration": 5339,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T15:09:19.327Z",
+                  "startTime": "2026-10-21T19:16:59.580Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -221,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4873,
+                  "duration": 5157,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T15:09:24.341Z",
+                  "startTime": "2026-10-21T19:17:04.956Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -255,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4599,
+                  "duration": 4985,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T15:09:29.230Z",
+                  "startTime": "2026-10-21T19:17:10.128Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -297,12 +297,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7024,
+                  "duration": 10934,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T15:09:33.862Z",
+                  "startTime": "2026-10-21T19:17:15.306Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -339,12 +339,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1704,
+                  "duration": 1239,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T15:09:40.929Z",
+                  "startTime": "2026-10-21T19:17:26.308Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -362,8 +362,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T15:08:48.222Z",
-    "duration": 54591.907,
+    "startTime": "2026-10-21T19:16:31.146Z",
+    "duration": 56553.06,
     "expected": 7,
     "skipped": 0,
     "unexpected": 0,

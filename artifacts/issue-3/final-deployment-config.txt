@@ -1,0 +1,1 @@
+PASS: Vercel fixture preview config is internally consistent. This does not verify hosted deployment or protection.
