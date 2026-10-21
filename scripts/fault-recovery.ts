@@ -6,6 +6,7 @@ import { login } from "../services/api/src/adapters.js";
 import { pool } from "../services/api/src/db.js";
 import { hash } from "../services/api/src/fixtures.js";
 import { demonstrationPassword } from "../tests/browser/local-account.js";
+const traceOffset=(await readFile(".runtime/traces.jsonl","utf8").catch(()=>"" )).length;
 const run = promisify(execFile),
   base = "http://localhost:3000";
 const t = (await login("reviewer", demonstrationPassword())).access_token;
@@ -14,16 +15,16 @@ const headers = {
   "Content-Type": "application/json",
 };
 const get = async (p: string) => (await fetch(base + p, { headers })).json();
-async function ready(url: string) {
+async function ready(url: string,maxMs=60000) {
   const start = performance.now();
-  while (performance.now() - start < 60000) {
+  while (performance.now() - start < maxMs) {
     try {
       if ((await fetch(url, { signal: AbortSignal.timeout(500) })).ok)
         return (performance.now() - start) / 1000;
     } catch {}
     await new Promise((r) => setTimeout(r, 500));
   }
-  throw Error("Service readiness exceeded 60 seconds");
+  throw Error("Service readiness exceeded predeclared "+maxMs/1000+" seconds");
 }
 const result: any = {
   at: new Date().toISOString(),
@@ -68,6 +69,18 @@ try {
     result.fhirRecoverySeconds = await ready(
       "http://localhost:8103/healthcheck",
     );
+  }
+  if(process.argv.includes("--issue-3")){
+    const beforeRule=await get('/api/cases/respiratory');
+    const priorCount=(await pool.query("SELECT count(*)::int AS n FROM audit WHERE case_id='respiratory'")).rows[0].n;
+    await run('docker',['compose','stop','cqf']);
+    try{
+      const alerts=await get('/api/operational-alerts');assert(alerts.alerts.some((a:any)=>a.service==='cqf'));
+      const r=await fetch(base+'/api/cases/respiratory/reviews',{method:'POST',headers,body:JSON.stringify({kind:'initial'})});assert.equal(r.status,502);
+      const afterRule=await get('/api/cases/respiratory');assert.equal(hash(afterRule.assessment),hash(beforeRule.assessment));
+      assert.equal((await pool.query("SELECT count(*)::int AS n FROM audit WHERE case_id='respiratory'")).rows[0].n,priorCount);
+      result.ruleEngineOutage={httpStatus:r.status,previousAssessmentPreserved:true,noFalseSuccessAudit:true,alertRaised:true};
+    }finally{await run('docker',['compose','start','cqf']);result.ruleEngineRecoverySeconds=await ready('http://localhost:8080/fhir/metadata',120000);}
   }
   await run("docker", ["compose", "stop", "local-model"]);
   try {
@@ -117,7 +130,7 @@ try {
   assert(metrics.includes("ur_http_request_duration_seconds_count"));
   result.requestMetricsObserved = true;
   await new Promise((r) => setTimeout(r, 200));
-  const spans = (await readFile(".runtime/traces.jsonl", "utf8"))
+  const spans = (await readFile(".runtime/traces.jsonl", "utf8")).slice(traceOffset)
     .trim()
     .split("\n")
     .map((s) => JSON.parse(s));
@@ -150,6 +163,7 @@ try {
     );
   }
   result.tracing = {
+    currentDrillOnly:true,
     rootSpans: roots.length,
     correlatedUpstreamSpans: children.length,
     samples,
@@ -161,12 +175,12 @@ try {
   result.error = (e as Error).message;
   process.exitCode = 1;
 } finally {
-  await run("docker", ["compose", "start", "medplum", "local-model"]).catch(
+  await run("docker", ["compose", "start", "medplum", "local-model", ...(process.argv.includes("--issue-3")?["cqf"]:[])]).catch(
     () => {},
   );
   await pool.end();
   await writeFile(
-    "artifacts/issue-2/fault-recovery.json",
+    process.argv.includes("--issue-3")?"artifacts/issue-3/fault-recovery.json":"artifacts/issue-2/fault-recovery.json",
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

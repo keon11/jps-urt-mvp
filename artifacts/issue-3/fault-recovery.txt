@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-21T19:13:05.625Z",
+  "scope": "Actual local synthetic FHIR and AI service stop/start; original source patient class remains unchanged.",
+  "fhirOutage": {
+    "httpStatus": 502,
+    "previousAssessmentPreserved": true,
+    "noFalseSuccessAudit": true,
+    "alertRaised": true
+  },
+  "fhirRecoverySeconds": 15.202099263000001,
+  "ruleEngineOutage": {
+    "httpStatus": 502,
+    "previousAssessmentPreserved": true,
+    "noFalseSuccessAudit": true,
+    "alertRaised": true
+  },
+  "ruleEngineRecoverySeconds": 64.31818860400001,
+  "aiOutage": {
+    "mode": "rules-fallback",
+    "seconds": 5.598325932000007,
+    "alertRaised": true
+  },
+  "aiRecoverySeconds": 2.038929858000003,
+  "recoveredClinicalReview": {
+    "mode": "local-model",
+    "seconds": 9.747462797
+  },
+  "requestMetricsObserved": true,
+  "tracing": {
+    "currentDrillOnly": true,
+    "rootSpans": 13,
+    "correlatedUpstreamSpans": 8,
+    "samples": [
+      {
+        "name": "http.request",
+        "traceId": "72ab3cdca19a2c293fab51d93b85f14b",
+        "spanId": "db6ac4b3c78db2be",
+        "attributes": {
+          "request.id": "d07e7667-3e1a-44a2-a7f6-67c7799c2018",
+          "http.request.method": "POST",
+          "http.route": "/api/cases/:id/reviews",
+          "http.response.status_code": 502
+        },
+        "status": {
+          "code": 2,
+          "message": "server_error"
+        },
+        "durationMs": 225.508507
+      },
+      {
+        "name": "upstream.request",
+        "traceId": "1b55c3065924d684d88445357beee7f4",
+        "spanId": "aaa2167d2555a362",
+        "parentSpanId": "981d5747000c0062",
+        "attributes": {},
+        "status": {
+          "code": 0
+        },
+        "durationMs": 712.504892
+      },
+      {
+        "name": "upstream.request",
+        "traceId": "1b55c3065924d684d88445357beee7f4",
+        "spanId": "aa8eb0133ecb41df",
+        "parentSpanId": "981d5747000c0062",
+        "attributes": {},
+        "status": {
+          "code": 0
+        },
+        "durationMs": 1415.4897230000001
+      },
+      {
+        "name": "upstream.request",
+        "traceId": "1b55c3065924d684d88445357beee7f4",
+        "spanId": "cd662e850214add4",
+        "parentSpanId": "981d5747000c0062",
+        "attributes": {},
+        "status": {
+          "code": 0
+        },
+        "durationMs": 8223.474377
+      }
+    ],
+    "sourceContentExported": false
+  },
+  "passed": true
+}
