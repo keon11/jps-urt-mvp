@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-21T20:41:15.460732+00:00",
+  "passed": false,
+  "reason": "Benchmark, API and waiting runner processes no longer exist; tool session IDs unknown. Exact termination cause unavailable. Docker dependencies remain running.",
+  "lastStatus": {
+    "state": "running",
+    "elapsedSeconds": 1974.976668465,
+    "responses": 112425,
+    "rssBytes": 269307904
+  },
+  "repair": "Preserve partial evidence, restart full duration in detached process session; never combine partial runs."
+}

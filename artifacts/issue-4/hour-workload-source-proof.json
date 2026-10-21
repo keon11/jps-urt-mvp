@@ -1,0 +1,31 @@
+{
+  "hourSourceCommit": "03b8cb8",
+  "files": [
+    {
+      "path": "services/api/src/worklist.ts",
+      "sha256": "106bd58ab1bb1125bb46e0db83137a231aa6e91ce44f88112276f8ecf3db8b5c",
+      "matchesHourStartCommit": true
+    },
+    {
+      "path": "services/api/src/db.ts",
+      "sha256": "e0f20afd8e72552b60cd2a8e61a369741be6c79986a9c8a6cae9d1e909c726a6",
+      "matchesHourStartCommit": true
+    },
+    {
+      "path": "services/api/src/config.ts",
+      "sha256": "1f744db4c372446b8f472b0d88d57c8acff5c4a67f61e29cba07bfe03c55a234",
+      "matchesHourStartCommit": true
+    },
+    {
+      "path": "services/api/src/adapters.ts",
+      "sha256": "e1f471a1270c6a0103358a6ca322eaf585fc2503ae25c39259116e36b03bdf78",
+      "matchesHourStartCommit": true
+    },
+    {
+      "path": "scripts/benchmark.ts",
+      "sha256": "555ee8c4492710bec98819a9f3eb171a8e503d873e63aebeb534d47823959bfd",
+      "matchesHourStartCommit": true
+    }
+  ],
+  "scope": "Compared loaded benchmark/queue/database/config/auth code. New UI/read-only evidence routes are outside the queue profile."
+}

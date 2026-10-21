@@ -124,7 +124,7 @@ try {
   await c.db.end();
   await closeOriginal();
   await writeFile(
-    `artifacts/${process.argv.includes("--issue-3")?"issue-3":"issue-2"}/reconciliation-${label}.json`,
+    `artifacts/${(process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?(process.argv.includes("--issue-4")?"issue-4":"issue-3"):"issue-2"}/reconciliation-${label}.json`,
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

@@ -70,7 +70,7 @@ try {
       "http://localhost:8103/healthcheck",
     );
   }
-  if(process.argv.includes("--issue-3")){
+  if((process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))){
     const beforeRule=await get('/api/cases/respiratory');
     const priorCount=(await pool.query("SELECT count(*)::int AS n FROM audit WHERE case_id='respiratory'")).rows[0].n;
     await run('docker',['compose','stop','cqf']);
@@ -175,12 +175,12 @@ try {
   result.error = (e as Error).message;
   process.exitCode = 1;
 } finally {
-  await run("docker", ["compose", "start", "medplum", "local-model", ...(process.argv.includes("--issue-3")?["cqf"]:[])]).catch(
+  await run("docker", ["compose", "start", "medplum", "local-model", ...((process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?["cqf"]:[])]).catch(
     () => {},
   );
   await pool.end();
   await writeFile(
-    process.argv.includes("--issue-3")?"artifacts/issue-3/fault-recovery.json":"artifacts/issue-2/fault-recovery.json",
+    (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?`artifacts/${process.argv.includes("--issue-4")?"issue-4":"issue-3"}/fault-recovery.json`:"artifacts/issue-2/fault-recovery.json",
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

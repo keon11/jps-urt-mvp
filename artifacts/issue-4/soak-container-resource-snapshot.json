@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-21T20:46:03.504238+00:00",
+  "scope": "Single instantaneous shared-host Docker service snapshot during soak; not peaks or production capacity. Native API RSS/CPU is measured separately by benchmark.",
+  "containers": [
+    {
+      "BlockIO": "32MB / 0B",
+      "CPUPerc": "10.58%",
+      "Container": "371bf92233e5",
+      "ID": "371bf92233e5",
+      "MemPerc": "0.06%",
+      "MemUsage": "10.11MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-redis-1",
+      "NetIO": "66.2MB / 34.3MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "12.4MB / 25.4MB",
+      "CPUPerc": "2.91%",
+      "Container": "315f75aff7d3",
+      "ID": "315f75aff7d3",
+      "MemPerc": "0.51%",
+      "MemUsage": "92.17MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-grafana-1",
+      "NetIO": "796kB / 70.5MB",
+      "PIDs": "17"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.01%",
+      "Container": "9da38b5b04bd",
+      "ID": "9da38b5b04bd",
+      "MemPerc": "1.24%",
+      "MemUsage": "223.1MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-local-model-1",
+      "NetIO": "74kB / 40.5kB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "16.4kB / 754kB",
+      "CPUPerc": "1.05%",
+      "Container": "45dc421db846",
+      "ID": "45dc421db846",
+      "MemPerc": "9.52%",
+      "MemUsage": "1.674GiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-cqf-1",
+      "NetIO": "390kB / 4.71MB",
+      "PIDs": "59"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "1.64%",
+      "Container": "e9ef98a48bcd",
+      "ID": "e9ef98a48bcd",
+      "MemPerc": "2.26%",
+      "MemUsage": "407.3MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-medplum-1",
+      "NetIO": "13MB / 20.8MB",
+      "PIDs": "12"
+    },
+    {
+      "BlockIO": "111MB / 713MB",
+      "CPUPerc": "658.10%",
+      "Container": "aae675da5bea",
+      "ID": "aae675da5bea",
+      "MemPerc": "1.51%",
+      "MemUsage": "271.1MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-postgres-1",
+      "NetIO": "244MB / 2.04GB",
+      "PIDs": "17"
+    },
+    {
+      "BlockIO": "211MB / 14.9MB",
+      "CPUPerc": "0.47%",
+      "Container": "3aa74280d090",
+      "ID": "3aa74280d090",
+      "MemPerc": "4.95%",
+      "MemUsage": "891MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-keycloak-1",
+      "NetIO": "543kB / 2.92MB",
+      "PIDs": "65"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+
+> hospital-ur-ai-mvp@0.1.0 build
+> tsc --noEmit && vite build
+
+scripts/verify-synthea.ts(22,46): error TS18048: 'result.entry' is possibly 'undefined'.
