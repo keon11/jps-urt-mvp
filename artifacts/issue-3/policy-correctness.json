@@ -1,6 +1,6 @@
 {
-  "corpusVersion": "1.0.0",
-  "corpusHash": "7bdbb2eedd22818ad311a8b9bc16934d9492bb2a8687513e074501a28e923f13",
+  "corpusVersion": "1.0.1",
+  "corpusHash": "39a62714b23b3cec9db2c1eaf6df0f74f3e13c34930b6b1e3864d303f52e017d",
   "labeling": "Expected outcomes specified as demonstration acceptance labels before evaluator execution; not independent clinical labels.",
   "clinicalValidation": false,
   "scope": "Synthetic allow-to-proceed classification only. Same-author acceptance labels, no clinical accuracy estimate.",
@@ -22,11 +22,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "47684cf57a3a437a79385fded9842f3a76fae1e45b71570389836c7cd0a0493a"
+        "inputHash": "014062930819513b103a4b8df4f900a4d6df32d52ca2c98026b7659457f8b8bb"
       }
     },
     {
@@ -46,11 +46,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "dd4c9ccba912dfde3a6dfa9a034783890e3e9bad3546368ac57bd9b1f1ff7d90"
+        "inputHash": "ea2b60c9bcb552862db050e2a87e14056f9ed58663924785249c808b7126736c"
       }
     },
     {
@@ -70,11 +70,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "6ef1c664013e36395d5e1b303b789c3d74a5bead7f00cef2077abdc823a307ef"
+        "inputHash": "72c5b9265038569303a662af01fdd45cbd244439279a35dce5567c9b329912e6"
       }
     },
     {
@@ -94,11 +94,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "55f3fc827d1df200a928de0e08125d6234325f28740e2031dc254efde72784f7"
+        "inputHash": "bc7ef3abe78bc6a62affd9f37f60edf97d89e0086352f47d15b95ee10ddfc35a"
       }
     },
     {
@@ -115,7 +115,7 @@
         "syntheticOnly": true,
         "engineVersion": "1.0.0",
         "citations": [],
-        "inputHash": "bb6d3c12fb38f8b765bc6556cfe99072d516659fa4ccd5e695507849061715e1"
+        "inputHash": "b4ec3e21191226d273acbd91f186db861787c3b7e0bc0d38c554393c17fc78fb"
       }
     },
     {
@@ -135,11 +135,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "23eca6aca6f551de60248fbc57c7809172f362103abb635ffcb940dbed977bbc"
+        "inputHash": "8945ce35fcee062e450e3ea003f6eea020ce5680bdb1cb1ad60597b8f07550f2"
       }
     },
     {
@@ -156,7 +156,7 @@
         "syntheticOnly": true,
         "engineVersion": "1.0.0",
         "citations": [],
-        "inputHash": "04955b6139ddfbe8a0e7c859a329ab618c98502265a0c3a9e9eed4d1c7d9fa65"
+        "inputHash": "5503be1c66534ade382cbadd333c1c0cc2930d26518175ed2587fafeb472703c"
       }
     },
     {
@@ -173,7 +173,7 @@
         "syntheticOnly": true,
         "engineVersion": "1.0.0",
         "citations": [],
-        "inputHash": "0093f551e6fb17118ae7514bda36942eb1f150a847590e36017b052bfcc978a5"
+        "inputHash": "560bd65da271651ebb0fd6dcf73c418d8a3f659eee68c77543d25942d9040dd4"
       }
     },
     {
@@ -190,7 +190,7 @@
         "syntheticOnly": true,
         "engineVersion": "1.0.0",
         "citations": [],
-        "inputHash": "f70542dca57f04667d6125cfbbf8f905c30b3c361b1d13a92a4589d985e2d97f"
+        "inputHash": "0cab2a85b9c87240e1c6c12608cc8654bc1d60bcbcc56394761b32d01f189371"
       }
     },
     {
@@ -210,11 +210,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "d0c48bdfc2189fc50cd68f4a0dc80841042737b6c55c186d309428f53630a4e1"
+        "inputHash": "6b0e938f3a437e41e6ebc09d59f408049bef8d2b4f3708aa13073f71c8fb497b"
       }
     },
     {
@@ -234,11 +234,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "613cf43fdfc0859da01da714e5d751118b6a25c5d0a9a53f10eb8fbecf82a2a1"
+        "inputHash": "114fdbca28d871695c837190d75385150478b83ad7cbfc06c8831111228d0ace"
       }
     },
     {
@@ -258,11 +258,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "4489865d77f6f59a67ba34a194838add31126a028c9d9e534f67232edccb4c8a"
+        "inputHash": "31767e2e9a24ccadc1dfad0f6120b9fdf7dbcefce973eac8ba130813364d6ff5"
       }
     },
     {
@@ -282,11 +282,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "34dae764b740f472d2cde0bad25d4024e1e9e9d3b0231b894687810aeb0bca25"
+        "inputHash": "8d7945c6a28a6611965b70f5751144f8915e34fd5442401c6e1658cd2916c768"
       }
     },
     {
@@ -306,11 +306,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "616d085af1329458f71daeb13ae5de3b55ff5024a4b10b1d959f79321217d2c5"
+        "inputHash": "8b75301001740de0352131f277a98be0fe1f94fe3749c1e804a144eaf05da944"
       }
     },
     {
@@ -330,11 +330,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "dbe4281cef062ac6585fb173495cb8e97a6608e76307de5878e83fe2ab25fa90"
+        "inputHash": "8fb24db79d12d39a8daaccd9f6f4a4ed37b924bd1682728194dbb7a9632521b4"
       }
     },
     {
@@ -355,10 +355,10 @@
             "id": "synthetic-plan-docs-v1",
             "version": "1",
             "url": "",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "996e0ddfe2661f1537fefd2ae1765dd208a2a31800110d32ab446ce54f44220f"
+        "inputHash": "3f726d903bd522f33d247d5f42b759db7408a8d5125ca7709065c9f3f0b54936"
       }
     },
     {
@@ -375,7 +375,7 @@
         "syntheticOnly": true,
         "engineVersion": "1.0.0",
         "citations": [],
-        "inputHash": "6b97a1754d508bfafbe9a888478477511bfa896911424b96478140cce8a63557"
+        "inputHash": "a6b482cf757819c8388f1665ca0993571d44741fa163c36533b31e834285ea0f"
       }
     },
     {
@@ -395,17 +395,17 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           },
           {
             "id": "synthetic-conflict-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "ec9cac4fe40b2570d107a14cef0fb1202dc8d37fa8f370e667828c8fc3906d63"
+        "inputHash": "7f31f9768a1de73a422c74e1557704576b4ba3c734455f8ff02c88dee4a78943"
       }
     },
     {
@@ -425,11 +425,11 @@
           {
             "id": "synthetic-plan-docs-v1",
             "version": "1",
-            "url": "urn:ur-demo:policy:authorization:v1",
-            "sha256": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de"
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
           }
         ],
-        "inputHash": "dd4c9ccba912dfde3a6dfa9a034783890e3e9bad3546368ac57bd9b1f1ff7d90"
+        "inputHash": "ea2b60c9bcb552862db050e2a87e14056f9ed58663924785249c808b7126736c"
       }
     }
   ],
@@ -444,5 +444,5 @@
     "specificity": 1
   },
   "passed": true,
-  "at": "2026-10-21T18:50:19.862Z"
+  "at": "2026-10-21T18:57:01.709Z"
 }

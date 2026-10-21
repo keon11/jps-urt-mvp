@@ -1,0 +1,14 @@
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (39.409887ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (17.017733ms)
+✔ updated, stale and inconsistent source versions require reconciliation (17.203972ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (19.066841ms)
+✔ malformed input fails closed with human review and never represents coverage (2.014929ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.973252ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1777.789222

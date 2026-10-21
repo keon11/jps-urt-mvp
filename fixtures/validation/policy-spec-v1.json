@@ -1,0 +1,11 @@
+{
+  "id": "synthetic-plan-docs-v1",
+  "version": "1",
+  "classification": "Fictional validation specification; not an insurer policy",
+  "effectiveDate": "2026-10-01",
+  "endDate": "2026-10-31",
+  "plans": ["Fictional Meridian"],
+  "requirement": "physician-note",
+  "exceptions": ["synthetic-emergency"],
+  "interpretation": "For this test fixture alone: inclusive start/end dates; an explicitly listed exception can waive documentation; absent or uncertain evidence is never a confirmed violation; uncertain applicability or conflicting instructions requires human review."
+}

@@ -1,0 +1,32 @@
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (17.61088ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (7.142833ms)
+✔ updated, stale and inconsistent source versions require reconciliation (8.146137ms)
+✖ versioned independently specified synthetic expectations match candidate evaluator (25.528245ms)
+✔ malformed input fails closed with human review and never represents coverage (2.494506ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.626601ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1868.102447
+
+✖ failing tests:
+
+test at services/api/test/policy-correctness.test.ts:1:146
+✖ versioned independently specified synthetic expectations match candidate evaluator (25.528245ms)
+  AssertionError [ERR_ASSERTION]: [{"id":"missing-source","expected":{"outcome":"review","reason":"unverified-policy"},"actual":{"outcome":"complete","reason":"supported","requiresHumanReview":true,"coverageDetermination":false,"syntheticOnly":true,"engineVersion":"1.0.0","citations":[{"id":"synthetic-plan-docs-v1","version":"1","url":"urn:ur-demo:validation:policy-spec:v1","sha256":"909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"}],"inputHash":"014062930819513b103a4b8df4f900a4d6df32d52ca2c98026b7659457f8b8bb"}}]
+      at TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/services/api/test/policy-correctness.test.ts:3:158)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
