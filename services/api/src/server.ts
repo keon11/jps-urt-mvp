@@ -1,3 +1,4 @@
+import {initPolicyEvidence,policyEvidence} from './policy-intelligence.js';
 import express from 'express';
 import {report,metrics,registry} from './reporting.js';
 import {z} from 'zod';
@@ -50,6 +51,7 @@ app.post('/api/intake',allow(['admin','reviewer']),async(req,res)=>{
 app.get('/api/cases',async(_req,res)=>res.json((await listCases()).map(operational)));
 app.get('/api/cases/:id',async(req,res)=>res.json(operational(await getCase(String(req.params.id)))));
 app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(String(req.params.id));res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[String(req.params.id)])).rows);});
+app.get('/api/policy-evidence',async(_req,res)=>res.json(await policyEvidence()));
 app.get('/api/rules',(_req,res)=>res.json(rules));
 app.post('/api/cases/:id/reviews',allow(['reviewer','advisor','admin']),async(req,res)=>{
  const input=z.object({kind:z.enum(['initial','continued-stay'])}).strict().parse(req.body);
@@ -68,6 +70,7 @@ app.use((err:any,_req:express.Request,res:express.Response,_next:express.NextFun
  const status=err instanceof z.ZodError?422:err.status||502;if(status>=500)console.error(err.message);res.status(status).json({error:status>=500?'A dependency failed. No success is claimed; retry after checking service health.':err.message});
 });
 await initDb();
+await initPolicyEvidence();
 const server=app.listen(config.port,process.env.BIND_HOST||'127.0.0.1',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
 async function shutdown(){server.close();await pool.end();process.exit(0);}
 process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

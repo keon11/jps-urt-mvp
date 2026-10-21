@@ -1,0 +1,6 @@
+
+> hospital-ur-ai-mvp@0.1.0 build
+> tsc --noEmit && vite build
+
+scripts/discover-policy.ts(1,26): error TS7016: Could not find a declaration file for module 'robots-parser'. '/workspace/hospital-ur-ai-mvp/node_modules/robots-parser/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/robots-parser` if it exists or add a new declaration (.d.ts) file containing `declare module 'robots-parser';`

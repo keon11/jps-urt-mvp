@@ -1,0 +1,16 @@
+{
+  "url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+  "checkedAt": "2026-10-21T14:06:18.236Z",
+  "officialRevisionVerified": false,
+  "executableOfficialRules": 0,
+  "status": "blocked",
+  "reason": "Command failed: curl -fsS --proto =https --max-time 20 https://www.cms.gov/robots.txt\ncurl: (22) The requested URL returned error: 403\n",
+  "notes": "Use clearly labeled synthetic documents; no official rule activation.",
+  "storedEvidence": [
+    {
+      "url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+      "source_hash": "25da9012851ac0ab40e0eed50707aed82b1dd1abc5897e0996967bd373f1d389",
+      "retrieved_at": "2026-10-21T14:05:15.783Z"
+    }
+  ]
+}
