@@ -1,0 +1,33 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ default services are local and FHIR R4 adapters have separate endpoints (2.360476ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.31664ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (16.876847ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (1.058016ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (4.488636ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (1.891072ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (0.39505ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (13.554065ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (31.576845ms)
+✔ official HTML never silently becomes an executable clinical rule (1.629681ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (15.035954ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (3.462647ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.789533ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (2.836409ms)
+✔ missing physician documentation raises illustrative risk (1.115572ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (24.106894ms)
+✔ model responses with fabricated evidence are rejected (124.701667ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (2.735913ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.68243ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (2.150366ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (6.869739ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7377.699216

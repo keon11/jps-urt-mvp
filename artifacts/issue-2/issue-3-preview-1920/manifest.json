@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-10-21T18:46:04.662Z",
+  "sourceBaseCommit": "d3683609adb9500f862607765c1bf2d54caf0cb2",
+  "workingSourceHashes": {
+    "apps/web/src/main.tsx": "e9582c13d9604088abcae6e0117233520c0c916eab8852686347e4176d859e29",
+    "apps/web/src/style.css": "973315b1c9e042c98df401675009b82390f10f1d271d68a5dccf660c4b31309e",
+    "apps/web/index.html": "944e5eb1536d8117812cfced90806764ad454bfa62a7ab2727cf2cadafb59a2e",
+    "apps/web/src/preview.ts": "0977b74e5143307e6e68ff9750eb64e10cec5570c555d6a9fbb2345bc5fbdb02",
+    "apps/web/src/preview-data.json": "672d600cbab61e1a0c945ef9eb007ec6bac2990d1f294194c4d8d8101ba6e8cf",
+    "apps/web/src/PolicyCenter.tsx": "291e14472e7c9a3b850d793d4e44a4b933b964fd06acedab188167f1db051dcf"
+  },
+  "images": [
+    {
+      "file": "artifacts/issue-2/issue-3-preview-1920/fixture-preview-audit.png",
+      "width": 1920,
+      "height": 1142,
+      "sha256": "70b6c509a7b156073dfc3bf62bca5d126014ca9c53fc05fab1c127762f0d3972"
+    },
+    {
+      "file": "artifacts/issue-2/issue-3-preview-1920/fixture-preview-authorization.png",
+      "width": 1920,
+      "height": 1341,
+      "sha256": "3ec1f1ecb2108bc973ecd8abdece15331b8820aa78e17bb9d9a4b78acd13885b"
+    },
+    {
+      "file": "artifacts/issue-2/issue-3-preview-1920/fixture-preview-policy.png",
+      "width": 1920,
+      "height": 1964,
+      "sha256": "0b7d5212c9f16f1c0b5b9c93f74c94680ad5ddc9d099c6973fc677fea008605f"
+    },
+    {
+      "file": "artifacts/issue-2/issue-3-preview-1920/fixture-preview-workstation.png",
+      "width": 1920,
+      "height": 1090,
+      "sha256": "8dddaad4619ca3802982e4d867888a0a4bdc483198fc810612c3c4803b72a87c"
+    }
+  ]
+}

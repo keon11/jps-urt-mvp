@@ -6,7 +6,7 @@ const json = (path) => JSON.parse(readFileSync(path, 'utf8'));
 const pkg = json('package.json');
 const vercel = json('vercel.json');
 const vite = readFileSync('vite.config.ts', 'utf8');
-const branch = 'dev/issue-2-execution';
+const branch = 'dev/phase-3-validation';
 assert.equal(vercel.framework, 'vite');
 assert.equal(vercel.installCommand, 'npm ci');
 assert.equal(vercel.buildCommand, 'npm run build:preview');

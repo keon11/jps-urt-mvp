@@ -2,7 +2,7 @@
 
 ## Mandatory scope
 Repository: keon11/jps-urt-mvp
-Working branch: dev/issue-2-execution (already created from dev/desktop-hospital-workspace)
+Working branch: dev/phase-3-validation (existing branch based on the verified Issue #2 checkpoint)
 Do not create another repository or branch. Never merge to main. Keep all data synthetic and do not expose public demo credentials.
 Read GitHub issues #1 and #2, with issue #2 taking priority for new features and issue #1 for UI visual acceptance.
 
@@ -37,4 +37,7 @@ If the coding environment is unavailable or Plan Mode prevents edits, state that
 
 ## Acceptance
 - Updated docs, dependency/license inventory, real screenshots, passing build/tests and honest gaps.
-- Commit and push to dev/issue-2-execution. No main merge.
+- Commit and push to dev/phase-3-validation. No main merge.
+
+## Issue #3 execution
+Issue #3 controls this sprint: deployable fixture preview, provenance and golden synthetic correctness corpus, FHIR sandbox conformance, longer measured reliability, and draft RFP preparation. Never submit or invent company/legal/clinical evidence.

@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 test("isolated fixture frontend uses no backend or credentials", async ({
   page,
 }) => {
+  if (process.env.PREVIEW_WIDTH) await page.setViewportSize({width:Number(process.env.PREVIEW_WIDTH),height:1080});
   const requests: string[] = [];
   page.on("request", (r) => requests.push(r.url()));
   await page.goto("http://localhost:4173");
