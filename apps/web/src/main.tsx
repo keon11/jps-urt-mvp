@@ -1034,13 +1034,14 @@ function App() {
                     />
                   )}
                   {detail === "Authorization Review" && (
+                    <><DocumentationRisk key={row.id} caseId={row.id} preview={fixturePreview} />
                     <AuthorizationReview
                       request={api}
                       caseId={row.id}
                       roles={user.roles}
                       preview={fixturePreview}
                       onChanged={refresh}
-                    />
+                    /></>
                   )}
                   {detail === "Audit history" && <Audit events={audit} />}
                 </div>
@@ -1869,3 +1870,8 @@ function Audit({ events }: { events: any[] }) {
   );
 }
 createRoot(document.getElementById("root")!).render(<App />);
+
+function DocumentationRisk({caseId,preview}:{caseId:string;preview:boolean}){
+ const[result,setResult]=useState<any>(null),[error,setError]=useState(''),[loading,setLoading]=useState(false);
+ return <section className="panel"><div className="panel-header"><h2>Documentation and authorization risk</h2><button disabled={preview||loading} onClick={async()=>{setLoading(true);setError('');try{setResult(await api('/cases/'+caseId+'/denial-risk-review'));}catch(e){setError((e as Error).message);}finally{setLoading(false);}}}>{loading?'Checking risk evidence…':'Review risk evidence'}</button></div><div className="panel-body"><p>Published illustrative documentation criteria only. No insurer denial probability or coverage determination.</p>{preview&&<p>Disconnected fixture preview; run the local backend for this review.</p>}{error&&<p role="alert">{error}</p>}{result&&<><p role="status">Review outcome: {result.outcome} · policy {result.policyId} · revision {result.policyRevision}</p><p>{result.explanation}</p><ul>{result.signals.map((s:any)=><li key={s.code}>{s.code} — evidence {s.evidenceStatus}; source {s.citation.sourceUrl} / SHA-256 {s.citation.sourceHash}</li>)}</ul><p>Human review required. Insurer contacted: no.</p></>}</div></section>;
+}

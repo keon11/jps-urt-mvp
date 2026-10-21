@@ -1,3 +1,4 @@
+import {denialValidationReport,activeDocumentationRisk} from './denial-risk.js';
 import {correctnessReport} from './policy-correctness.js';
 import {tracer,context,trace,propagation,SpanStatusCode,closeTelemetry} from './telemetry.js';
 import {worklist} from './worklist.js';
@@ -70,6 +71,8 @@ app.post('/api/policy-changes/:id/actions',async(req,res)=>res.json(await transi
 app.post('/api/policy-suspension',async(req,res)=>res.json(await suspendPolicy(req.body,actor(res))));
 app.get('/api/cases/:id/authorization-review',async(req,res)=>res.json(await internalReviewContext(String(req.params.id))));
 app.post('/api/cases/:id/authorization-review',async(req,res)=>res.json(await internalReview(String(req.params.id),req.body,actor(res))));
+app.get('/api/denial-validation',allow(['admin','advisor']),(_req,res)=>res.json(denialValidationReport()));
+app.get('/api/cases/:id/denial-risk-review',async(req,res)=>res.json(activeDocumentationRisk((await internalReviewContext(String(req.params.id))).evaluation)));
 app.get('/api/policy-validation',allow(['admin','advisor']),(_req,res)=>res.json(correctnessReport()));
 app.get('/api/policy-evidence',async(_req,res)=>res.json(await policyEvidence()));
 app.get('/api/rules',(_req,res)=>res.json(rules));

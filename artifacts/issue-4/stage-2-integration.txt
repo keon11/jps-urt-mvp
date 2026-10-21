@@ -1,0 +1,36 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:integration
+> tsx --test --test-concurrency=1 tests/*.integration.test.ts
+
+✔ risk review uses active registry evidence and synthetic report has role protection (800.511153ms)
+✔ CQF outage returns an error and preserves previous assessment and audit (3058.642363ms)
+✔ Medplum outage returns an error and preserves previous assessment and audit (2554.956678ms)
+✔ real Keycloak authentication protects API (434.804377ms)
+✔ repeat intake preserves one case and FHIR source versions (148.328085ms)
+✔ malformed payloads, conflicting idempotency keys, and advisor intake are rejected (26.100676ms)
+✔ intake audit includes versioned FHIR source evidence and database rejects audit edits (18.61666ms)
+✔ synthetic validation report requires authorized clinical or supervisor role (633.170503ms)
+✔ authenticated policy evidence exposes versioned synthetic candidates, while anonymous requests fail (527.154212ms)
+✔ policy evidence originals are immutable in the application database (102.91205ms)
+✔ governance roles, independent approvals and pending-rule isolation use real authenticated identities (948.345938ms)
+✔ publication detects stale competing changes, enforces effective version, and supports suspension and immutable rollback (453.11394ms)
+✔ internal authorization review is idempotent, evidence-linked, role restricted and never an insurer determination (241.569156ms)
+✔ missing assessment permits an information request and unchanged-source reassessment preserves that pending request (9834.60369ms)
+✔ reports match persisted cases and Prometheus exposition serves real counts (402.400984ms)
+✔ Grafana account can read only aggregate view, not source records or audit (83.628353ms)
+✔ actual Grafana datasource queries the provisioned operational dashboard (232.207012ms)
+✔ real CQF and local inference produce traceable initial recommendations (21627.160551ms)
+✔ continued-stay review responds to new clinical versions and invalidates old assessment (23143.589131ms)
+✔ stable initial review suggests observation; missing documentation raises risk (9488.223021ms)
+✔ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (7101.029905ms)
+✔ physician escalation enforces roles, override reasons, and source status preservation (17537.095309ms)
+✔ authenticated bounded worklist summaries match persisted cases and keep source bundles private (353.404902ms)
+✔ operational alerts and source-free request metrics expose real runtime state (219.424465ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 119812.33877

@@ -1,3 +1,5 @@
+import {createWriteStream} from "node:fs";
+import {once} from "node:events";
 import { performance } from "node:perf_hooks";
 import { readFile, writeFile } from "node:fs/promises";
 import { cpus, totalmem } from "node:os";
@@ -15,9 +17,12 @@ import { pool } from "../services/api/src/db.js";
 import { config } from "../services/api/src/config.js";
 import { login } from "../services/api/src/adapters.js";
 import { demonstrationPassword } from "../tests/browser/local-account.js";
-const extended=process.argv.includes("--extended");
-const durationSeconds=extended?600:120;
-const outputDirectory=extended?"artifacts/issue-3":"artifacts/issue-2";
+const hour=process.argv.includes("--hour");
+const extended=hour||process.argv.includes("--extended");
+const durationSeconds=hour?3600:extended?600:120;
+const outputDirectory=hour?"artifacts/issue-4":extended?"artifacts/issue-3":"artifacts/issue-2";
+const rawSink=hour?createWriteStream(outputDirectory+"/soak-requests.jsonl"):undefined;
+rawSink?.setMaxListeners(60);
 const raw:{elapsedMs:number,session:number,status:string,durationMs:number}[]=[];
 const samples:{elapsedSeconds:number,responses:number,rssBytes:number}[]=[];
 const c = await isolatedContext();
@@ -30,6 +35,7 @@ const result: any = {
     rows: 10000,
     sessions: 25,
     seconds: durationSeconds,
+    ...(hour?{peakApiRssBytes:1073741824}:{}),
     p95Ms: 1000,
     errorFraction: 0.01,
     minThroughput: 20,
@@ -120,7 +126,7 @@ try {
     begin = performance.now(),
     end = begin + durationSeconds*1000;
   const timer = setInterval(() => {
-    proc().then(p=>samples.push({elapsedSeconds:(performance.now()-begin)/1000,responses:count,rssBytes:p.rss})).catch(() => {});
+    proc().then(async p=>{const sample={elapsedSeconds:(performance.now()-begin)/1000,responses:count,rssBytes:p.rss};samples.push(sample);if(hour)await writeFile(outputDirectory+"/hour-status.json",JSON.stringify({state:"running",...sample})+"\n");}).catch(() => {});
     console.log(
       "load progress",
       Math.round((performance.now() - begin) / 1000) + "s",
@@ -150,7 +156,7 @@ try {
           errors[key] = (errors[key] || 0) + 1;
         }
         const durationMs=performance.now()-t;
-        if(extended)raw.push({elapsedMs:t-begin,session:i,status,durationMs});
+        if(extended){const measurement={elapsedMs:t-begin,session:i,status,durationMs};if(rawSink){if(!rawSink.write(JSON.stringify(measurement)+"\n"))await once(rawSink,"drain");}else raw.push(measurement);}
         durations.push(durationMs);
         count++;
       }
@@ -204,7 +210,7 @@ try {
     result.load.errorFraction < 0.01 &&
     result.load.throughputPerSecond >= 20 &&
     result.apiRestartSeconds <= 15 &&
-    result.restore.seconds <= 120;
+    result.restore.seconds <= 120 && (!hour||result.load.peakApiRssBytes<=1073741824);
   assert(result.passed, "One or more predeclared benchmark gates failed");
 } catch (e) {
   result.error = (e as Error).message;
@@ -218,6 +224,8 @@ try {
     outputDirectory+"/benchmark-results.json",
     JSON.stringify(result, null, 2) + "\n",
   );
-  if(extended){await writeFile(outputDirectory+"/soak-requests.jsonl",raw.map(r=>JSON.stringify(r)).join("\n")+"\n");await writeFile(outputDirectory+"/soak-samples.json",JSON.stringify(samples,null,2)+"\n");}
+  if(rawSink){rawSink.end();await once(rawSink,"finish");}
+  if(extended){if(!hour)await writeFile(outputDirectory+"/soak-requests.jsonl",raw.map(r=>JSON.stringify(r)).join("\n")+"\n");await writeFile(outputDirectory+"/soak-samples.json",JSON.stringify(samples,null,2)+"\n");}
+  if(hour)await writeFile(outputDirectory+"/hour-status.json",JSON.stringify({state:result.passed?"passed":"failed",seconds:result.load?.seconds,requests:result.load?.requests})+"\n");
   console.log(JSON.stringify(result, null, 2));
 }

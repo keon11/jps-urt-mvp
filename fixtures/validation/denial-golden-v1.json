@@ -1,0 +1,914 @@
+{
+  "version": "1.0.0",
+  "classification": "Synthetic acceptance labels specified before engine execution; no clinical/adjudication labels",
+  "cases": [
+    {
+      "id": "complete",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "missing-note",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "missing",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "documentation-risk",
+        "reason": "missing-document"
+      }
+    },
+    {
+      "id": "missing-auth",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "authorization-receipt",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "missing",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "authorization-risk",
+        "reason": "missing-authorization"
+      }
+    },
+    {
+      "id": "unknown-note",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "unknown",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "uncertain-evidence"
+      }
+    },
+    {
+      "id": "unknown-authorization",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "authorization-receipt",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "unknown",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "uncertain-evidence"
+      }
+    },
+    {
+      "id": "private-contract-unknown",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": false
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unknown-contract"
+      }
+    },
+    {
+      "id": "stale-source",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": false,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "stale-source"
+      }
+    },
+    {
+      "id": "other-plan",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Harbor",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      }
+    },
+    {
+      "id": "effective-inclusive",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-01",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "pre-effective",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-09-30",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      }
+    },
+    {
+      "id": "expiry-inclusive",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-31",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "post-expiry",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-11-01",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      }
+    },
+    {
+      "id": "exception-waiver",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "missing",
+        "authorization-receipt": "present",
+        "exception": "synthetic-emergency",
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "verified-exception"
+      }
+    },
+    {
+      "id": "unverified-exception",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": "unknown-exception",
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unverified-exception"
+      }
+    },
+    {
+      "id": "unapproved",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": false,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      }
+    },
+    {
+      "id": "no-clinical-approval",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": false,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      }
+    },
+    {
+      "id": "no-supervisor-approval",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": false,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      }
+    },
+    {
+      "id": "changed-policy",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unverified-policy"
+      }
+    },
+    {
+      "id": "ambiguous-policy",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": true
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unverified-policy"
+      }
+    },
+    {
+      "id": "equal-priority-conflict",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        },
+        {
+          "id": "other",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "authorization-receipt",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "review-required",
+        "reason": "conflicting-policy"
+      }
+    },
+    {
+      "id": "explicit-priority",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        },
+        {
+          "id": "other",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 1,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "authorization-receipt",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "pending-isolation",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        },
+        {
+          "id": "pending",
+          "version": "1",
+          "published": false,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 99,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "authorization-receipt",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "wildcard-plan",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "*",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Harbor",
+        "date": "2026-10-20",
+        "physician-note": "present",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "plan-specific-precedence",
+      "rules": [
+        {
+          "id": "fictional-docs",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "Fictional Meridian",
+          "priority": 0,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "physician-note",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        },
+        {
+          "id": "general",
+          "version": "1",
+          "published": true,
+          "supervisorApproved": true,
+          "clinicalApproved": true,
+          "plan": "*",
+          "priority": 999,
+          "effective": "2026-10-01",
+          "expires": "2026-10-31",
+          "requirement": "authorization-receipt",
+          "exception": "synthetic-emergency",
+          "sourceUrl": "urn:ur-demo:payer-spec:v1",
+          "sourceHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "verifiedHash": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4",
+          "uncertain": false
+        }
+      ],
+      "context": {
+        "plan": "Fictional Meridian",
+        "date": "2026-10-20",
+        "physician-note": "missing",
+        "authorization-receipt": "present",
+        "exception": null,
+        "sourceCurrent": true,
+        "privateContractKnown": true
+      },
+      "expected": {
+        "outcome": "documentation-risk",
+        "reason": "missing-document"
+      }
+    }
+  ]
+}

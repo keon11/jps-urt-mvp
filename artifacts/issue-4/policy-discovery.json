@@ -1,0 +1,53 @@
+{
+  "url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+  "checkedAt": "2026-10-21T20:03:20.211Z",
+  "officialRevisionVerified": false,
+  "executableOfficialRules": 0,
+  "status": "retrieved",
+  "title": "Prior Authorization for Certain Hospital Outpatient Department (OPD) Services | CMS",
+  "sourceHash": "f22b498a22d0740c5a2873014abd33423f4200b1c8d263f12965f151900acd8d",
+  "publishedDate": null,
+  "effectiveDate": null,
+  "provenance": {
+    "extractor": "cheerio",
+    "version": "1.1.2",
+    "format": "html",
+    "sourceBytes": 201506,
+    "permission": "official public page; no license-gated endpoint used"
+  },
+  "originalPath": ".runtime/policies/cms-opd-original.html",
+  "policyType": "unverified",
+  "planApplicability": [],
+  "comparison": {
+    "sourceUrl": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+    "beforeHash": "643b37d045130831d4a949f02424422a0898594cad88cbe8ebba709a0483bd3f",
+    "afterHash": "f22b498a22d0740c5a2873014abd33423f4200b1c8d263f12965f151900acd8d",
+    "bytesChanged": true,
+    "textChanged": false,
+    "addedSegments": 0,
+    "removedSegments": 0,
+    "officialRevisionVerified": false,
+    "effectiveDate": null,
+    "publishedDate": null,
+    "activationAllowed": false,
+    "interpretation": "Page content comparison only; dates, plan applicability and authorized criteria require human verification."
+  },
+  "notes": "One current official page verified. No official historical revision established. Two owned synthetic revisions demonstrate comparison and governance, without attributing fictional criteria to CMS.",
+  "storedEvidence": [
+    {
+      "url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+      "source_hash": "25da9012851ac0ab40e0eed50707aed82b1dd1abc5897e0996967bd373f1d389",
+      "retrieved_at": "2026-10-21T14:05:15.783Z"
+    },
+    {
+      "url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+      "source_hash": "643b37d045130831d4a949f02424422a0898594cad88cbe8ebba709a0483bd3f",
+      "retrieved_at": "2026-10-21T18:47:23.989Z"
+    },
+    {
+      "url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+      "source_hash": "f22b498a22d0740c5a2873014abd33423f4200b1c8d263f12965f151900acd8d",
+      "retrieved_at": "2026-10-21T20:03:24.480Z"
+    }
+  ]
+}

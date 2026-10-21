@@ -1,0 +1,67 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✖ 24 independently specified synthetic payer cases enforce precedence, exceptions, dates, negatives and pending-rule isolation (13.421037ms)
+✔ unknown input and stale/suspended active context cannot authorize a next step (0.913912ms)
+✔ read-only synthetic transport follows bounded same-endpoint pagination (100.26527ms)
+✔ expired tokens renew, 401 refreshes once, 403 denies and transient reads retry within bound (6.510307ms)
+✔ SSRF redirects, pagination loops and missing read authority fail closed (2.30999ms)
+✔ source identity, version change and stale information require reconciliation (3.589618ms)
+✔ expired provider token, wrong resource scope and privilege loss on renewal never dispatch an authorized read (2.609505ms)
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (30.472559ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (9.998423ms)
+✔ updated, stale and inconsistent source versions require reconciliation (6.064254ms)
+✔ default services are local and FHIR R4 adapters have separate endpoints (1.425999ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.907267ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (8.45646ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (2.175982ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (1.619375ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (17.510723ms)
+✔ malformed input fails closed with human review and never represents coverage (1.185468ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.453174ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (1.766745ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (15.028762ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (2.54195ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (45.451062ms)
+✔ official HTML never silently becomes an executable clinical rule (2.321848ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (12.983253ms)
+✔ official page changes remain unverified source comparisons with no activation (3.65733ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (3.13761ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (2.491368ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (1.183288ms)
+✔ missing physician documentation raises illustrative risk (0.218995ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (10.562423ms)
+✔ model responses with fabricated evidence are rejected (93.588013ms)
+✔ actual Synthea-derived varied cohort retains explicit synthetic origin and longitudinal clinical records (1120.314622ms)
+✔ normalization reports missing references rather than silently asserting complete evidence (41.408341ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (1.147323ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.530888ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (1.020619ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (5.100369ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 36
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5167.127377
+
+✖ failing tests:
+
+test at services/api/test/denial-risk.test.ts:1:169
+✖ 24 independently specified synthetic payer cases enforce precedence, exceptions, dates, negatives and pending-rule isolation (13.421037ms)
+  AssertionError [ERR_ASSERTION]: [{"id":"equal-priority-conflict","expected":{"outcome":"review-required","reason":"conflicting-policy"},"actual":{"outcome":"no-risk-identified","reason":"supported","syntheticOnly":true,"humanReviewRequired":true,"coverageDetermination":false,"adjudicationProbability":null,"calibrationSupported":false,"explanation":"Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.","citations":[{"id":"other","version":"1","url":"urn:ur-demo:payer-spec:v1","sha256":"12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"}],"inputHash":"2c0826577361a6ee6b7c1d37e13a2f07f478050cc730a15ab8152b05ed0b4d6c"}}]
+      at TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/services/api/test/denial-risk.test.ts:2:205)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

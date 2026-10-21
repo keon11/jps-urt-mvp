@@ -1,0 +1,5 @@
+{
+  "version": "1.0.0",
+  "classification": "Owned fictional payer policy for engineering validation only",
+  "rules": "Approved/published rules only; exact plan matches before wildcard; declared priority resolves within specificity only. Conflicting equal-priority requirements route for review. Effective and expiry dates inclusive; explicit verified exception waives only that rule. Missing or uncertain evidence is not a denial or confirmed violation. Private criteria remain unknown."
+}
