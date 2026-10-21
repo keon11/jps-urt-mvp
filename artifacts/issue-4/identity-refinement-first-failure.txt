@@ -1,0 +1,61 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ 24 independently specified synthetic payer cases enforce precedence, exceptions, dates, negatives and pending-rule isolation (18.74145ms)
+✔ unknown input and stale/suspended active context cannot authorize a next step (1.475777ms)
+✔ read-only synthetic transport follows bounded same-endpoint pagination (94.335874ms)
+✖ expired tokens renew, 401 refreshes once, 403 denies and transient reads retry within bound (1.447107ms)
+✔ SSRF redirects, pagination loops and missing read authority fail closed (1.554225ms)
+✔ source identity, version change and stale information require reconciliation (2.297646ms)
+✔ expired provider token, wrong resource scope and privilege loss on renewal never dispatch an authorized read (0.724882ms)
+✔ a successful HTTP response with the wrong FHIR identity is rejected (3.665497ms)
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (51.50488ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (28.714281ms)
+✔ updated, stale and inconsistent source versions require reconciliation (31.938096ms)
+✔ default services are local and FHIR R4 adapters have separate endpoints (31.03239ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (3.647183ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (50.69729ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (1.825014ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (6.484361ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (53.338998ms)
+✔ malformed input fails closed with human review and never represents coverage (6.880268ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.499253ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (1.636041ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (22.351175ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (2.394007ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (44.794877ms)
+✔ official HTML never silently becomes an executable clinical rule (2.826002ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (10.805388ms)
+✔ official page changes remain unverified source comparisons with no activation (4.185809ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (5.8458ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.41475ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (0.606196ms)
+✔ missing physician documentation raises illustrative risk (4.801738ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (10.54011ms)
+✔ model responses with fabricated evidence are rejected (98.780966ms)
+✔ actual Synthea-derived varied cohort retains explicit synthetic origin and longitudinal clinical records (1584.688383ms)
+✔ normalization reports missing references rather than silently asserting complete evidence (11.44505ms)
+✔ longitudinal Synthea records do not manufacture current acute-review evidence (6.647317ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (3.2087ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (1.050289ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (2.668961ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (34.290553ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 38
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16532.638445
+
+✖ failing tests:
+
+test at services/api/test/epic-fhir-adapter.test.ts:1:1047
+✖ expired tokens renew, 401 refreshes once, 403 denies and transient reads retry within bound (1.447107ms)
+  Error: FHIR response identity mismatch
+      at EpicFhirR4Adapter.read (/workspace/hospital-ur-ai-mvp/services/api/src/epic-fhir-adapter.ts:18:338)
+      at async TestContext.<anonymous> (/workspace/hospital-ur-ai-mvp/services/api/test/epic-fhir-adapter.test.ts:5:376)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

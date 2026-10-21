@@ -1,0 +1,48 @@
+✖ risk review uses active registry evidence and synthetic report has role protection (67.51681ms)
+✖ authenticated cohort endpoint serves actual Synthea-derived history while anonymous access is denied (13.642285ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2176.284085
+
+✖ failing tests:
+
+test at tests/denial-risk.integration.test.ts:1:181
+✖ risk review uses active registry evidence and synthetic report has role protection (67.51681ms)
+  [TypeError: fetch failed] {
+    [cause]: AggregateError [ECONNREFUSED]: 
+        at internalConnectMultiple (node:net:1339:18)
+        at afterConnectMultiple (node:net:1942:7) {
+      code: 'ECONNREFUSED',
+      [errors]: [
+        Error: connect ECONNREFUSED ::1:3000
+            at createConnectionError (node:net:1905:14)
+            at afterConnectMultiple (node:net:1935:16),
+        Error: connect ECONNREFUSED 127.0.0.1:3000
+            at createConnectionError (node:net:1905:14)
+            at afterConnectMultiple (node:net:1935:16)
+      ]
+    }
+  }
+
+test at tests/denial-risk.integration.test.ts:1:1156
+✖ authenticated cohort endpoint serves actual Synthea-derived history while anonymous access is denied (13.642285ms)
+  [TypeError: fetch failed] {
+    [cause]: AggregateError [ECONNREFUSED]: 
+        at internalConnectMultiple (node:net:1339:18)
+        at afterConnectMultiple (node:net:1942:7) {
+      code: 'ECONNREFUSED',
+      [errors]: [
+        Error: connect ECONNREFUSED ::1:3000
+            at createConnectionError (node:net:1905:14)
+            at afterConnectMultiple (node:net:1935:16),
+        Error: connect ECONNREFUSED 127.0.0.1:3000
+            at createConnectionError (node:net:1905:14)
+            at afterConnectMultiple (node:net:1935:16)
+      ]
+    }
+  }

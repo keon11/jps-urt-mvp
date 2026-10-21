@@ -1,0 +1,10 @@
+✔ risk review uses active registry evidence and synthetic report has role protection (1909.307993ms)
+✔ authenticated cohort endpoint serves actual Synthea-derived history while anonymous access is denied (11782.05677ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16257.389684

@@ -1,3 +1,4 @@
+import {syntheticCohort} from './synthetic-cohort.js';
 import {denialValidationReport,activeDocumentationRisk} from './denial-risk.js';
 import {correctnessReport} from './policy-correctness.js';
 import {tracer,context,trace,propagation,SpanStatusCode,closeTelemetry} from './telemetry.js';
@@ -15,8 +16,8 @@ import {randomUUID,randomBytes} from 'node:crypto';
 import {config} from './config.js';
 import {initDb,pool} from './db.js';
 import {login,verifyToken,serviceStatus} from './adapters.js';
-import {fixtureIds,makeFixture} from './fixtures.js';
-import {getCase,listCases,intake,HttpError,type Actor} from './store.js';
+import {fixtureIds,makeFixture,hash} from './fixtures.js';
+import {getCase,listCases,intake,freshBundle,HttpError,type Actor} from './store.js';
 const app=express();
 app.disable('x-powered-by');
 app.use((req,res,next)=>{
@@ -71,8 +72,9 @@ app.post('/api/policy-changes/:id/actions',async(req,res)=>res.json(await transi
 app.post('/api/policy-suspension',async(req,res)=>res.json(await suspendPolicy(req.body,actor(res))));
 app.get('/api/cases/:id/authorization-review',async(req,res)=>res.json(await internalReviewContext(String(req.params.id))));
 app.post('/api/cases/:id/authorization-review',async(req,res)=>res.json(await internalReview(String(req.params.id),req.body,actor(res))));
+app.get('/api/synthetic-cohort',async(_req,res)=>res.json(await syntheticCohort()));
 app.get('/api/denial-validation',allow(['admin','advisor']),(_req,res)=>res.json(denialValidationReport()));
-app.get('/api/cases/:id/denial-risk-review',async(req,res)=>res.json(activeDocumentationRisk((await internalReviewContext(String(req.params.id))).evaluation)));
+app.get('/api/cases/:id/denial-risk-review',async(req,res)=>{const id=String(req.params.id),context=await internalReviewContext(id),row=await getCase(id),fresh=await freshBundle(row),sourceFresh=hash(fresh)===context.evaluation.assessmentSourceHash;res.json(activeDocumentationRisk({...context.evaluation,sourceFresh,assessmentCurrent:context.evaluation.assessmentCurrent&&sourceFresh}));});
 app.get('/api/policy-validation',allow(['admin','advisor']),(_req,res)=>res.json(correctnessReport()));
 app.get('/api/policy-evidence',async(_req,res)=>res.json(await policyEvidence()));
 app.get('/api/rules',(_req,res)=>res.json(rules));

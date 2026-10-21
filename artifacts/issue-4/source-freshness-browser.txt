@@ -1,0 +1,12 @@
+
+Running 3 tests using 1 worker
+
+(node:318236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:318236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1440px (4.6s)
+  ✓  2 tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1920px (5.0s)
+  ✓  3 tests/browser/risk.spec.ts:43:1 › operations browses actual derived Synthea histories without altering encounters (6.8s)
+
+  3 passed (20.3s)
