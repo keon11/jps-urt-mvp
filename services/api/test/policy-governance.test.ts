@@ -1,0 +1,6 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+import {extractPolicy} from '../src/policy-intelligence.js';import {candidateTests,evaluateDocumentation,changeInput,internalInput} from '../src/policy-governance.js';
+const d=extractPolicy(readFileSync('fixtures/policies/authorization-v2.html','utf8'),'urn:test:v2');
+test('missing source documents are unknown/missing, not confirmed clinical violations',()=>{const e=evaluateDocumentation(d,{bundle:{entry:[]},workflow:{events:[]}});assert.equal(e.outcome,'needs-information');assert.deepEqual(e.missing,['physician-note','authorization-receipt']);assert.equal(e.coverageDetermination,false);assert(e.requirements.every(r=>r.status==='missing'));});
+test('candidate testing uses separate expected synthetic outcomes and never claims clinical validation',()=>{const r=candidateTests(d);assert.equal(r.passed,true);assert.equal(r.results.length,3);assert.equal(r.clinicalValidation,false);assert.equal(r.sourceHash,d.sourceHash);});
+test('governance inputs reject arbitrary rules, undocumented actions and missing idempotency',()=>{assert.throws(()=>changeInput.parse({documentId:'private-medical-criteria',reason:'documentation-requirement-update'}));assert.throws(()=>internalInput.parse({action:'approve-insurer-coverage',eventId:crypto.randomUUID()}));});

@@ -1,3 +1,4 @@
+import {initGovernance,center,propose,transition,suspendPolicy,internalReviewContext,internalReview} from './policy-governance.js';
 import {initPolicyEvidence,policyEvidence} from './policy-intelligence.js';
 import express from 'express';
 import {report,metrics,registry} from './reporting.js';
@@ -51,6 +52,12 @@ app.post('/api/intake',allow(['admin','reviewer']),async(req,res)=>{
 app.get('/api/cases',async(_req,res)=>res.json((await listCases()).map(operational)));
 app.get('/api/cases/:id',async(req,res)=>res.json(operational(await getCase(String(req.params.id)))));
 app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(String(req.params.id));res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[String(req.params.id)])).rows);});
+app.get('/api/policy-center',async(_req,res)=>res.json(await center(actor(res))));
+app.post('/api/policy-changes',async(req,res)=>res.json(await propose(req.body,actor(res))));
+app.post('/api/policy-changes/:id/actions',async(req,res)=>res.json(await transition(String(req.params.id),req.body,actor(res))));
+app.post('/api/policy-suspension',async(req,res)=>res.json(await suspendPolicy(req.body,actor(res))));
+app.get('/api/cases/:id/authorization-review',async(req,res)=>res.json(await internalReviewContext(String(req.params.id))));
+app.post('/api/cases/:id/authorization-review',async(req,res)=>res.json(await internalReview(String(req.params.id),req.body,actor(res))));
 app.get('/api/policy-evidence',async(_req,res)=>res.json(await policyEvidence()));
 app.get('/api/rules',(_req,res)=>res.json(rules));
 app.post('/api/cases/:id/reviews',allow(['reviewer','advisor','admin']),async(req,res)=>{
@@ -71,6 +78,7 @@ app.use((err:any,_req:express.Request,res:express.Response,_next:express.NextFun
 });
 await initDb();
 await initPolicyEvidence();
+await initGovernance();
 const server=app.listen(config.port,process.env.BIND_HOST||'127.0.0.1',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
 async function shutdown(){server.close();await pool.end();process.exit(0);}
 process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

@@ -1,0 +1,31 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:integration
+> tsx --test --test-concurrency=1 tests/*.integration.test.ts
+
+✔ CQF outage returns an error and preserves previous assessment and audit (3578.939606ms)
+✔ Medplum outage returns an error and preserves previous assessment and audit (2061.807209ms)
+✔ real Keycloak authentication protects API (350.982462ms)
+✔ repeat intake preserves one case and FHIR source versions (97.855067ms)
+✔ malformed payloads, conflicting idempotency keys, and advisor intake are rejected (30.018951ms)
+✔ intake audit includes versioned FHIR source evidence and database rejects audit edits (31.50698ms)
+✔ authenticated policy evidence exposes versioned synthetic candidates, while anonymous requests fail (394.531158ms)
+✔ policy evidence originals are immutable in the application database (97.186567ms)
+✔ governance roles, independent approvals and pending-rule isolation use real authenticated identities (2500.896046ms)
+✔ publication detects stale competing changes, enforces effective version, and supports suspension and immutable rollback (936.85618ms)
+✔ internal authorization review is idempotent, evidence-linked, role restricted and never an insurer determination (1061.8337ms)
+✔ reports match persisted cases and Prometheus exposition serves real counts (768.093953ms)
+✔ Grafana account can read only aggregate view, not source records or audit (84.804887ms)
+✔ actual Grafana datasource queries the provisioned operational dashboard (111.531139ms)
+✔ real CQF and local inference produce traceable initial recommendations (13603.681985ms)
+✔ continued-stay review responds to new clinical versions and invalidates old assessment (28314.535551ms)
+✔ stable initial review suggests observation; missing documentation raises risk (20830.512124ms)
+✔ live authorization simulator tracks lifecycle, duplicate events, notifications and FHIR receipts (19720.394044ms)
+✔ physician escalation enforces roles, override reasons, and source status preservation (34588.695683ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 147437.46353

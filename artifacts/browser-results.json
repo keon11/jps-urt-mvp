@@ -81,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 26248,
+                  "duration": 33895,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -89,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 903
+                      "duration": 1561
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 9594
+                      "duration": 10989
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 9289
+                      "duration": 14310
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 2047
+                      "duration": 2318
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 457
+                      "duration": 590
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 1665
+                      "duration": 2175
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 991
+                      "duration": 929
                     }
                   ],
-                  "startTime": "2026-10-21T14:02:33.557Z",
+                  "startTime": "2026-10-21T14:24:14.555Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -145,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1004,
+                  "duration": 1137,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:03:00.344Z",
+                  "startTime": "2026-10-21T14:24:48.712Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -179,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5606,
+                  "duration": 5108,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:03:01.369Z",
+                  "startTime": "2026-10-21T14:24:49.869Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -221,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5287,
+                  "duration": 4770,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:03:07.021Z",
+                  "startTime": "2026-10-21T14:24:55.031Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -255,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5351,
+                  "duration": 5353,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:03:12.328Z",
+                  "startTime": "2026-10-21T14:24:59.835Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -274,13 +274,55 @@
           "column": 3
         }
       ]
+    },
+    {
+      "title": "governance.spec.ts",
+      "file": "governance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "policy governance and internal authorization buttons execute real role-restricted backend workflows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7347,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T14:25:05.237Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd80fa2e263003b85faf-77211073d68b05274cbc",
+          "file": "governance.spec.ts",
+          "line": 32,
+          "column": 1
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T14:02:32.210Z",
-    "duration": 45673.956,
-    "expected": 5,
+    "startTime": "2026-10-21T14:24:12.005Z",
+    "duration": 60787.94500000001,
+    "expected": 6,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -66,7 +66,7 @@ export async function assess(id:string,actor:Actor,kind='initial'){
   const locked=(await tx.query('SELECT * FROM cases WHERE id=$1 FOR UPDATE',[id])).rows[0];
   if(new Date(locked.updated_at).getTime()!==new Date(row.updated_at).getTime()||hash(locked.workflow)!==hash(row.workflow)||hash(locked.bundle)!==hash(row.bundle))throw new HttpError(409,'Case changed during assessment; rerun against the latest case');
   const humanDecision=locked.workflow.humanDecision?.assessmentSourceHash===assessment.sourceHash?locked.workflow.humanDecision:null;
-  const workflow={...locked.workflow,humanDecision,state:locked.workflow.state==='escalated'?'escalated':humanDecision?.disposition==='Request more information'?'awaiting-information':humanDecision?'reviewed':'assessed'};
+  const workflow={...locked.workflow,humanDecision,state:locked.workflow.state==='escalated'?'escalated':humanDecision?.disposition==='Request more information'?'awaiting-information':humanDecision?'reviewed':locked.workflow.internalReview?.action==='request-information'&&locked.workflow.internalReview.assessmentSourceHash===assessment.sourceHash?'awaiting-information':'assessed'};
   const {rows}=await tx.query('UPDATE cases SET bundle=$2,assessment=$3,workflow=$4,updated_at=now() WHERE id=$1 RETURNING *',[id,bundle,{...assessment,provenance:'Provenance/'+provenance.id},workflow]);
   await audit(tx,id,actor.name,kind==='continued-stay'?'continued-stay-review':'initial-review',assessment);
   return rows[0];

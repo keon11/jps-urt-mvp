@@ -1,3 +1,4 @@
+import {PolicyCenter,AuthorizationReview} from './PolicyCenter';
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -296,6 +297,7 @@ function App() {
     ["Physician advisor", Stethoscope],
     ["Operations", ChartNoAxesCombined],
     ["Audit trail", History],
+    ["Policy management", ShieldCheck],
   ] as const;
   return (
     <div className="layout">
@@ -647,6 +649,7 @@ function App() {
                 </div>
               </section>
             )}
+          {tab === "Policy management" && <PolicyCenter request={api} roles={user.roles} preview={fixturePreview}/>}
           {tab === "Audit trail" && (
             <section className="panel">
               <div className="panel-heading">
@@ -694,6 +697,7 @@ function App() {
                   "Overview",
                   "Clinical evidence",
                   "Authorization",
+                  "Authorization Review",
                   "Advisor review",
                   "Audit history",
                 ].map((t) => (
@@ -918,6 +922,7 @@ function App() {
                     }
                   />
                 )}
+                {detail === "Authorization Review" && <AuthorizationReview request={api} caseId={row.id} roles={user.roles} preview={fixturePreview} onChanged={refresh}/>}
                 {detail === "Audit history" && <Audit events={audit} />}
               </div>
             </section></div>

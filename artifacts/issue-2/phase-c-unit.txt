@@ -1,0 +1,32 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ default services are local and FHIR R4 adapters have separate endpoints (2.658219ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.427013ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (16.661078ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (0.933203ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (1.577855ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (2.408036ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (0.364773ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (4.375267ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (46.524714ms)
+✔ official HTML never silently becomes an executable clinical rule (2.460509ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (12.980566ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (3.715286ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.480963ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (0.602523ms)
+✔ missing physician documentation raises illustrative risk (0.299299ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (11.195723ms)
+✔ model responses with fabricated evidence are rejected (81.928895ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (9.0547ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.556844ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (21.540298ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5775.389031
