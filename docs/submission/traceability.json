@@ -156,6 +156,76 @@
       }
     },
     {
+      "id": "private-criteria",
+      "status": "Synthetic only; authorized criteria required",
+      "evidence": "services/api/src/denial-risk.ts",
+      "gap": "No private plan contract or real medical-necessity criteria inferred.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 171,
+        "quote": "• Configurable rules for Medicare, Medicare Advantage, Medicaid, managed care, commercial payers, and JPS-specific UM workflows.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "denial-risk",
+      "status": "Synthetic workflow risk flags",
+      "evidence": "services/api/src/denial-risk.ts",
+      "gap": "No validated denial prediction, prospective outcome study or calibration.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 173,
+        "quote": "• Alerts for delayed reviews, high-priority cases, observation outliers, authorization risk, avoidable denial risk, and cases requiring escalation.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "hipaa-baa",
+      "status": "External security/legal validation required",
+      "evidence": "docs/SECURITY-AND-PRODUCTION-GAPS.md",
+      "gap": "Compliance and BAA not established or accepted.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 186,
+        "quote": "• The solution must fully comply with HIPAA and HITECH requirements for handling PHI and must support execution of a Business Associate Agreement with JPS.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "secondary-use",
+      "status": "Boundary preserved in synthetic demo",
+      "evidence": "docs/submission/SECURITY-AI-DRAFT.md",
+      "gap": "No JPS data used; production use controls/agreements require approval.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 189,
+        "quote": "• The vendor must disclose whether PHI is used for model training, tuning, monitoring, or third-party processing and must not use JPS data for external model training or secondary purposes without explicit JPS approval.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "model-evaluation",
+      "status": "Proposed independent validation work",
+      "evidence": "docs/submission/IMPLEMENTATION-ROADMAP.md",
+      "gap": "Representative clinical labels, drift/bias evidence and signoff remain outstanding.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 212,
+        "quote": "• The vendor must provide transparent model governance, including model versioning, performance monitoring, drift monitoring, bias or fairness evaluation where applicable, and a process for review of recommendation logic.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
       "id": "security",
       "status": "Draft; unknowns pending",
       "evidence": "docs/submission/SECURITY-AI-DRAFT.md",

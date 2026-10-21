@@ -12,6 +12,11 @@ const rows=[
  ['training','Training, user adoption support','Proposed production work','docs/DEMO.md','A demo guide exists; JPS training/go-live services not delivered.'],
  ['pricing','Use the spreadsheet attached as Exhibit A','Owner input required','docs/submission/pricing-working-template.csv','Working worksheet only; official Exhibit A must be obtained/completed without changing its format.'],
  ['references','Provide a minimum of three references.','Owner input required','docs/submission/OWNER-CHECKLIST.md','No customer references supplied or fabricated.'],
+ ['private-criteria','Configurable rules for Medicare','Synthetic only; authorized criteria required','services/api/src/denial-risk.ts','No private plan contract or real medical-necessity criteria inferred.'],
+ ['denial-risk','Alerts for delayed reviews','Synthetic workflow risk flags','services/api/src/denial-risk.ts','No validated denial prediction, prospective outcome study or calibration.'],
+ ['hipaa-baa','fully comply with HIPAA and HITECH','External security/legal validation required','docs/SECURITY-AND-PRODUCTION-GAPS.md','Compliance and BAA not established or accepted.'],
+ ['secondary-use','must not use JPS data for external model training','Boundary preserved in synthetic demo','docs/submission/SECURITY-AI-DRAFT.md','No JPS data used; production use controls/agreements require approval.'],
+ ['model-evaluation','drift monitoring, bias or fairness evaluation','Proposed independent validation work','docs/submission/IMPLEMENTATION-ROADMAP.md','Representative clinical labels, drift/bias evidence and signoff remain outstanding.'],
  ['security','Exhibit G: JPS Security Risk Assessment Forms','Draft; unknowns pending','docs/submission/SECURITY-AI-DRAFT.md','Official forms and evidence require authorized owner/security/legal review.']
 ];
 const traceability=[];for(const [id,needle,status,evidence,gap] of rows){const index=lines.findIndex(l=>l.includes(needle));assert(index>=0,'Missing RFP source anchor: '+id);await readFile(evidence);traceability.push({id,status,evidence,gap,citation:{file:'docs/sources/rfp.txt',line:index+1,quote:lines[index],originalUrl:provenance.find((p:any)=>p.name==='rfp').url,originalSha256:provenance.find((p:any)=>p.name==='rfp').sha256,extractedTextSha256:createHash('sha256').update(source).digest('hex')}});}

@@ -11,6 +11,8 @@ jobs:
       - run: node scripts/verify-deployment-config.mjs
       - run: npm test
       - run: npm run test:policy-correctness
+      - run: npm run test:denial-correctness
+      - run: npm run prepare:readiness
       - run: npm run prepare:submission
       - run: npm run build
       - run: npm run build:preview

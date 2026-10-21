@@ -15,4 +15,9 @@ Not a submission, commitment or statement of production compliance. Exact source
 | training | Proposed production work | [Evidence](../../docs/DEMO.md) | A demo guide exists; JPS training/go-live services not delivered. | rfp.txt:164 |
 | pricing | Owner input required | [Evidence](../../docs/submission/pricing-working-template.csv) | Working worksheet only; official Exhibit A must be obtained/completed without changing its format. | rfp.txt:232 |
 | references | Owner input required | [Evidence](../../docs/submission/OWNER-CHECKLIST.md) | No customer references supplied or fabricated. | rfp.txt:255 |
+| private-criteria | Synthetic only; authorized criteria required | [Evidence](../../services/api/src/denial-risk.ts) | No private plan contract or real medical-necessity criteria inferred. | rfp.txt:171 |
+| denial-risk | Synthetic workflow risk flags | [Evidence](../../services/api/src/denial-risk.ts) | No validated denial prediction, prospective outcome study or calibration. | rfp.txt:173 |
+| hipaa-baa | External security/legal validation required | [Evidence](../../docs/SECURITY-AND-PRODUCTION-GAPS.md) | Compliance and BAA not established or accepted. | rfp.txt:186 |
+| secondary-use | Boundary preserved in synthetic demo | [Evidence](../../docs/submission/SECURITY-AI-DRAFT.md) | No JPS data used; production use controls/agreements require approval. | rfp.txt:189 |
+| model-evaluation | Proposed independent validation work | [Evidence](../../docs/submission/IMPLEMENTATION-ROADMAP.md) | Representative clinical labels, drift/bias evidence and signoff remain outstanding. | rfp.txt:212 |
 | security | Draft; unknowns pending | [Evidence](../../docs/submission/SECURITY-AI-DRAFT.md) | Official forms and evidence require authorized owner/security/legal review. | rfp.txt:270 |

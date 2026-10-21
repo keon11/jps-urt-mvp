@@ -1,0 +1,24 @@
+{
+  "robotsPermitted": true,
+  "results": [
+    {
+      "name": "rfp",
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+      "sha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+      "matchesRetainedSource": true,
+      "embeddedAttachments": [],
+      "originalPrivate": true,
+      "formsFilledOrSigned": false
+    },
+    {
+      "name": "addendum",
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-10/RFP_20261404054_URT_Addendum_1_Response_Date_Extension%20%283%29.docx",
+      "sha256": "310e6c48a0ad92419fdd12e72b83da0a53b8020d13202fab17619c3dae095099",
+      "matchesRetainedSource": true,
+      "embeddedAttachments": [],
+      "originalPrivate": true,
+      "formsFilledOrSigned": false
+    }
+  ],
+  "scope": "Read-only public source/document inspection. No submission, signing, terms acceptance or PHI."
+}

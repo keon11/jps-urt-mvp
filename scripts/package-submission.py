@@ -3,12 +3,12 @@ from pathlib import Path
 from hashlib import sha256
 from datetime import datetime, timezone
 from zipfile import ZipFile, ZIP_DEFLATED
-import json
+import json,sys
 root=Path(__file__).resolve().parent.parent
 files=sorted((root/'docs/submission').glob('*'))
 assert files and all(p.is_file() and p.suffix in ('.md','.json','.csv') for p in files)
 manifest={'createdAt':datetime.now(timezone.utc).isoformat(),'classification':'DRAFT PREPARATION ONLY; NOT A BID; NO SIGNATURES OR SUBMISSION','files':[{'path':str(p.relative_to(root)),'sha256':sha256(p.read_bytes()).hexdigest()} for p in files]}
-out=root/'artifacts/issue-3';out.mkdir(parents=True,exist_ok=True)
+out=root/('artifacts/issue-4' if '--issue-4' in sys.argv else 'artifacts/issue-3');out.mkdir(parents=True,exist_ok=True)
 with ZipFile(out/'jps-submission-preparation.zip','w',ZIP_DEFLATED) as archive:
  for p in files:archive.write(p,str(p.relative_to(root)))
  archive.writestr('PREPARATION-MANIFEST.json',json.dumps(manifest,indent=2)+'\n')

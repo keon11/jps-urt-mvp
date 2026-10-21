@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-21T20:41:43.515Z",
+  "engineeringPreparationOnly": true,
+  "readyToSubmit": false,
+  "submitted": false,
+  "signed": false,
+  "requirements": [
+    {
+      "field": "legalEntity",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "authorizedSignatory",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "threeReferences",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "pricingExhibitA",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "insuranceEvidence",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "clinicalReviewerSignoff",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "payerAgreements",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "jpsEpicPermission",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "securityRiskAssessment",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "latestAddendaReview",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    },
+    {
+      "field": "hubOutreachEvidence",
+      "status": "EXTERNAL VALIDATION REQUIRED"
+    }
+  ],
+  "reason": "Owner/company/clinical/contract/security facts unavailable; no defaults invented."
+}

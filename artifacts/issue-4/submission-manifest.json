@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-10-21T20:42:18.317526+00:00",
+  "classification": "DRAFT PREPARATION ONLY; NOT A BID; NO SIGNATURES OR SUBMISSION",
+  "files": [
+    {
+      "path": "docs/submission/IMPLEMENTATION-ROADMAP.md",
+      "sha256": "e45451010cb81c9b57e98a70acdc6edb87e61b546ad1e79a981982c6f557ac0a"
+    },
+    {
+      "path": "docs/submission/OFFICIAL-FORMS.md",
+      "sha256": "c76665f99bad0705a34b467a04d8bd74aa31ffe8b4df98cb535780cf51716a43"
+    },
+    {
+      "path": "docs/submission/OFFICIAL-QUESTIONNAIRE-DRAFT.md",
+      "sha256": "36f38d84f094795f7acb5336ed87e7317795a97352e8b935635717cc1535fef2"
+    },
+    {
+      "path": "docs/submission/OWNER-CHECKLIST.md",
+      "sha256": "4310b6ed14f7d52a05d63011a56f2928f1543895884ac57795d7c7498655bd48"
+    },
+    {
+      "path": "docs/submission/PROPOSAL-DRAFT.md",
+      "sha256": "b0708970c24f9c4e275b56d86f3c3355a3cb14dc6786ee6e5d00417d9ddcc9b4"
+    },
+    {
+      "path": "docs/submission/SECURITY-AI-DRAFT.md",
+      "sha256": "e130108c2d0ee8fe26c2b1f07ae38f498f3666130617ad606ad83095064e8cda"
+    },
+    {
+      "path": "docs/submission/SYNTHETIC-DEMO-SCRIPT.md",
+      "sha256": "caa014f36b9a30018b81975fb7ad70b00850d77fc70e78f545760d50dd22dd4c"
+    },
+    {
+      "path": "docs/submission/TRACEABILITY.md",
+      "sha256": "a42c3661c60cac3ebd2da7b0be76cf19ea68fdc40773b1109e9cef93a60039ba"
+    },
+    {
+      "path": "docs/submission/owner-input-template.json",
+      "sha256": "393a0b37c951013ecaf7d7b4da1583ed95d81d112cf400a13ed5e2ada8161a1b"
+    },
+    {
+      "path": "docs/submission/pricing-working-template.csv",
+      "sha256": "04ce33c7cc0db3db610011e279d3a62a4f3fca0e13d6e66fb7765f42ae771f29"
+    },
+    {
+      "path": "docs/submission/traceability.json",
+      "sha256": "aacddbf2bf84a64b07928e040cde78c931066930a316934c166dfa8537a4b181"
+    }
+  ],
+  "archiveSha256": "278468c21145529d0b165b6726e6eaaff68ea025ca13e48fa8468572c5b6cbe4"
+}

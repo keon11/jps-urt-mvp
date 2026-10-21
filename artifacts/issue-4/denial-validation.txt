@@ -1,0 +1,5 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:denial-correctness
+> tsx scripts/validate-denial.ts
+
+{"passed":true,"corpus":"1.0.0","cases":24,"metrics":{"tp":3,"tn":21,"fp":0,"fn":0,"precision":1,"recall":1,"specificity":1},"calibration":{"supported":false,"reason":"Ordinal workflow flags; no adjudication probabilities or representative labeled insurer outcomes."},"clinicalValidation":false}

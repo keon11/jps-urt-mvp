@@ -28,7 +28,12 @@
     "test:policy-correctness": "tsx scripts/validate-policy.ts",
     "test:epic-conformance": "tsx scripts/verify-epic-conformance.ts",
     "test:soak": "tsx scripts/benchmark.ts --extended",
-    "prepare:submission": "tsx scripts/prepare-submission.ts"
+    "prepare:submission": "tsx scripts/prepare-submission.ts",
+    "generate:synthea": "python3 scripts/generate-synthea.py",
+    "test:synthea": "tsx scripts/verify-synthea.ts",
+    "test:hour": "tsx scripts/benchmark.ts --hour",
+    "test:denial-correctness": "tsx scripts/validate-denial.ts",
+    "prepare:readiness": "node scripts/verify-submission-readiness.mjs"
   },
   "dependencies": {
     "@medplum/core": "5.2.6",

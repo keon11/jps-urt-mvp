@@ -8,3 +8,7 @@ test-results/
 dist-preview/
 .vercel/
 .env.*
+
+# Python reproduction/report cache
+__pycache__/
+*.pyc

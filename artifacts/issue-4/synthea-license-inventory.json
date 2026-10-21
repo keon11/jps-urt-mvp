@@ -1,0 +1,441 @@
+{
+  "generator": "Synthea",
+  "version": "4.0.0",
+  "upstreamLicense": "Apache-2.0",
+  "jarSha256": "ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1",
+  "embeddedNoticeInventory": [
+    {
+      "jarEntry": "LICENSE.txt",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+      "detectedNoticeFamilies": [
+        "LGPL notice",
+        "GPL notice"
+      ]
+    },
+    {
+      "jarEntry": "org/mitre/synthea/X12/X12Professional$LoopGS$LoopST$LoopDETAIL$Loop2000A$Loop2010AA$REF_BILLING_PROVIDER_UPIN_LICENSE_INFORMATION.class",
+      "bytes": 3779,
+      "sha256": "c09585734b1d438dbcfec3f4740efd67881ca7bb9cdfba581697ff48f2b7122f",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/mitre/synthea/X12/X12Dental$LoopGS$LoopST$LoopDETAIL$Loop2000A$Loop2010AA$REF_BILLING_PROVIDER_UPIN_LICENSE_INFORMATION.class",
+      "bytes": 3701,
+      "sha256": "e03760f66f87d21a0ae4941194f18b8ebab2559e975881fbf4284a420a8dff50",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "ca/uhn/fhir/model/dstu2/resource/PaymentNotice.class",
+      "bytes": 9249,
+      "sha256": "918b589217d880e31b70e1800277fecdfbc25236074a1880b2c46a68c2ef138b",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/schema/paymentnotice.sch",
+      "bytes": 12231,
+      "sha256": "3ed98a2cbef4dc0df53360f868a32e553a0d50f31c64d7f656ecf8e7d06a867a",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/schema/paymentnotice.xsd",
+      "bytes": 6666,
+      "sha256": "2c5788f3da3cc00e7caba07b3b1469ec647816c9675d55d763871a97bd73c8ff",
+      "detectedNoticeFamilies": [
+        "BSD-style notice"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/schema/paymentnotice.sch",
+      "bytes": 10745,
+      "sha256": "ca5e3e45f0530dac4dc4791f8b8a349d49bc9964a81ae24caa01aa53f2e6cbf6",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/schema/paymentnotice.xsd",
+      "bytes": 6093,
+      "sha256": "92b7b40b21cad7b91eddbc31e9ab4d08954e51c451ca676a2d907ddb02dff50f",
+      "detectedNoticeFamilies": [
+        "BSD-style notice"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/convertors/conv30_40/resources30_40/PaymentNotice30_40$1.class",
+      "bytes": 1580,
+      "sha256": "82ff506e08cbd8cf76fe79800d133fd5cc86c04364039e5c2b78a4195e33711e",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/convertors/conv30_40/resources30_40/PaymentNotice30_40.class",
+      "bytes": 9454,
+      "sha256": "cfd3cce700cef40e45e4526fe1bf04db6ca8a086fe8acf1d5fb3edc68909431e",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/convertors/conv30_50/resources30_50/PaymentNotice30_50$1.class",
+      "bytes": 1642,
+      "sha256": "f4c2ed70564493d4303171bded6fd1d7fcd317cfce2781f11046a71bf08d147a",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/convertors/conv30_50/resources30_50/PaymentNotice30_50.class",
+      "bytes": 9623,
+      "sha256": "e2aae279e5d85bb0b72659ec4f7505a3123e86e2218ebdb0bf9e1044fd5cc077",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/convertors/conv40_50/resources40_50/PaymentNotice40_50$1.class",
+      "bytes": 1627,
+      "sha256": "4e4ef8e440f479ee8daf34be481802a6e237a353003688726be1675a98f53cbc",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/convertors/conv40_50/resources40_50/PaymentNotice40_50.class",
+      "bytes": 10239,
+      "sha256": "a940c23931c2c1151c6a0c77147e6e0125e9b2ff24552d72f2e094473cc5f69f",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/PaymentNotice$1.class",
+      "bytes": 1018,
+      "sha256": "44ea7de8287736329f183e3dbbac7c71c09175b22a60ab71c737bb9b6421ec85",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/PaymentNotice$PaymentNoticeStatus.class",
+      "bytes": 3346,
+      "sha256": "7be19bf8ed050412136929f000554d642fb3fe1885afc4832993c1caf8db0518",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/PaymentNotice$PaymentNoticeStatusEnumFactory.class",
+      "bytes": 3322,
+      "sha256": "189f12fd558c783815d76a0984eb9a9d93f3747ffd072f7d9ce157ee2fc421c3",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/PaymentNotice.class",
+      "bytes": 24621,
+      "sha256": "d80f2af3960aef34fa7b5d2c82479aaadcc2a85502d57fe411dbac950480bad3",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/codesystems/PaymentnoticeStatus$1.class",
+      "bytes": 960,
+      "sha256": "9c3f79bb0b0e0b3e6f7b26af899338184c82ebe41573954dbc3cb41cdbf8139e",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/codesystems/PaymentnoticeStatus.class",
+      "bytes": 3133,
+      "sha256": "a1a28e46a68d685a70de7409d0ef1e8d3b74ae73ea17396ee9ef91d2cd1359d0",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu3/model/codesystems/PaymentnoticeStatusEnumFactory.class",
+      "bytes": 2233,
+      "sha256": "402c01954494b1f130c949e9a3b35201ed22239bb23b9e7f792a3233d723b775",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/ImplementationGuide$SPDXLicense.class",
+      "bytes": 79164,
+      "sha256": "a229ce0c79a47ec9c7b01f7c96f9a11abdd79c23ec2a706833314985f1991928",
+      "detectedNoticeFamilies": [
+        "Apache notice",
+        "MIT notice",
+        "LGPL notice",
+        "GPL notice",
+        "MPL notice",
+        "EPL notice"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/ImplementationGuide$SPDXLicenseEnumFactory.class",
+      "bytes": 40294,
+      "sha256": "f3a69b5cddf2b1c98f8c27c84066b99052a7fd80a34b23105cc50d7c3979874d",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/PaymentNotice$1.class",
+      "bytes": 1000,
+      "sha256": "e2dca1a2320f9ca2e846282ee4e3c22ea40f044ef77e3fabede5011b742edf2b",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/PaymentNotice$PaymentNoticeStatus.class",
+      "bytes": 3316,
+      "sha256": "59e0dfeaed7ebdfc0b81b60fa8d302eb03b66af9281a90fbb9ff56e10f1c6dff",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/PaymentNotice$PaymentNoticeStatusEnumFactory.class",
+      "bytes": 3259,
+      "sha256": "952f427fc620cbc4979093e5caa87242836794cd07b291a32a22efb39ec82b33",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/PaymentNotice.class",
+      "bytes": 27079,
+      "sha256": "b9168c8fc8fc66cf20390ac9cd1d40bdec92cde1ce6bf8b7eb4fd1ce1f24eff7",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/codesystems/SpdxLicense$1.class",
+      "bytes": 18258,
+      "sha256": "d97996184d87dd7e571103fa4c7cf46993f4fabe427aef2269947a1a74845574",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/codesystems/SpdxLicense.class",
+      "bytes": 74390,
+      "sha256": "1b0649c2b63e5f93fe1607fc80960cf103a132f19871175f96a8849d42237851",
+      "detectedNoticeFamilies": [
+        "Apache notice",
+        "MIT notice",
+        "LGPL notice",
+        "GPL notice",
+        "MPL notice",
+        "EPL notice"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4/model/codesystems/SpdxLicenseEnumFactory.class",
+      "bytes": 28715,
+      "sha256": "93777192de8014c5057db523313ebb17b86b68cf9500bedabd157bda3d68b380",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu2/model/PaymentNotice.class",
+      "bytes": 16261,
+      "sha256": "d0155a9af708a1f49d77b7d056a2c25e50d3854bdb6f0b084d7284a94b5eaa1f",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/dstu2016may/model/PaymentNotice.class",
+      "bytes": 24477,
+      "sha256": "ad329abf93f3944bfb9da577668ad3c70095c6a067b2b4ad105b8e4d4f9c733d",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r5/model/ImplementationGuide$SPDXLicense.class",
+      "bytes": 79120,
+      "sha256": "373b870c04bbf360acf3cab0becaed511521c33aa8b2c95bcf7959e0a329cc75",
+      "detectedNoticeFamilies": [
+        "Apache notice",
+        "MIT notice",
+        "LGPL notice",
+        "GPL notice",
+        "MPL notice",
+        "EPL notice"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r5/model/ImplementationGuide$SPDXLicenseEnumFactory.class",
+      "bytes": 40294,
+      "sha256": "d9ebaa7e138e411a23ba5c9547356915fb7cc8eb00b0e2c8698daa5bf764fe45",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r5/model/PaymentNotice.class",
+      "bytes": 32086,
+      "sha256": "e3cd88df00c99eb48db78b6532c36c9d9ece372649b1f0a4eb94e65c71ad1b30",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4b/model/ImplementationGuide$SPDXLicense.class",
+      "bytes": 79174,
+      "sha256": "d12ded4fe1db30f1980b36eb1da38c9141daad781168267c7b39e08b41877e28",
+      "detectedNoticeFamilies": [
+        "Apache notice",
+        "MIT notice",
+        "LGPL notice",
+        "GPL notice",
+        "MPL notice",
+        "EPL notice"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4b/model/ImplementationGuide$SPDXLicenseEnumFactory.class",
+      "bytes": 40315,
+      "sha256": "2c64f06257d6b3ed3d3a95ef95ce20e06bca687278fd1c5b09c7a24c0797c572",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/r4b/model/PaymentNotice.class",
+      "bytes": 31787,
+      "sha256": "634e0718b0176f1717e48c5f32e60c2add815912b4267e879293a58a84ac3559",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/instance/model/profile/paymentnotice.profile.xml",
+      "bytes": 19176,
+      "sha256": "1502df64a61e81a0cfc19a896370978a8ca4e4549a13d226d4d82dcfd2c3fb5a",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "org/hl7/fhir/instance/model/schema/paymentnotice.sch",
+      "bytes": 6708,
+      "sha256": "d2f490b7f3c46c52971bec2082dd24ea2153510767305545c7b7a4761a39c6e4",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/LICENSE",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "detectedNoticeFamilies": [
+        "Apache notice"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "detectedNoticeFamilies": [
+        "Apache notice"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/NOTICE.txt",
+      "bytes": 173,
+      "sha256": "f0f63c91b99efc3ebd486f8fd6bf6af1efe1de72a27fed6df755570cd65fcc26",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/NOTICE",
+      "bytes": 825,
+      "sha256": "41c338db0adac3ea540c53845bd4cec40d437e843b22c84ae08375a4d6442543",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "okhttp3/internal/publicsuffix/NOTICE",
+      "bytes": 218,
+      "sha256": "8a9c58fbded5ea3474315e4a9824ca8b1486098a1a03e897e0b19419d5e1876a",
+      "detectedNoticeFamilies": [
+        "MPL notice"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/LICENSE.md",
+      "bytes": 1529,
+      "sha256": "c56e52168c596cb8ca8dca3a648886f19924461928eb8102f5eb31710aee9e31",
+      "detectedNoticeFamilies": [
+        "BSD-style notice"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/NOTICE.md",
+      "bytes": 4630,
+      "sha256": "757d97415f437b8e48ee96694425bbcf25330a2b355348272494fdf57950391a",
+      "detectedNoticeFamilies": [
+        "Apache notice",
+        "MIT notice",
+        "EPL notice"
+      ]
+    },
+    {
+      "jarEntry": "META-INF/resources/webjars/viz.js-graphviz-java/2.1.3/LICENSE",
+      "bytes": 1063,
+      "sha256": "b9a0b3fcb35b2b675f3a199c31eb19edd1dec3aa08687be4fb0d317e865e35cd",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "net/sf/saxon/Configuration$LicenseFeature.class",
+      "bytes": 585,
+      "sha256": "83d33bc4651f9108dc5bfd5345582790d6115fb8574266eaa9996cf3ea7404ce",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "net/sf/saxon/trans/LicenseException.class",
+      "bytes": 861,
+      "sha256": "d04bcc163b950112fdcf15a30ce4134da6ba5f311e664f54430315c2d5d034f4",
+      "detectedNoticeFamilies": [
+        "manual review required"
+      ]
+    },
+    {
+      "jarEntry": "LICENSE",
+      "bytes": 21025,
+      "sha256": "7915b19db903070778581ae05d8bf4ea241b34a05deb51ca4f5cbb15ea1cbba3",
+      "detectedNoticeFamilies": [
+        "BSD-style notice"
+      ]
+    }
+  ],
+  "compatibilityVerified": "Executed with Java21; FHIR R4 tested locally with Medplum/HAPI base validation; no second engine added.",
+  "limits": "Binary dependencies/terminology/code-system commercial rights require complete legal review; upstream Apache license is not a blanket grant for all medical terminologies or payer criteria. No license-gated terms accepted."
+}

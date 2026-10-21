@@ -1,0 +1,5 @@
+
+> hospital-ur-ai-mvp@0.1.0 prepare:readiness
+> node scripts/verify-submission-readiness.mjs
+
+Prepared owner template; submission readiness is BLOCKED on 11 owner evidence items. No bid submitted.
