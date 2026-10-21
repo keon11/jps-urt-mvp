@@ -1,0 +1,222 @@
+{
+  "before": [
+    {
+      "QUERY PLAN": [
+        {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 2954.49,
+            "Total Cost": 2954.62,
+            "Plan Rows": 50,
+            "Plan Width": 22,
+            "Actual Startup Time": 288.482,
+            "Actual Total Time": 288.491,
+            "Actual Rows": 50,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 62069,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 2941.99,
+                "Total Cost": 2967.01,
+                "Plan Rows": 10006,
+                "Plan Width": 22,
+                "Actual Startup Time": 288.068,
+                "Actual Total Time": 288.326,
+                "Actual Rows": 5050,
+                "Actual Loops": 1,
+                "Sort Key": [
+                  "(CASE WHEN ((assessment ->> 'triageStale'::text) = 'true'::text) THEN 0 ELSE COALESCE(((assessment ->> 'priority'::text))::integer, 0) END) DESC",
+                  "created_at",
+                  "id"
+                ],
+                "Sort Method": "quicksort",
+                "Sort Space Used": 1088,
+                "Sort Space Type": "Memory",
+                "Shared Hit Blocks": 62069,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "cases",
+                    "Alias": "cases",
+                    "Startup Cost": 0,
+                    "Total Cost": 2277.16,
+                    "Plan Rows": 10006,
+                    "Plan Width": 22,
+                    "Actual Startup Time": 0.089,
+                    "Actual Total Time": 264.925,
+                    "Actual Rows": 10006,
+                    "Actual Loops": 1,
+                    "Filter": "((label ~~* '%%'::text) OR (id ~~* '%%'::text))",
+                    "Rows Removed by Filter": 0,
+                    "Shared Hit Blocks": 62060,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 100,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.556,
+          "Triggers": [],
+          "Execution Time": 288.611
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "QUERY PLAN": [
+        {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 2954.49,
+            "Total Cost": 2954.62,
+            "Plan Rows": 50,
+            "Plan Width": 22,
+            "Actual Startup Time": 194.589,
+            "Actual Total Time": 194.664,
+            "Actual Rows": 50,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 62032,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 2941.99,
+                "Total Cost": 2967.01,
+                "Plan Rows": 10006,
+                "Plan Width": 22,
+                "Actual Startup Time": 193.234,
+                "Actual Total Time": 194.036,
+                "Actual Rows": 5050,
+                "Actual Loops": 1,
+                "Sort Key": [
+                  "(CASE WHEN ((assessment ->> 'triageStale'::text) = 'true'::text) THEN 0 ELSE COALESCE(((assessment ->> 'priority'::text))::integer, 0) END) DESC",
+                  "created_at",
+                  "id"
+                ],
+                "Sort Method": "quicksort",
+                "Sort Space Used": 1088,
+                "Sort Space Type": "Memory",
+                "Shared Hit Blocks": 62032,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "cases",
+                    "Alias": "cases",
+                    "Startup Cost": 0,
+                    "Total Cost": 2277.16,
+                    "Plan Rows": 10006,
+                    "Plan Width": 22,
+                    "Actual Startup Time": 0.039,
+                    "Actual Total Time": 172.529,
+                    "Actual Rows": 10006,
+                    "Actual Loops": 1,
+                    "Filter": "((label ~~* '%%'::text) OR (id ~~* '%%'::text))",
+                    "Rows Removed by Filter": 0,
+                    "Shared Hit Blocks": 62032,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 24,
+            "Shared Read Blocks": 1,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.894,
+          "Triggers": [],
+          "Execution Time": 195.162
+        }
+      ]
+    }
+  ]
+}

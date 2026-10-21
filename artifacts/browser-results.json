@@ -81,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 33895,
+                  "duration": 45109,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -89,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 1561
+                      "duration": 906
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 10989
+                      "duration": 9680
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 14310
+                      "duration": 20947
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 2318
+                      "duration": 7263
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 590
+                      "duration": 686
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 2175
+                      "duration": 2885
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 929
+                      "duration": 1161
                     }
                   ],
-                  "startTime": "2026-10-21T14:24:14.555Z",
+                  "startTime": "2026-10-21T14:51:51.880Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -145,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1137,
+                  "duration": 1387,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:24:48.712Z",
+                  "startTime": "2026-10-21T14:52:37.582Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -179,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5108,
+                  "duration": 4382,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:24:49.869Z",
+                  "startTime": "2026-10-21T14:52:38.990Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -221,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4770,
+                  "duration": 5148,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:24:55.031Z",
+                  "startTime": "2026-10-21T14:52:43.428Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -255,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5353,
+                  "duration": 6953,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:24:59.835Z",
+                  "startTime": "2026-10-21T14:52:48.607Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -297,12 +297,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7347,
+                  "duration": 10234,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T14:25:05.237Z",
+                  "startTime": "2026-10-21T14:52:55.597Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -316,13 +316,55 @@
           "column": 1
         }
       ]
+    },
+    {
+      "title": "retry.spec.ts",
+      "file": "retry.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "a failed payer-simulator click retries the same logical event identifier",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3870,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T14:53:06.098Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d4db9983fd58b264f38-27563f3563881b85d4ac",
+          "file": "retry.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T14:24:12.005Z",
-    "duration": 60787.94500000001,
-    "expected": 6,
+    "startTime": "2026-10-21T14:51:49.962Z",
+    "duration": 80330.85,
+    "expected": 7,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -54,3 +54,11 @@ The default Grafana dashboard queries `ur_operational_metrics`, an aggregate vie
 ## Desktop frontend preview boundary (Issue #1)
 
 The desktop UI has two compile modes. The normal build continues to use the unchanged local API. The Vercel build dynamically loads a credential-free fictional JSON snapshot through a read-only adapter and emits static files only. No API functions, backend proxies, Keycloak, Medplum, CQF, model server or Grafana are deployed to Vercel. See [DESKTOP-REDESIGN.md](DESKTOP-REDESIGN.md) for the deployment permission blocker and explicit presentation-only boundary. Desktop screens target 1440/1920px, minimum 1280px; mobile is out of scope.
+
+## Issue #2 additions
+
+The existing Medplum/CQF/Keycloak/PostgreSQL/Grafana/llama.cpp adapters remain intact. Policy intelligence adds a bounded HTML extraction adapter, an immutable evidence store and explicit synthetic candidate comparison. Policy governance uses PostgreSQL transactions, optimistic versions, independent local role identities and immutable command/publication records. Existing clinical CQL remains illustrative and unchanged; the synthetic published policy governs only internal documentation review.
+
+External simulator writes use durable intent identity plus Medplum conditional-create receipts with a payload fingerprint. This is a measured repair for rollback/retry duplication, not a claim of atomic transactions spanning FHIR and PostgreSQL. An operator must reconcile unresolved intents and preserve their original event identifiers; the UI retains an unresolved click identifier while its component remains open. Cross-session pending-intent recovery and automatic orchestration remain production requirements.
+
+A generated queue-priority column, covering index and materialized page projection support the bounded encounter-worklist API. The legacy full-bundle API remains for the six-case demo; its large-queue performance is not certified by the new endpoint benchmark. OpenTelemetry application/upstream spans propagate W3C context, export source-free local JSONL and augment existing Prometheus-compatible request metrics. Dependency warnings are evaluated locally and do not send external messages. Full multi-service collectors, long-duration soak/HA and clinical validation remain separate work.

@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-21T14:46:31.638Z",
+  "scope": "Actual local synthetic FHIR and AI service stop/start; original source patient class remains unchanged.",
+  "fhirOutage": {
+    "httpStatus": 502,
+    "previousAssessmentPreserved": true,
+    "noFalseSuccessAudit": true,
+    "alertRaised": true
+  },
+  "fhirRecoverySeconds": 13.243750037000002,
+  "aiOutage": {
+    "mode": "rules-fallback",
+    "seconds": 1.626198312999997,
+    "alertRaised": true
+  },
+  "aiRecoverySeconds": 2.030722549999999,
+  "recoveredClinicalReview": {
+    "mode": "local-model",
+    "seconds": 60.058455099
+  },
+  "requestMetricsObserved": true,
+  "tracing": {
+    "rootSpans": 10,
+    "correlatedUpstreamSpans": 6,
+    "samples": [
+      {
+        "name": "http.request",
+        "traceId": "6643c45f82f2bf09d4760661c4987724",
+        "spanId": "29d2cbf06031d538",
+        "attributes": {
+          "request.id": "8ae15c99-6c29-47e3-825d-6352b96531cb",
+          "http.request.method": "POST",
+          "http.route": "/api/cases/:id/reviews",
+          "http.response.status_code": 200
+        },
+        "status": {
+          "code": 0
+        },
+        "durationMs": 1621.9778919999999
+      },
+      {
+        "name": "upstream.request",
+        "traceId": "7bef86ddbf2a591fbb7088ff7fb270f7",
+        "spanId": "004604c5063774ca",
+        "parentSpanId": "5e3016674b067805",
+        "attributes": {},
+        "status": {
+          "code": 0
+        },
+        "durationMs": 1189.107958
+      },
+      {
+        "name": "upstream.request",
+        "traceId": "7bef86ddbf2a591fbb7088ff7fb270f7",
+        "spanId": "01821f8a63022c3a",
+        "parentSpanId": "5e3016674b067805",
+        "attributes": {},
+        "status": {
+          "code": 0
+        },
+        "durationMs": 1805.2372070000001
+      },
+      {
+        "name": "upstream.request",
+        "traceId": "7bef86ddbf2a591fbb7088ff7fb270f7",
+        "spanId": "c77ffb82ac13c2da",
+        "parentSpanId": "5e3016674b067805",
+        "attributes": {},
+        "status": {
+          "code": 0
+        },
+        "durationMs": 57944.296764
+      }
+    ],
+    "sourceContentExported": false
+  },
+  "passed": true
+}

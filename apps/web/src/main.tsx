@@ -1,4 +1,8 @@
-import {PolicyCenter,AuthorizationReview} from './PolicyCenter';
+import {
+  PolicyCenter,
+  AuthorizationReview,
+  OperationalAlerts,
+} from "./PolicyCenter";
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -129,8 +133,10 @@ function App() {
       await fn();
       if (user) await refresh();
       if (success) setNotice(success);
+      return true;
     } catch (e) {
       setError((e as Error).message);
+      return false;
     } finally {
       setBusy(false);
     }
@@ -249,9 +255,7 @@ function App() {
             });
           }}
         >
-          <div className="brand">
-            Utilization Review
-          </div>
+          <div className="brand">Utilization Review</div>
           <h1>Hospital utilization review</h1>
           <p>
             Local synthetic demonstration. Sign in with an authorized
@@ -305,9 +309,7 @@ function App() {
         Skip to workspace
       </a>
       <aside className="sidebar">
-        <div className="brand">
-          Utilization Review
-        </div>
+        <div className="brand">Utilization Review</div>
         <span className="side-caption">CARE OPERATIONS</span>
         <nav>
           {nav.map(([label, Icon]) => (
@@ -382,7 +384,9 @@ function App() {
         <main id="workspace" aria-busy={busy || loading}>
           <div className="page-top">
             <div>
-              <div className="eyebrow">CLINICAL OPERATIONS · SYNTHETIC WORKSPACE</div>
+              <div className="eyebrow">
+                CLINICAL OPERATIONS · SYNTHETIC WORKSPACE
+              </div>
               <h1>{tab}</h1>
               <p>
                 {tab === "Review queue"
@@ -437,7 +441,25 @@ function App() {
               {notice}
             </div>
           )}
-          <div className="census-strip" aria-label="Worklist census"><strong>{cases.length} encounters</strong><span>{count(c=>c.assessment?.priority>=70&&!c.assessment?.triageStale)} high priority</span><span>{count(c=>c.workflow.authorization!=='approved')} authorization follow-ups</span><span>{count(c=>c.workflow.state==='escalated')} advisor escalations</span><span>FHIR R4 · Illustrative review criteria</span></div>
+          <div className="census-strip" aria-label="Worklist census">
+            <strong>{cases.length} encounters</strong>
+            <span>
+              {count(
+                (c) =>
+                  c.assessment?.priority >= 70 && !c.assessment?.triageStale,
+              )}{" "}
+              high priority
+            </span>
+            <span>
+              {count((c) => c.workflow.authorization !== "approved")}{" "}
+              authorization follow-ups
+            </span>
+            <span>
+              {count((c) => c.workflow.state === "escalated")} advisor
+              escalations
+            </span>
+            <span>FHIR R4 · Illustrative review criteria</span>
+          </div>
           {!row &&
             ["Review queue", "Authorizations", "Physician advisor"].includes(
               tab,
@@ -649,7 +671,13 @@ function App() {
                 </div>
               </section>
             )}
-          {tab === "Policy management" && <PolicyCenter request={api} roles={user.roles} preview={fixturePreview}/>}
+          {tab === "Policy management" && (
+            <PolicyCenter
+              request={api}
+              roles={user.roles}
+              preview={fixturePreview}
+            />
+          )}
           {tab === "Audit trail" && (
             <section className="panel">
               <div className="panel-heading">
@@ -667,6 +695,9 @@ function App() {
               </div>
             </section>
           )}
+          {tab === "Operations" && (
+            <OperationalAlerts request={api} preview={fixturePreview} />
+          )}
           {tab === "Operations" && report && (
             <Operations
               report={report}
@@ -678,254 +709,339 @@ function App() {
               }}
             />
           )}
-          {row && (<div className="clinical-workbench"><aside className="encounter-rail" aria-label="Encounter list"><h2>Encounters</h2><p>Current synthetic census</p>{cases.map(c=><button key={c.id} aria-label={'Open '+c.label} aria-pressed={c.id===row.id} onClick={()=>{setSelected(c.id);setDetail(tab==='Authorizations'?'Authorization':tab==='Physician advisor'?'Advisor review':'Overview');}}><strong>{c.label}</strong><small>{c.id} · {c.workflow.state.replaceAll('-',' ')}</small><span>{c.assessment?.recommendation||'Awaiting assessment'}</span><small>{c.bundle.entry.find((e:any)=>e.resource.resourceType==='Coverage')?.resource.payor[0].display}</small></button>)}</aside>
-            <section className="panel case-detail">
-              <div className="panel-heading">
-                <div>
-                  <div className="eyebrow">ENCOUNTER WORKSPACE · FICTIONAL</div>
-                  <h2>
-                    {row.label}
-                    <span className="pill neutral">{row.id}</span>
-                  </h2>
-                </div>
-                <button className="secondary" onClick={() => setSelected(null)}>
-                  Back to worklist
-                </button>
-              </div>
-              <div className="tabs" aria-label="Encounter sections">
-                {[
-                  "Overview",
-                  "Clinical evidence",
-                  "Authorization",
-                  "Authorization Review",
-                  "Advisor review",
-                  "Audit history",
-                ].map((t) => (
+          {row && (
+            <div className="clinical-workbench">
+              <aside className="encounter-rail" aria-label="Encounter list">
+                <h2>Encounters</h2>
+                <p>Current synthetic census</p>
+                {cases.map((c) => (
                   <button
-                    aria-pressed={detail === t}
-                    className={detail === t ? "active" : ""}
-                    onClick={() => setDetail(t)}
-                    key={t}
+                    key={c.id}
+                    aria-label={"Open " + c.label}
+                    aria-pressed={c.id === row.id}
+                    onClick={() => {
+                      setSelected(c.id);
+                      setDetail(
+                        tab === "Authorizations"
+                          ? "Authorization"
+                          : tab === "Physician advisor"
+                            ? "Advisor review"
+                            : "Overview",
+                      );
+                    }}
                   >
-                    {t}
+                    <strong>{c.label}</strong>
+                    <small>
+                      {c.id} · {c.workflow.state.replaceAll("-", " ")}
+                    </small>
+                    <span>
+                      {c.assessment?.recommendation || "Awaiting assessment"}
+                    </span>
+                    <small>
+                      {
+                        c.bundle.entry.find(
+                          (e: any) => e.resource.resourceType === "Coverage",
+                        )?.resource.payor[0].display
+                      }
+                    </small>
                   </button>
                 ))}
-              </div>
-              <div className="detail-body">
-                {detail === "Overview" && (
-                  <div className="two-col">
-                    <div>
-                      <h3>Review summary</h3>
-                      {fixturePreview && (
-                        <p className="preview-note">
-                          Recorded fictional assessment · snapshot only; no live
-                          clinical execution.
-                        </p>
-                      )}
-                      <p>
-                        {
-                          row.bundle.entry.find(
-                            (e: any) => e.resource.resourceType === "Condition",
-                          )?.resource.code.text
-                        }
-                      </p>
-                      <div className="review-actions">
-                        <button
-                          className="primary"
-                          disabled={busy || fixturePreview}
-                          onClick={() =>
-                            action(
-                              () =>
-                                api("/cases/" + row.id + "/reviews", {
-                                  kind: "initial",
-                                }),
-                              "Initial review completed; recommendation requires human review.",
-                            )
-                          }
-                        >
-                          <BrainCircuit size={16} />
-                          {busy
-                            ? "Evaluating evidence & local AI…"
-                            : "Run initial review"}
-                        </button>
-                        <button
-                          className="secondary"
-                          disabled={busy || fixturePreview}
-                          onClick={() =>
-                            action(
-                              () =>
-                                api("/cases/" + row.id + "/reviews", {
-                                  kind: "continued-stay",
-                                }),
-                              "Continued-stay review completed.",
-                            )
-                          }
-                        >
-                          <RefreshCw size={16} />
-                          Continued-stay review
-                        </button>
-                      </div>
-                      {row.assessment ? (
-                        <Assessment a={row.assessment} />
-                      ) : (
-                        <div className="callout">
-                          <BrainCircuit size={20} />
-                          <div>
-                            <strong>Ready for evidence-based review</strong>
-                            <p>
-                              No current assessment. Run a review to evaluate
-                              illustrative CQL criteria and local AI triage.
-                            </p>
-                          </div>
-                        </div>
-                      )}
+              </aside>
+              <section className="panel case-detail">
+                <div className="panel-heading">
+                  <div>
+                    <div className="eyebrow">
+                      ENCOUNTER WORKSPACE · FICTIONAL
                     </div>
-                    <div>
-                      <h3>Source clinical evidence</h3><table className="compact-evidence"><thead><tr><th>Observation</th><th>Value</th></tr></thead><tbody>{row.bundle.entry.filter((e:any)=>e.resource.resourceType==='Observation').map((e:any)=><tr key={e.resource.id}><td>{e.resource.code.coding[0].display}<small>FHIR version {e.resource.meta?.versionId}</small></td><td>{e.resource.valueQuantity.value} {e.resource.valueQuantity.unit}</td></tr>)}</tbody></table><h3>Encounter context</h3>
-                      <dl>
-                        <dt>FHIR patient</dt>
-                        <dd className="mono">{row.patient_id}</dd>
-                        <dt>Payer</dt>
-                        <dd>
+                    <h2>
+                      {row.label}
+                      <span className="pill neutral">{row.id}</span>
+                    </h2>
+                  </div>
+                  <button
+                    className="secondary"
+                    onClick={() => setSelected(null)}
+                  >
+                    Back to worklist
+                  </button>
+                </div>
+                <div className="tabs" aria-label="Encounter sections">
+                  {[
+                    "Overview",
+                    "Clinical evidence",
+                    "Authorization",
+                    "Authorization Review",
+                    "Advisor review",
+                    "Audit history",
+                  ].map((t) => (
+                    <button
+                      aria-pressed={detail === t}
+                      className={detail === t ? "active" : ""}
+                      onClick={() => setDetail(t)}
+                      key={t}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+                <div className="detail-body">
+                  {detail === "Overview" && (
+                    <div className="two-col">
+                      <div>
+                        <h3>Review summary</h3>
+                        {fixturePreview && (
+                          <p className="preview-note">
+                            Recorded fictional assessment · snapshot only; no
+                            live clinical execution.
+                          </p>
+                        )}
+                        <p>
                           {
                             row.bundle.entry.find(
                               (e: any) =>
-                                e.resource.resourceType === "Coverage",
-                            )?.resource.payor[0].display
+                                e.resource.resourceType === "Condition",
+                            )?.resource.code.text
                           }
-                        </dd>
-                        <dt>Workflow</dt>
-                        <dd>{row.workflow.state}</dd>
-                      </dl>
-                      {editable && (
-                        <form
-                          className="vitals-form"
-                          onSubmit={(e) => {
-                            e.preventDefault();
-                            action(
-                              () =>
-                                api("/cases/" + row.id + "/synthetic-vitals", {
-                                  spo2: spo2Input,
-                                  systolic: bpInput,
-                                  expectedNights: nightsInput,
-                                }),
-                              "Synthetic observations updated. Prior assessment cleared; run a new review.",
-                            );
-                          }}
-                        >
-                          <h3>Simulate a clinical update</h3>
-                          <p>
-                            Updates only this fictional patient's observations
-                            in Medplum.
-                          </p>
-                          <div className="vital-inputs">
-                            <label>
-                              Oxygen %
-                              <input
-                                type="number"
-                                min="50"
-                                max="100"
-                                value={spo2Input}
-                                onChange={(e) =>
-                                  setSpo2Input(Number(e.target.value))
-                                }
-                              />
-                            </label>
-                            <label>
-                              Systolic mmHg
-                              <input
-                                type="number"
-                                min="40"
-                                max="240"
-                                value={bpInput}
-                                onChange={(e) =>
-                                  setBpInput(Number(e.target.value))
-                                }
-                              />
-                            </label>
-                            <label>
-                              Expected nights
-                              <input
-                                type="number"
-                                min="0"
-                                max="30"
-                                value={nightsInput}
-                                onChange={(e) =>
-                                  setNightsInput(Number(e.target.value))
-                                }
-                              />
-                            </label>
-                          </div>
-                          <button className="secondary" disabled={busy}>
-                            Save synthetic observations
+                        </p>
+                        <div className="review-actions">
+                          <button
+                            className="primary"
+                            disabled={busy || fixturePreview}
+                            onClick={() =>
+                              action(
+                                () =>
+                                  api("/cases/" + row.id + "/reviews", {
+                                    kind: "initial",
+                                  }),
+                                "Initial review completed; recommendation requires human review.",
+                              )
+                            }
+                          >
+                            <BrainCircuit size={16} />
+                            {busy
+                              ? "Evaluating evidence & local AI…"
+                              : "Run initial review"}
                           </button>
-                        </form>
-                      )}
-                    </div>
-                  </div>
-                )}
-                {detail === "Clinical evidence" && (
-                  <div className="evidence-grid">
-                    {row.bundle.entry.map((e: any) => (
-                      <div className="evidence-card" key={e.resource.id}>
-                        <span className="eyebrow">
-                          {e.resource.resourceType}
-                        </span>
-                        <h3>
-                          {e.resource.code?.coding?.[0]?.display ||
-                            e.resource.code?.text ||
-                            e.resource.description ||
-                            e.resource.resourceType}
-                        </h3>
-                        {e.resource.valueQuantity && (
-                          <div className="evidence-value">
-                            {e.resource.valueQuantity.value}
-                            <small>{e.resource.valueQuantity.unit}</small>
+                          <button
+                            className="secondary"
+                            disabled={busy || fixturePreview}
+                            onClick={() =>
+                              action(
+                                () =>
+                                  api("/cases/" + row.id + "/reviews", {
+                                    kind: "continued-stay",
+                                  }),
+                                "Continued-stay review completed.",
+                              )
+                            }
+                          >
+                            <RefreshCw size={16} />
+                            Continued-stay review
+                          </button>
+                        </div>
+                        {row.assessment ? (
+                          <Assessment a={row.assessment} />
+                        ) : (
+                          <div className="callout">
+                            <BrainCircuit size={20} />
+                            <div>
+                              <strong>Ready for evidence-based review</strong>
+                              <p>
+                                No current assessment. Run a review to evaluate
+                                illustrative CQL criteria and local AI triage.
+                              </p>
+                            </div>
                           </div>
                         )}
-                        <small className="mono">
-                          {e.resource.id}
-                          <br />
-                          Version: {e.resource.meta?.versionId}
-                        </small>
                       </div>
-                    ))}
-                  </div>
-                )}
-                {detail === "Authorization" && (
-                  <Authorization
-                    row={row}
-                    busy={busy}
-                    canEdit={!!editable}
-                    perform={(path, body, message) =>
-                      action(
-                        () => api("/cases/" + row.id + path, body),
-                        message,
-                      )
-                    }
-                  />
-                )}
-                {detail === "Advisor review" && (
-                  <Advisor
-                    row={row}
-                    busy={busy}
-                    canEdit={!!editable}
-                    canDecide={
-                      !fixturePreview &&
-                      user.roles.some((r) => ["advisor", "admin"].includes(r))
-                    }
-                    perform={(path, body, message) =>
-                      action(
-                        () => api("/cases/" + row.id + path, body),
-                        message,
-                      )
-                    }
-                  />
-                )}
-                {detail === "Authorization Review" && <AuthorizationReview request={api} caseId={row.id} roles={user.roles} preview={fixturePreview} onChanged={refresh}/>}
-                {detail === "Audit history" && <Audit events={audit} />}
-              </div>
-            </section></div>
+                      <div>
+                        <h3>Source clinical evidence</h3>
+                        <table className="compact-evidence">
+                          <thead>
+                            <tr>
+                              <th>Observation</th>
+                              <th>Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {row.bundle.entry
+                              .filter(
+                                (e: any) =>
+                                  e.resource.resourceType === "Observation",
+                              )
+                              .map((e: any) => (
+                                <tr key={e.resource.id}>
+                                  <td>
+                                    {e.resource.code.coding[0].display}
+                                    <small>
+                                      FHIR version {e.resource.meta?.versionId}
+                                    </small>
+                                  </td>
+                                  <td>
+                                    {e.resource.valueQuantity.value}{" "}
+                                    {e.resource.valueQuantity.unit}
+                                  </td>
+                                </tr>
+                              ))}
+                          </tbody>
+                        </table>
+                        <h3>Encounter context</h3>
+                        <dl>
+                          <dt>FHIR patient</dt>
+                          <dd className="mono">{row.patient_id}</dd>
+                          <dt>Payer</dt>
+                          <dd>
+                            {
+                              row.bundle.entry.find(
+                                (e: any) =>
+                                  e.resource.resourceType === "Coverage",
+                              )?.resource.payor[0].display
+                            }
+                          </dd>
+                          <dt>Workflow</dt>
+                          <dd>{row.workflow.state}</dd>
+                        </dl>
+                        {editable && (
+                          <form
+                            className="vitals-form"
+                            onSubmit={(e) => {
+                              e.preventDefault();
+                              action(
+                                () =>
+                                  api(
+                                    "/cases/" + row.id + "/synthetic-vitals",
+                                    {
+                                      spo2: spo2Input,
+                                      systolic: bpInput,
+                                      expectedNights: nightsInput,
+                                    },
+                                  ),
+                                "Synthetic observations updated. Prior assessment cleared; run a new review.",
+                              );
+                            }}
+                          >
+                            <h3>Simulate a clinical update</h3>
+                            <p>
+                              Updates only this fictional patient's observations
+                              in Medplum.
+                            </p>
+                            <div className="vital-inputs">
+                              <label>
+                                Oxygen %
+                                <input
+                                  type="number"
+                                  min="50"
+                                  max="100"
+                                  value={spo2Input}
+                                  onChange={(e) =>
+                                    setSpo2Input(Number(e.target.value))
+                                  }
+                                />
+                              </label>
+                              <label>
+                                Systolic mmHg
+                                <input
+                                  type="number"
+                                  min="40"
+                                  max="240"
+                                  value={bpInput}
+                                  onChange={(e) =>
+                                    setBpInput(Number(e.target.value))
+                                  }
+                                />
+                              </label>
+                              <label>
+                                Expected nights
+                                <input
+                                  type="number"
+                                  min="0"
+                                  max="30"
+                                  value={nightsInput}
+                                  onChange={(e) =>
+                                    setNightsInput(Number(e.target.value))
+                                  }
+                                />
+                              </label>
+                            </div>
+                            <button className="secondary" disabled={busy}>
+                              Save synthetic observations
+                            </button>
+                          </form>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  {detail === "Clinical evidence" && (
+                    <div className="evidence-grid">
+                      {row.bundle.entry.map((e: any) => (
+                        <div className="evidence-card" key={e.resource.id}>
+                          <span className="eyebrow">
+                            {e.resource.resourceType}
+                          </span>
+                          <h3>
+                            {e.resource.code?.coding?.[0]?.display ||
+                              e.resource.code?.text ||
+                              e.resource.description ||
+                              e.resource.resourceType}
+                          </h3>
+                          {e.resource.valueQuantity && (
+                            <div className="evidence-value">
+                              {e.resource.valueQuantity.value}
+                              <small>{e.resource.valueQuantity.unit}</small>
+                            </div>
+                          )}
+                          <small className="mono">
+                            {e.resource.id}
+                            <br />
+                            Version: {e.resource.meta?.versionId}
+                          </small>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {detail === "Authorization" && (
+                    <Authorization
+                      row={row}
+                      busy={busy}
+                      canEdit={!!editable}
+                      perform={(path, body, message) =>
+                        action(
+                          () => api("/cases/" + row.id + path, body),
+                          message,
+                        )
+                      }
+                    />
+                  )}
+                  {detail === "Advisor review" && (
+                    <Advisor
+                      row={row}
+                      busy={busy}
+                      canEdit={!!editable}
+                      canDecide={
+                        !fixturePreview &&
+                        user.roles.some((r) => ["advisor", "admin"].includes(r))
+                      }
+                      perform={(path, body, message) =>
+                        action(
+                          () => api("/cases/" + row.id + path, body),
+                          message,
+                        )
+                      }
+                    />
+                  )}
+                  {detail === "Authorization Review" && (
+                    <AuthorizationReview
+                      request={api}
+                      caseId={row.id}
+                      roles={user.roles}
+                      preview={fixturePreview}
+                      onChanged={refresh}
+                    />
+                  )}
+                  {detail === "Audit history" && <Audit events={audit} />}
+                </div>
+              </section>
+            </div>
           )}
           <div className="service-strip">
             <span>
@@ -1279,23 +1395,53 @@ type WorkflowProps = {
 };
 function Authorization({ row, busy, canEdit, perform }: WorkflowProps) {
   const [outcome, setOutcome] = useState("pending-information");
+  const [pending, setPending] = useState<{
+    action: string;
+    outcome: string;
+    eventId: string;
+  } | null>(null);
+  const [eventError, setEventError] = useState("");
   const state = row.workflow.authorization;
-  function event(action: string) {
-    perform(
+  async function event(action: string) {
+    if (
+      pending &&
+      (pending.action !== action ||
+        (action === "payer-response" && pending.outcome !== outcome))
+    ) {
+      setEventError(
+        "Retry the unresolved event with its original action and response before starting another event.",
+      );
+      return;
+    }
+    const eventId = pending?.eventId || crypto.randomUUID();
+    setPending({ action, outcome, eventId });
+    setEventError("");
+    const success = await perform(
       "/authorization",
       {
         action,
-        eventId: crypto.randomUUID(),
+        eventId,
         ...(action === "payer-response" ? { outcome } : {}),
       },
       "Simulated event recorded. No insurer was contacted. Refresh the review to update priority.",
     );
+    if (success === true) setPending(null);
   }
   return (
     <div className="two-col">
       <div>
         <div className="eyebrow">LOCAL PAYER SIMULATOR</div>
         <h3>Authorization & notification tracking</h3>
+        {eventError && (
+          <div role="alert" className="error">
+            {eventError}
+          </div>
+        )}
+        {pending && (
+          <p>
+            Unresolved event {pending.eventId}. Retrying preserves its identity.
+          </p>
+        )}
         <div className="callout">
           <ShieldCheck size={20} />
           <div>
@@ -1388,7 +1534,11 @@ function Authorization({ row, busy, canEdit, perform }: WorkflowProps) {
           </div>
         )}
       </div>
-      <div className="authorization-history" tabIndex={0} aria-label="Authorization event records">
+      <div
+        className="authorization-history"
+        tabIndex={0}
+        aria-label="Authorization event records"
+      >
         <h3>Authorization event history</h3>
         {!row.workflow.events.length && <p>No simulated payer events yet.</p>}
         {[...row.workflow.events].reverse().map((e: any) => (
@@ -1699,7 +1849,12 @@ function Audit({ events }: { events: any[] }) {
               </small>
               <details>
                 <summary>Event details</summary>
-                <pre>{JSON.stringify(e.detail, null, 2).replaceAll("Clarity UR", "Utilization Review")}</pre>
+                <pre>
+                  {JSON.stringify(e.detail, null, 2).replaceAll(
+                    "Clarity UR",
+                    "Utilization Review",
+                  )}
+                </pre>
               </details>
               <small className="mono">SHA-256 {e.hash}</small>
             </div>

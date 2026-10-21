@@ -13,13 +13,17 @@ export async function initDb(){
  action text NOT NULL, detail jsonb NOT NULL, at timestamptz NOT NULL DEFAULT now(),
  previous_hash text NOT NULL, hash text NOT NULL UNIQUE
  );
+ CREATE TABLE IF NOT EXISTS authorization_intents(event_id uuid PRIMARY KEY,case_id text NOT NULL REFERENCES cases(id),actor text NOT NULL,payload_hash text NOT NULL,payload jsonb NOT NULL,created_at timestamptz NOT NULL DEFAULT now());
  CREATE TABLE IF NOT EXISTS idempotency (key text PRIMARY KEY, payload_hash text NOT NULL, case_id text NOT NULL);
  `);
+ await pool.query(`ALTER TABLE cases ADD COLUMN IF NOT EXISTS queue_priority integer GENERATED ALWAYS AS (CASE WHEN assessment->>'triageStale'='true' THEN 0 ELSE COALESCE((assessment->>'priority')::int,0) END) STORED;
+ CREATE INDEX IF NOT EXISTS cases_queue_order ON cases(queue_priority DESC,created_at,id) INCLUDE(label);
+ DROP INDEX IF EXISTS cases_worklist_order;`);
  // Reject updates/deletes through the application database account, including accidental maintenance.
  await pool.query(`CREATE OR REPLACE FUNCTION immutable_audit() RETURNS trigger AS $$ BEGIN RAISE EXCEPTION 'audit is append-only'; END; $$ LANGUAGE plpgsql;
  DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname='audit_immutable') THEN
  CREATE TRIGGER audit_immutable BEFORE UPDATE OR DELETE ON audit FOR EACH ROW EXECUTE FUNCTION immutable_audit();
- END IF; END $$;`);
+ END IF; IF NOT EXISTS(SELECT 1 FROM pg_trigger WHERE tgname='authorization_intent_immutable') THEN CREATE TRIGGER authorization_intent_immutable BEFORE UPDATE OR DELETE ON authorization_intents FOR EACH ROW EXECUTE FUNCTION immutable_audit(); END IF; END $$;`);
  await pool.query(`CREATE OR REPLACE VIEW ur_operational_metrics AS SELECT
  count(*)::int AS active_encounters,
  count(*) FILTER (WHERE assessment IS NOT NULL AND COALESCE(assessment->>'triageStale','false')!='true')::int AS current_assessments,

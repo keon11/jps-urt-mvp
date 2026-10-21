@@ -1,3 +1,4 @@
+import {pool} from './db.js';
 import {z} from 'zod';
 import {transaction,audit,getCase,HttpError,type Actor} from './store.js';
 import {fhirClient} from './adapters.js';
@@ -21,6 +22,15 @@ export async function authorizationEvent(id:string,input:unknown,actor:Actor){
  const data=authInput.parse(input);
  if(data.action==='payer-response'&&!data.outcome)throw new HttpError(422,'A simulated payer outcome is required');
  if(data.action!=='payer-response'&&data.outcome)throw new HttpError(422,'Outcome is only valid for a simulated payer response');
+ const current=await getCase(id),oldEvent=current.workflow.events?.find((e:any)=>e.eventId===data.eventId);
+ const oldIntent=(await pool.query('SELECT * FROM authorization_intents WHERE event_id=$1',[data.eventId])).rows[0];
+ const payloadHash=hash({id,data});
+ if(oldIntent&&(oldIntent.actor!==actor.id||oldIntent.payload_hash!==payloadHash))throw new HttpError(409,'Event identifier already reserved for a different actor or payload');
+ if(oldEvent){if(oldEvent.payloadHash!==hash(data))throw new HttpError(409,'Event ID already used with another payload');return {...current,duplicate:true};}
+ authTransition(current.workflow.authorization,data.action,data.outcome);
+ await pool.query('INSERT INTO authorization_intents(event_id,case_id,actor,payload_hash,payload) VALUES($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING',[data.eventId,id,actor.id,payloadHash,data]);
+ const reserved=(await pool.query('SELECT actor,payload_hash FROM authorization_intents WHERE event_id=$1',[data.eventId])).rows[0];
+ if(reserved.actor!==actor.id||reserved.payload_hash!==payloadHash)throw new HttpError(409,'Event identifier already reserved for a different actor or payload');
  return transaction(async tx=>{
   const row=(await tx.query('SELECT * FROM cases WHERE id=$1 FOR UPDATE',[id])).rows[0];if(!row)throw new HttpError(404,'Case not found');
   const events=row.workflow.events||[],previous=events.find((e:any)=>e.eventId===data.eventId);
@@ -28,15 +38,18 @@ export async function authorizationEvent(id:string,input:unknown,actor:Actor){
   const status=authTransition(row.workflow.authorization,data.action,data.outcome);
   const event:any={...data,payloadHash:hash(data),at:new Date().toISOString(),demoAsOf:demoNow().toISOString(),status,simulated:true,actor:actor.name};
   const client=await fhirClient();
+  const receiptQuery=new URLSearchParams({identifier:'urn:ur-demo:authorization-event|'+id+':'+data.eventId}).toString();
+  const receiptIdentity={identifier:[{system:'urn:ur-demo:authorization-event',value:id+':'+data.eventId}],extension:[{url:'urn:ur-demo:authorization-payload-hash',valueString:hash(data)}]};
+  const verifyReceipt=(receipt:any)=>{if(receipt.extension?.find((e:any)=>e.url==='urn:ur-demo:authorization-payload-hash')?.valueString!==hash(data))throw new HttpError(409,'FHIR receipt exists for a different event payload; reconcile before retrying');};
   const workflow={...row.workflow,authorization:status,events:[...events,event]};
   if(data.action==='submit'){
    if(!row.assessment)throw new HttpError(409,'Run a review before a simulated submission');
    const coverage=row.bundle.entry.find((e:any)=>e.resource.resourceType==='Coverage').resource;
-   const claim=await client.createResource({resourceType:'Claim',meta:{tag:[syntheticTag]},status:'active',type:{coding:[{system:'http://terminology.hl7.org/CodeSystem/claim-type',code:'institutional'}]},use:'preauthorization',patient:{reference:'Patient/'+row.patient_id},created:demoNow().toISOString(),provider:{display:'Fictional Demonstration Hospital'},priority:{coding:[{system:'http://terminology.hl7.org/CodeSystem/processpriority',code:'normal'}]},insurance:[{sequence:1,focal:true,coverage:{reference:'Coverage/'+coverage.id}}]});
+   const claim=await client.createResourceIfNoneExist({resourceType:'Claim',...receiptIdentity,meta:{tag:[syntheticTag]},status:'active',type:{coding:[{system:'http://terminology.hl7.org/CodeSystem/claim-type',code:'institutional'}]},use:'preauthorization',patient:{reference:'Patient/'+row.patient_id},created:demoNow().toISOString(),provider:{display:'Fictional Demonstration Hospital'},priority:{coding:[{system:'http://terminology.hl7.org/CodeSystem/processpriority',code:'normal'}]},insurance:[{sequence:1,focal:true,coverage:{reference:'Coverage/'+coverage.id}}]},receiptQuery);verifyReceipt(claim);
    event.fhirReference='Claim/'+claim.id;workflow.claimReference=event.fhirReference;workflow.submittedAt=demoNow().toISOString();
   }
   if(data.action==='payer-response'){
-   const response=await client.createResource({resourceType:'ClaimResponse',meta:{tag:[syntheticTag]},status:'active',type:{coding:[{system:'http://terminology.hl7.org/CodeSystem/claim-type',code:'institutional'}]},use:'preauthorization',patient:{reference:'Patient/'+row.patient_id},created:demoNow().toISOString(),insurer:{display:'Fictional Payer Simulator'},request:{reference:workflow.claimReference},outcome:status==='pending-information'?'queued':status==='partial-approved'?'partial':'complete',disposition:`ILLUSTRATIVE SIMULATION ONLY: ${status}. No payer was contacted.`,...(status==='approved'||status==='partial-approved'?{preAuthRef:'SIM-'+data.eventId.slice(0,8)}:{})});
+   const response=await client.createResourceIfNoneExist({resourceType:'ClaimResponse',...receiptIdentity,meta:{tag:[syntheticTag]},status:'active',type:{coding:[{system:'http://terminology.hl7.org/CodeSystem/claim-type',code:'institutional'}]},use:'preauthorization',patient:{reference:'Patient/'+row.patient_id},created:demoNow().toISOString(),insurer:{display:'Fictional Payer Simulator'},request:{reference:workflow.claimReference},outcome:status==='pending-information'?'queued':status==='partial-approved'?'partial':'complete',disposition:`ILLUSTRATIVE SIMULATION ONLY: ${status}. No payer was contacted.`,...(status==='approved'||status==='partial-approved'?{preAuthRef:'SIM-'+data.eventId.slice(0,8)}:{})},receiptQuery);verifyReceipt(response);
    event.fhirReference='ClaimResponse/'+response.id;
    if(['approved','partial-approved'].includes(status))workflow.validUntil=new Date(demoNow().getTime()+48*3600000).toISOString();
   }

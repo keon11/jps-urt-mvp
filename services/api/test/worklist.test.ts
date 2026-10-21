@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {worklistQuery} from '../src/worklist.js';
+test('worklist bounds protect pagination and reject arbitrary query fields',()=>{assert.deepEqual(worklistQuery.parse({}),{limit:50,offset:0,q:''});assert.throws(()=>worklistQuery.parse({limit:10001}));assert.throws(()=>worklistQuery.parse({offset:-1}));assert.throws(()=>worklistQuery.parse({q:'x'.repeat(81)}));assert.throws(()=>worklistQuery.parse({sql:'SELECT secret'}));});

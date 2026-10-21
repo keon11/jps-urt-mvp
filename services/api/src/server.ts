@@ -1,13 +1,15 @@
+import {tracer,context,trace,propagation,SpanStatusCode,closeTelemetry} from './telemetry.js';
+import {worklist} from './worklist.js';
 import {initGovernance,center,propose,transition,suspendPolicy,internalReviewContext,internalReview} from './policy-governance.js';
 import {initPolicyEvidence,policyEvidence} from './policy-intelligence.js';
 import express from 'express';
-import {report,metrics,registry} from './reporting.js';
+import {report,metrics,registry,requestDuration} from './reporting.js';
 import {z} from 'zod';
 import {authorizationEvent,operational,escalate,decide} from './workflow.js';
 import {assess,updateVitals,rules} from './review.js';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {randomBytes} from 'node:crypto';
+import {randomUUID,randomBytes} from 'node:crypto';
 import {config} from './config.js';
 import {initDb,pool} from './db.js';
 import {login,verifyToken,serviceStatus} from './adapters.js';
@@ -15,6 +17,13 @@ import {fixtureIds,makeFixture} from './fixtures.js';
 import {getCase,listCases,intake,HttpError,type Actor} from './store.js';
 const app=express();
 app.disable('x-powered-by');
+app.use((req,res,next)=>{
+ const requestId=randomUUID(),start=performance.now();res.setHeader('X-Request-Id',requestId);
+ const span=tracer.startSpan('http.request',{},propagation.extract(context.active(),req.headers));span.setAttribute('request.id',requestId);
+ res.on('finish',()=>{const route=String(req.route?.path||'unmatched');span.setAttributes({'http.request.method':req.method,'http.route':route,'http.response.status_code':res.statusCode});if(res.statusCode>=500)span.setStatus({code:SpanStatusCode.ERROR,message:'server_error'});span.end();requestDuration.observe({method:['GET','POST','DELETE'].includes(req.method)?req.method:'OTHER',route,status:String(Math.floor(res.statusCode/100))+'xx'},(performance.now()-start)/1000);});
+ context.with(trace.setSpan(context.active(),span),next);
+});
+app.use((req,res,next)=>process.env.BENCHMARK_READ_ONLY==='true'&&req.method!=='GET'?res.status(403).json({error:'Isolated benchmark instance is read only'}):next());
 app.use(express.json({limit:'256kb'}));
 app.use((req,res,next)=>{
  res.set({'X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Cache-Control':'no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'"});
@@ -52,6 +61,8 @@ app.post('/api/intake',allow(['admin','reviewer']),async(req,res)=>{
 app.get('/api/cases',async(_req,res)=>res.json((await listCases()).map(operational)));
 app.get('/api/cases/:id',async(req,res)=>res.json(operational(await getCase(String(req.params.id)))));
 app.get('/api/cases/:id/audit',async(req,res)=>{await getCase(String(req.params.id));res.json((await pool.query('SELECT * FROM audit WHERE case_id=$1 ORDER BY sequence',[String(req.params.id)])).rows);});
+app.get('/api/encounter-worklist',async(req,res)=>res.json(await worklist(req.query)));
+app.get('/api/operational-alerts',async(_req,res)=>{const services=await serviceStatus();const alerts=Object.entries(services).filter(([,v])=>v!=='ready').map(([service])=>({service,severity:'warning',message:'Dependency unavailable; review workflow may be degraded'}));res.json({checkedAt:new Date().toISOString(),services,alerts,externalNotificationsSent:false});});
 app.get('/api/policy-center',async(_req,res)=>res.json(await center(actor(res))));
 app.post('/api/policy-changes',async(req,res)=>res.json(await propose(req.body,actor(res))));
 app.post('/api/policy-changes/:id/actions',async(req,res)=>res.json(await transition(String(req.params.id),req.body,actor(res))));
@@ -80,5 +91,5 @@ await initDb();
 await initPolicyEvidence();
 await initGovernance();
 const server=app.listen(config.port,process.env.BIND_HOST||'127.0.0.1',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
-async function shutdown(){server.close();await pool.end();process.exit(0);}
+async function shutdown(){server.close();await pool.end();await closeTelemetry();process.exit(0);}
 process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

@@ -1,0 +1,10 @@
+✔ authenticated policy evidence exposes versioned synthetic candidates, while anonymous requests fail (288.76506ms)
+✔ policy evidence originals are immutable in the application database (133.38554ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2517.123779

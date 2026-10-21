@@ -1,3 +1,4 @@
+import {dependencySpan,propagation,context} from './telemetry.js';
 import { MedplumClient } from '@medplum/core';
 import type { Bundle, Parameters, Resource } from '@medplum/fhirtypes';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
@@ -9,10 +10,13 @@ export async function fhirClient() {
  await medLogin; return medplum;
 }
 export async function jsonFetch(url:string,init:RequestInit={},timeout=30000):Promise<any>{
- const r=await fetch(url,{...init,signal:AbortSignal.timeout(timeout)});
+ return dependencySpan('upstream.request',async()=>{
+ const headers=new Headers(init.headers);const carrier:Record<string,string>={};propagation.inject(context.active(),carrier);for(const [k,v] of Object.entries(carrier))headers.set(k,v);
+ const r=await fetch(url,{...init,headers,signal:AbortSignal.timeout(timeout)});
  const text=await r.text();
  if(!r.ok) throw new Error(`Upstream ${new URL(url).pathname} returned ${r.status}: ${text.slice(0,300)}`);
  return text?JSON.parse(text):{};
+ });
 }
 export function toCqfBundle(data:Bundle):Bundle{
  const standardMeta=new Set(['id','extension','versionId','lastUpdated','source','profile','security','tag']);
