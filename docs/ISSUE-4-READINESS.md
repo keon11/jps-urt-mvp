@@ -2,7 +2,7 @@
 
 ## ENGINEERING VERIFIED
 
-Working six-case/eight-workflow checkpoint preserved. Stage 1 local proof: pinned Synthea release/license, 16 generated patients, longitudinal clinical derivation/source hashes, generated Location reference repair, 64 Medplum writes/reads, eight HAPI base-structure validations without errors, actual local adapter pagination. Stage 2: published-policy case risk action, source citations and human-review boundaries; initial 37 unit/24 live integration/two risk-browser checks passed. Exact logs and commits are in artifacts/issue-4 and ISSUE-4-EXECUTION.md. Additional refinements and final whole-application checks must be verified separately before marking complete.
+Working six-case/eight-workflow checkpoint preserved. Stage 1 local proof: pinned Synthea release/license, 16 generated patients, longitudinal clinical derivation/source hashes, generated Location reference repair, 64 Medplum writes/reads, eight HAPI base-structure validations without errors, actual local adapter pagination. Stage 2: published-policy case risk action, source citations and human-review boundaries; initial 37 unit/24 live integration/two risk-browser checks passed. Exact logs and commits are in artifacts/issue-4 and ISSUE-4-EXECUTION.md. Extended local FHIR proof now passed: 6,650 derived clinical resources imported with source hash metadata, 64 representative stored/read resources, 64 HAPI base validations, 22 synthetic patients paginated, actual generated-Patient update/duplicate/stale reconciliation and administrative-field restoration. Final whole-application checks and the one-hour gate remain pending.
 
 ## SYNTHETIC ONLY
 

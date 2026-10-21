@@ -54,7 +54,7 @@ Targets were committed before measurement: >=3600s, 25 sessions, 10,000 cloned q
 | API restart / isolated baseline restore | {b['apiRestartSeconds']:.2f}s / {b['restore']['seconds']:.2f}s |
 | Working MVP check during load | Case count and audit chain unchanged; not a full-table case-content snapshot |
 
-Phase 3 baseline: 63.60 requests/s, p95 689.43ms, 0.1938% timeouts over 600 seconds. Current changes: throughput {throughput_delta:+.2f}%, p95 {latency_delta:+.2f}%. This is the same bounded queue API/dataset/session workload on the shared host. Independent source/build/document verification occurred during the hour; do not causally attribute changes without a controlled repeat. Raw rows stream to disk and progress/RSS sample every 15 seconds.
+Phase 3 baseline: 63.60 requests/s, p95 689.43ms, 0.1938% timeouts over 600 seconds. Current changes: throughput {throughput_delta:+.2f}%, p95 {latency_delta:+.2f}%. This is the same bounded queue API/dataset/session workload on the shared host. Independent source/build/document verification and extended synthetic Medplum/HAPI validation occurred during the hour; do not causally attribute changes without a controlled repeat. Raw rows stream to disk and progress/RSS sample every 15 seconds.
 
 This is not Synthea clinical-inference throughput, full-bundle UI capacity, real clinician concurrency, multi-day stability, HA, a production SLA or a clinical accuracy claim. Nonzero failures/tail latency remain material production concerns. No threshold was relaxed and no short run substituted for the hour. The initial process-session interruption at about 1975 seconds is retained separately and never combined with this completed run.
 

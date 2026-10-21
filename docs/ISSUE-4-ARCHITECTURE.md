@@ -20,7 +20,7 @@ Owned synthetic payer cases exercise exact-plan/wildcard precedence, explicit pr
 
 ## Reliability and desktop
 
-The existing queue benchmark is extended to a 3600-second profile with the same 10,006-row workload, 25 sessions, token renewal and thresholds; a sampled RSS gate is added in advance. Request rows stream to disk, status/RSS sample every 15 seconds, and aggregate results are recomputed independently. The hour load is separate from case-mutating tests and dependency faults. Independent read-only/source/document work during the run is disclosed as shared-host activity. The benchmark is not a Synthea clinical-inference capacity test.
+The existing queue benchmark is extended to a 3600-second profile with the same 10,006-row workload, 25 sessions, token renewal and thresholds; a sampled RSS gate is added in advance. Request rows stream to disk, status/RSS sample every 15 seconds, and aggregate results are recomputed independently. The hour load is separate from case-mutating tests and dependency faults. Independent source/build/document work and extended synthetic Medplum/HAPI validation during the run is disclosed as shared-host activity. The benchmark is not a Synthea clinical-inference capacity test.
 
 OpenTelemetry, prom-client, actual local dependency alerts, durable intent/conditional FHIR receipts and full restore/audit checks are reused. New artifact destinations keep earlier proof immutable. No single-host result establishes HA, a production SLA, multi-day stability or HIPAA compliance.
 
