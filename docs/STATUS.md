@@ -47,3 +47,9 @@ Execution mode enabled; read branch AGENTS.md and Issues #1/#2. Used only existi
 - Phase E: final dependency-set regression, fixture-only preview, fresh screenshots, full-table restore proof, delivery report and CI verification. Vercel link-only project creation again returned 403; no hosted preview, protection or live backend connection is claimed. Refer to ISSUE-2-REPORT.md for final evidence and exact remaining blockers.
 
 No merge to main, paid service, PHI, real payer submission or external production connection occurred. Founder visual approval and independent clinical validation remain pending.
+
+## Issue #3 (dev/phase-3-validation)
+
+Deployment verifier ran first and passed; branch filters now select the existing Phase 3 branch. Two fixture desktop sizes tested and captured. Provenance/correctness and synthetic FHIR milestones committed/pushed. CMS current-page retrieval is permitted this session; extracted text unchanged across two hashes and no authentic policy revision/date is inferred. Epic public metadata discovery succeeded with explicit FHIR content negotiation; authenticated Epic/JPS integration remains untested. Ten-minute isolated reliability run and final sequential regression are recorded in artifacts/issue-3. Draft RFP package requires owner/company/legal/commercial inputs and is not submitted. See ISSUE-3-REPORT.md for final measured results and remaining gates.
+
+Final Issue #3 checks passed locally: 28 unit / 23 integration / 7 live browser; ten-minute API gates passed with 74 timeouts (0.194%); FHIR/CQF/AI faults and reconciliation passed. Restored 10 tables and verified 717 audit events in 3.15s. Draft package is prepared, not submitted. Final report: ISSUE-3-REPORT.md. External Vercel/Epic authorization and clinical/owner requirements remain explicitly open.

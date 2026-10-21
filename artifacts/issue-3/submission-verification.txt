@@ -1,0 +1,5 @@
+
+> hospital-ur-ai-mvp@0.1.0 prepare:submission
+> tsx scripts/prepare-submission.ts
+
+Verified 12 RFP source quotations; generated draft matrix. No offer submitted.

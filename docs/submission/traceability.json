@@ -1,0 +1,173 @@
+{
+  "classification": "Draft preparation only; not a submitted offer",
+  "traceability": [
+    {
+      "id": "prioritization",
+      "status": "Synthetic demonstration",
+      "evidence": "services/api/src/review.ts",
+      "gap": "No calibrated clinical accuracy or representative data.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 169,
+        "quote": "• AI-driven prioritization of new admissions, observation encounters, short-stay encounters, continued-stay reviews, and denial-risk cases.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "explainability",
+      "status": "Synthetic demonstration",
+      "evidence": "services/api/src/review.ts",
+      "gap": "Authorized criteria and qualified independent clinical validation outstanding.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 170,
+        "quote": "• Explainable recommendations for patient status review and continued-stay review, including the relevant clinical data, payer logic, and criteria elements supporting the recommendation.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "governance",
+      "status": "Synthetic demonstration",
+      "evidence": "services/api/src/policy-governance.ts",
+      "gap": "No validated production payer/plan contract criteria.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 210,
+        "quote": "• The platform must support configurable workflows, rules, alerts, dashboards, user roles, permission sets, and reporting logic without excessive custom development.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "oversight",
+      "status": "Implemented demonstration boundary",
+      "evidence": "services/api/src/workflow.ts",
+      "gap": "Real payer submission and clinical status changes are disabled.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 130,
+        "quote": "The vendor shall support payer-specific rules, regulatory requirements, and local workflow configuration. The solution must function as a decision-support tool and shall not autonomously change patient status, submit payer actions, or replace required clinical and regulatory review. Final determinations and external payer actions must remain under JPS-approved workflows.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "interoperability",
+      "status": "Synthetic conformance only",
+      "evidence": "services/api/src/fhir-conformance.ts",
+      "gap": "No authenticated Epic/JPS tenant testing, ADT, interface certification or production reconciliation.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 176,
+        "quote": "• Secure integration with Epic and relevant enterprise systems using healthcare interoperability standards.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "reliability",
+      "status": "Proposed production work",
+      "evidence": "docs/ISSUE-3-EXECUTION.md",
+      "gap": "Measured single-host recovery/soak does not establish HA, DR or contractual SLA.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 211,
+        "quote": "• The platform must provide high availability, disaster recovery, monitoring, support procedures, upgrade management, issue escalation, and service-level reporting.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "model-governance",
+      "status": "Partial synthetic demonstration",
+      "evidence": "docs/model-lock.json",
+      "gap": "Model pinning/audit/fallback present; drift, fairness and clinical evaluation outstanding.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 212,
+        "quote": "• The vendor must provide transparent model governance, including model versioning, performance monitoring, drift monitoring, bias or fairness evaluation where applicable, and a process for review of recommendation logic.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "audit",
+      "status": "Synthetic demonstration",
+      "evidence": "services/api/src/store.ts",
+      "gap": "Hash chain and application immutability are not certified WORM storage.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 213,
+        "quote": "• The solution must maintain complete auditability of AI recommendations, user actions, source data displayed, overrides, and outcome tracking for compliance and quality review.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "training",
+      "status": "Proposed production work",
+      "evidence": "docs/DEMO.md",
+      "gap": "A demo guide exists; JPS training/go-live services not delivered.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 164,
+        "quote": "Training, user adoption support, go-live support, and role-based education for UM reviewers, physician advisors, leaders, and other approved users.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "pricing",
+      "status": "Owner input required",
+      "evidence": "docs/submission/pricing-working-template.csv",
+      "gap": "Working worksheet only; official Exhibit A must be obtained/completed without changing its format.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 232,
+        "quote": "Price quotes shall remain firm during Solicitation evaluation and for an additional 120 days after recommendation for award.  Pricing must remain fixed for the initial term of the agreement. Respondents must include all costs associated with use of the items. Any costs not included in the Solicitation response cannot be charged to the District. Respondents may propose pricing increases for the optional renewal terms with set caps (e.g., no more than 1% to 3% annually). Use the spreadsheet attached as Exhibit A to this Solicitation to provide line-item pricing in your Response.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "references",
+      "status": "Owner input required",
+      "evidence": "docs/submission/OWNER-CHECKLIST.md",
+      "gap": "No customer references supplied or fabricated.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 255,
+        "quote": "Provide a minimum of three references. [Can include specific types of references needed, if applicable; e.g., other Texas customers, other hospital systems, etc.] Include name, telephone number, and email address. The District will contact the references provided to determine Respondent’s performance record for products/services similar to that described in this request.",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    },
+    {
+      "id": "security",
+      "status": "Draft; unknowns pending",
+      "evidence": "docs/submission/SECURITY-AI-DRAFT.md",
+      "gap": "Official forms and evidence require authorized owner/security/legal review.",
+      "citation": {
+        "file": "docs/sources/rfp.txt",
+        "line": 270,
+        "quote": "g.Exhibit G: JPS Security Risk Assessment Forms",
+        "originalUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+        "originalSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+        "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-10-21T19:18:40.864018+00:00",
+  "classification": "DRAFT PREPARATION ONLY; NOT A BID; NO SIGNATURES OR SUBMISSION",
+  "files": [
+    {
+      "path": "docs/submission/OWNER-CHECKLIST.md",
+      "sha256": "61947002fffcb458eb74e79787fa241edff0889a7bcecfb139c91c003d430a39"
+    },
+    {
+      "path": "docs/submission/PROPOSAL-DRAFT.md",
+      "sha256": "b0708970c24f9c4e275b56d86f3c3355a3cb14dc6786ee6e5d00417d9ddcc9b4"
+    },
+    {
+      "path": "docs/submission/SECURITY-AI-DRAFT.md",
+      "sha256": "e130108c2d0ee8fe26c2b1f07ae38f498f3666130617ad606ad83095064e8cda"
+    },
+    {
+      "path": "docs/submission/TRACEABILITY.md",
+      "sha256": "979ed9fd39bef890a133fc759ec13047498e385e27936379dbbb22302ca76812"
+    },
+    {
+      "path": "docs/submission/pricing-working-template.csv",
+      "sha256": "04ce33c7cc0db3db610011e279d3a62a4f3fca0e13d6e66fb7765f42ae771f29"
+    },
+    {
+      "path": "docs/submission/traceability.json",
+      "sha256": "7a9c0e9ac8c03c0158eb20c9db3b6be56a700f6de0eae5162304857a180126af"
+    }
+  ],
+  "archiveSha256": "0674afe5d3f39f35b36a85947de9a1e990e6e30b3e826b54630ec19912183566"
+}

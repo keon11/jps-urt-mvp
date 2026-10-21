@@ -1,0 +1,20 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const source=await readFile('docs/sources/rfp.txt','utf8'),lines=source.split('\n');const provenance=JSON.parse(await readFile('docs/sources/provenance.json','utf8'));
+const rows=[
+ ['prioritization','AI-driven prioritization of new admissions','Synthetic demonstration','services/api/src/review.ts','No calibrated clinical accuracy or representative data.'],
+ ['explainability','Explainable recommendations for patient status review','Synthetic demonstration','services/api/src/review.ts','Authorized criteria and qualified independent clinical validation outstanding.'],
+ ['governance','configurable workflows, rules, alerts, dashboards','Synthetic demonstration','services/api/src/policy-governance.ts','No validated production payer/plan contract criteria.'],
+ ['oversight','shall not autonomously change patient status','Implemented demonstration boundary','services/api/src/workflow.ts','Real payer submission and clinical status changes are disabled.'],
+ ['interoperability','healthcare interoperability standards','Synthetic conformance only','services/api/src/fhir-conformance.ts','No authenticated Epic/JPS tenant testing, ADT, interface certification or production reconciliation.'],
+ ['reliability','high availability, disaster recovery','Proposed production work','docs/ISSUE-3-EXECUTION.md','Measured single-host recovery/soak does not establish HA, DR or contractual SLA.'],
+ ['model-governance','transparent model governance','Partial synthetic demonstration','docs/model-lock.json','Model pinning/audit/fallback present; drift, fairness and clinical evaluation outstanding.'],
+ ['audit','complete auditability of AI recommendations','Synthetic demonstration','services/api/src/store.ts','Hash chain and application immutability are not certified WORM storage.'],
+ ['training','Training, user adoption support','Proposed production work','docs/DEMO.md','A demo guide exists; JPS training/go-live services not delivered.'],
+ ['pricing','Use the spreadsheet attached as Exhibit A','Owner input required','docs/submission/pricing-working-template.csv','Working worksheet only; official Exhibit A must be obtained/completed without changing its format.'],
+ ['references','Provide a minimum of three references.','Owner input required','docs/submission/OWNER-CHECKLIST.md','No customer references supplied or fabricated.'],
+ ['security','Exhibit G: JPS Security Risk Assessment Forms','Draft; unknowns pending','docs/submission/SECURITY-AI-DRAFT.md','Official forms and evidence require authorized owner/security/legal review.']
+];
+const traceability=[];for(const [id,needle,status,evidence,gap] of rows){const index=lines.findIndex(l=>l.includes(needle));assert(index>=0,'Missing RFP source anchor: '+id);await readFile(evidence);traceability.push({id,status,evidence,gap,citation:{file:'docs/sources/rfp.txt',line:index+1,quote:lines[index],originalUrl:provenance.find((p:any)=>p.name==='rfp').url,originalSha256:provenance.find((p:any)=>p.name==='rfp').sha256,extractedTextSha256:createHash('sha256').update(source).digest('hex')}});}
+await mkdir('docs/submission',{recursive:true});await writeFile('docs/submission/traceability.json',JSON.stringify({classification:'Draft preparation only; not a submitted offer',traceability},null,2)+'\n');
+await writeFile('docs/submission/TRACEABILITY.md','# Draft source-backed traceability\n\nNot a submission, commitment or statement of production compliance. Exact source quotations and original DOCX hashes are in traceability.json. Source freshness/addenda must be rechecked before submission.\n\n| Requirement | Status | Evidence | Gap | Source line |\n|---|---|---|---|---|\n'+traceability.map(r=>`| ${r.id} | ${r.status} | [Evidence](../../${r.evidence}) | ${r.gap} | rfp.txt:${r.citation.line} |`).join('\n')+'\n');
+console.log('Verified',traceability.length,'RFP source quotations; generated draft matrix. No offer submitted.');

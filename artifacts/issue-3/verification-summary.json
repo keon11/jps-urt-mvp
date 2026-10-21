@@ -1,0 +1,317 @@
+{
+  "verifiedAt": "2026-10-21T19:18:41.028506+00:00",
+  "tests": {
+    "unit": 28,
+    "liveIntegration": 23,
+    "liveBrowser": 7,
+    "fixtureBrowser": "1 test at each of 1440 and 1920; both passed"
+  },
+  "syntheticPolicy": {
+    "cases": 19,
+    "metrics": {
+      "tp": 4,
+      "fp": 0,
+      "tn": 15,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "sensitivity": 1,
+      "specificity": 1
+    },
+    "corpusVersion": "1.0.1",
+    "clinicalValidation": false
+  },
+  "benchmark": {
+    "startedAt": "2026-10-21T19:02:30.580Z",
+    "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+    "thresholds": {
+      "rows": 10000,
+      "sessions": 25,
+      "seconds": 600,
+      "p95Ms": 1000,
+      "errorFraction": 0.01,
+      "minThroughput": 20,
+      "apiRecoverySeconds": 15,
+      "restoreSeconds": 120
+    },
+    "host": {
+      "node": "v24.19.0",
+      "logicalCPUs": 5,
+      "totalMemoryBytes": 18882674688
+    },
+    "database": "ur_issue2_1792593144631",
+    "restore": {
+      "target": "ur_issue2_verify_1792609350581",
+      "seconds": 0.9322262170000001,
+      "originalBackupRestoreSeconds": 1.644887195,
+      "cases": 6,
+      "audit": {
+        "verified": true,
+        "events": 413,
+        "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+      }
+    },
+    "load": {
+      "requests": 38186,
+      "seconds": 600.4199611280001,
+      "throughputPerSecond": 63.59881828089214,
+      "p50Ms": 382.4416000000201,
+      "p95Ms": 689.4253840000019,
+      "p99Ms": 1078.0744759999798,
+      "maxMs": 10207.691817999992,
+      "errors": {
+        "TimeoutError": 74
+      },
+      "failedRequests": 74,
+      "errorFraction": 0.0019378829937673494,
+      "peakApiRssBytes": 452587520,
+      "apiAverageCpuPercent": 17.81752888411942,
+      "authenticationRenewals": 50,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "apiRestartSeconds": 2.7772628520000726,
+    "liveMvpUnchanged": true,
+    "passed": true
+  },
+  "faultRecovery": {
+    "at": "2026-10-21T19:13:05.625Z",
+    "scope": "Actual local synthetic FHIR and AI service stop/start; original source patient class remains unchanged.",
+    "fhirOutage": {
+      "httpStatus": 502,
+      "previousAssessmentPreserved": true,
+      "noFalseSuccessAudit": true,
+      "alertRaised": true
+    },
+    "fhirRecoverySeconds": 15.202099263000001,
+    "ruleEngineOutage": {
+      "httpStatus": 502,
+      "previousAssessmentPreserved": true,
+      "noFalseSuccessAudit": true,
+      "alertRaised": true
+    },
+    "ruleEngineRecoverySeconds": 64.31818860400001,
+    "aiOutage": {
+      "mode": "rules-fallback",
+      "seconds": 5.598325932000007,
+      "alertRaised": true
+    },
+    "aiRecoverySeconds": 2.038929858000003,
+    "recoveredClinicalReview": {
+      "mode": "local-model",
+      "seconds": 9.747462797
+    },
+    "requestMetricsObserved": true,
+    "tracing": {
+      "currentDrillOnly": true,
+      "rootSpans": 13,
+      "correlatedUpstreamSpans": 8,
+      "samples": [
+        {
+          "name": "http.request",
+          "traceId": "72ab3cdca19a2c293fab51d93b85f14b",
+          "spanId": "db6ac4b3c78db2be",
+          "attributes": {
+            "request.id": "d07e7667-3e1a-44a2-a7f6-67c7799c2018",
+            "http.request.method": "POST",
+            "http.route": "/api/cases/:id/reviews",
+            "http.response.status_code": 502
+          },
+          "status": {
+            "code": 2,
+            "message": "server_error"
+          },
+          "durationMs": 225.508507
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "1b55c3065924d684d88445357beee7f4",
+          "spanId": "aaa2167d2555a362",
+          "parentSpanId": "981d5747000c0062",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 712.504892
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "1b55c3065924d684d88445357beee7f4",
+          "spanId": "aa8eb0133ecb41df",
+          "parentSpanId": "981d5747000c0062",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 1415.4897230000001
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "1b55c3065924d684d88445357beee7f4",
+          "spanId": "cd662e850214add4",
+          "parentSpanId": "981d5747000c0062",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 8223.474377
+        }
+      ],
+      "sourceContentExported": false
+    },
+    "passed": true
+  },
+  "restore": {
+    "createdAt": "2026-10-21T19:17:31.051Z",
+    "sourceDatabase": "ur",
+    "restoreDatabase": "ur_issue2_final_1792610251050",
+    "dumpPath": ".runtime/issue3-final-checkpoint.dump",
+    "publiclyDistributed": false,
+    "seconds": 3.147624589,
+    "tables": {
+      "audit": {
+        "rows": 717,
+        "sha256": "b49af7674255cff6dda0868048bdb24aba4f5f9d90ed42e38e0e5255cd2053bd"
+      },
+      "authorization_intents": {
+        "rows": 72,
+        "sha256": "3e1bb7a438e28f743cf19f334dda38b454e8b417599465ef2664264c4b8fa41c"
+      },
+      "cases": {
+        "rows": 6,
+        "sha256": "30c0315a65ae43d20a34e73dc6867ea0e0f522c67ba7c294cd7e4d95acdeda14"
+      },
+      "governance_commands": {
+        "rows": 193,
+        "sha256": "faf14dddf8f8ed20aa57f394f933a5ef74c134fa2f194c79c615529c90979e13"
+      },
+      "idempotency": {
+        "rows": 28,
+        "sha256": "e9037f6551c6e013a746de32439d8241889a831421c7628ac7d8f5a833f6456e"
+      },
+      "internal_authorization_reviews": {
+        "rows": 22,
+        "sha256": "b242885c30a830b359383782d364c0df6fe81f73c13fae8e5568c9f72a87678e"
+      },
+      "policy_changes": {
+        "rows": 23,
+        "sha256": "1f2b29ee3e0dee597926515121e8070d97c4432fb993afc5bfa0394c709d517d"
+      },
+      "policy_documents": {
+        "rows": 4,
+        "sha256": "3e950f1c4063d6a7d9079dda7a1aa46e0c71ea6b624e9d9ec78097756126430d"
+      },
+      "policy_publications": {
+        "rows": 22,
+        "sha256": "8795b8831d45246695cbbb9bc91ccc645aad83ff58ebda4383446a868efa4212"
+      },
+      "policy_registry": {
+        "rows": 1,
+        "sha256": "6cd85f07adb52c8ca31a5f428d395c14adcbe0e4e897cf8b3c47d47009350f19"
+      }
+    },
+    "audit": {
+      "verified": true,
+      "events": 717,
+      "lastHash": "c5cd9d3b33d17b5465717e8a2576620632c5be2ced3c65fcffa485759f28b1dd"
+    },
+    "dumpSha256": "6320b5f38bffaef01933e2ce84db1cbf97b796ee632f9803778e656ca1f1a923",
+    "restoredApplicationReadVerified": true,
+    "passed": true
+  },
+  "reconciliation": {
+    "at": "2026-10-21T19:12:51.197Z",
+    "label": "after-repair",
+    "isolatedDatabase": "ur_issue2_1792593144631",
+    "threshold": "one FHIR Claim resource per logical event after database failure and retry",
+    "failedRequestStatuses": [
+      502,
+      502
+    ],
+    "createdResourceIds": [
+      "cd14b828-6d91-44ee-8fc7-900ee6da71cc"
+    ],
+    "resourceCountAfterTwoFailedAttempts": 1,
+    "noFalseSuccessAudit": true,
+    "changedPayloadReplayRejected": true,
+    "resourceCountAfterSuccessfulRetry": 1,
+    "committedLogicalEvents": 1,
+    "passed": true
+  },
+  "liveScreenshots": "artifacts/issue-2/issue-3-live-final-20261021T191628Z/manifest.json",
+  "publicEpicMetadata": {
+    "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/metadata",
+    "httpStatus": 200,
+    "bodySha256": "541d1e8e3f90fc9b0e958ec80e6d3345a2b2c587d40d4fd48fa18cadaac550da",
+    "capabilityStatementReceived": true,
+    "fhirVersion": "4.0.1",
+    "supportedResources": [
+      "Account",
+      "AdverseEvent",
+      "AllergyIntolerance",
+      "Appointment",
+      "Binary",
+      "BodyStructure",
+      "CarePlan",
+      "CareTeam",
+      "Claim",
+      "Communication",
+      "ConceptMap",
+      "Condition",
+      "Consent",
+      "Contract",
+      "Coverage",
+      "Device",
+      "DeviceRequest",
+      "DeviceUseStatement",
+      "DiagnosticReport",
+      "DocumentReference",
+      "Encounter",
+      "Endpoint",
+      "EpisodeOfCare",
+      "ExplanationOfBenefit",
+      "FamilyMemberHistory",
+      "Flag",
+      "Goal",
+      "Group",
+      "ImagingStudy",
+      "Immunization",
+      "ImmunizationRecommendation",
+      "List",
+      "Location",
+      "Measure",
+      "MeasureReport",
+      "Media",
+      "Medication",
+      "MedicationAdministration",
+      "MedicationDispense",
+      "MedicationRequest",
+      "MedicationStatement",
+      "NutritionOrder",
+      "Observation",
+      "Organization",
+      "Patient",
+      "Practitioner",
+      "PractitionerRole",
+      "Procedure",
+      "Provenance",
+      "Questionnaire",
+      "QuestionnaireResponse",
+      "RelatedPerson",
+      "RequestGroup",
+      "ResearchStudy",
+      "ResearchSubject",
+      "ServiceRequest",
+      "Specimen",
+      "Substance",
+      "Task",
+      "ValueSet"
+    ],
+    "format": "json",
+    "patientDataRequested": false
+  },
+  "authenticatedEpicValidation": false,
+  "jpsConnected": false,
+  "vercel": "project creation 403; no hosted URL",
+  "submission": "draft preparation only; not signed/submitted"
+}

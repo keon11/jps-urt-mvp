@@ -1,0 +1,10 @@
+category,description,quantity,unit,unit_price,total_price,owner,assumptions,status
+software,Platform subscription,,,,,,Commercial scope and licensing unknown,OWNER INPUT REQUIRED
+implementation,Workflow discovery and configuration,,,,,,Not delivered to JPS,OWNER INPUT REQUIRED
+integration,Epic and payer interfaces,,,,,,Tenant and third-party fees unknown,OWNER INPUT REQUIRED
+hosting,Compute storage monitoring and backups,,,,,,Sizing and availability commitments unknown,OWNER INPUT REQUIRED
+security,Security assessment compliance and assurance,,,,,,No HIPAA compliance claim,OWNER INPUT REQUIRED
+training,Role training and go-live support,,,,,,Staffing schedule unknown,OWNER INPUT REQUIRED
+support,Support and service level coverage,,,,,,No contractual SLA offered,OWNER INPUT REQUIRED
+clinical,Authorized criteria licensing and validation,,,,,,Criteria rights and clinical reviewers unknown,OWNER INPUT REQUIRED
+renewal,Optional renewal caps,,,,,,Requires owner commercial decision,OWNER INPUT REQUIRED
