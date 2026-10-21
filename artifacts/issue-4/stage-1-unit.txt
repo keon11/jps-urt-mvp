@@ -1,0 +1,47 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ read-only synthetic transport follows bounded same-endpoint pagination (73.116802ms)
+✔ expired tokens renew, 401 refreshes once, 403 denies and transient reads retry within bound (9.776476ms)
+✔ SSRF redirects, pagination loops and missing read authority fail closed (3.17787ms)
+✔ source identity, version change and stale information require reconciliation (1.968396ms)
+✔ expired provider token, wrong resource scope and privilege loss on renewal never dispatch an authorized read (13.85664ms)
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (33.774786ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (17.719682ms)
+✔ updated, stale and inconsistent source versions require reconciliation (13.153973ms)
+✔ default services are local and FHIR R4 adapters have separate endpoints (2.842565ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.894992ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (26.667811ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (12.780329ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (3.09942ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (19.578491ms)
+✔ malformed input fails closed with human review and never represents coverage (2.330321ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.591945ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (5.219597ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (19.120618ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (3.353221ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (143.756161ms)
+✔ official HTML never silently becomes an executable clinical rule (1.980697ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (7.903789ms)
+✔ official page changes remain unverified source comparisons with no activation (3.904433ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (3.18842ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.388056ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (0.639085ms)
+✔ missing physician documentation raises illustrative risk (0.263966ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (6.312188ms)
+✔ model responses with fabricated evidence are rejected (73.068941ms)
+✔ actual Synthea-derived varied cohort retains explicit synthetic origin and longitudinal clinical records (5547.22204ms)
+✔ normalization reports missing references rather than silently asserting complete evidence (31.870356ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (1.462305ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.551672ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (2.137643ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (9.994579ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11352.961943

@@ -1,0 +1,340 @@
+{
+  "at": "2026-10-21T19:55:54.680Z",
+  "name": "Synthea",
+  "version": "4.0.0",
+  "url": "https://github.com/synthetichealth/synthea",
+  "releaseUrl": "https://github.com/synthetichealth/synthea/releases/download/v4.0.0/synthea-with-dependencies.jar",
+  "jarSha256": "ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1",
+  "seed": 20261404054,
+  "clinicianSeed": 20261404054,
+  "populationRequested": 12,
+  "populationGenerated": 16,
+  "referenceDate": "2026-10-20",
+  "historyYears": 5,
+  "license": "Apache-2.0",
+  "licenseSha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+  "cohortHash": "06b14fce294758b7cc80e700e3e55380a47edf689eb4fd42143cc0a475f618aa",
+  "patients": [
+    {
+      "id": "468a04c8-31e7-330d-6b80-17e85a379584",
+      "label": "Synthea 1 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "54e493f0125b3ae895f81cb8cf4a0f507c78e9e895ec3fabd3d802178fffaca6",
+        "normalizedHash": "7117824fd3317064f6931700b73bd94ce6cca23ed1d89f19d7d1adfa1386891f",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 506,
+        "encounters": 41,
+        "observations": 123,
+        "conditions": 30
+      },
+      "derivedHash": "ed8aa9058c33252809f724d20755262b468ea59eed0a25cd1bbb433bf7d776eb"
+    },
+    {
+      "id": "f8e27039-f601-dab4-8e1a-33bf5004e833",
+      "label": "Synthea 2 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "082f2d9541d32fcb6286feac42d212d9db7fba3013a96c17aea039a1a29d015a",
+        "normalizedHash": "92c89cfc47c1df281fc24afef85a4b0374dcb3e2461e9379ef1c7496db712ea5",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 328,
+        "encounters": 21,
+        "observations": 117,
+        "conditions": 21
+      },
+      "derivedHash": "949612dff8654e13e7d831e028aca51063829cf573117ca8a2f79bfc0e1b8ecc"
+    },
+    {
+      "id": "ea796016-0cd6-fc51-b65e-51a6de6cd972",
+      "label": "Synthea 3 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "be1a47084ea7b2b9c6bee98edc616707319afbf3f441538797341c817a8dbd71",
+        "normalizedHash": "03a086e559875b255508fc812065d4c7a0d0aa6eb26c8d2b545d700f9394f72d",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 332,
+        "encounters": 35,
+        "observations": 61,
+        "conditions": 13
+      },
+      "derivedHash": "476eec9d9ec3ad4dd2e93d57327438df57a4c20395a3b343fcd46c4a922fb87c"
+    },
+    {
+      "id": "6c8a18a7-5f5e-709d-20c5-d27c6fa0fc34",
+      "label": "Synthea 4 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "5ebf6d16d352e4a68ec05ff7687cf4f57b3b27951e49eb5c64819e15ce466e3a",
+        "normalizedHash": "b1476f82e6ae8aa7d45247209874ca583c981e5ea6d75f360234e41801b50767",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 6807,
+        "encounters": 416,
+        "observations": 2739,
+        "conditions": 54
+      },
+      "derivedHash": "007140c232098cbe81f49c5d9fabd66c0b52300d9a28fe932d8eb5aeb8a4586a"
+    },
+    {
+      "id": "34151971-b2ce-34e4-e799-5cd03e1c8d94",
+      "label": "Synthea 5 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "e154909820592b666b8886a7965d166b09672fa484b51437be88d970b73c8b33",
+        "normalizedHash": "7dadbcccc6c71b563985a42c85ecbb4e306a14c6a6528f3a0c813fb55d787aec",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 1570,
+        "encounters": 98,
+        "observations": 501,
+        "conditions": 35
+      },
+      "derivedHash": "b64330f4acab97a8a5384d5e018b6896aa3d866ca6e90dd319635f819492b00d"
+    },
+    {
+      "id": "7492462a-36b6-388d-e43c-547e95e6995d",
+      "label": "Synthea 6 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "2a1f1cd7c31abe2c31f3a1e95a7f91cc61b0af46317d01dc14f4c73303059e0e",
+        "normalizedHash": "fc0ff1b4a19316807f5aafe05f933305e232123ab6ed484c728773b252312ad7",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 256,
+        "encounters": 32,
+        "observations": 38,
+        "conditions": 13
+      },
+      "derivedHash": "9ac83d2e14384042825b22c53210aa31a3db2bb311d5adaccd8a2e41e45448ed"
+    },
+    {
+      "id": "7ceae065-b679-5d14-7c3d-0ba0ccbcb156",
+      "label": "Synthea 7 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "2ec9f8fdc6d3d032baa2726480c7c3f86413fd46376eb18c7e6ed6cfa2c3b657",
+        "normalizedHash": "b596a02529a6c543efcaebb6aefcd47f70764845f74e60415f0370e9a0f6e67d",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 289,
+        "encounters": 21,
+        "observations": 77,
+        "conditions": 21
+      },
+      "derivedHash": "cc1bdc58cc2072bdfd93c3ffff6b0f68918c6373f0ece4392b231d7fd73befd9"
+    },
+    {
+      "id": "4cebd840-c807-aec5-1567-fc028664bcb4",
+      "label": "Synthea 8 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "f017d003e762c0362db82377832c942b7f45f8727faf4bead85108c65250f939",
+        "normalizedHash": "a8c0432dcfdfd6fc6329b005b323c65bc2c715a799548ec884a90035d067e4fe",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 386,
+        "encounters": 25,
+        "observations": 87,
+        "conditions": 23
+      },
+      "derivedHash": "10f7f8e58ba905820c7e81cccf5e6495af2671bb8a24a0088a9c02c04da25dcf"
+    },
+    {
+      "id": "080341ae-4a17-6716-bcd3-a00154fea222",
+      "label": "Synthea 9 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "779eccc864f6e470f70ea534761a85c8e82e866bb5dddc5341f4b0acf19aee3f",
+        "normalizedHash": "84d6cd4e9df3b24523b2223cc2c5dc0077f7f56e199ac357ee8c919240eff778",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 303,
+        "encounters": 18,
+        "observations": 118,
+        "conditions": 21
+      },
+      "derivedHash": "432df499f0af99a5851ddfaffde987e274075615ff9930592c164bbd2fd31fb0"
+    },
+    {
+      "id": "c487a039-5d6a-8aa1-1c1d-7f5a10c65ba3",
+      "label": "Synthea 10 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "7a06c8fc52d77e308d4013edf47d5f720a2ef7656ab8d9d5a9ac30e5ba542520",
+        "normalizedHash": "0f8817e2606cdaff90f37883b2cc03848a37d4db67a55b575f36ee13a1c638ab",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 339,
+        "encounters": 25,
+        "observations": 80,
+        "conditions": 31
+      },
+      "derivedHash": "f0931966a470f70cbf3d91238712229fd88c399cc2043453f0adedc9807fa9de"
+    },
+    {
+      "id": "cdfd4022-8726-4e7b-f1b1-cd0ca1cdf70e",
+      "label": "Synthea 11 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "3c81b8719df485f4314efe7cb549490c215076270ab542b43167ce68a48aa8a3",
+        "normalizedHash": "2c41296962578219e30892b8c15c8c6f0f9f8cc15e45a50ca05e020c37a75492",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 987,
+        "encounters": 41,
+        "observations": 506,
+        "conditions": 40
+      },
+      "derivedHash": "45e9f5137b4d804352e9129c2fc828b31cd6a518b9376a62d28c3b8c428f5b80"
+    },
+    {
+      "id": "29d987e2-0f2c-5a5c-6b38-c5b5b4cb2b66",
+      "label": "Synthea 12 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "9b6575c66eb5c056ccb0d5bf665c7108381df30646cd7f624a576785ef021ebf",
+        "normalizedHash": "bf984088c508823c5a0ed6b076722c4e5a28eb7d04ee1f306d762f2b6a156fa9",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 360,
+        "encounters": 31,
+        "observations": 82,
+        "conditions": 15
+      },
+      "derivedHash": "2f7678cacbf45cb4f4e552c0432839c9d74e15c8168934470c792c3331374426"
+    },
+    {
+      "id": "5fe45208-cd38-3fe5-c085-dc9ce6729c1e",
+      "label": "Synthea 13 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "5d962b639d0abc7a812afd49d9cabbe2b6e3c38a26f031c545b8193de7eab8d6",
+        "normalizedHash": "20e77fa26ff49de4fb8cb848a666bd6ca6d4e28e07f08507fef605b3bb82220b",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 328,
+        "encounters": 19,
+        "observations": 151,
+        "conditions": 11
+      },
+      "derivedHash": "a233f19558b528a8c70976e8521169327be6fb4cb7b6fcaaa66971a906f9e01f"
+    },
+    {
+      "id": "c7d3cc79-68b2-6b22-5ea3-1d69b3977614",
+      "label": "Synthea 14 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "10a5808f397f7c46a71f3848b291ce01ed793d247c35cb154e020783a742fc8d",
+        "normalizedHash": "a04b318adf3a15bdfb0845d3a6060c497375f86a70c162ad5b4eefc0447398a1",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 995,
+        "encounters": 49,
+        "observations": 271,
+        "conditions": 47
+      },
+      "derivedHash": "2bb181a7ae009f51379f372042b3cfc618fe43ec2a84f169ad2cf53df4814e63"
+    },
+    {
+      "id": "68f39d36-0864-e715-6d09-577d553cad5c",
+      "label": "Synthea 15 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "781813a980da1c70750eec34970533209c8f810655fc6317e6e9c6d2f8f34bdc",
+        "normalizedHash": "919356b0c6d6f550715e6006af1c2a3053a4856b30548863e716c1d5588e89e7",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 763,
+        "encounters": 49,
+        "observations": 267,
+        "conditions": 28
+      },
+      "derivedHash": "b486b864e8f3f2cda1b435d4714d5dd418dd4ede9fc540841e4dde391035406d"
+    },
+    {
+      "id": "3fffe730-9026-5e93-fe7f-b1e583a05c8e",
+      "label": "Synthea 16 Fictional",
+      "provenance": {
+        "generator": "Synthea",
+        "version": "4.0.0",
+        "originalSha256": "19e8d58b4d8c031a471e5156527d2fea3abd90c52ecab92490f19529af2cf30c",
+        "normalizedHash": "e2708a7b0c92e4942767725545746caf595f97156a66a67f927889af81b98807",
+        "syntheticOnly": true,
+        "epicRuntimeValidated": false,
+        "transform": "Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart."
+      },
+      "counts": {
+        "allOriginalResources": 218,
+        "encounters": 18,
+        "observations": 56,
+        "conditions": 18
+      },
+      "derivedHash": "67c2afbe1d326d84e35dbce00b11093a5c2fa2b8bff79fc6111079760d8aee8e"
+    }
+  ],
+  "originalsPublic": false
+}

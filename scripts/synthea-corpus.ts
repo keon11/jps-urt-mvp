@@ -1,0 +1,19 @@
+import {readFile,readdir,mkdir,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import type {Bundle} from '@medplum/fhirtypes';
+import {normalizeSynthea} from '../services/api/src/epic-fhir-adapter.js';import {hash} from '../services/api/src/fixtures.js';
+const dir='.runtime/synthea/output/fhir',sha=(b:Buffer|string)=>createHash('sha256').update(b).digest('hex');
+const locations:any[]=[];for(const file of(await readdir(dir)).filter(f=>f.startsWith('hospitalInformation'))){const original=JSON.parse(await readFile(dir+'/'+file,'utf8'));for(const e of original.entry??[]){if(e.resource?.resourceType!=='Location')continue;const r=e.resource;r.name='Synthetic facility Fictional';for(const k of ['address','telecom','position','managingOrganization'])delete r[k];r.meta={tag:[{system:'urn:ur-demo:data-classification',code:'synthetic'}]};locations.push(r);}}
+const patients:any[]=[];for(const file of (await readdir(dir)).sort()){
+ const bytes=await readFile(dir+'/'+file),b=JSON.parse(bytes.toString()) as Bundle;if(!b.entry?.some(e=>e.resource?.resourceType==='Patient'))continue;
+ const n=normalizeSynthea(b,sha(bytes));const p:any=n.patient;p.name=[{family:'Fictional',given:['Synthea '+(patients.length+1)]}];delete p.address;delete p.telecom;delete p.photo;p.identifier=[{system:'urn:ur-demo:synthea',value:p.id}];
+ const encounters=n.clinical.filter(r=>r.resourceType==='Encounter');
+ const selected=n.clinical.filter((r:any)=>r.resourceType==='Patient'||r.resourceType==='Encounter'||r.resourceType==='Condition'||r.resourceType==='Observation');
+ // Preserve actual longitudinal clinical records; remove external practitioner/provider pointers only in this documented derived test fixture.
+ function scrub(v:any):void{if(Array.isArray(v)){v.forEach(scrub);return;}if(v&&typeof v==='object'){for(const[k,x]of Object.entries(v)){if(['generalPractitioner','managingOrganization','participant','serviceProvider','performer','asserter','recorder'].includes(k))delete v[k];else scrub(x);}}}
+ selected.forEach(scrub);
+ patients.push({id:p.id,label:'Synthea '+(patients.length+1)+' Fictional',provenance:{...n.provenance,transform:'Derived clinical-only cohort: synthetic labels, patient contact identifiers removed, external provider pointers removed. Not original export or a complete clinical chart.'},counts:{allOriginalResources:b.entry.length,encounters:encounters.length,observations:selected.filter(r=>r.resourceType==='Observation').length,conditions:selected.filter(r=>r.resourceType==='Condition').length},bundle:{resourceType:'Bundle',type:'collection',entry:selected.map(resource=>({resource}))}});
+}
+const spec={locations,version:'1.0.0',syntheticOnly:true,generator:{name:'Synthea',version:'4.0.0',url:'https://github.com/synthetichealth/synthea',releaseUrl:'https://github.com/synthetichealth/synthea/releases/download/v4.0.0/synthea-with-dependencies.jar',jarSha256:'ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1',seed:20261404054,clinicianSeed:20261404054,populationRequested:12,populationGenerated:patients.length,referenceDate:'2026-10-20',historyYears:5,license:'Apache-2.0'},patients};
+if(patients.length!==16)throw Error('Unexpected generated population; inspect generation rather than silently replacing corpus');
+await mkdir('fixtures/synthea',{recursive:true});await writeFile('fixtures/synthea/cohort-v1.json',JSON.stringify(spec,null,2)+'\n');
+await writeFile('artifacts/issue-4/synthea-generation-manifest.json',JSON.stringify({at:new Date().toISOString(),...spec.generator,licenseSha256:sha(await readFile('.runtime/synthea/LICENSE')),cohortHash:hash(spec),patients:patients.map(({bundle,...p})=>({...p,derivedHash:hash(bundle)})),originalsPublic:false},null,2)+'\n');
+console.log('Prepared',patients.length,'Synthea-derived fictional patients; original byte hashes preserved.');

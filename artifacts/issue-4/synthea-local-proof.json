@@ -1,0 +1,844 @@
+{
+  "localAdapterPagination": {
+    "patients": 22,
+    "passed": true,
+    "authority": "Existing local Medplum service client, not an Epic SMART grant"
+  },
+  "smartDiscovery": {
+    "authorizationEndpoint": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/authorize",
+    "tokenEndpoint": "https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token",
+    "pkce": "S256",
+    "grantTypes": [
+      "authorization_code",
+      "refresh_token",
+      "client_credentials",
+      "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      "urn:ietf:params:oauth:grant-type:token-exchange"
+    ],
+    "credentialExchangePerformed": false
+  },
+  "at": "2026-10-21T19:57:47.043Z",
+  "classification": "SYNTHETIC ONLY",
+  "originals": "private Synthea exports; derived fixture is documented",
+  "patients": 16,
+  "resources": 64,
+  "localMedplumPassed": true,
+  "results": [
+    {
+      "id": "468a04c8-31e7-330d-6b80-17e85a379584",
+      "label": "Synthea 1 Fictional",
+      "counts": {
+        "allOriginalResources": 506,
+        "encounters": 41,
+        "observations": 123,
+        "conditions": 30
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "468a04c8-31e7-330d-6b80-17e85a379584",
+          "medplumReadVerified": true,
+          "version": "c5aaf245-90d1-459a-8ec8-1299c7d9fa25",
+          "sourceHash": "0291df2dbf2380f18daa1889ea7d61212c57edfa173997e9f20960ef97a795ad",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://synthetichealth.github.io/synthea/disability-adjusted-life-years"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://synthetichealth.github.io/synthea/quality-adjusted-life-years"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Encounter",
+          "id": "468a04c8-31e7-330d-8212-002da2952632",
+          "medplumReadVerified": true,
+          "version": "b41a00b9-9b98-4047-874b-21b8686f1d69",
+          "sourceHash": "afe0faf466ec749423892bd89e67aeb95fdee9e7d3f8146f30a5e15c5d8fdaf1",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Unable to expand ValueSet: cannot apply filters '[org.hl7.fhir.r5.model.ValueSet$ConceptSetFilterComponent@3806868e]' because CodeSystem 'http://snomed.info/sct' is ignored/not-present"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "None of the codings provided are in the value set 'Encounter Reason Codes' (http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1), and a coding is recommended to come from this value set (codes = http://snomed.info/sct#66383009)"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Observation",
+          "id": "468a04c8-31e7-330d-a523-55601c0f1b91",
+          "medplumReadVerified": true,
+          "version": "f872b541-7738-433a-8cdb-d61b0a70b6d3",
+          "sourceHash": "2e38b3db424b8e7d6dcbd3ef4643240f502f85a4f065eca6a0d9ca82555a5260",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "CodeSystem is unknown and can't be validated: http://loinc.org for 'http://loinc.org#55758-7'"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Best Practice Recommendation: In general, all observations should have a performer"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Condition",
+          "id": "468a04c8-31e7-330d-d39e-4190cce4dbf3",
+          "medplumReadVerified": true,
+          "version": "66eaade0-ea84-4057-a781-465e14f4c49b",
+          "sourceHash": "f18c08621c2c895007f20afe6482789107a4ef3cb7329e82a9dd2910cc8c0d78",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "f8e27039-f601-dab4-8e1a-33bf5004e833",
+      "label": "Synthea 2 Fictional",
+      "counts": {
+        "allOriginalResources": 328,
+        "encounters": 21,
+        "observations": 117,
+        "conditions": 21
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "f8e27039-f601-dab4-8e1a-33bf5004e833",
+          "medplumReadVerified": true,
+          "version": "d0fb71fd-b935-42b7-89c0-b4f5c7736ab6",
+          "sourceHash": "6fd7e848c17ee843bfac8c79a106488e583c46956f7c9ed9c631b63d391ee969",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://synthetichealth.github.io/synthea/disability-adjusted-life-years"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "Unknown extension http://synthetichealth.github.io/synthea/quality-adjusted-life-years"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Encounter",
+          "id": "f8e27039-f601-dab4-5d4e-f48abba00c1b",
+          "medplumReadVerified": true,
+          "version": "b3e9bf45-b9cf-4443-86dc-fef0dd86801c",
+          "sourceHash": "803303438bf295558b5a66f6f6d08a078baf5f75d36f899dcec1c2607aafb2d5",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Unable to expand ValueSet: cannot apply filters '[org.hl7.fhir.r5.model.ValueSet$ConceptSetFilterComponent@4d843b09]' because CodeSystem 'http://snomed.info/sct' is ignored/not-present"
+              },
+              {
+                "severity": "information",
+                "code": "processing",
+                "diagnostics": "None of the codings provided are in the value set 'Encounter Reason Codes' (http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1), and a coding is recommended to come from this value set (codes = http://snomed.info/sct#401303003)"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Observation",
+          "id": "f8e27039-f601-dab4-09d6-66275d9ecbd2",
+          "medplumReadVerified": true,
+          "version": "08e57805-0329-4fba-938e-68d6d22fabbe",
+          "sourceHash": "60105c4d08c6c726e7f1ef881efbe473ebcc476974fb2dcd31f742080ce1cfa9",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "CodeSystem is unknown and can't be validated: http://loinc.org for 'http://loinc.org#69453-9'"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+              },
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Best Practice Recommendation: In general, all observations should have a performer"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Condition",
+          "id": "f8e27039-f601-dab4-cddb-4239c99bb67f",
+          "medplumReadVerified": true,
+          "version": "dfaa2a73-6ef8-44a9-95aa-88dd34fd836a",
+          "sourceHash": "c7f4c2e4bc9e1de1a5f40f1af6f5df83851f0f818e42c20eefc5ca69047b7b8e",
+          "hapi": {
+            "status": 200,
+            "resourceType": "OperationOutcome",
+            "issues": [
+              {
+                "severity": "warning",
+                "code": "processing",
+                "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ea796016-0cd6-fc51-b65e-51a6de6cd972",
+      "label": "Synthea 3 Fictional",
+      "counts": {
+        "allOriginalResources": 332,
+        "encounters": 35,
+        "observations": 61,
+        "conditions": 13
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "ea796016-0cd6-fc51-b65e-51a6de6cd972",
+          "medplumReadVerified": true,
+          "version": "bb4aa992-8580-4b45-8196-94d3b16d2a39",
+          "sourceHash": "3b683ea7579b7fe1b92031af0e29ecd72149d03162f0f78d1c94e63e4b4ed2e5"
+        },
+        {
+          "type": "Encounter",
+          "id": "ea796016-0cd6-fc51-d4f0-3e2baf37167c",
+          "medplumReadVerified": true,
+          "version": "ef3be735-a687-490b-8ece-8aa5f979083e",
+          "sourceHash": "c772d5cdf5c89d3597df86dcf6f6d7258a3f56ffb7c4f457130f3c74a5da20ae"
+        },
+        {
+          "type": "Observation",
+          "id": "ea796016-0cd6-fc51-3c71-1af1d9660119",
+          "medplumReadVerified": true,
+          "version": "025603f3-dded-44ca-9b89-1b776ef137a7",
+          "sourceHash": "17437b7b57cf61997ed0ed14c8c9e680c96a3052359950caeb5a38a3192b2c7b"
+        },
+        {
+          "type": "Condition",
+          "id": "ea796016-0cd6-fc51-2d3b-fdadc0518722",
+          "medplumReadVerified": true,
+          "version": "84510e62-3c9f-4232-b0c5-4c9c96e09385",
+          "sourceHash": "2022b6bdafd69b723ea6a4707c09377c9501ca850c026f8999eea42a19c0ba7d"
+        }
+      ]
+    },
+    {
+      "id": "6c8a18a7-5f5e-709d-20c5-d27c6fa0fc34",
+      "label": "Synthea 4 Fictional",
+      "counts": {
+        "allOriginalResources": 6807,
+        "encounters": 416,
+        "observations": 2739,
+        "conditions": 54
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "6c8a18a7-5f5e-709d-20c5-d27c6fa0fc34",
+          "medplumReadVerified": true,
+          "version": "d3f5384e-0d1a-45e3-9823-c70dfe646b7f",
+          "sourceHash": "57a4e080160de6c4471805840fb192ba143a55269bae083996859ae2707a36fc"
+        },
+        {
+          "type": "Encounter",
+          "id": "6c8a18a7-5f5e-709d-f008-e0e2f1d91cae",
+          "medplumReadVerified": true,
+          "version": "38fe8765-57e3-4ea3-8ecd-36ddd0efb1de",
+          "sourceHash": "caac68176040c59f08717ed103422daa327184e3ff633811394cc982e1111f48"
+        },
+        {
+          "type": "Observation",
+          "id": "6c8a18a7-5f5e-709d-a89f-b72a7944d2b2",
+          "medplumReadVerified": true,
+          "version": "5d719e2e-0ac4-4a33-b4a6-8d91b3014563",
+          "sourceHash": "9912cb8ec9d32fd8a7e298cc5aab4cce6f07e289ad57dc6f394dda89abbad9f3"
+        },
+        {
+          "type": "Condition",
+          "id": "6c8a18a7-5f5e-709d-33fb-0365e6dea0ca",
+          "medplumReadVerified": true,
+          "version": "a03bd5b7-5eea-41aa-a3ab-a4a9200d057e",
+          "sourceHash": "9c09200dfed25a0530c6adf07f2caaeb40ee37f2ae2c1573bc7d2acc278d2a63"
+        }
+      ]
+    },
+    {
+      "id": "34151971-b2ce-34e4-e799-5cd03e1c8d94",
+      "label": "Synthea 5 Fictional",
+      "counts": {
+        "allOriginalResources": 1570,
+        "encounters": 98,
+        "observations": 501,
+        "conditions": 35
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "34151971-b2ce-34e4-e799-5cd03e1c8d94",
+          "medplumReadVerified": true,
+          "version": "0496bbac-071d-4292-927c-00b50d857800",
+          "sourceHash": "ba186834be88b2396726bd11122c52ee2ef489ffa48c261e52dff4f5ba472637"
+        },
+        {
+          "type": "Encounter",
+          "id": "34151971-b2ce-34e4-3939-1d59aab3eb75",
+          "medplumReadVerified": true,
+          "version": "b4c2c3b8-cc0c-4910-9d93-ce77ee34050a",
+          "sourceHash": "f1834909e4c8761ec07a24097bff42c70a43744186e585a8e5a32e92ca3ed870"
+        },
+        {
+          "type": "Observation",
+          "id": "34151971-b2ce-34e4-a2e9-178798c5e23c",
+          "medplumReadVerified": true,
+          "version": "27123eb5-2e17-4542-8784-025d8b02de97",
+          "sourceHash": "2d4653fb8e1d991bf76fba81bb5a190230da13871b1c339c9d938344e3d1ba34"
+        },
+        {
+          "type": "Condition",
+          "id": "34151971-b2ce-34e4-3833-bf8d27f53456",
+          "medplumReadVerified": true,
+          "version": "53858440-16fa-4b54-90d5-f5e12e3452ab",
+          "sourceHash": "20561a198ee5f732ee0acd7071b8df3dda5f65e28dd595b60e02513443c5aa84"
+        }
+      ]
+    },
+    {
+      "id": "7492462a-36b6-388d-e43c-547e95e6995d",
+      "label": "Synthea 6 Fictional",
+      "counts": {
+        "allOriginalResources": 256,
+        "encounters": 32,
+        "observations": 38,
+        "conditions": 13
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "7492462a-36b6-388d-e43c-547e95e6995d",
+          "medplumReadVerified": true,
+          "version": "ab25fdca-94a7-406a-a731-a4b672aeface",
+          "sourceHash": "abd60ea0cd76261fdda7dd19de9a093b01a77d4aca572adae10b2e678339a2db"
+        },
+        {
+          "type": "Encounter",
+          "id": "7492462a-36b6-388d-28ec-3bd745255acb",
+          "medplumReadVerified": true,
+          "version": "f6c185d1-219e-418a-a14d-9adf2882ee39",
+          "sourceHash": "3732be0a73a7b54466d3b9a516679f58efa401799563ad6dcc5c3a40bd014994"
+        },
+        {
+          "type": "Observation",
+          "id": "7492462a-36b6-388d-7ee4-647b52922d8e",
+          "medplumReadVerified": true,
+          "version": "9f74174e-6b3e-49a4-b814-0ad9dbb1938d",
+          "sourceHash": "d805be30489c655914bad8a7642953efac08b1e336c14f9ac37bbfb2f231e11b"
+        },
+        {
+          "type": "Condition",
+          "id": "7492462a-36b6-388d-fcb2-fc51effc2ec7",
+          "medplumReadVerified": true,
+          "version": "77726f0b-eeb6-406a-b343-d93fe834567b",
+          "sourceHash": "95f55218058e9bc152bbd851f8b87c68b3ba7f81282bbd3e1e2349083e4a8d63"
+        }
+      ]
+    },
+    {
+      "id": "7ceae065-b679-5d14-7c3d-0ba0ccbcb156",
+      "label": "Synthea 7 Fictional",
+      "counts": {
+        "allOriginalResources": 289,
+        "encounters": 21,
+        "observations": 77,
+        "conditions": 21
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "7ceae065-b679-5d14-7c3d-0ba0ccbcb156",
+          "medplumReadVerified": true,
+          "version": "a3d531e5-5985-482e-bd38-0c63be8ed0fd",
+          "sourceHash": "47cac3d4005bd09767ed974b6baf88cb87e9ae849ce53187dac8ee8d756dc40a"
+        },
+        {
+          "type": "Encounter",
+          "id": "7ceae065-b679-5d14-ad7e-fcf350fc3baf",
+          "medplumReadVerified": true,
+          "version": "4273b0ef-e037-4a3f-9387-f8391a635fec",
+          "sourceHash": "01a2fd8e627aa151a5b5ff721f7ec96090681f1d8cebca6fa7ad70c2e0f55018"
+        },
+        {
+          "type": "Observation",
+          "id": "7ceae065-b679-5d14-08f9-9663c65c36e6",
+          "medplumReadVerified": true,
+          "version": "283b86af-a659-4da8-b23c-0f809ecf90a6",
+          "sourceHash": "a408843fea93af334395bbb9c11f0d863e01f8b17119cbbd23008f02d0488324"
+        },
+        {
+          "type": "Condition",
+          "id": "7ceae065-b679-5d14-bb13-a934449f1017",
+          "medplumReadVerified": true,
+          "version": "d36bea8e-99a9-4c9e-9453-63d1fae4a58f",
+          "sourceHash": "08c6f1ed7fa6c71c6f4b3f9fab67fc6b73f50010af91d7c609f7b22e5360dbd1"
+        }
+      ]
+    },
+    {
+      "id": "4cebd840-c807-aec5-1567-fc028664bcb4",
+      "label": "Synthea 8 Fictional",
+      "counts": {
+        "allOriginalResources": 386,
+        "encounters": 25,
+        "observations": 87,
+        "conditions": 23
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "4cebd840-c807-aec5-1567-fc028664bcb4",
+          "medplumReadVerified": true,
+          "version": "88358f60-ba97-4410-b0b5-c45aa9db6445",
+          "sourceHash": "25159fda33da7dc7efe33d4b6a25830902af1b9b53e26ca41cabbb4ae5b68720"
+        },
+        {
+          "type": "Encounter",
+          "id": "4cebd840-c807-aec5-914a-01966c92c385",
+          "medplumReadVerified": true,
+          "version": "db702b93-46e8-455b-a407-353171ff8517",
+          "sourceHash": "0cdbe3ca3cd3e8283c1f66ca6198bc25c67b20598c49d5c827e5de86bfa9e266"
+        },
+        {
+          "type": "Observation",
+          "id": "4cebd840-c807-aec5-f9bd-1253bce89a62",
+          "medplumReadVerified": true,
+          "version": "0ed2934a-b396-45ba-bc2a-c8cec54ec668",
+          "sourceHash": "9161acd4a84bb855c665bcec8909e73394655a26dcea467e7f869f35798224b9"
+        },
+        {
+          "type": "Condition",
+          "id": "4cebd840-c807-aec5-faed-93caf7e9c2a8",
+          "medplumReadVerified": true,
+          "version": "05d8a49e-083b-4d0e-a2a5-eff2d382ff15",
+          "sourceHash": "1cd2be970e44b1b9dd7459499f3e3f77528cafe09ec6ecb9b262361535f516c8"
+        }
+      ]
+    },
+    {
+      "id": "080341ae-4a17-6716-bcd3-a00154fea222",
+      "label": "Synthea 9 Fictional",
+      "counts": {
+        "allOriginalResources": 303,
+        "encounters": 18,
+        "observations": 118,
+        "conditions": 21
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "080341ae-4a17-6716-bcd3-a00154fea222",
+          "medplumReadVerified": true,
+          "version": "de9bbefc-a997-479c-b915-56cb83cec87c",
+          "sourceHash": "60c513e7d36cd51f32cd280c01685b37bc4ec2d6f1b6c00620a09356970c717d"
+        },
+        {
+          "type": "Encounter",
+          "id": "080341ae-4a17-6716-30a9-11074c737fc7",
+          "medplumReadVerified": true,
+          "version": "d00a9d1b-80b1-4064-b507-9d5b8704568b",
+          "sourceHash": "262aae7dc5734c14b488aa6d1dc3d8f1f71bfeaf229b670f2e27bef58fd42989"
+        },
+        {
+          "type": "Observation",
+          "id": "080341ae-4a17-6716-90ea-eb5c4f26d0e1",
+          "medplumReadVerified": true,
+          "version": "c1d2f723-b5e3-449d-bca5-81d14d2f6a1a",
+          "sourceHash": "0754e4aca1b6b61aac4ed5dd01c1aa4e50a100759331374b45db34c233d9e0de"
+        },
+        {
+          "type": "Condition",
+          "id": "080341ae-4a17-6716-36c4-7303e64d1528",
+          "medplumReadVerified": true,
+          "version": "efbd19d1-0a4b-46f2-bcba-614a6cabf73e",
+          "sourceHash": "1ccabd28d00e03283003294bc2b580a4bb453831ae01020ddcfa2f008e4b5bfb"
+        }
+      ]
+    },
+    {
+      "id": "c487a039-5d6a-8aa1-1c1d-7f5a10c65ba3",
+      "label": "Synthea 10 Fictional",
+      "counts": {
+        "allOriginalResources": 339,
+        "encounters": 25,
+        "observations": 80,
+        "conditions": 31
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "c487a039-5d6a-8aa1-1c1d-7f5a10c65ba3",
+          "medplumReadVerified": true,
+          "version": "bab4c9ef-5f03-4985-ae79-31e19d24b776",
+          "sourceHash": "0bc5bfef12076f51a064dde9224db8736556e8b3a34af8fe78b18b94c2cede86"
+        },
+        {
+          "type": "Encounter",
+          "id": "c487a039-5d6a-8aa1-e65e-4327c57d15b9",
+          "medplumReadVerified": true,
+          "version": "83bab95e-27cf-4e92-a57f-8c58b0637b0b",
+          "sourceHash": "9427f3e67aba786196cd5d8690224d6853a4462b1ca367d9d2e9c62e032f1164"
+        },
+        {
+          "type": "Observation",
+          "id": "c487a039-5d6a-8aa1-a483-90ef279e2b6e",
+          "medplumReadVerified": true,
+          "version": "e791f568-b8e5-4717-b180-f887dc6878e2",
+          "sourceHash": "adeffadba0f4fa13f59eebe542040d759fe551d4709a42d6af512353120a37c7"
+        },
+        {
+          "type": "Condition",
+          "id": "c487a039-5d6a-8aa1-90cc-d6895972d188",
+          "medplumReadVerified": true,
+          "version": "5283ec4f-71d9-4703-a8fa-b99b350d3e37",
+          "sourceHash": "2f57d8c2a06d2b72547346e4ba88467fc033c4b647964cfa36e114af78289df9"
+        }
+      ]
+    },
+    {
+      "id": "cdfd4022-8726-4e7b-f1b1-cd0ca1cdf70e",
+      "label": "Synthea 11 Fictional",
+      "counts": {
+        "allOriginalResources": 987,
+        "encounters": 41,
+        "observations": 506,
+        "conditions": 40
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "cdfd4022-8726-4e7b-f1b1-cd0ca1cdf70e",
+          "medplumReadVerified": true,
+          "version": "c7b6daa5-e98f-43df-8f66-916cb8bef873",
+          "sourceHash": "06b4255478fa1f4bf7a37c4f62726470b1b345aea1b29588cefe66bf407e8b3f"
+        },
+        {
+          "type": "Encounter",
+          "id": "cdfd4022-8726-4e7b-af2c-e86b059776a7",
+          "medplumReadVerified": true,
+          "version": "05b91fc3-faf1-4826-a4bd-370214b82b3f",
+          "sourceHash": "efc26d98f2bda309798d302fabdc84cf88eb315a5c133a058a6774ef4086cd6f"
+        },
+        {
+          "type": "Observation",
+          "id": "cdfd4022-8726-4e7b-d3c1-72cfed74b41b",
+          "medplumReadVerified": true,
+          "version": "e483b564-b7db-498b-937d-51329dde6d61",
+          "sourceHash": "47f4ff96432b2fd60509295fa2a88eb5a05ce4a4961be49c14cf32d3f4e43522"
+        },
+        {
+          "type": "Condition",
+          "id": "cdfd4022-8726-4e7b-498e-233d0e219b20",
+          "medplumReadVerified": true,
+          "version": "92a20642-c47f-4020-8a37-6d5d928d5cb1",
+          "sourceHash": "4d01cc6caec8037b3b0ff1169a23c953361acc1d49857c2ca450107f6735f2c8"
+        }
+      ]
+    },
+    {
+      "id": "29d987e2-0f2c-5a5c-6b38-c5b5b4cb2b66",
+      "label": "Synthea 12 Fictional",
+      "counts": {
+        "allOriginalResources": 360,
+        "encounters": 31,
+        "observations": 82,
+        "conditions": 15
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "29d987e2-0f2c-5a5c-6b38-c5b5b4cb2b66",
+          "medplumReadVerified": true,
+          "version": "a8241b25-ec1b-44a8-8c5c-ec0370e97751",
+          "sourceHash": "229719e641b2ff2205ebd3b3842b006ad2193226fe3f0e71588d7af0ce47208b"
+        },
+        {
+          "type": "Encounter",
+          "id": "29d987e2-0f2c-5a5c-3214-7fb85975c1af",
+          "medplumReadVerified": true,
+          "version": "d49bf651-2afd-4bf3-ac75-fdac2ee49f38",
+          "sourceHash": "43c48e0aff20819885c484f22891423ff05aec21937912a7c43b6620303bfb86"
+        },
+        {
+          "type": "Observation",
+          "id": "29d987e2-0f2c-5a5c-6e84-68740dea1d70",
+          "medplumReadVerified": true,
+          "version": "ba3a01ff-7aba-4cea-b164-90ffbb1c90be",
+          "sourceHash": "52e6e715e70f7905bc2773dc3fe1d032b8312d9474557635c46d6167e2b68d56"
+        },
+        {
+          "type": "Condition",
+          "id": "29d987e2-0f2c-5a5c-29bd-8b49e63ce8e3",
+          "medplumReadVerified": true,
+          "version": "a675502f-c0b3-4fb1-8f14-3e0131e7fa59",
+          "sourceHash": "d1455edfd839b0bd469cd31b73aa96ef711b4e230e682c95e6d1bd7f2d085186"
+        }
+      ]
+    },
+    {
+      "id": "5fe45208-cd38-3fe5-c085-dc9ce6729c1e",
+      "label": "Synthea 13 Fictional",
+      "counts": {
+        "allOriginalResources": 328,
+        "encounters": 19,
+        "observations": 151,
+        "conditions": 11
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "5fe45208-cd38-3fe5-c085-dc9ce6729c1e",
+          "medplumReadVerified": true,
+          "version": "3b7501ca-c0e4-41e0-aafe-9925b4540acf",
+          "sourceHash": "f70f140caed740c0a96f523cb2add93ab6b02be1d32fce50cd11143eb622dca3"
+        },
+        {
+          "type": "Encounter",
+          "id": "5fe45208-cd38-3fe5-baae-d2c0c27dc14a",
+          "medplumReadVerified": true,
+          "version": "605941b8-18d8-48d7-820d-70da03f978bc",
+          "sourceHash": "c60dade96c67769f6fae51b741d087d9086e7afc224eba1e6e02be27b3eda41a"
+        },
+        {
+          "type": "Observation",
+          "id": "5fe45208-cd38-3fe5-a792-224f8684023f",
+          "medplumReadVerified": true,
+          "version": "a6a0004f-6ef8-4b4b-a9e7-fcfd1fb528c4",
+          "sourceHash": "86e25748c616440693847c8099059d4ae5bba39783475140b842089c4b7c679d"
+        },
+        {
+          "type": "Condition",
+          "id": "5fe45208-cd38-3fe5-367e-9f1dde549c5f",
+          "medplumReadVerified": true,
+          "version": "6d831cea-313f-409e-b7e8-dcf53dc1b213",
+          "sourceHash": "475ce3769acab9a9237dad7f98b5de9fbfc51863c2403734090b664a465b0e40"
+        }
+      ]
+    },
+    {
+      "id": "c7d3cc79-68b2-6b22-5ea3-1d69b3977614",
+      "label": "Synthea 14 Fictional",
+      "counts": {
+        "allOriginalResources": 995,
+        "encounters": 49,
+        "observations": 271,
+        "conditions": 47
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "c7d3cc79-68b2-6b22-5ea3-1d69b3977614",
+          "medplumReadVerified": true,
+          "version": "760bece5-12e7-438d-84e8-5aa1f90bc9f5",
+          "sourceHash": "277c2106fdadc518ba2521fb130393b6fe855d32c40073131358376d635b8e04"
+        },
+        {
+          "type": "Encounter",
+          "id": "c7d3cc79-68b2-6b22-8f31-253ccb6e73b0",
+          "medplumReadVerified": true,
+          "version": "d9f06c23-3b58-4aea-8d52-3aceb5035e31",
+          "sourceHash": "06561e0aa562b2dff2e13f44eca808f239299c7dfa20f6c490af84ccbc85e0a3"
+        },
+        {
+          "type": "Observation",
+          "id": "c7d3cc79-68b2-6b22-5484-40717be74ad3",
+          "medplumReadVerified": true,
+          "version": "91c79001-2f4d-49dc-be47-f7586e14a1cb",
+          "sourceHash": "b233d86624410e61e57b459697096e40bfbd1aa77ff5007e861bd2a09e1d6b4f"
+        },
+        {
+          "type": "Condition",
+          "id": "c7d3cc79-68b2-6b22-662b-d36b1d7488d1",
+          "medplumReadVerified": true,
+          "version": "1af08e1b-f2ac-44d7-9199-ef3c3fd37758",
+          "sourceHash": "94b41de7f0f2ccd934692121f53c7291ad018bd99563e7f095e420d6f3170daf"
+        }
+      ]
+    },
+    {
+      "id": "68f39d36-0864-e715-6d09-577d553cad5c",
+      "label": "Synthea 15 Fictional",
+      "counts": {
+        "allOriginalResources": 763,
+        "encounters": 49,
+        "observations": 267,
+        "conditions": 28
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "68f39d36-0864-e715-6d09-577d553cad5c",
+          "medplumReadVerified": true,
+          "version": "9ecf831e-8e99-4e0a-bc08-2d85525b360c",
+          "sourceHash": "3e10a67de5ded1d29328b18e46ef180a2cd524cf50afd064bf042421f2e4abb6"
+        },
+        {
+          "type": "Encounter",
+          "id": "68f39d36-0864-e715-01ac-22777851e5e6",
+          "medplumReadVerified": true,
+          "version": "04957c2b-7803-4ae8-9420-e1df02dc516b",
+          "sourceHash": "c20efa85abddf3bac419a0f3489a281845155334215a4c3a10005ffaa359d2d3"
+        },
+        {
+          "type": "Observation",
+          "id": "68f39d36-0864-e715-cee3-422b26137d79",
+          "medplumReadVerified": true,
+          "version": "0f6d9ea0-f86c-4d05-ae8f-7f517b2505b5",
+          "sourceHash": "8f3eb5b12d70450903a78e795c218f7783960af6aa67d72d1240de2b3fa25470"
+        },
+        {
+          "type": "Condition",
+          "id": "68f39d36-0864-e715-ab15-0e66f4c04f6f",
+          "medplumReadVerified": true,
+          "version": "b6d94efe-b465-4c43-b3cd-692e41e36d37",
+          "sourceHash": "756b498c69fee3d97063cac29aa2f12e8afa835635d8662a4c4cef32ed3cc548"
+        }
+      ]
+    },
+    {
+      "id": "3fffe730-9026-5e93-fe7f-b1e583a05c8e",
+      "label": "Synthea 16 Fictional",
+      "counts": {
+        "allOriginalResources": 218,
+        "encounters": 18,
+        "observations": 56,
+        "conditions": 18
+      },
+      "checks": [
+        {
+          "type": "Patient",
+          "id": "3fffe730-9026-5e93-fe7f-b1e583a05c8e",
+          "medplumReadVerified": true,
+          "version": "84e1970a-b4c1-40c9-8b7a-e00fb9ba1589",
+          "sourceHash": "d6e513a0f784231d69a8598ab1fa3f54484fafa14608ad0b4cbd70922be2b83e"
+        },
+        {
+          "type": "Encounter",
+          "id": "3fffe730-9026-5e93-a4cb-808833a3a548",
+          "medplumReadVerified": true,
+          "version": "53e373b6-0909-4091-ac81-71ebe1392e30",
+          "sourceHash": "0330034e1ad90d4858aba8a7d6840363744a281e539153a24afef4d54e8be9ca"
+        },
+        {
+          "type": "Observation",
+          "id": "3fffe730-9026-5e93-eddc-94fd5ee434c3",
+          "medplumReadVerified": true,
+          "version": "463e7fc4-4e98-45b4-8ca2-bcd53599cadf",
+          "sourceHash": "0d9860a0bc047bb38a5041d4e0d7a39dc128ae6179303ce0f6053a372443d8d5"
+        },
+        {
+          "type": "Condition",
+          "id": "3fffe730-9026-5e93-5e7b-1db62c67f407",
+          "medplumReadVerified": true,
+          "version": "8abb0323-577d-49f7-80ad-d86f5d997420",
+          "sourceHash": "6945981e5dbcf6e0d8215870ea82a026a430ba44ea94136e34b11f85c7ad523c"
+        }
+      ]
+    }
+  ],
+  "epicAuthenticated": false,
+  "jpsConnected": false,
+  "hapiScope": "First two patients, four resource types each; base resource structure only, profiles removed from validation copy. No US Core certification."
+}

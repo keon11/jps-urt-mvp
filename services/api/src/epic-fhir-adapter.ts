@@ -1,0 +1,35 @@
+import type {Bundle,Resource} from '@medplum/fhirtypes';
+import {hash,syntheticTag} from './fixtures.js';
+export type ReadToken={accessToken:string;expiresAt:number;scopes:string[]};
+export class FhirAccessError extends Error{constructor(public status:number,message:string){super(message);}}
+/** Read-only transport. The caller supplies an authorized SMART/OAuth token provider; no passwords or issuer tokens are persisted. */
+export class EpicFhirR4Adapter{
+ private token?:ReadToken;
+ constructor(private options:{baseUrl:string;tokenProvider:(forceRefresh:boolean)=>Promise<ReadToken>;fetch?:typeof fetch;syntheticTest?:boolean;wait?:(ms:number)=>Promise<void>}){const u=new URL(options.baseUrl);if(u.protocol!=='https:'&&!(options.syntheticTest&&u.protocol==='http:'&&['localhost','127.0.0.1'].includes(u.hostname)))throw Error('HTTPS FHIR endpoint required');if(!u.pathname.endsWith('/')||u.username||u.password||u.search||u.hash)throw Error('Canonical FHIR base URL required');}
+ private url(value:string){const base=new URL(this.options.baseUrl),u=new URL(value,base);if(u.origin!==base.origin||!u.pathname.startsWith(base.pathname)||u.username||u.password||u.hash||/%2f|%5c/i.test(u.pathname))throw Error('FHIR link escapes authorized endpoint');return u;}
+ async read(value:string):Promise<any>{const url=this.url(value);let refreshed=false;for(let attempt=0;attempt<3;attempt++){
+  if(!this.token||this.token.expiresAt<=Date.now()+30000){this.token=await this.options.tokenProvider(false);if(!this.token.accessToken||!Number.isFinite(this.token.expiresAt)||this.token.expiresAt<=Date.now())throw new FhirAccessError(401,'Expired OAuth token');}
+  const requested=url.pathname.slice(new URL(this.options.baseUrl).pathname.length).split('/')[0];
+  if(!this.token.scopes.some(s=>{const m=/^(patient|user|system)\/([^ ]+)\.(read|rs|cruds)$/.exec(s);return !!m&&(m[2]==='*'||m[2]===requested);}))throw new FhirAccessError(403,'FHIR resource read scope required');
+  const r=await(this.options.fetch??fetch)(url,{headers:{Accept:'application/fhir+json',Authorization:'Bearer '+this.token.accessToken},redirect:'error',signal:AbortSignal.timeout(5000)});
+  if(r.status===401&&!refreshed){this.token=await this.options.tokenProvider(true);refreshed=true;attempt--;continue;}
+  if([429,502,503,504].includes(r.status)&&attempt<2){const retry=Number(r.headers.get('retry-after')??0);if(!Number.isFinite(retry)||retry>2||retry<0)throw new FhirAccessError(r.status,'Retry deferred to operator');await(this.options.wait??(ms=>new Promise(r=>setTimeout(r,ms))))(retry*1000);continue;}
+  if(!r.ok)throw new FhirAccessError(r.status,'FHIR read failed; no success asserted');
+  const body=await r.json();if(!body?.resourceType||body.resourceType==='OperationOutcome')throw Error('Unexpected FHIR response');return body;
+ }throw new FhirAccessError(503,'Bounded FHIR retry limit exceeded');}
+ async search(path:string,maxPages=20):Promise<Bundle>{if(!Number.isInteger(maxPages)||maxPages<1||maxPages>100)throw Error('Invalid page bound');const entries:NonNullable<Bundle['entry']>=[],seen=new Set<string>();let next:string|undefined=path;
+  while(next){const url=this.url(next).href;if(seen.has(url)||seen.size>=maxPages)throw Error('FHIR pagination cycle or bound exceeded');seen.add(url);const b=await this.read(url);if(b.resourceType!=='Bundle'||b.type!=='searchset')throw Error('Expected FHIR searchset');entries.push(...(b.entry??[]));if(entries.length>10000)throw Error('FHIR result bound exceeded');next=b.link?.find((l:any)=>l.relation==='next')?.url;}
+  const refs=new Set<string>();for(const e of entries){const ref=e.resource?.resourceType+'/'+e.resource?.id;if(!e.resource?.id||refs.has(ref))throw Error('Duplicate/missing resource identity across pages');refs.add(ref);}return {resourceType:'Bundle',type:'collection',entry:entries};
+ }
+}
+export function normalizeSynthea(input:Bundle,originalSha256:string){if(input.resourceType!=='Bundle'||!input.entry?.length||!/^[a-f0-9]{64}$/.test(originalSha256))throw Error('Synthea bundle/provenance required');const copy=structuredClone(input),refs=new Map<string,string>();
+ for(const e of copy.entry!){const r=e.resource;if(!r?.id)throw Error('Resource id required');const ref=r.resourceType+'/'+r.id;if([...refs.values()].includes(ref))throw Error('Duplicate Synthea identity');refs.set(e.fullUrl??ref,ref);refs.set(ref,ref);r.meta={...r.meta,tag:[...(r.meta?.tag??[]),syntheticTag]};}
+ function rewrite(v:any):void{if(Array.isArray(v)){v.forEach(rewrite);return;}if(v&&typeof v==='object'){for(const[k,x]of Object.entries(v)){if(k==='reference'&&typeof x==='string'&&refs.has(x))v[k]=refs.get(x);else rewrite(x);}}}
+ copy.entry!.forEach(e=>rewrite(e.resource));const resources=copy.entry!.map(e=>e.resource!);const patients=resources.filter(r=>r.resourceType==='Patient');if(patients.length!==1)throw Error('One Synthea patient per file required');
+ const clinical=resources.filter(r=>['Patient','Encounter','Observation','Condition'].includes(r.resourceType));const missingReferences:string[]=[];
+ function check(v:any):void{if(Array.isArray(v)){v.forEach(check);return;}if(v&&typeof v==='object'){for(const[k,x]of Object.entries(v)){if(k==='reference'&&typeof x==='string'&&!refs.has(x)&&![...refs.values()].includes(x))missingReferences.push(x);else check(x);}}}
+ clinical.forEach(check);
+ return {bundle:{...copy,type:'collection',entry:copy.entry!.map(e=>({resource:e.resource}))} as Bundle,patient:patients[0],clinical,missingReferences:[...new Set(missingReferences)],provenance:{generator:'Synthea',version:'4.0.0',originalSha256,normalizedHash:hash(resources),syntheticOnly:true,epicRuntimeValidated:false}};
+}
+export function reconcileFhirResource(previous:Resource,incoming:Resource){if(previous.resourceType!==incoming.resourceType||previous.id!==incoming.id)throw Error('Identity mismatch');if(hash(previous)===hash(incoming))return 'duplicate';if(!previous.meta?.lastUpdated||!incoming.meta?.lastUpdated||!previous.meta.versionId||!incoming.meta.versionId) return 'review-required';const a=Date.parse(previous.meta.lastUpdated),b=Date.parse(incoming.meta.lastUpdated);if(!Number.isFinite(a)||!Number.isFinite(b)||b<a)throw Error('Invalid or stale source');if(previous.meta.versionId===incoming.meta.versionId)throw Error('Content changed without version change');return 'review-required';}
+export function smartConfiguration(value:any,allowedOrigin:string){const origin=new URL(allowedOrigin).origin;for(const key of ['authorization_endpoint','token_endpoint']){const u=new URL(value[key]);if(u.protocol!=='https:'||u.origin!==origin||u.username||u.password||u.hash)throw Error('Untrusted SMART authorization endpoint');}if(!value.code_challenge_methods_supported?.includes('S256'))throw Error('SMART PKCE S256 not advertised');return {authorizationEndpoint:value.authorization_endpoint,tokenEndpoint:value.token_endpoint,pkce:'S256',grantTypes:value.grant_types_supported??[],credentialExchangePerformed:false};}
