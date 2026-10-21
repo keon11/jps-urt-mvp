@@ -1,8 +1,10 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-import {extractPolicy,comparePolicies} from '../src/policy-intelligence.js';
+import {extractPolicy,comparePolicies,compareSourceEvidence} from '../src/policy-intelligence.js';
 const a=readFileSync('fixtures/policies/authorization-v1.html','utf8'),b=readFileSync('fixtures/policies/authorization-v2.html','utf8');
 test('policy revisions preserve bytes, dates, citations, tables and exact added requirement',()=>{
  const first=extractPolicy(a,'urn:test:v1'),second=extractPolicy(b,'urn:test:v2');assert.notEqual(first.sourceHash,second.sourceHash);assert.equal(second.effectiveDate,'2026-10-20');assert.equal(first.tables[0][1][0],'Missing or uncertain evidence');assert.equal(comparePolicies(first,second).added[0].code,'authorization-receipt');assert.equal(second.rules[1].citation.sourceHash,second.sourceHash);assert(b.includes(second.rules[1].citation.quote));
 });
 test('official HTML never silently becomes an executable clinical rule',()=>{const d=extractPolicy('<main><p>Prior authorization required</p></main>','https://www.cms.gov/example');assert.equal(d.rules.length,0);assert.equal(d.effectiveDate,null);assert(d.uncertainties.length);});
 test('invalid dates, duplicate conditions and unrecognized predicates are rejected',()=>{assert.throws(()=>extractPolicy(a.replace('2026-10-01','2026-02-31'),'urn:test'));assert.throws(()=>extractPolicy(a.replace('</ul>','<li data-requirement="physician-note">Duplicate</li></ul>'),'urn:test'));assert.throws(()=>extractPolicy(a.replace('physician-note','invented'),'urn:test'));});
+
+test('official page changes remain unverified source comparisons with no activation',()=>{const first=extractPolicy('<main>Version A</main>','https://www.cms.gov/example');const second=extractPolicy('<main>Version B</main>','https://www.cms.gov/example');const comparison=compareSourceEvidence(first,second);assert(comparison.textChanged);assert.equal(comparison.activationAllowed,false);assert.equal(comparison.officialRevisionVerified,false);assert.equal(second.policyType,'unverified');assert.deepEqual(second.planApplicability,[]);});

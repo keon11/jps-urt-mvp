@@ -1,0 +1,39 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (20.848019ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (20.528154ms)
+✔ updated, stale and inconsistent source versions require reconciliation (7.370654ms)
+✔ default services are local and FHIR R4 adapters have separate endpoints (4.660624ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.734843ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (14.226105ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (1.425278ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (1.805383ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (11.473825ms)
+✔ malformed input fails closed with human review and never represents coverage (1.501923ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (4.828133ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (161.25088ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (4.313251ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (26.414985ms)
+✔ official HTML never silently becomes an executable clinical rule (3.233975ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (7.547993ms)
+✔ official page changes remain unverified source comparisons with no activation (2.501875ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (6.492493ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (2.510592ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (2.042371ms)
+✔ missing physician documentation raises illustrative risk (0.910492ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (21.445052ms)
+✔ model responses with fabricated evidence are rejected (214.974544ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (1.914998ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.510232ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (1.817115ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (25.058774ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10826.022069

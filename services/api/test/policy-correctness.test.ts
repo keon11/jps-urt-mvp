@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {correctnessReport,evaluateCandidate} from '../src/policy-correctness.js';
+test('versioned independently specified synthetic expectations match candidate evaluator',()=>{const r=correctnessReport();assert.equal(r.results.length,19);assert(r.passed,JSON.stringify(r.results.filter(s=>s.actual.outcome!==s.expected.outcome)));assert.equal(r.metrics.fp,0);assert.equal(r.metrics.fn,0);assert.equal(r.clinicalValidation,false);});
+test('malformed input fails closed with human review and never represents coverage',()=>{for(const value of [null,{},[],{plan:'real'}]){const r=evaluateCandidate(value,value);assert.equal(r.outcome,'review');assert.equal(r.requiresHumanReview,true);assert.equal(r.coverageDetermination,false);}});

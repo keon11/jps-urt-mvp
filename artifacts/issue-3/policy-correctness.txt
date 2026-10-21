@@ -1,0 +1,1 @@
+{"passed":true,"cases":19,"metrics":{"tp":4,"fp":0,"tn":15,"fn":0,"precision":1,"recall":1,"sensitivity":1,"specificity":1},"clinicalValidation":false}

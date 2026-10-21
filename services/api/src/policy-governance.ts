@@ -1,3 +1,4 @@
+import {correctnessReport} from './policy-correctness.js';
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import type { PoolClient } from "pg";
@@ -186,8 +187,10 @@ export function candidateTests(d: PolicyDocument) {
     row: undefined,
     actual: evaluateDocumentation(d, s.row).outcome,
   }));
+  const extendedValidation=correctnessReport();
   return {
-    passed: results.every((s) => s.actual === s.expected),
+    extendedValidation,
+    passed: extendedValidation.passed && results.every((s) => s.actual === s.expected),
     results,
     clinicalValidation: false,
     sourceHash: d.sourceHash,

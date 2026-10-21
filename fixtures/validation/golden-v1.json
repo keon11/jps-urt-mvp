@@ -1,0 +1,710 @@
+{
+  "version": "1.0.0",
+  "classification": "synthetic-only",
+  "labeling": "Expected outcomes specified as demonstration acceptance labels before evaluator execution; not independent clinical labels.",
+  "cases": [
+    {
+      "id": "complete",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "complete",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "missing-note",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "missing",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "needs-information",
+        "reason": "missing-evidence"
+      }
+    },
+    {
+      "id": "unknown-note",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "unknown",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "uncertain-evidence"
+      }
+    },
+    {
+      "id": "effective-first-day",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-01",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "complete",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "before-effective",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-09-30",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "no-applicable-policy"
+      }
+    },
+    {
+      "id": "expiry-last-day",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-31",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "complete",
+        "reason": "supported"
+      }
+    },
+    {
+      "id": "after-expiry",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-11-01",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "no-applicable-policy"
+      }
+    },
+    {
+      "id": "different-plan",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Harbor",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "no-applicable-policy"
+      }
+    },
+    {
+      "id": "missing-plan",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": null,
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "missing-context"
+      }
+    },
+    {
+      "id": "recognized-exception",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "missing",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": "synthetic-emergency"
+      },
+      "expected": {
+        "outcome": "exception",
+        "reason": "explicit-exception"
+      }
+    },
+    {
+      "id": "unrecognized-exception",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": "not-specified"
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "unverified-exception"
+      }
+    },
+    {
+      "id": "changed-evidence",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "stale-evidence"
+      }
+    },
+    {
+      "id": "changed-policy",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "unverified-policy"
+      }
+    },
+    {
+      "id": "ambiguous-terms",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": true
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "ambiguous-policy"
+      }
+    },
+    {
+      "id": "pending-approval",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": false,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "unapproved-policy"
+      }
+    },
+    {
+      "id": "missing-source",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "unverified-policy"
+      }
+    },
+    {
+      "id": "invalid-calendar",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-02-31",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "missing-context"
+      }
+    },
+    {
+      "id": "conflicting-rules",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        },
+        {
+          "id": "synthetic-conflict-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "authorization-receipt",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "present",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "review",
+        "reason": "conflicting-policy"
+      }
+    },
+    {
+      "id": "negative-does-not-prove-violation",
+      "rules": [
+        {
+          "id": "synthetic-plan-docs-v1",
+          "version": "1",
+          "synthetic": true,
+          "approved": true,
+          "sourceUrl": "urn:ur-demo:policy:authorization:v1",
+          "sourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "verifiedSourceHash": "5876b8f655d68bc8b865653181eac7785b09ba7445c8eb5a00df14851fc292de",
+          "effectiveDate": "2026-10-01",
+          "endDate": "2026-10-31",
+          "plans": [
+            "Fictional Meridian"
+          ],
+          "requirement": "physician-note",
+          "exceptions": [
+            "synthetic-emergency"
+          ],
+          "ambiguous": false
+        }
+      ],
+      "context": {
+        "asOf": "2026-10-20",
+        "plan": "Fictional Meridian",
+        "evidence": "missing",
+        "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "assessedSourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exception": null
+      },
+      "expected": {
+        "outcome": "needs-information",
+        "reason": "missing-evidence"
+      }
+    }
+  ]
+}

@@ -80,6 +80,9 @@ export function extractPolicy(
     publishedDate: date("published-date"),
     effectiveDate: date("effective-date"),
     synthetic,
+    policyType: synthetic ? "illustrative-documentation" : "unverified",
+    planApplicability: synthetic ? ["Fictional Meridian", "Fictional Harbor", "Fictional Summit"] : [],
+    applicabilityVerified: synthetic,
     text,
     tables,
     rules,
@@ -161,4 +164,11 @@ export async function policyEvidence() {
     disclaimer:
       "Candidate rules only. Synthetic revisions are not official payer revisions.",
   };
+}
+
+// A page-byte change is not proof of an official policy revision.
+export function compareSourceEvidence(before:PolicyDocument,after:PolicyDocument){
+ if(before.sourceUrl!==after.sourceUrl)throw Error('Source URL mismatch');
+ const diff=diffWordsWithSpace(before.text,after.text);
+ return {sourceUrl:after.sourceUrl,beforeHash:before.sourceHash,afterHash:after.sourceHash,bytesChanged:before.sourceHash!==after.sourceHash,textChanged:before.text!==after.text,addedSegments:diff.filter(d=>d.added).length,removedSegments:diff.filter(d=>d.removed).length,officialRevisionVerified:false,effectiveDate:after.effectiveDate,publishedDate:after.publishedDate,activationAllowed:false,interpretation:'Page content comparison only; dates, plan applicability and authorized criteria require human verification.'};
 }
