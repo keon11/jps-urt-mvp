@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-21T21:48:52.924405+00:00",
+  "method": "Direct inspection of actual browser screenshot bytes with image viewing tool",
+  "images": [
+    {
+      "path": "artifacts/issue-4/issue4-live-final-20261021T214459Z/risk-1440.png",
+      "sha256": "74af789dd1e0e33dfb380864f99e5aa83b1ea961cba2df35bc397c7c1ae765dc"
+    },
+    {
+      "path": "artifacts/issue-4/issue4-live-final-20261021T214459Z/risk-1920.png",
+      "sha256": "0c7f821ced391cdc2e6ccd98c9ce1435edce0d246b06fdd8bfd9fd9ff8aa77fd"
+    },
+    {
+      "path": "artifacts/issue-4/issue4-live-final-20261021T214459Z/synthea-workspace.png",
+      "sha256": "f8d40baa38bdfd7519c92c7f40c35a0692f5e9abc39a9b9e261bb17d6e870bd9"
+    },
+    {
+      "path": "artifacts/issue-2/issue4-live-final-20261021T214459Z/1920/queue.png",
+      "sha256": "9d56d76ffccd3eafc1a64a4378ba89a528e4e7d4afa6f8e103c03eaec03f87e5"
+    },
+    {
+      "path": "artifacts/issue-2/issue4-preview-1440-20261021T214601Z/fixture-preview-workstation.png",
+      "sha256": "82465c8da1b099a73a3755d04ccb77f0b6e8a7a8afd3fca83632aee76b98565d"
+    }
+  ],
+  "findings": [
+    "Unnamed desktop workstation retains dense encounter/evidence/workflow layout",
+    "Risk/internal authorization boundaries and source evidence readable at 1440/1920",
+    "Actual Synthea history list/evidence accessible without adding encounter cases",
+    "Fixture banner clearly states disconnected/read-only and no backend credentials displayed"
+  ],
+  "limits": "Engineering visual inspection, not founder acceptance, accessibility certification or clinical usability validation."
+}

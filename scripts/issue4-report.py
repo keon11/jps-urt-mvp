@@ -17,6 +17,9 @@ def count(text):
 u=count(unit);i=count(integration);browser_count=int(re.search(r'(\d+) passed',browser).group(1));assert u>=41 and i>=25 and browser_count>=10
 for width in [1440,1920]:
  preview=read(f'final-preview-{width}-results.json')['stats'];assert preview['expected']==1 and preview['unexpected']==0 and preview['flaky']==0
+static=read('fixture-frontend-manifest.json')
+assert hashlib.sha256((p/'fixture-frontend-preview.zip').read_bytes()).hexdigest()==static['archiveSha256']
+assert static['sourceFingerprintSha256']==hashlib.sha256((p/'source-fingerprint.json').read_bytes()).hexdigest()
 assert read('final-npm-audit.json')['metadata']['vulnerabilities']['total']==0
 subprocess.run(['node','scripts/source-fingerprint.mjs','--check'],cwd=root,check=True)
 live=(root/'.runtime/issue4-live-run').read_text().strip()
@@ -54,7 +57,7 @@ Targets were committed before measurement: >=3600s, 25 sessions, 10,000 cloned q
 | API restart / isolated baseline restore | {b['apiRestartSeconds']:.2f}s / {b['restore']['seconds']:.2f}s |
 | Working MVP check during load | Case count and audit chain unchanged; not a full-table case-content snapshot |
 
-Phase 3 baseline: 63.60 requests/s, p95 689.43ms, 0.1938% timeouts over 600 seconds. Current changes: throughput {throughput_delta:+.2f}%, p95 {latency_delta:+.2f}%. This is the same bounded queue API/dataset/session workload on the shared host. Independent source/build/document verification and extended synthetic Medplum/HAPI validation occurred during the hour; do not causally attribute changes without a controlled repeat. Raw rows stream to disk and progress/RSS sample every 15 seconds.
+Phase 3 baseline: 63.60 requests/s, p95 689.43ms, 0.1938% timeouts over 600 seconds. Current changes: throughput {throughput_delta:+.2f}%, p95 {latency_delta:+.2f}%. This is the same bounded queue API/dataset/session workload on the shared host. Independent source/build/document verification and extended synthetic Medplum/HAPI validation occurred during the hour; do not causally attribute changes without a controlled repeat. Raw rows stream to disk and progress/RSS sample every 15 seconds. Other service resource usage is retained in a [single instantaneous Docker snapshot](../artifacts/issue-4/soak-container-resource-snapshot.json); it does not establish their peak usage.
 
 This is not Synthea clinical-inference throughput, full-bundle UI capacity, real clinician concurrency, multi-day stability, HA, a production SLA or a clinical accuracy claim. Nonzero failures/tail latency remain material production concerns. No threshold was relaxed and no short run substituted for the hour. The initial process-session interruption at about 1975 seconds is retained separately and never combined with this completed run.
 
@@ -74,7 +77,7 @@ Historical Synthea data does not establish current acute admission evidence. Tes
 
 [Live 1440/1920 workstation manifest](../artifacts/issue-2/{live}/manifest.json), [new risk/Synthea workspace captures](../artifacts/issue-4/{live}/manifest.json). The screenshots are unique actual browser captures with source references/hashes, not inherited mockups. Fixture preview captures are in the timestamped issue4-preview directories under artifacts/issue-2.
 
-Local prerequisites: Node 24, Docker Compose, Java 21 only for regeneration, adequate RAM/disk for pinned services/model/generator. Start `TRACE_SAMPLE_RATE=1 npm run start:demo`, open http://localhost:3000 on that same machine and obtain seeded local account values from the operator. Keep all services on loopback; no credentials are displayed/prefilled. Build `npm run build:preview` for the explicitly disconnected, read-only frontend.
+Local prerequisites: Node 24, Docker Compose, Java 21 only for regeneration, adequate RAM/disk for pinned services/model/generator. Start `TRACE_SAMPLE_RATE=1 npm run start:demo`, open http://localhost:3000 on that same machine and obtain seeded local account values from the operator. Keep all services on loopback; no credentials are displayed/prefilled. Build `npm run build:preview` for the explicitly disconnected, read-only frontend. A [verified static frontend archive](../artifacts/issue-4/fixture-frontend-preview.zip) and [asset hashes](../artifacts/issue-4/fixture-frontend-manifest.json) are included; `python3 scripts/package-preview.py` recreates the package from the verified build. This archive is not a hosted Vercel deployment.
 
 Sequential checks: `npm test`, `npm run build`, `npm run test:integration`, `npm run test:browser`, `npm run test:preview`, `npm run verify:audit`. Added commands: `npm run generate:synthea`, `npm run test:synthea`, `npm run test:denial-correctness`, `npm run test:hour`, `npm run prepare:readiness`. Full cohort validation: `npx tsx scripts/verify-synthea.ts --all-hapi`. After hour completion, separately run `python3 scripts/verify-soak-measurements.py --issue-4`, `npx tsx scripts/reconcile-proof.ts --issue-4`, `npx tsx scripts/fault-recovery.ts --issue-4`, `npx tsx scripts/final-checkpoint.ts --issue-4`. Fault tests intentionally stop/restart local services; never overlap them or case-mutating suites with load/another demonstration. TRACE_SAMPLE_RATE=1 on the local API makes current-drill trace proof deterministic; the isolated load API uses its pinned 0.05 rate.
 

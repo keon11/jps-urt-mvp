@@ -18,7 +18,7 @@ Grafana remains separate at http://localhost:3001/d/ur-synthetic-operations. Kee
 
 For the **read-only fictional frontend preview**, run `npm run test:preview`, then `npx vite preview --mode preview --host 127.0.0.1 --port 4173`. It uses no backend or credentials. Vercel project creation is currently denied with 403; no hosted preview is claimed.
 
-The current development branch is `dev/issue-2-execution`. The unnamed clinical workbench preserves all eight demonstrations and adds a functional Policy Management Center, separate internal Authorization Review, source provenance, independent synthetic approval roles, publication/rollback, retry reconciliation, metrics and local tracing. See [the Issue #2 report](docs/ISSUE-2-REPORT.md) for current evidence, screenshots, benchmarks, restore instructions and blockers. Founder visual approval and real clinical validation remain pending.
+The current development branch is `dev/phase-4-enterprise-proof`. All eight demonstrations remain working. Issue #4 adds 16 actual Synthea-generated patients, 6,650 imported clinical resources, read-only Epic-compatible transport, source-linked documentation-risk review, and a measured one-hour bounded queue proof. Final local checks passed: 41 unit, 25 integration, 10 live browser tests, and fixture checks at both desktop widths. See [the current readiness report](docs/ISSUE-4-REPORT.md), [architecture/reuse inventory](docs/ISSUE-4-ARCHITECTURE.md) and [checkpoint restoration](docs/ISSUE-4-RESTORE.md). Epic/JPS authorization, payer agreements, independent clinical validation, hosted Vercel access and owner legal/commercial evidence remain external requirements.
 
 ## Documentation and evidence
 
@@ -33,6 +33,6 @@ The current development branch is `dev/issue-2-execution`. The unnamed clinical 
 
 Medplum provides FHIR R4 storage, HAPI/CQF evaluates illustrative CQL, Keycloak provides identity, CPU llama.cpp serves the checksum-pinned Qwen model, and Grafana provides aggregate reporting. Lightweight adapters connect the services. PAS-inspired payer workflows remain entirely local and do not claim Da Vinci conformance.
 
-The original five development phases remain on `dev/autonomous-mvp`. The previous desktop checkpoint is on `dev/desktop-hospital-workspace`; current Issue #2 work is on `dev/issue-2-execution`, in the existing repository `keon11/jps-urt-mvp`. No default-branch merge or production deployment is authorized.
+The original five development phases remain on `dev/autonomous-mvp`. The previous desktop checkpoint is on `dev/desktop-hospital-workspace`; the preserved Issue #2 checkpoint is on `dev/issue-2-execution`, in the existing repository `keon11/jps-urt-mvp`. No default-branch merge or production deployment is authorized.
 
 Issue #3 validation work is on `dev/phase-3-validation`; see [execution evidence](docs/ISSUE-3-EXECUTION.md), [validation architecture](docs/ISSUE-3-ARCHITECTURE.md) and [draft RFP preparation](docs/submission/PROPOSAL-DRAFT.md). Run `npm run verify:deployment`, `npm run test:policy-correctness`, `npm run test:epic-conformance` and `npm run prepare:submission` for the added reproducible checks. `npm run test:soak` runs a ten-minute isolated API load test; schedule it separately from data-mutating or service-outage tests. Never submit the draft as a completed bid.

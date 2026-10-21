@@ -1,0 +1,23 @@
+{
+  "classification": "READ-ONLY SYNTHETIC FIXTURE FRONTEND; NO BACKEND/AUTH/CLINICAL SERVICE",
+  "sourceFingerprintSha256": "202a5739eaeb9c425f26d45eb9253165bf2169f9ede9a484e3175669614db3d2",
+  "files": [
+    {
+      "path": "assets/index-D9hDUPtJ.js",
+      "sha256": "e74f138316f9a22064f0efcc9523ffb3a9046e477a23b0f2668d2f91bb45d2aa"
+    },
+    {
+      "path": "assets/index-PbV5PUbs.css",
+      "sha256": "16c62b65a1a37607a2f4843765715305b109142fe5a30ca9ea4e05db6bc663d8"
+    },
+    {
+      "path": "assets/preview-quGN5TjE.js",
+      "sha256": "10ccef2b5f652c6cd619778530dbd8e676b3d233ea6ce015881ad6bf147338d5"
+    },
+    {
+      "path": "index.html",
+      "sha256": "0c3408a824be134e828da545e25233707e68c128e72d9e57d6c9abd54309be13"
+    }
+  ],
+  "archiveSha256": "99cb6e4e69fae730ee1dea56b483dcedf4e8d220d810832f53a89725edc8eec2"
+}

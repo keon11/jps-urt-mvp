@@ -81,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 24856,
+                  "duration": 17223,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -89,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 1307
+                      "duration": 820
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 7735
+                      "duration": 6096
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 8361
+                      "duration": 4969
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 2260
+                      "duration": 1908
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 607
+                      "duration": 412
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 1978
+                      "duration": 1533
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 1064
+                      "duration": 752
                     }
                   ],
-                  "startTime": "2026-10-21T19:16:32.925Z",
+                  "startTime": "2026-10-21T21:45:03.226Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -145,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1089,
+                  "duration": 753,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T19:16:58.469Z",
+                  "startTime": "2026-10-21T21:45:20.681Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -179,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5339,
+                  "duration": 4739,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T19:16:59.580Z",
+                  "startTime": "2026-10-21T21:45:21.451Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -221,12 +221,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5157,
+                  "duration": 16906,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T19:17:04.956Z",
+                  "startTime": "2026-10-21T21:45:26.229Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -255,12 +255,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4985,
+                  "duration": 5562,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T19:17:10.128Z",
+                  "startTime": "2026-10-21T21:45:43.150Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -297,12 +297,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10934,
+                  "duration": 6517,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T19:17:15.306Z",
+                  "startTime": "2026-10-21T21:45:48.747Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -339,12 +339,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1239,
+                  "duration": 1507,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-21T19:17:26.308Z",
+                  "startTime": "2026-10-21T21:45:55.291Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -358,13 +358,123 @@
           "column": 1
         }
       ]
+    },
+    {
+      "title": "risk.spec.ts",
+      "file": "risk.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "published documentation risk evidence renders without insurer determination at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1168,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T21:45:56.822Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9bb9156c88243709cb4d-61cc630f8c57beadb0ad",
+          "file": "risk.spec.ts",
+          "line": 4,
+          "column": 35
+        },
+        {
+          "title": "published documentation risk evidence renders without insurer determination at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1291,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T21:45:58.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9bb9156c88243709cb4d-bda42193cfa1a264d714",
+          "file": "risk.spec.ts",
+          "line": 4,
+          "column": 35
+        },
+        {
+          "title": "operations browses actual derived Synthea histories without altering encounters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1410,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T21:45:59.309Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9bb9156c88243709cb4d-38f25bbb274519de8f05",
+          "file": "risk.spec.ts",
+          "line": 43,
+          "column": 1
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T19:16:31.146Z",
-    "duration": 56553.06,
-    "expected": 7,
+    "startTime": "2026-10-21T21:45:02.035Z",
+    "duration": 58814.371,
+    "expected": 10,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

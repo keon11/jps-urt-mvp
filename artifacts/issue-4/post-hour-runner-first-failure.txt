@@ -1,0 +1,4 @@
+Captured product and fixture source fingerprints.
+Manifest captured 28 real screenshots, source base and current source hashes.
+Manifest captured 3 real screenshots, source base and current source hashes.
+cp: cannot stat 'artifacts/issue-3/phase-e-preview-browser-results.json': No such file or directory

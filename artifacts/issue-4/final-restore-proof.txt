@@ -1,0 +1,58 @@
+{
+  "createdAt": "2026-10-21T21:46:58.337Z",
+  "sourceDatabase": "ur",
+  "restoreDatabase": "ur_issue2_final_1792619218337",
+  "dumpPath": ".runtime/issue4-final-checkpoint.dump",
+  "publiclyDistributed": false,
+  "seconds": 2.957038124,
+  "tables": {
+    "audit": {
+      "rows": 847,
+      "sha256": "91dc4a346c22c950f0b96d9d449a1becc2aed32cdc0f6addd052411ced77be40"
+    },
+    "authorization_intents": {
+      "rows": 101,
+      "sha256": "69b151e4a75e1f453e14bc09fac0635f24b67518808ec7bec715eee66241f409"
+    },
+    "cases": {
+      "rows": 6,
+      "sha256": "5d0b6d4a55d918a1699d898b8415c632a25425cc0e78b42ffb8deedf14c6186f"
+    },
+    "governance_commands": {
+      "rows": 251,
+      "sha256": "b25b6fedf3a65668306497a902712370f165b2a5c9d268b2377f99826de8c2d1"
+    },
+    "idempotency": {
+      "rows": 29,
+      "sha256": "c305b824576b3689eaee8ebdc30ec03328e5faa06ba03b25b247bd4c78fa0053"
+    },
+    "internal_authorization_reviews": {
+      "rows": 29,
+      "sha256": "05ae4c28a5305a36c04cc39d34287ac53522d1c6d8761a1455fc6a812162cc59"
+    },
+    "policy_changes": {
+      "rows": 30,
+      "sha256": "ec24337896b4cf5aaf675d9fc139dbd04e47af71931566b8f1232dc305ec41d9"
+    },
+    "policy_documents": {
+      "rows": 5,
+      "sha256": "7af5e29a9359a8397ded4765b7530105c92eec6d8b330f127610ea08e682597a"
+    },
+    "policy_publications": {
+      "rows": 28,
+      "sha256": "ed6994e116eb4e4e5cbea124540b5beb3713b2416071ddda2a79a2becddcdc9d"
+    },
+    "policy_registry": {
+      "rows": 1,
+      "sha256": "7b3ea47742db473ba5aa3f115e95ed2f61dc68639ba432a11f2b7f7ca31f1bf4"
+    }
+  },
+  "audit": {
+    "verified": true,
+    "events": 847,
+    "lastHash": "b9703d33e972913c030fb8248751e429cea19fb27ecd9290b1c5c0a6c4d30fa7"
+  },
+  "dumpSha256": "325e9b80265fb6a4026d3a3d4079b340f165ea28a0a635e31bf19580be7f954b",
+  "restoredApplicationReadVerified": true,
+  "passed": true
+}
