@@ -1,0 +1,9 @@
+{
+  "failedAttempt": {
+    "results": "benchmark-session-expiry-failure.json",
+    "raw": "soak-session-expiry-failure-requests.jsonl.gz",
+    "rawManifest": "soak-session-expiry-failure-raw-manifest.json",
+    "explanation": "Unrenewed identity tokens expired during ten-minute load. Final post-restart total assertion also failed because its bearer token was expired; liveMvpUnchanged was not reached. This failed result is not a capacity acceptance. Some request timeouts were also observed; all statuses are retained."
+  },
+  "repair": "Proactive renewal using issuer expires_in; all failures still counted; same duration and thresholds. No server auth lifetime or security setting was weakened."
+}

@@ -1,0 +1,187 @@
+[
+  {
+    "elapsedSeconds": 15.071142700000001,
+    "responses": 1348,
+    "rssBytes": 170876928
+  },
+  {
+    "elapsedSeconds": 30.303501192000002,
+    "responses": 2062,
+    "rssBytes": 189358080
+  },
+  {
+    "elapsedSeconds": 45.293370795,
+    "responses": 2654,
+    "rssBytes": 189751296
+  },
+  {
+    "elapsedSeconds": 60.314715375,
+    "responses": 3443,
+    "rssBytes": 189882368
+  },
+  {
+    "elapsedSeconds": 75.297392675,
+    "responses": 4203,
+    "rssBytes": 190144512
+  },
+  {
+    "elapsedSeconds": 90.53425546,
+    "responses": 4774,
+    "rssBytes": 190144512
+  },
+  {
+    "elapsedSeconds": 105.56950302,
+    "responses": 5827,
+    "rssBytes": 176902144
+  },
+  {
+    "elapsedSeconds": 120.52802857500001,
+    "responses": 6973,
+    "rssBytes": 177295360
+  },
+  {
+    "elapsedSeconds": 135.483942363,
+    "responses": 7386,
+    "rssBytes": 177557504
+  },
+  {
+    "elapsedSeconds": 150.485081788,
+    "responses": 8135,
+    "rssBytes": 177410048
+  },
+  {
+    "elapsedSeconds": 165.488085323,
+    "responses": 8889,
+    "rssBytes": 177541120
+  },
+  {
+    "elapsedSeconds": 180.486967725,
+    "responses": 9711,
+    "rssBytes": 177672192
+  },
+  {
+    "elapsedSeconds": 195.48651098699997,
+    "responses": 11372,
+    "rssBytes": 210022400
+  },
+  {
+    "elapsedSeconds": 210.485862246,
+    "responses": 12337,
+    "rssBytes": 208060416
+  },
+  {
+    "elapsedSeconds": 259.012327821,
+    "responses": 12631,
+    "rssBytes": 208060416
+  },
+  {
+    "elapsedSeconds": 273.943032856,
+    "responses": 13406,
+    "rssBytes": 208322560
+  },
+  {
+    "elapsedSeconds": 288.95726361600003,
+    "responses": 14222,
+    "rssBytes": 209240064
+  },
+  {
+    "elapsedSeconds": 303.957513936,
+    "responses": 31568,
+    "rssBytes": 238993408
+  },
+  {
+    "elapsedSeconds": 318.97891078,
+    "responses": 59241,
+    "rssBytes": 239255552
+  },
+  {
+    "elapsedSeconds": 333.963402912,
+    "responses": 81030,
+    "rssBytes": 239386624
+  },
+  {
+    "elapsedSeconds": 348.977953495,
+    "responses": 96246,
+    "rssBytes": 239386624
+  },
+  {
+    "elapsedSeconds": 363.97024883,
+    "responses": 112757,
+    "rssBytes": 239648768
+  },
+  {
+    "elapsedSeconds": 379.365999764,
+    "responses": 127477,
+    "rssBytes": 239779840
+  },
+  {
+    "elapsedSeconds": 394.246872692,
+    "responses": 146578,
+    "rssBytes": 240828416
+  },
+  {
+    "elapsedSeconds": 409.240162402,
+    "responses": 185124,
+    "rssBytes": 242794496
+  },
+  {
+    "elapsedSeconds": 424.30391983799996,
+    "responses": 202916,
+    "rssBytes": 243580928
+  },
+  {
+    "elapsedSeconds": 439.366638499,
+    "responses": 220958,
+    "rssBytes": 243843072
+  },
+  {
+    "elapsedSeconds": 454.36331344499996,
+    "responses": 240863,
+    "rssBytes": 244236288
+  },
+  {
+    "elapsedSeconds": 469.3772891,
+    "responses": 264928,
+    "rssBytes": 244367360
+  },
+  {
+    "elapsedSeconds": 484.36688899200004,
+    "responses": 286876,
+    "rssBytes": 244498432
+  },
+  {
+    "elapsedSeconds": 499.366916419,
+    "responses": 315459,
+    "rssBytes": 244498432
+  },
+  {
+    "elapsedSeconds": 514.4744087299999,
+    "responses": 347356,
+    "rssBytes": 245678080
+  },
+  {
+    "elapsedSeconds": 529.764012267,
+    "responses": 372772,
+    "rssBytes": 245940224
+  },
+  {
+    "elapsedSeconds": 544.7519733219999,
+    "responses": 399054,
+    "rssBytes": 245940224
+  },
+  {
+    "elapsedSeconds": 559.753025081,
+    "responses": 425832,
+    "rssBytes": 246071296
+  },
+  {
+    "elapsedSeconds": 574.7628322300001,
+    "responses": 447360,
+    "rssBytes": 246071296
+  },
+  {
+    "elapsedSeconds": 589.752311275,
+    "responses": 471667,
+    "rssBytes": 246202368
+  }
+]

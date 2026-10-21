@@ -15,6 +15,11 @@ import { pool } from "../services/api/src/db.js";
 import { config } from "../services/api/src/config.js";
 import { login } from "../services/api/src/adapters.js";
 import { demonstrationPassword } from "../tests/browser/local-account.js";
+const extended=process.argv.includes("--extended");
+const durationSeconds=extended?600:120;
+const outputDirectory=extended?"artifacts/issue-3":"artifacts/issue-2";
+const raw:{elapsedMs:number,session:number,status:string,durationMs:number}[]=[];
+const samples:{elapsedSeconds:number,responses:number,rssBytes:number}[]=[];
 const c = await isolatedContext();
 let child: any;
 const result: any = {
@@ -24,7 +29,7 @@ const result: any = {
   thresholds: {
     rows: 10000,
     sessions: 25,
-    seconds: 120,
+    seconds: durationSeconds,
     p95Ms: 1000,
     errorFraction: 0.01,
     minThroughput: 20,
@@ -81,10 +86,12 @@ try {
   );
   child = await startApi(c.dsn, true);
   const tokens: string[] = [];
-  for (let i = 0; i < 25; i++)
-    tokens.push(
-      (await login("reviewer", demonstrationPassword())).access_token,
-    );
+  const expiresAt:number[]=[];
+  let authenticationRenewals=0;
+  for (let i = 0; i < 25; i++){
+    const session=await login("reviewer",demonstrationPassword());
+    tokens.push(session.access_token);expiresAt.push(Date.now()+Number(session.expires_in)*1000);
+  }
   const auth = (i: number) => ({ Authorization: "Bearer " + tokens[i] });
   const sample = await fetch(
     "http://localhost:3010/api/encounter-worklist?limit=50&offset=0",
@@ -96,7 +103,7 @@ try {
   assert.equal(first.items.length, 50);
   const baseline = await verifyAudit(c.db);
   console.log(
-    "Restored audit verified; starting 25 authenticated sessions for 120 seconds.",
+    `Restored audit verified; starting 25 authenticated sessions for ${durationSeconds} seconds.`,
   );
   const durations: number[] = [];
   const errors: Record<string, number> = {};
@@ -111,9 +118,9 @@ try {
   };
   const beforeCpu = await proc(),
     begin = performance.now(),
-    end = begin + 120000;
+    end = begin + durationSeconds*1000;
   const timer = setInterval(() => {
-    proc().catch(() => {});
+    proc().then(p=>samples.push({elapsedSeconds:(performance.now()-begin)/1000,responses:count,rssBytes:p.rss})).catch(() => {});
     console.log(
       "load progress",
       Math.round((performance.now() - begin) / 1000) + "s",
@@ -126,19 +133,25 @@ try {
       let n = 0;
       while (performance.now() < end) {
         const t = performance.now();
+        let status="unknown";
         try {
+          if(Date.now()>=expiresAt[i]-30000){const session=await login("reviewer",demonstrationPassword());tokens[i]=session.access_token;expiresAt[i]=Date.now()+Number(session.expires_in)*1000;authenticationRenewals++;}
           const r = await fetch(
             `http://localhost:3010/api/encounter-worklist?limit=50&offset=${(i * 31 + n++ * 50) % 9950}`,
             { headers: auth(i), signal: AbortSignal.timeout(5000) },
           );
           await r.arrayBuffer();
+          status=String(r.status);
           if (r.status !== 200)
             errors[String(r.status)] = (errors[String(r.status)] || 0) + 1;
         } catch (e) {
           const key = (e as Error).name;
+          status=key;
           errors[key] = (errors[key] || 0) + 1;
         }
-        durations.push(performance.now() - t);
+        const durationMs=performance.now()-t;
+        if(extended)raw.push({elapsedMs:t-begin,session:i,status,durationMs});
+        durations.push(durationMs);
         count++;
       }
     }),
@@ -164,6 +177,8 @@ try {
     peakApiRssBytes: peakRss,
     apiAverageCpuPercent:
       ((afterCpu.ticks - beforeCpu.ticks) / 100 / seconds) * 100,
+    authenticationRenewals,
+    tokenValuesRecorded:false,
     sameRoleDistinctAuthenticationSessions: true,
   };
   const recoveryStart = performance.now();
@@ -200,8 +215,9 @@ try {
   await c.db.end();
   await closeOriginal();
   await writeFile(
-    "artifacts/issue-2/benchmark-results.json",
+    outputDirectory+"/benchmark-results.json",
     JSON.stringify(result, null, 2) + "\n",
   );
+  if(extended){await writeFile(outputDirectory+"/soak-requests.jsonl",raw.map(r=>JSON.stringify(r)).join("\n")+"\n");await writeFile(outputDirectory+"/soak-samples.json",JSON.stringify(samples,null,2)+"\n");}
   console.log(JSON.stringify(result, null, 2));
 }

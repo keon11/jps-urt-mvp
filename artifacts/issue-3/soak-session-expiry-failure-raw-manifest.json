@@ -1,0 +1,7 @@
+{
+  "uncompressedBytes": 42960192,
+  "uncompressedSha256": "b31c487d40e0bec6f8bacf5a89b5758e7f9429b2e366d1f6c92bb8d38c727402",
+  "gzipSha256": "cf55dde537e386fe711978db6c85d8407aad15b850e72016950a3229086ba44e",
+  "records": 490784,
+  "compression": "lossless gzip; original bytes roundtrip verified"
+}
