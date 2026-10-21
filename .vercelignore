@@ -1,0 +1,12 @@
+.runtime/
+.env*
+.vercel/
+node_modules/
+artifacts/
+docs/
+infra/
+services/
+tests/
+scripts/
+*.bundle
+*.zip

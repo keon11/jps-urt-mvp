@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-21",
+  "teamSlug": "kevionkt111-1687",
+  "plan": "hobby",
+  "requestedProject": "clarity-ur-desktop-preview",
+  "repository": "keon11/jps-urt-mvp",
+  "branch": "dev/desktop-hospital-workspace",
+  "action": "create_git_project",
+  "deployRequested": false,
+  "status": "BLOCKED",
+  "httpStatus": 403,
+  "reason": "You don't have permission to create the project.",
+  "existingProjectsFound": 0,
+  "mappedCliFallback": false,
+  "independentCliCredentialsAvailable": false,
+  "deploymentUrl": null,
+  "repositoryLinkVerified": false,
+  "remoteProtectionVerified": false,
+  "productionDeploymentPerformed": false
+}

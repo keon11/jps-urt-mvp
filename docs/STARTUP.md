@@ -19,13 +19,9 @@ This installs locked dependencies, verifies/downloads the model, starts infrastr
 
 Open **http://localhost:3000** in a browser on the same machine. This loopback URL is not a public deployment URL. For a remote workstation, use an approved SSH tunnel to loopback; do not expose the default demo credentials on the Internet.
 
-| Demo role | Username | Password |
-|---|---|---|
-| Utilization reviewer | `reviewer` | `Synthetic-demo-only-2026!` |
-| Physician advisor | `advisor` | `Synthetic-demo-only-2026!` |
-| Administrator | `admin` | `Synthetic-demo-only-2026!` |
+Local account roles are `reviewer`, `advisor`, and `admin`. Obtain the seeded password through the local operator from `infra/realm.json`; the UI requires manual entry. Grafana and Keycloak administration remain local-only; operators inspect the corresponding local Compose configuration. These historical defaults are demonstration values, present in the original commit history, and must never be used on a public service.
 
-Grafana: **http://localhost:3001/d/ur-synthetic-operations**, user `demo-admin`, password `synthetic-grafana-local-only`. It reads only an aggregate SQL view. Keycloak administration is on port 8081 using `demo-admin` / `synthetic-admin-local-only`. All are intentionally public local-demo values, not production credentials.
+The frontend preview contains no credential values and does not connect to these services. See [preview configuration and limitations](DESKTOP-REDESIGN.md).
 
 ## Individual commands
 

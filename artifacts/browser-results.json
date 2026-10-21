@@ -42,7 +42,9 @@
         "id": "",
         "name": "",
         "testDir": "/workspace/hospital-ur-ai-mvp/tests/browser",
-        "testIgnore": [],
+        "testIgnore": [
+          "**/preview.spec.ts"
+        ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -79,7 +81,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 32550,
+                  "duration": 18687,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -87,34 +89,34 @@
                   "steps": [
                     {
                       "title": "1. Synthetic intake and persisted FHIR evidence",
-                      "duration": 1644
+                      "duration": 617
                     },
                     {
                       "title": "2. Local AI-driven prioritization and 3. inpatient versus observation recommendation",
-                      "duration": 11870
+                      "duration": 6610
                     },
                     {
                       "title": "4. Continued-stay review responds to synthetic clinical changes",
-                      "duration": 11176
+                      "duration": 6232
                     },
                     {
                       "title": "5. Authorization, payer responses and notification tracking",
-                      "duration": 2671
+                      "duration": 1859
                     },
                     {
                       "title": "6. Potential denial-risk identification is explained and labeled illustrative",
-                      "duration": 585
+                      "duration": 443
                     },
                     {
                       "title": "7. Physician advisor escalation and role-restricted human override",
-                      "duration": 1982
+                      "duration": 1444
                     },
                     {
                       "title": "8. Dashboards, explanations and audit trails",
-                      "duration": 1176
+                      "duration": 761
                     }
                   ],
-                  "startTime": "2026-10-20T17:39:14.726Z",
+                  "startTime": "2026-10-21T00:47:26.106Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -124,7 +126,7 @@
           ],
           "id": "05384557491ebd602dd7-88c66971b0dc4fc4a449",
           "file": "demo.spec.ts",
-          "line": 33,
+          "line": 37,
           "column": 1
         },
         {
@@ -143,12 +145,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1547,
+                  "duration": 926,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-20T17:39:47.616Z",
+                  "startTime": "2026-10-21T00:47:44.951Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -158,7 +160,7 @@
           ],
           "id": "05384557491ebd602dd7-5ccfd3d356e1a1ccfca5",
           "file": "demo.spec.ts",
-          "line": 213,
+          "line": 212,
           "column": 1
         },
         {
@@ -177,12 +179,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3934,
+                  "duration": 3204,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-20T17:39:49.189Z",
+                  "startTime": "2026-10-21T00:47:45.900Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -192,17 +194,93 @@
           ],
           "id": "05384557491ebd602dd7-2cade4e9188b6da8a60e",
           "file": "demo.spec.ts",
-          "line": 239,
+          "line": 238,
           "column": 1
+        }
+      ]
+    },
+    {
+      "title": "desktop.spec.ts",
+      "file": "desktop.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop acceptance and real screenshots at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3900,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T00:47:49.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12cc77c408bab7a1d6ba-aebd9977daf3d5bf5ccc",
+          "file": "desktop.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "desktop acceptance and real screenshots at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6268,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T00:47:53.061Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12cc77c408bab7a1d6ba-144f78cf82b966bf1d8b",
+          "file": "desktop.spec.ts",
+          "line": 4,
+          "column": 3
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-20T17:39:13.455Z",
-    "duration": 39864.039000000004,
-    "expected": 3,
+    "startTime": "2026-10-21T00:47:25.180Z",
+    "duration": 34370.222,
+    "expected": 5,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

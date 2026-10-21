@@ -50,3 +50,7 @@ Audit appends are serialized with a database advisory lock and linked using cano
 ## Local reporting topology
 
 The default Grafana dashboard queries `ur_operational_metrics`, an aggregate view, using the restricted `ur_metrics` role. Direct case/audit reads by that role are tested and denied. This avoids opening the loopback-only API to Docker's host gateway. `/metrics` exposes Prometheus-format process and case counters; the optional Prometheus profile requires a reviewed private listener/container topology and is not enabled by default. Grafana update/usage reporting and remote public-key retrieval are disabled for this offline demonstration; no external plugins are installed.
+
+## Desktop frontend preview boundary (Issue #1)
+
+The desktop UI has two compile modes. The normal build continues to use the unchanged local API. The Vercel build dynamically loads a credential-free fictional JSON snapshot through a read-only adapter and emits static files only. No API functions, backend proxies, Keycloak, Medplum, CQF, model server or Grafana are deployed to Vercel. See [DESKTOP-REDESIGN.md](DESKTOP-REDESIGN.md) for the deployment permission blocker and explicit presentation-only boundary. Desktop screens target 1440/1920px, minimum 1280px; mobile is out of scope.

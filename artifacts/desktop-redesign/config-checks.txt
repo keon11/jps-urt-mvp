@@ -1,0 +1,6 @@
+PASS: deployment settings validate against Vercel property schema (Draft 7 instance validation).
+PASS: build gate preview dev/desktop-hospital-workspace build
+PASS: build gate production dev/desktop-hospital-workspace skip
+PASS: build gate preview main skip
+PASS: build gate preview dev/autonomous-mvp skip
+PASS: build gate preview other skip

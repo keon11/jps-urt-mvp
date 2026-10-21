@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-10-21T00:48:51.884564+00:00",
+  "issue": "https://github.com/keon11/jps-urt-mvp/issues/1",
+  "branch": "dev/desktop-hospital-workspace",
+  "baseCommit": "b71b6e6c6bda67b8434182ecac63b968c13bfdf9",
+  "localImplementation": "PASS",
+  "remotePreview": "BLOCKED: Vercel project creation 403 forbidden",
+  "backendChanged": false,
+  "mobileInScope": false,
+  "tests": {
+    "unit": {
+      "passed": 14,
+      "failed": 0
+    },
+    "integration": {
+      "passed": 14,
+      "failed": 0
+    },
+    "liveBrowser": {
+      "passed": 5,
+      "failed": 0
+    },
+    "fixtureBrowser": {
+      "passed": 1,
+      "failed": 0
+    },
+    "auditChain": "verified",
+    "previewCredentialScan": "passed",
+    "npmAuditVulnerabilities": 0
+  },
+  "sources": {
+    "apps/web/src/main.tsx": "fae90f7746866430bff31a2535e4c8e2f9e9bfe0441bdf6ec9698f1302d26226",
+    "apps/web/src/style.css": "5c9dd855bb74710033dec7732d008be001d53fa724eceea96dbd4e70af36ecd9",
+    "apps/web/src/preview.ts": "54adc3539726f9e5bf24239a9480771d210f540b98cb6b4028830c05b9c7fdf1",
+    "apps/web/src/preview-data.json": "cc237039cedf320d0b8a992ae19f0bf3101c78fa3f931d8c0dc027d386154e44",
+    "vite.config.ts": "0bb5deeb40c9f229abe60fda662feac8072d11dbfa3f9bb1fa372b1252d52e5d",
+    "vercel.json": "886cd0bcd5258326284ca400740a0114426535f926b23644bd019476346eeaf6"
+  },
+  "screenshots": [
+    {
+      "file": "artifacts/desktop-redesign/1440/queue.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "8af9494cf311c1d3a8000700d1653e79bdcf7437270f76556ebb96438a8757db"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1440/evidence.png",
+      "width": 1440,
+      "height": 1160,
+      "sha256": "d8759d6368e69cd38229b1ea83475c8f7187b73ccb9e58f002905503c26b81af"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1440/ai-review.png",
+      "width": 1440,
+      "height": 1766,
+      "sha256": "4faf6c1418300eda628c60fd40f206ad776a0137cc83e5e2a64ae82f719f9321"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1440/authorization.png",
+      "width": 1440,
+      "height": 1271,
+      "sha256": "715e96a28e1d4925399c078874fc774d7c69f48754781f483498843b6fa37dce"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1440/advisor.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "04c4ccb4bbd044f03cdffc50b7c354f1037e2efe815b98e9330400ecf3143cec"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1440/operations.png",
+      "width": 1440,
+      "height": 1828,
+      "sha256": "3f3fb526ab3a45e5d9a937d4bb77e2b09162cc05ce978f6571f7b01f936df574"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1440/audit.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "c25df09c584055059176722d8c46b40d4c827e790701b8a44fba631d209a30d1"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/queue.png",
+      "width": 1920,
+      "height": 1111,
+      "sha256": "e1e0852260fa5c5d162f0b252e1b0693d161d64e890b3c465ea86a4ac300fddc"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/evidence.png",
+      "width": 1920,
+      "height": 1168,
+      "sha256": "f6557c93102900a603b4259dc4c5bf60a6085127aa05262bf83c6b4db9948272"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/ai-review.png",
+      "width": 1920,
+      "height": 1661,
+      "sha256": "f466d0f6aa103480e16ae8219fa7c202e5dca0b862c8765c7ffe03859136c68d"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/authorization.png",
+      "width": 1920,
+      "height": 1279,
+      "sha256": "952da2cc1798562c513bc914823b6be7b9a0a925fa20b1ee56ffe4ce652895f7"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/advisor.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "de9e1a91cd3dfc0dd664f0ca36000d53f2f2053b2879cd1e25af3db1ab8612fb"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/operations.png",
+      "width": 1920,
+      "height": 1840,
+      "sha256": "e4163002a26be208b82a4274e805825a2c15a1d994a9a63f325a3209a240a079"
+    },
+    {
+      "file": "artifacts/desktop-redesign/1920/audit.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "a294d141e9050fc6b7ea0f42edc68283e0344f3029667504434db443107c5fc8"
+    }
+  ]
+}

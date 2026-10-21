@@ -32,3 +32,9 @@
 | Deployment | Local isolated demo; no public hosting | Reviewed hardened deployment, access restrictions, secrets provisioning and change management before any external environment |
 
 All Compose credentials are intentionally public, synthetic-demo-only values. They must never be reused outside an isolated local demonstration. The demo does not autonomously change source patient status or take real payer actions. No legal commitment, proposal submission or addendum acknowledgment has been made.
+
+## Desktop preview assessment (Issue #1)
+
+The static preview contains only explicitly marked fictional snapshot data. Credential values are removed from the frontend, sign-in is not used in preview mode, mutations are read-only, external links to local services are hidden, and build artifacts are scanned for known local passwords, local-only credential patterns, tokens, private keys and source maps. Browser verification checks for zero API/external requests. Static headers restrict connections to the same origin, disable framing and indexing, and prevent content sniffing. These measures do not replace Vercel deployment protection, which cannot yet be verified because project creation returned 403.
+
+Historical commits and isolated backend fixture configuration contain intentionally public local-only defaults. This change preserves that history and does not rotate or publish any external credential. Those defaults are not secure credentials for a network-accessible backend; all must be replaced before any real deployment. No claim of HIPAA compliance, validated medical necessity, payer certification, clinical model performance or complete accessibility compliance is made. A live preview integration additionally needs verified HTTPS, secure sessions, origin/CSRF controls, scoped identity, synthetic-only isolation, monitoring and access review. Production gaps listed above remain open.

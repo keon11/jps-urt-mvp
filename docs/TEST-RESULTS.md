@@ -25,3 +25,24 @@ The main browser test performs all eight requested scenarios through the running
 The startup script was executed end to end in this environment using persistent service volumes. Fresh PostgreSQL initialization was tested independently with the actual official image entrypoint and an empty isolated tmpfs. A second complete clean-machine deployment, load tests, real payer/Epic integration, container vulnerability scanning, formal clinical validation and production security/compliance assessment were not executed or claimed.
 
 Earlier failures and repairs are recorded in `STATUS.md`. Final successful transcripts supersede earlier/interrupted attempts. Source file hashes are retained in `artifacts/source-manifest.json`; Git history identifies the completed phase commits. Audit-chain verification and final readiness results are retained separately after the final synthetic data preparation.
+
+## Issue #1 desktop redesign — 2026-10-21
+
+These results supersede the historical mobile presentation checks. Mobile is outside current scope. No backend, clinical rules or model changes were required.
+
+| Check | Executed outcome | Evidence |
+|---|---|---|
+| Unit suite | 14/14 passed, no skips | [Log](../artifacts/desktop-redesign/unit-tests.txt) |
+| TypeScript and live frontend build | Passed | [Log](../artifacts/desktop-redesign/build.txt) |
+| Real-service integration | 14/14 passed, no skips; includes outage behavior, FHIR versions, RBAC, authorization, advisor decisions, reporting | [Log](../artifacts/desktop-redesign/integration-tests.txt) |
+| Live browser | 5/5 passed: eight-scenario walkthrough, session recovery, live Grafana, desktop acceptance at 1440 and 1920 | [Log](../artifacts/desktop-redesign/browser-tests.txt), [JSON](../artifacts/browser-results.json) |
+| Static fictional preview | Build, credential/source-map scan, synthetic markers/counts, and browser check passed; zero API/external requests | [Log](../artifacts/desktop-redesign/preview-tests.txt), [JSON](../artifacts/desktop-redesign/preview-browser-results.json) |
+| Desktop screenshots | Seven screens at both requested widths, actually captured and visually inspected; additional 1280px overflow and keyboard checks | [Index](DESKTOP-REDESIGN.md#actual-screenshots) |
+| Audit integrity | Full local append-only hash chain verified | [Log](../artifacts/desktop-redesign/audit-verification.txt) |
+| Dependency audit | Zero reported vulnerabilities | [Log](../artifacts/desktop-redesign/npm-audit.txt) |
+| Preview configuration | Vercel property schema and branch/environment build gate checks passed | [Log](../artifacts/desktop-redesign/config-checks.txt) |
+| Remote Vercel deployment | **BLOCKED**, not passed: connector returned 403 during link-only project creation; no independent CLI credentials | [Record](../artifacts/desktop-redesign/vercel-blocker.json) |
+
+The first new focus assertion was corrected to test actual keyboard Tab navigation. Visual inspection led to repairs for active navigation contrast and unbounded audit/authorization history. Final browser captures include the corrected UI. Credential values are absent from the public frontend build; no protected service was exposed. Existing local demo defaults remain in original history and backend fixture configuration and must not be reused for a public service.
+
+Local implementation acceptance passes. End-to-end **remote preview deployment acceptance is incomplete** until an authorized Vercel connection can create/link the project, protection is verified, the exact development commit is deployed as a preview, and the actual hosted URL is tested. A local fixture test is not evidence of a live Vercel deployment or live backend integration.

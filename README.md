@@ -12,9 +12,11 @@ Requires Node 24, Python 3, Docker Compose, approximately 12–16 GiB RAM and su
 npm run start:demo
 ```
 
-Open http://localhost:3000 on the same machine. Sign in as `reviewer`, `advisor` or `admin`; each uses the intentionally public local-demo password `Synthetic-demo-only-2026!`.
+Open http://localhost:3000 on the same machine at **1280px minimum; 1440px or 1920px recommended**. Sign in with an authorized local demonstration account. Local operators obtain the seeded values from the isolated realm configuration; no credentials are prefilled or displayed in the UI. Mobile development is out of scope.
 
-Grafana: http://localhost:3001/d/ur-synthetic-operations (`demo-admin` / `synthetic-grafana-local-only`). Never expose these defaults to untrusted networks.
+Grafana remains separate at http://localhost:3001/d/ur-synthetic-operations. Keep the entire Docker backend on loopback.
+
+For the **read-only fictional frontend preview**, run `npm run test:preview`, then `npx vite preview --mode preview --host 127.0.0.1 --port 4173`. No backend is used by this build. See [desktop redesign and preview setup](docs/DESKTOP-REDESIGN.md) for the Vercel permission blocker and deployment requirements.
 
 ## Documentation and evidence
 
@@ -29,4 +31,4 @@ Grafana: http://localhost:3001/d/ur-synthetic-operations (`demo-admin` / `synthe
 
 Medplum provides FHIR R4 storage, HAPI/CQF evaluates illustrative CQL, Keycloak provides identity, CPU llama.cpp serves the checksum-pinned Qwen model, and Grafana provides aggregate reporting. Lightweight adapters connect the services. PAS-inspired payer workflows remain entirely local and do not claim Da Vinci conformance.
 
-All work is in a dedicated local repository on `dev/autonomous-mvp`. GitHub creation was rejected by the installed integration's permissions, so no remote repository or public deployment is claimed. No existing project or default branch was modified.
+The original five development phases remain on `dev/autonomous-mvp`. Issue #1 changes are on `dev/desktop-hospital-workspace`, based on that branch, in the existing repository `keon11/jps-urt-mvp`. No default-branch merge or production deployment is authorized.

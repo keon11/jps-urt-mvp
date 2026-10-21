@@ -1,0 +1,18 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:browser
+> playwright test
+
+
+Running 5 tests using 1 worker
+
+(node:362447) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:362447) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/demo.spec.ts:37:1 › all eight synthetic utilization review scenarios work end to end (18.7s)
+  ✓  2 tests/browser/demo.spec.ts:212:1 › invalidated session returns to sign-in instead of leaving unusable controls (926ms)
+  ✓  3 tests/browser/demo.spec.ts:238:1 › Grafana renders live aggregate reporting (3.2s)
+  ✓  4 tests/browser/desktop.spec.ts:4:3 › desktop acceptance and real screenshots at 1440px (3.9s)
+  ✓  5 tests/browser/desktop.spec.ts:4:3 › desktop acceptance and real screenshots at 1920px (6.3s)
+
+  5 passed (34.4s)

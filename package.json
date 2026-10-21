@@ -16,7 +16,9 @@
     "seed": "tsx scripts/seed.ts",
     "verify:audit": "tsx scripts/verify-audit.ts",
     "demo": "tsx scripts/prepare-demo.ts",
-    "start:demo": "bash scripts/start-demo.sh"
+    "start:demo": "bash scripts/start-demo.sh",
+    "build:preview": "tsc --noEmit && vite build --mode preview",
+    "test:preview": "npm run build:preview && node scripts/verify-preview.mjs && playwright test --config playwright.preview.config.ts"
   },
   "dependencies": {
     "@medplum/core": "5.2.6",
