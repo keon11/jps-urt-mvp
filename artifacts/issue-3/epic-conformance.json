@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-21T18:52:37.970Z",
+  "sources": [
+    {
+      "url": "https://hl7.org/fhir/R4/bundle.html",
+      "purpose": "FHIR R4 bundle/reference semantics"
+    },
+    {
+      "url": "https://fhir.epic.com/Documentation?docId=developerguidelines",
+      "purpose": "Epic developer registration/access prerequisites; not certification"
+    }
+  ],
+  "access": {
+    "url": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/metadata",
+    "httpStatus": 200,
+    "bodySha256": "dccd2d0c743311952bae3491791633d38cd1609c47223c5f542669469c20b7a6",
+    "capabilityStatementReceived": true,
+    "format": "json",
+    "patientDataRequested": false
+  },
+  "syntheticResults": [
+    {
+      "id": "respiratory",
+      "patientReference": "Patient/30000000-0000-4000-8000-000000000001",
+      "encounterReference": "Encounter/30000000-0000-4000-8000-000000000002",
+      "sourceHash": "6efd9a3254e074d5964d05900b4b28dc45b9b71af29bdafbb4fd2d1f3047e5a1",
+      "resources": 8,
+      "passed": true
+    },
+    {
+      "id": "observation",
+      "patientReference": "Patient/30000000-0000-4000-8000-000000000021",
+      "encounterReference": "Encounter/30000000-0000-4000-8000-000000000022",
+      "sourceHash": "a16beac66f727ad4d384fc28f54a6d94609de8d058cd4b631c5bb225c23b0416",
+      "resources": 8,
+      "passed": true
+    },
+    {
+      "id": "continued-stay",
+      "patientReference": "Patient/30000000-0000-4000-8000-000000000041",
+      "encounterReference": "Encounter/30000000-0000-4000-8000-000000000042",
+      "sourceHash": "4f6c2d6c1be50d747aec99489568ccc1ced5c649bf98adeb9116c56816c2f354",
+      "resources": 8,
+      "passed": true
+    },
+    {
+      "id": "documentation",
+      "patientReference": "Patient/30000000-0000-4000-8000-000000000061",
+      "encounterReference": "Encounter/30000000-0000-4000-8000-000000000062",
+      "sourceHash": "9fcf8b82f618d0f29bb5b3f148ad6554f4f16024f5ca5b967addbca92e0d868e",
+      "resources": 7,
+      "passed": true
+    },
+    {
+      "id": "authorization",
+      "patientReference": "Patient/30000000-0000-4000-8000-000000000081",
+      "encounterReference": "Encounter/30000000-0000-4000-8000-000000000082",
+      "sourceHash": "9dafdb973bf04a0c47b1c8640cbb270b11d37f07e56e46f1f0cb474768d0ef83",
+      "resources": 8,
+      "passed": true
+    },
+    {
+      "id": "advisor",
+      "patientReference": "Patient/30000000-0000-4000-8000-000000000101",
+      "encounterReference": "Encounter/30000000-0000-4000-8000-000000000102",
+      "sourceHash": "e31c4f387f517bb1c64a51f6b899234289500dfbad141ce0f6cf05d136cd7f5a",
+      "resources": 8,
+      "passed": true
+    }
+  ],
+  "epicRuntimeValidated": false,
+  "jpsConnected": false,
+  "blocker": "No authorized Epic client registration, scoped sandbox token or tenant endpoint supplied. Metadata probe is not authenticated resource testing. Fixtures validate only this narrow synthetic mapping contract; not US Core/profile certification.",
+  "requiredAction": "Register/authorize a non-production Epic application and securely configure its tenant endpoint, client identity and read-only scopes. Never send credentials in chat."
+}

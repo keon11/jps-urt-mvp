@@ -1,0 +1,11 @@
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (35.144323ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (15.935297ms)
+✔ updated, stale and inconsistent source versions require reconciliation (10.601198ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1661.365376
