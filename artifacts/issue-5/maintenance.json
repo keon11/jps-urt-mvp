@@ -1,0 +1,21 @@
+{
+  "scope": "Explicit ordinary VACUUM/ANALYZE on isolated synthetic fixture only; no forced planner setting, production DDL, workflow/action mutation or extra engine",
+  "before": [
+    {
+      "relpages": 2048,
+      "relallvisible": 0,
+      "reltuples": 10006,
+      "bytes": "16777216"
+    }
+  ],
+  "after": [
+    {
+      "relpages": 2048,
+      "relallvisible": 2001,
+      "reltuples": 10006,
+      "bytes": "16777216"
+    }
+  ],
+  "seconds": 1.162213412,
+  "completed": true
+}

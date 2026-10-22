@@ -1,0 +1,52 @@
+{
+  "startedAt": "2026-10-22T02:26:42.303Z",
+  "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+  "thresholds": {
+    "rows": 10000,
+    "sessions": 25,
+    "seconds": 120,
+    "peakApiRssBytes": 1073741824,
+    "p95Ms": 1000,
+    "errorFraction": 0.01,
+    "minThroughput": 20,
+    "apiRecoverySeconds": 15,
+    "restoreSeconds": 120
+  },
+  "host": {
+    "node": "v24.19.0",
+    "logicalCPUs": 5,
+    "totalMemoryBytes": 18882674688
+  },
+  "database": "ur_issue2_1792593144631",
+  "restore": {
+    "target": "ur_issue2_verify_1792636002304",
+    "seconds": 0.7467173290000001,
+    "originalBackupRestoreSeconds": 1.644887195,
+    "cases": 6,
+    "audit": {
+      "verified": true,
+      "events": 413,
+      "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+    }
+  },
+  "load": {
+    "requests": 14420,
+    "seconds": 120.31862341700001,
+    "throughputPerSecond": 119.84844565602448,
+    "p50Ms": 203.39272899999924,
+    "p95Ms": 380.78774800000247,
+    "p99Ms": 653.5470950000017,
+    "maxMs": 1098.3512270000065,
+    "errors": {},
+    "failedRequests": 0,
+    "errorFraction": 0,
+    "peakApiRssBytes": 241913856,
+    "apiAverageCpuPercent": 23.05544994797586,
+    "authenticationRenewals": 0,
+    "tokenValuesRecorded": false,
+    "sameRoleDistinctAuthenticationSessions": true
+  },
+  "apiRestartSeconds": 3.7499762320000007,
+  "liveMvpUnchanged": true,
+  "passed": true
+}

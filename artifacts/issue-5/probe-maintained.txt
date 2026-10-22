@@ -1,0 +1,61 @@
+Restored audit verified; starting 25 authenticated sessions for 120 seconds.
+load progress 15s 5123 responses
+load progress 30s 10213 responses
+load progress 45s 15507 responses
+load progress 60s 21296 responses
+load progress 75s 27208 responses
+load progress 90s 32556 responses
+load progress 105s 38055 responses
+load progress 120s 43160 responses
+{
+  "startedAt": "2026-10-22T02:29:09.370Z",
+  "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+  "thresholds": {
+    "rows": 10000,
+    "sessions": 25,
+    "seconds": 120,
+    "peakApiRssBytes": 1073741824,
+    "p95Ms": 1000,
+    "errorFraction": 0.01,
+    "minThroughput": 20,
+    "apiRecoverySeconds": 15,
+    "restoreSeconds": 120
+  },
+  "host": {
+    "node": "v24.19.0",
+    "logicalCPUs": 5,
+    "totalMemoryBytes": 18882674688
+  },
+  "database": "ur_issue2_1792593144631",
+  "restore": {
+    "target": "ur_issue2_verify_1792636149370",
+    "seconds": 0.8230808510000001,
+    "originalBackupRestoreSeconds": 1.644887195,
+    "cases": 6,
+    "audit": {
+      "verified": true,
+      "events": 413,
+      "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+    }
+  },
+  "load": {
+    "requests": 43179,
+    "seconds": 120.04393339,
+    "throughputPerSecond": 359.69331211198823,
+    "p50Ms": 60.11351199999626,
+    "p95Ms": 120.60465599999952,
+    "p99Ms": 183.36725599999772,
+    "maxMs": 803.101029999998,
+    "errors": {},
+    "failedRequests": 0,
+    "errorFraction": 0,
+    "peakApiRssBytes": 257036288,
+    "apiAverageCpuPercent": 57.77884649502653,
+    "authenticationRenewals": 0,
+    "tokenValuesRecorded": false,
+    "sameRoleDistinctAuthenticationSessions": true
+  },
+  "apiRestartSeconds": 1.6343056559999969,
+  "liveMvpUnchanged": true,
+  "passed": true
+}
