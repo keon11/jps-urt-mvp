@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-22T03:39:00.835068+00:00",
+  "worklistPoolMax": 2,
+  "clinicalWritePoolMax": 8,
+  "clinicalDbModuleUnchanged": true,
+  "fetchTimeoutMsUnchanged": 5000,
+  "hostQuotaCpusObserved": 4,
+  "files": {
+    "services/api/src/worklist.ts": "486230ab2c1c40cbb89824a92539b5f3c1553da4232bc9c528d3e7170fe9b305",
+    "services/api/src/db.ts": "e0f20afd8e72552b60cd2a8e61a369741be6c79986a9c8a6cae9d1e909c726a6",
+    "services/api/src/server.ts": "fe859afc977f0af3cdcfbcf7fe5766b7d88a0e3a4b4a65b6dca3fec6fe4d1199",
+    "services/api/src/adapters.ts": "e1f471a1270c6a0103358a6ca322eaf585fc2503ae25c39259116e36b03bdf78",
+    "services/api/src/telemetry.ts": "6d981845208239626cc70b6ae7b702382b9ca0ebd39eff2c2518262da2ff993f",
+    "scripts/benchmark.ts": "8f99ed5f5725f0fddac7e7e27705eeb65510b036a1465e5d5d03bebb6bb124c4"
+  },
+  "changes": "Queue pg pool isolation and graceful HTTP/pool shutdown; driver adds only a run label, not a workload/deadline change"
+}

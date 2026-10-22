@@ -1,0 +1,55 @@
+{
+  "scope": "Cumulative existing benchmark exporter at this checkpoint, including historical runs and probes; not exclusively attributable to this hour",
+  "spans": 175699,
+  "rawSha256": "742f641995e30563382fb03a675122fb86094a030741e56dc764ebb9547cc397",
+  "gzipSha256": "011071a9d3d86cefadd4d4def8e6afe0ec96ffaf98ea1935d9fef573d35dc5bd",
+  "attributesWhitelisted": true,
+  "sourceContentExported": false,
+  "samples": [
+    {
+      "name": "http.request",
+      "traceId": "2fa909a4ee15c59c66be9b4ea7c3405e",
+      "spanId": "f220131e0fda458a",
+      "attributes": {
+        "request.id": "5422dd52-c149-4acd-b549-c47bdec25b8b",
+        "http.request.method": "GET",
+        "http.route": "/api/encounter-worklist",
+        "http.response.status_code": 200
+      },
+      "status": {
+        "code": 0
+      },
+      "durationMs": 72.094967
+    },
+    {
+      "name": "http.request",
+      "traceId": "ce758d06672081e8819302512e951790",
+      "spanId": "1004738e5d0ee85f",
+      "attributes": {
+        "request.id": "1a6f2854-357a-4e77-9686-98e7f571f5c9",
+        "http.request.method": "GET",
+        "http.route": "/api/encounter-worklist",
+        "http.response.status_code": 200
+      },
+      "status": {
+        "code": 0
+      },
+      "durationMs": 79.501066
+    },
+    {
+      "name": "http.request",
+      "traceId": "03f5d26685f755df5b2cfdbad7d78412",
+      "spanId": "594b8d5b69969087",
+      "attributes": {
+        "request.id": "20df2981-af37-4f10-9e21-596a2e42895a",
+        "http.request.method": "GET",
+        "http.route": "/api/encounter-worklist",
+        "http.response.status_code": 200
+      },
+      "status": {
+        "code": 0
+      },
+      "durationMs": 58.528868
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "at": "2026-10-22T04:04:46.522Z",
+  "activity": [
+    {
+      "state": "active",
+      "wait_event_type": null,
+      "wait_event": null,
+      "sessions": 3
+    }
+  ],
+  "pressure": {
+    "cpu": {
+      "available": false,
+      "reason": "ENOENT"
+    },
+    "io": {
+      "available": false,
+      "reason": "ENOENT"
+    },
+    "memory": {
+      "available": false,
+      "reason": "ENOENT"
+    },
+    "loadAverage": {
+      "available": true,
+      "value": "3.33 3.34 4.04 4/937 703926\n"
+    },
+    "cgroupCpu": {
+      "available": true,
+      "value": "usage_usec 81657965951\nuser_usec 73014857218\nsystem_usec 8643108733\nnice_usec 0\nnr_periods 243748\nnr_throttled 48909\nthrottled_usec 12676710094\nnr_bursts 0\nburst_usec 0\n"
+    }
+  },
+  "containers": [
+    {
+      "BlockIO": "32MB / 0B",
+      "CPUPerc": "0.58%",
+      "Container": "371bf92233e5",
+      "ID": "371bf92233e5",
+      "MemPerc": "0.13%",
+      "MemUsage": "23.05MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-redis-1",
+      "NetIO": "177MB / 82.8MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "12.4MB / 51.5MB",
+      "CPUPerc": "1.91%",
+      "Container": "315f75aff7d3",
+      "ID": "315f75aff7d3",
+      "MemPerc": "0.51%",
+      "MemUsage": "91.41MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-grafana-1",
+      "NetIO": "979kB / 82.3MB",
+      "PIDs": "18"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.00%",
+      "Container": "9da38b5b04bd",
+      "ID": "9da38b5b04bd",
+      "MemPerc": "1.28%",
+      "MemUsage": "229.8MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-local-model-1",
+      "NetIO": "46kB / 25.9kB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "0B / 3.06MB",
+      "CPUPerc": "2.97%",
+      "Container": "45dc421db846",
+      "ID": "45dc421db846",
+      "MemPerc": "8.08%",
+      "MemUsage": "1.421GiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-cqf-1",
+      "NetIO": "223kB / 3.92MB",
+      "PIDs": "58"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.03%",
+      "Container": "e9ef98a48bcd",
+      "ID": "e9ef98a48bcd",
+      "MemPerc": "2.19%",
+      "MemUsage": "394.8MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-medplum-1",
+      "NetIO": "18.7MB / 57.2MB",
+      "PIDs": "12"
+    },
+    {
+      "BlockIO": "111MB / 1.34GB",
+      "CPUPerc": "195.43%",
+      "Container": "aae675da5bea",
+      "ID": "aae675da5bea",
+      "MemPerc": "1.54%",
+      "MemUsage": "277.7MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-postgres-1",
+      "NetIO": "2.84GB / 23.2GB",
+      "PIDs": "10"
+    },
+    {
+      "BlockIO": "211MB / 41.6MB",
+      "CPUPerc": "0.73%",
+      "Container": "3aa74280d090",
+      "ID": "3aa74280d090",
+      "MemPerc": "19.27%",
+      "MemUsage": "3.388GiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-keycloak-1",
+      "NetIO": "1.51MB / 6.64MB",
+      "PIDs": "56"
+    }
+  ],
+  "observation": "Instantaneous snapshot; API logs show pg pool-acquisition timeout. No DSN, tokens, query text or patient data captured."
+}
