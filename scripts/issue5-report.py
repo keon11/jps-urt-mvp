@@ -12,6 +12,7 @@ for label,r in [('baseline',b),('optimized',o)]:
  assert hashlib.sha256(raw.read_bytes()).hexdigest()==m['gzipSha256']
  with gzip.open(raw,'rb') as f:assert hashlib.file_digest(f,'sha256').hexdigest()==m['rawSha256']
  assert read(label+'/native-profile-summary.json')['eventLoop']['p95Ms']>0
+ assert read(label+'/otel-trace-manifest.json')['attributesWhitelisted']
 assert b['host']==o['host']
 assert read('dataset-baseline.json')['sha256']==read('dataset-maintained.json')['sha256']==read('dataset-optimized.json')['sha256']
 eq=read('queue-equivalence.json');assert eq['passed'] and len(eq['checks'])==32
@@ -42,7 +43,7 @@ text=f'''# Issue #5 measured performance and hospital demonstration readiness
 
 ## ENGINEERING VERIFIED
 
-The original empty-search path applied ILIKE '%' to every row for page/count queries. Actual EXPLAIN/BUFFERS, payload, warm auth/DB round-trip, catalog/cache and V8 profiles are retained. Reused existing PostgreSQL covering index and pg parameterization, Node perf_hooks/V8 and existing jose/Prometheus/React. No new NPM dependency, result/token cache, infrastructure, schema denormalization, auth bypass or clinical-rule change.
+A baseline point snapshot showed about 435% PostgreSQL CPU, eight workload sessions plus the observer active, and API logs confirmed pool-acquisition timeouts. PSI counters are unavailable on this kernel; captured load/cgroup counters are cumulative/point observations, not exclusive proof of every timeout cause. The original empty-search path applied ILIKE '%' to every row for page/count queries. Actual EXPLAIN/BUFFERS, payload, warm auth/DB round-trip, catalog/cache and V8 profiles are retained. Reused existing PostgreSQL covering index and pg parameterization, Node perf_hooks/V8 and existing jose/Prometheus/React. No new NPM dependency, result/token cache, infrastructure, schema denormalization, auth bypass or clinical-rule change.
 
 The empty-search fast path removes that redundant predicate; filtered searches retain literal escaping and parameters. All 32 original/optimized SQL page/count comparisons passed, including deep/end offsets and wildcard/backslash/injection-looking text. Counts stay current with no application cache. Selected-row JSON at offset 5000 was 12,741 bytes before/after; this is not a full UI/FHIR bundle payload claim. Warm JWT p95 was about 1.40ms and DB SELECT-1 round-trip p95 about 1.33ms in the initial profile; these local snapshots are not WAN measurements. Buffer/cache counters are database-cumulative, not per-request application-cache rates.
 
@@ -56,7 +57,7 @@ Predeclared targets: each run >=3600s, same 10,006-row isolated queue, 25 synthe
 |---|---:|---:|---:|---:|---:|---:|---:|---|---:|
 {chr(10).join(rows)}
 
-Throughput change **{throughput:+.2f}%**; p95 change **{latency:+.2f}%**, compared with the newly reproduced original. Actual target status: **{json.dumps(goals)}**. Optimized errors/timeouts are reported above even if other gates pass. Observed zero in one interval is not a zero-failure guarantee. Full ordered case-row hashes verify the same queue content before/after maintenance and optimized load. Raw rows are independently recomputed and retained losslessly compressed with SHA-256 round-trip proof. CPU/RSS samples and matched 30s V8/event-loop profiles are included in each run directory; their overhead is present in both runs.
+Throughput change **{throughput:+.2f}%**; p95 change **{latency:+.2f}%**, compared with the newly reproduced original. Actual target status: **{json.dumps(goals)}**. Optimized errors/timeouts are reported above even if other gates pass. Observed zero in one interval is not a zero-failure guarantee. Full ordered case-row hashes verify the same queue content before/after maintenance and optimized load. Raw rows are independently recomputed and retained losslessly compressed with SHA-256 round-trip proof. Cumulative privacy-restricted OpenTelemetry trace snapshots are preserved with their historical/probe scope explicitly labeled. CPU/RSS samples and matched 30s V8/event-loop profiles are included in each run directory; their overhead is present in both runs.
 
 Historical Phase 4 was 71.0149 req/s, p95 626.116ms, 21 timeouts over 3600.160s. Compare against that as historical context, not a new controlled run. Recorded current hardware is {b['host']['logicalCPUs']} logical CPUs, {b['host']['totalMemoryBytes']/1073741824:.2f}GiB host RAM, {b['host']['node']}. Shared-host/OS scheduling remains uncontrolled. Optimization includes measured fixture maintenance; do not attribute the combined gain only to SQL. The driver and service run on the same host, so this is not WAN, clinical inference, legacy full-bundle UI, real clinician concurrency, HA or a production SLA.
 

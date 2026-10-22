@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-22T01:59:55.433011+00:00",
+  "scope": "Private isolated API log since latest startup; exact known error messages only",
+  "messages": {
+    "timeout exceeded when trying to connect": 80
+  },
+  "interpretation": "pg client pool-acquisition wait hit configured 5000ms; not a clinical/insurer failure. Query/host contention causes require comparison."
+}

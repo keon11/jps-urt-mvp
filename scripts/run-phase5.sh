@@ -11,6 +11,7 @@ if [ ! -f .runtime/issue5-baseline-stage.done ]; then
 wait_run baseline
 python3 scripts/verify-soak-measurements.py --performance=baseline > artifacts/issue-5/baseline/raw-verification.txt
 python3 scripts/compress-performance-proof.py baseline
+python3 scripts/capture-performance-traces.py baseline
 npx tsx scripts/queue-dataset-proof.ts baseline
 python3 - <<'PY'
 import json,hashlib
@@ -49,6 +50,7 @@ wait "$profile_pid" || true
 wait_run optimized
 python3 scripts/verify-soak-measurements.py --performance=optimized > artifacts/issue-5/optimized/raw-verification.txt
 python3 scripts/compress-performance-proof.py optimized
+python3 scripts/capture-performance-traces.py optimized
 npx tsx scripts/queue-dataset-proof.ts optimized
 git add artifacts/issue-5
 if ! git diff --cached --quiet; then git commit -m 'Issue 5: retain comparable optimized hour, diagnostic probes and maintenance attribution'; fi
