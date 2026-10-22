@@ -1,0 +1,32 @@
+{
+  "newNpmDependencies": [],
+  "newInfrastructure": [],
+  "existingPackages": {
+    "pg": {
+      "version": "8.16.3",
+      "license": "MIT"
+    },
+    "jose": {
+      "version": "6.1.0",
+      "license": "MIT"
+    },
+    "prom-client": {
+      "version": "15.1.3",
+      "license": "Apache-2.0"
+    },
+    "react": {
+      "version": "19.1.1",
+      "license": "MIT"
+    },
+    "@opentelemetry/api": {
+      "version": "1.10.0",
+      "license": "Apache-2.0"
+    }
+  },
+  "runtimeTools": [
+    "PostgreSQL existing engine: EXPLAIN/BUFFERS/catalogs/ordinary VACUUM ANALYZE",
+    "Node 24 built-in V8 inspector/perf_hooks",
+    "Python standard-library lossless gzip/hash verification"
+  ],
+  "scope": "Installed-package license metadata and actual reused APIs; not complete transitive/container/legal or security clearance"
+}
