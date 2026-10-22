@@ -1,7 +1,7 @@
 {
-  "createdAt": "2026-10-22T06:45:07.027799+00:00",
+  "createdAt": "2026-10-22T06:46:34.402421+00:00",
   "classification": "DRAFT TECHNICAL DEMONSTRATION TRANSFER; NOT A BID; NO PHI/CREDENTIALS/SIGNATURES",
-  "sourceCommitBeforePackaging": "abff54b7897e3c3cc1c7c78f90517111d28c7ce9",
+  "sourceCommitBeforePackaging": "bf497708b8abfa3692f2d3c13e29e689e0b6179e",
   "sourceFingerprintSha256": "3df6b5494dc3f317f1b02857fd49e0cbf74c399febb8ed5e928e6b503f67e0ff",
   "privateRuntimeExcluded": true,
   "submitted": false,
@@ -568,7 +568,7 @@
       "sha256": "e130108c2d0ee8fe26c2b1f07ae38f498f3666130617ad606ad83095064e8cda"
     }
   ],
-  "archiveSha256": "6b15d87a8ca7f3144b94df312badce570c356fc7d4df958a6dd98ca8b0308934",
-  "archiveBytes": 13055029,
+  "archiveSha256": "41ccdd009bc155d9e3fd925b72e7af4c6845becb3fe2f26a0468822068b6f6dd",
+  "archiveBytes": 13055028,
   "allEntryHashesVerified": true
 }

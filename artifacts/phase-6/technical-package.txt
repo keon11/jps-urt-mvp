@@ -1,2 +1,2 @@
 PASS: product/fixture/dependency source hashes match verification checkpoint.
-PASS: allowlisted technical package: 140 hashed files; 13055029 bytes; private runtime excluded, nothing submitted.
+PASS: allowlisted technical package: 140 hashed files; 13055028 bytes; private runtime excluded, nothing submitted.
