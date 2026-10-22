@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-22T03:15:46.085544+00:00",
+  "cpuMax": "1600000 400000",
+  "quotaCpus": 4,
+  "reportedLogicalCpus": 5,
+  "scope": "Observed shared cgroup quota; no host/resource limit modified. All services and load share this budget."
+}

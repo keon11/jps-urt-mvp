@@ -1,0 +1,9 @@
+unit-build	Run npm audit --omit=dev --audit-level=high	﻿2026-10-22T02:33:37.2824754Z ##[group]Run npm audit --omit=dev --audit-level=high
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:33:37.2825200Z [36;1mnpm audit --omit=dev --audit-level=high[0m
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:33:37.2888157Z shell: /usr/bin/bash -e {0}
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:33:37.2888463Z ##[endgroup]
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:38:37.6464755Z npm warn audit 503 Service Unavailable - POST https://registry.npmjs.org/-/npm/v1/security/advisories/bulk - Service Unavailable
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:38:37.6466151Z { error: 'Service Unavailable' }
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:38:37.6477435Z npm error audit endpoint returned an error
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:38:37.6492645Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-10-22T02_33_37_348Z-debug-0.log
+unit-build	Run npm audit --omit=dev --audit-level=high	2026-10-22T02:38:37.6571353Z ##[error]Process completed with exit code 1.

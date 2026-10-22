@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-22T03:22:59.172938+00:00",
+  "productCheckpoint": "2d86253b5dd214353f11177134d311568edf9800",
+  "scope": "First optimized interval still uses original shared eight-connection pool; snapshot before any budget change",
+  "files": {
+    "services/api/src/worklist.ts": "3c334c32da36d2138f06ae2fc048f33515daf7c43cc97b70ae439de6b865cd01",
+    "services/api/src/db.ts": "e0f20afd8e72552b60cd2a8e61a369741be6c79986a9c8a6cae9d1e909c726a6",
+    "services/api/src/server.ts": "603de25606f1ff7fc6c86e31907c346c63a7287eaaf3eed5ab6aeba24c024c32",
+    "services/api/src/adapters.ts": "e1f471a1270c6a0103358a6ca322eaf585fc2503ae25c39259116e36b03bdf78",
+    "services/api/src/telemetry.ts": "6d981845208239626cc70b6ae7b702382b9ca0ebd39eff2c2518262da2ff993f",
+    "scripts/benchmark.ts": "9c39184dee8a81381c85b674066219b54e246bad4141a87433b0186b3413b556"
+  }
+}

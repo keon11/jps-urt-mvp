@@ -36,7 +36,7 @@ summary={'at':datetime.now(timezone.utc).isoformat(),'classification':'LOCAL ENG
 (p/'verification-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 rows=[]
 for label,r in [('Reproduced original',b),('Optimized + maintained',o)]:
- l=r['load'];rows.append(f"| {label} | {l['seconds']:.3f} | {l['requests']:,} | {l['throughputPerSecond']:.2f} | {l['p50Ms']:.2f} | {l['p95Ms']:.2f} | {l['p99Ms']:.2f} | {l['maxMs']:.2f} | {json.dumps(l['errors'])} | {l['peakApiRssBytes']/1048576:.2f} |")
+ l=r['load'];rows.append(f"| {label} | {l['seconds']:.3f} | {l['requests']:,} | {l['throughputPerSecond']:.2f} | {l['p50Ms']:.2f} | {l['p95Ms']:.2f} | {l['p99Ms']:.2f} | {l['maxMs']:.2f} | {json.dumps(l['errors'])} | {l['peakApiRssBytes']/1048576:.2f} | {l['apiAverageCpuPercent']:.2f} |")
 text=f'''# Issue #5 measured performance and hospital demonstration readiness
 
 [Development branch](https://github.com/keon11/jps-urt-mvp/tree/dev/phase-5-performance). The containing delivery commit is the reproducible source checkpoint; previous MVP/Phase 4 commits remain ancestors and main is unchanged. [Machine-readable proof](../artifacts/issue-5/verification-summary.json).
@@ -53,8 +53,8 @@ Visibility-map diagnostics found 0 all-visible pages out of 2048 after earlier f
 
 Predeclared targets: each run >=3600s, same 10,006-row isolated queue, 25 synthetic same-role sessions, page/offset sequence, 5s request timeout, token renewal and 0.05 trace sampling. Optimized target p95 <500ms; throughput >=20/s; errors <1%; sampled API RSS <=1GiB; restart <=15s; restore <=120s. Timeout target zero is tracked separately and never hidden by the fractional error gate.
 
-| Run | Seconds | Requests | Req/s | p50 ms | p95 ms | p99 ms | Max ms | Errors | Peak API MiB |
-|---|---:|---:|---:|---:|---:|---:|---:|---|---:|
+| Run | Seconds | Requests | Req/s | p50 ms | p95 ms | p99 ms | Max ms | Errors | Sampled peak API MiB | API CPU % of one core |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---:|---:|
 {chr(10).join(rows)}
 
 Throughput change **{throughput:+.2f}%**; p95 change **{latency:+.2f}%**, compared with the newly reproduced original. Actual target status: **{json.dumps(goals)}**. Optimized errors/timeouts are reported above even if other gates pass. Observed zero in one interval is not a zero-failure guarantee. Full ordered case-row hashes verify the same queue content before/after maintenance and optimized load. The client iteration clock starts before any token renewal; the unchanged five-second deadline applies to the queue fetch, while authentication renewal and delayed timer delivery can make total iterations longer. Raw rows are independently recomputed and retained losslessly compressed with SHA-256 round-trip proof. Cumulative privacy-restricted OpenTelemetry trace snapshots are preserved with their historical/probe scope explicitly labeled. CPU/RSS samples and matched 30s V8/event-loop profiles are included in each run directory; their overhead is present in both runs.

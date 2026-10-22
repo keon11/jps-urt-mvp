@@ -1,0 +1,122 @@
+{
+  "at": "2026-10-22T03:05:15.102Z",
+  "activity": [
+    {
+      "state": "active",
+      "wait_event_type": null,
+      "wait_event": null,
+      "sessions": 4
+    },
+    {
+      "state": "idle",
+      "wait_event_type": "Client",
+      "wait_event": "ClientRead",
+      "sessions": 5
+    }
+  ],
+  "pressure": {
+    "cpu": {
+      "available": false,
+      "reason": "ENOENT"
+    },
+    "io": {
+      "available": false,
+      "reason": "ENOENT"
+    },
+    "memory": {
+      "available": false,
+      "reason": "ENOENT"
+    },
+    "loadAverage": {
+      "available": true,
+      "value": "7.71 8.63 8.84 9/926 654454\n"
+    },
+    "cgroupCpu": {
+      "available": true,
+      "value": "usage_usec 70402576991\nuser_usec 63243049634\nsystem_usec 7159527356\nnice_usec 0\nnr_periods 234820\nnr_throttled 45122\nthrottled_usec 12055719823\nnr_bursts 0\nburst_usec 0\n"
+    }
+  },
+  "containers": [
+    {
+      "BlockIO": "32MB / 0B",
+      "CPUPerc": "4.66%",
+      "Container": "371bf92233e5",
+      "ID": "371bf92233e5",
+      "MemPerc": "0.13%",
+      "MemUsage": "23.2MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-redis-1",
+      "NetIO": "168MB / 80.5MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "12.4MB / 47.9MB",
+      "CPUPerc": "0.38%",
+      "Container": "315f75aff7d3",
+      "ID": "315f75aff7d3",
+      "MemPerc": "0.51%",
+      "MemUsage": "91.62MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-grafana-1",
+      "NetIO": "979kB / 82.3MB",
+      "PIDs": "18"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.00%",
+      "Container": "9da38b5b04bd",
+      "ID": "9da38b5b04bd",
+      "MemPerc": "1.28%",
+      "MemUsage": "229.8MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-local-model-1",
+      "NetIO": "46kB / 25.9kB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "0B / 2.59MB",
+      "CPUPerc": "1.87%",
+      "Container": "45dc421db846",
+      "ID": "45dc421db846",
+      "MemPerc": "8.08%",
+      "MemUsage": "1.421GiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-cqf-1",
+      "NetIO": "223kB / 3.92MB",
+      "PIDs": "58"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.36%",
+      "Container": "e9ef98a48bcd",
+      "ID": "e9ef98a48bcd",
+      "MemPerc": "2.21%",
+      "MemUsage": "397.2MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-medplum-1",
+      "NetIO": "16.4MB / 48.7MB",
+      "PIDs": "12"
+    },
+    {
+      "BlockIO": "111MB / 1.3GB",
+      "CPUPerc": "322.71%",
+      "Container": "aae675da5bea",
+      "ID": "aae675da5bea",
+      "MemPerc": "1.60%",
+      "MemUsage": "288.4MiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-postgres-1",
+      "NetIO": "1.75GB / 13.8GB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "211MB / 35.5MB",
+      "CPUPerc": "0.19%",
+      "Container": "3aa74280d090",
+      "ID": "3aa74280d090",
+      "MemPerc": "19.24%",
+      "MemUsage": "3.383GiB / 17.59GiB",
+      "Name": "hospital-ur-ai-mvp-keycloak-1",
+      "NetIO": "1.28MB / 5.77MB",
+      "PIDs": "54"
+    }
+  ],
+  "observation": "Instantaneous snapshot; current private API log checked separately; no DSN, tokens, query text or patient data captured.",
+  "currentPoolTimeoutLogMessages": {
+    "timeout exceeded when trying to connect": 19
+  }
+}

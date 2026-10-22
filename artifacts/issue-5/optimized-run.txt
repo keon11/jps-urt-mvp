@@ -1,0 +1,294 @@
+Restored audit verified; starting 25 authenticated sessions for 3600 seconds.
+load progress 15s 5138 responses
+load progress 30s 10948 responses
+load progress 45s 16578 responses
+load progress 60s 21900 responses
+load progress 75s 27450 responses
+load progress 90s 33012 responses
+load progress 106s 35499 responses
+load progress 121s 40247 responses
+load progress 136s 45530 responses
+load progress 151s 51589 responses
+load progress 166s 57491 responses
+load progress 181s 63278 responses
+load progress 196s 68966 responses
+load progress 211s 74710 responses
+load progress 226s 80186 responses
+load progress 241s 85396 responses
+load progress 256s 90769 responses
+load progress 271s 96281 responses
+load progress 286s 101961 responses
+load progress 301s 107317 responses
+load progress 316s 112128 responses
+load progress 331s 117217 responses
+load progress 346s 122118 responses
+load progress 361s 127845 responses
+load progress 376s 131782 responses
+load progress 391s 138015 responses
+load progress 406s 143703 responses
+load progress 421s 149474 responses
+load progress 436s 155672 responses
+load progress 451s 159578 responses
+load progress 466s 164042 responses
+load progress 481s 168458 responses
+load progress 496s 173711 responses
+load progress 511s 179216 responses
+load progress 526s 184396 responses
+load progress 541s 187777 responses
+load progress 556s 192136 responses
+load progress 571s 197149 responses
+load progress 586s 202067 responses
+load progress 601s 208012 responses
+load progress 616s 214011 responses
+load progress 631s 219555 responses
+load progress 646s 224526 responses
+load progress 673s 228488 responses
+load progress 688s 230032 responses
+load progress 703s 235881 responses
+load progress 718s 241639 responses
+load progress 733s 246460 responses
+load progress 749s 251314 responses
+load progress 764s 256732 responses
+load progress 779s 262312 responses
+load progress 794s 266345 responses
+load progress 809s 270506 responses
+load progress 824s 275448 responses
+load progress 839s 281155 responses
+load progress 854s 285808 responses
+load progress 869s 290485 responses
+load progress 884s 295779 responses
+load progress 899s 300148 responses
+load progress 914s 305097 responses
+load progress 929s 309971 responses
+load progress 944s 315520 responses
+load progress 959s 321080 responses
+load progress 974s 326823 responses
+load progress 989s 331338 responses
+load progress 1004s 331430 responses
+load progress 1019s 334834 responses
+load progress 1034s 339891 responses
+load progress 1049s 345305 responses
+load progress 1064s 350936 responses
+load progress 1079s 355247 responses
+load progress 1094s 360849 responses
+load progress 1109s 366626 responses
+load progress 1124s 372447 responses
+load progress 1139s 378118 responses
+load progress 1154s 384225 responses
+load progress 1169s 390404 responses
+load progress 1184s 395240 responses
+load progress 1199s 399306 responses
+load progress 1214s 404824 responses
+load progress 1229s 410315 responses
+load progress 1244s 415633 responses
+load progress 1259s 421356 responses
+load progress 1274s 427327 responses
+load progress 1289s 432115 responses
+load progress 1304s 436949 responses
+load progress 1319s 441982 responses
+load progress 1334s 448137 responses
+load progress 1349s 453827 responses
+load progress 1364s 459079 responses
+load progress 1379s 464202 responses
+load progress 1394s 470606 responses
+load progress 1409s 476532 responses
+load progress 1424s 482730 responses
+load progress 1439s 488026 responses
+load progress 1454s 493537 responses
+load progress 1469s 499200 responses
+load progress 1484s 505365 responses
+load progress 1499s 511235 responses
+load progress 1514s 517022 responses
+load progress 1529s 522111 responses
+load progress 1544s 527748 responses
+load progress 1559s 533317 responses
+load progress 1574s 539492 responses
+load progress 1589s 545688 responses
+load progress 1604s 551724 responses
+load progress 1619s 557852 responses
+load progress 1634s 562947 responses
+load progress 1649s 568872 responses
+load progress 1664s 575088 responses
+load progress 1681s 575970 responses
+load progress 1696s 580501 responses
+load progress 1711s 586196 responses
+load progress 1726s 591203 responses
+load progress 1741s 596630 responses
+load progress 1756s 602373 responses
+load progress 1771s 608564 responses
+load progress 1786s 614614 responses
+load progress 1801s 620598 responses
+load progress 1816s 626013 responses
+load progress 1831s 632168 responses
+load progress 1846s 638358 responses
+load progress 1861s 644559 responses
+load progress 1876s 650239 responses
+load progress 1891s 655948 responses
+load progress 1906s 660632 responses
+load progress 1921s 666446 responses
+load progress 1936s 672317 responses
+load progress 1951s 678342 responses
+load progress 1966s 684350 responses
+load progress 1981s 690394 responses
+load progress 1996s 696150 responses
+load progress 2011s 701133 responses
+load progress 2026s 706722 responses
+load progress 2041s 712265 responses
+load progress 2056s 717487 responses
+load progress 2071s 722618 responses
+load progress 2086s 728837 responses
+load progress 2101s 734785 responses
+load progress 2116s 740829 responses
+load progress 2131s 746779 responses
+load progress 2146s 752832 responses
+load progress 2161s 758451 responses
+load progress 2176s 763669 responses
+load progress 2191s 768904 responses
+load progress 2206s 770799 responses
+load progress 2221s 776001 responses
+load progress 2236s 782284 responses
+load progress 2251s 788468 responses
+load progress 2266s 792036 responses
+load progress 2281s 797431 responses
+load progress 2296s 803789 responses
+load progress 2311s 810232 responses
+load progress 2326s 816427 responses
+load progress 2341s 822725 responses
+load progress 2356s 828979 responses
+load progress 2371s 835443 responses
+load progress 2386s 841268 responses
+load progress 2401s 847232 responses
+load progress 2416s 853687 responses
+load progress 2431s 860077 responses
+load progress 2446s 865362 responses
+load progress 2461s 871299 responses
+load progress 2476s 877931 responses
+load progress 2491s 884337 responses
+load progress 2506s 890585 responses
+load progress 2521s 895782 responses
+load progress 2536s 901291 responses
+load progress 2551s 907738 responses
+load progress 2566s 912782 responses
+load progress 2581s 918866 responses
+load progress 2596s 925188 responses
+load progress 2611s 930745 responses
+load progress 2626s 935874 responses
+load progress 2641s 941900 responses
+load progress 2656s 947356 responses
+load progress 2671s 952897 responses
+load progress 2686s 958961 responses
+load progress 2701s 963674 responses
+load progress 2716s 966707 responses
+load progress 2731s 970344 responses
+load progress 2746s 975425 responses
+load progress 2761s 979936 responses
+load progress 2776s 984698 responses
+load progress 2791s 989469 responses
+load progress 2806s 993437 responses
+load progress 2821s 998232 responses
+load progress 2836s 1003480 responses
+load progress 2851s 1008473 responses
+load progress 2866s 1013643 responses
+load progress 2881s 1018844 responses
+load progress 2897s 1023790 responses
+load progress 2912s 1028551 responses
+load progress 2927s 1033503 responses
+load progress 2942s 1038461 responses
+load progress 2957s 1043373 responses
+load progress 2972s 1047715 responses
+load progress 2987s 1051777 responses
+load progress 3002s 1056917 responses
+load progress 3017s 1062136 responses
+load progress 3032s 1067500 responses
+load progress 3047s 1072543 responses
+load progress 3062s 1076793 responses
+load progress 3077s 1081887 responses
+load progress 3092s 1086192 responses
+load progress 3107s 1091370 responses
+load progress 3122s 1097031 responses
+load progress 3137s 1103018 responses
+load progress 3152s 1109236 responses
+load progress 3167s 1114897 responses
+load progress 3182s 1121177 responses
+load progress 3197s 1127507 responses
+load progress 3212s 1133949 responses
+load progress 3227s 1139932 responses
+load progress 3242s 1145749 responses
+load progress 3257s 1151483 responses
+load progress 3272s 1157115 responses
+load progress 3287s 1163155 responses
+load progress 3302s 1169041 responses
+load progress 3317s 1174973 responses
+load progress 3332s 1180949 responses
+load progress 3347s 1186163 responses
+load progress 3362s 1191630 responses
+load progress 3377s 1197483 responses
+load progress 3392s 1203150 responses
+load progress 3407s 1209238 responses
+load progress 3422s 1214845 responses
+load progress 3437s 1219882 responses
+load progress 3452s 1225952 responses
+load progress 3467s 1229880 responses
+load progress 3482s 1233760 responses
+load progress 3497s 1239765 responses
+load progress 3512s 1245101 responses
+load progress 3527s 1250311 responses
+load progress 3542s 1255256 responses
+load progress 3557s 1260848 responses
+load progress 3572s 1266287 responses
+load progress 3587s 1271317 responses
+{
+  "startedAt": "2026-10-22T02:31:19.076Z",
+  "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+  "thresholds": {
+    "rows": 10000,
+    "sessions": 25,
+    "seconds": 3600,
+    "peakApiRssBytes": 1073741824,
+    "p95Ms": 500,
+    "errorFraction": 0.01,
+    "minThroughput": 20,
+    "apiRecoverySeconds": 15,
+    "restoreSeconds": 120
+  },
+  "host": {
+    "node": "v24.19.0",
+    "logicalCPUs": 5,
+    "totalMemoryBytes": 18882674688
+  },
+  "database": "ur_issue2_1792593144631",
+  "restore": {
+    "target": "ur_issue2_verify_1792636279077",
+    "seconds": 0.6174661650000001,
+    "originalBackupRestoreSeconds": 1.644887195,
+    "cases": 6,
+    "audit": {
+      "verified": true,
+      "events": 413,
+      "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+    }
+  },
+  "load": {
+    "requests": 1275453,
+    "seconds": 3600.040107144,
+    "throughputPerSecond": 354.28855291610853,
+    "p50Ms": 58.43968399986625,
+    "p95Ms": 121.50321300001815,
+    "p99Ms": 195.9916499999963,
+    "maxMs": 13705.22926199995,
+    "errors": {
+      "TimeoutError": 77,
+      "TypeError": 6
+    },
+    "failedRequests": 83,
+    "errorFraction": 0.00006507491847994399,
+    "peakApiRssBytes": 290779136,
+    "apiAverageCpuPercent": 54.304117226930714,
+    "authenticationRenewals": 325,
+    "tokenValuesRecorded": false,
+    "sameRoleDistinctAuthenticationSessions": true
+  },
+  "apiRestartSeconds": 2.23341970100021,
+  "liveMvpUnchanged": true,
+  "passed": true
+}
