@@ -1,0 +1,39 @@
+{
+  "draftOnly": true,
+  "readyToSubmit": false,
+  "submitted": false,
+  "signed": false,
+  "actualVendorPricesEntered": false,
+  "officialExhibitSha256": "9ef090e2e4544c2c38ac73ec9c4356a951b6aa42c0c8ad341ab1c354bb128ed9",
+  "officialBytesUnchanged": true,
+  "officialTemplateZerosAreNotVendorPrices": true,
+  "internalCostInputsBlank": true,
+  "formulasStructurallyVerified": true,
+  "spreadsheetApplicationRecalculationExecuted": false,
+  "pdfPages": 8,
+  "executiveSummaryPDFPages": 1,
+  "docxPageLayoutValidated": false,
+  "libraries": {
+    "openpyxl": "3.1.5",
+    "python-docx": "1.2.0",
+    "reportlab": "4.4.9"
+  },
+  "files": [
+    {
+      "file": "artifacts/phase-6/RFP20261404054_Exhibit-A_ORIGINAL-UNFILLED.xlsx",
+      "sha256": "9ef090e2e4544c2c38ac73ec9c4356a951b6aa42c0c8ad341ab1c354bb128ed9"
+    },
+    {
+      "file": "artifacts/phase-6/RFP20261404054_INTERNAL-PRICING_OWNER-INPUT.xlsx",
+      "sha256": "e7c8f4f6b176c7719198ccd94525bb5331607c1ab6d939aee4e198ca171806b5"
+    },
+    {
+      "file": "artifacts/phase-6/RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.docx",
+      "sha256": "ee3b50aa48c97e898693863f6568e7f0bef66a8a62adb9c5c5173bf329736a63"
+    },
+    {
+      "file": "artifacts/phase-6/RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.pdf",
+      "sha256": "90c7008fc18fb6636d76c29a5fb5b90d4066d7edf616b561c8f820fbdd978245"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "classification": "DRAFT ENGINEERING TRACEABILITY; NOT LEGAL COMPLIANCE OR A BID",
+  "coverageUnit": "Every nonempty retained source paragraph/line, with sentence subclauses preserved. Background, evaluator fields and form fields separately classified; owner must review all legal/compound clauses.",
+  "sourceUrl": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+  "sourceSha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+  "extractedTextSha256": "84a9602757592842d2cbbcb285e3300acf1bc1bd97314032ebf74a183b4cfaaf",
+  "sourceLines": 501,
+  "nonemptyLinesCovered": 379,
+  "unmappedNonemptyLines": 0,
+  "deadlinePrecedence": {
+    "source": "docs/sources/addendum.txt",
+    "originalSha256": "310e6c48a0ad92419fdd12e72b83da0a53b8020d13202fab17619c3dae095099",
+    "deadlineAsWritten": "November 3, 2026, at 2:00 p.m. CST",
+    "acknowledged": false,
+    "signed": false
+  }
+}

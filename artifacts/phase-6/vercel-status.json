@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-22T06:13:29.435159+00:00",
+  "teamId": "team_uA8zCRulxC46h0tgXFv9F1kj",
+  "teamVerified": true,
+  "projectCountFromAuthorizedList": 0,
+  "linkedPreviewVerified": false,
+  "deploymentAttempted": false,
+  "hostedUrl": null,
+  "historicalFailure": {
+    "phase": "4",
+    "httpStatus": 403,
+    "reason": "You do not have permission to create the project"
+  },
+  "currentBlocker": "No project returned by authenticated team inspection; no local .vercel project link. Owner must import/link existing repository, select Phase 6 branch and configure preview access/protection. Current create permission has not been retested.",
+  "backendExposed": false
+}

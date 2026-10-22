@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-22T06:13:00.361Z",
+  "url": "https://www.jpshealthnet.org/rfp/utilization-review-technology-and-optimization-partner-urt",
+  "submitted": false,
+  "signed": false,
+  "termsAccepted": false,
+  "retrieved": true,
+  "pageSha256": "99322b3db36fa1027c451ef0882c8a59899d99b56d9c55000d47b7da2b5cb1f4",
+  "attachments": [
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/RFP20261404054%20-%20Utilization%20Review%20Technology%20and%20Optimization%20Partner%20%282%29.docx",
+      "label": "RFP20261404054 - Utilization Review Technology and Optimization Partner (2).docx",
+      "robotsPermitted": true,
+      "sha256": "353674b25398f2f6e23f482361bcad029d5a6380364c8245659b07106592b415",
+      "privatePath": ".runtime/phase6-official/RFP20261404054 - Utilization Review Technology and Optimization Partner (2).docx"
+    },
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/Exhibit%20A%20-%20JPS%20URT%20RFP%20Price%20Sheet.xlsx",
+      "label": "Exhibit A - JPS URT RFP Price Sheet.xlsx",
+      "robotsPermitted": true,
+      "sha256": "9ef090e2e4544c2c38ac73ec9c4356a951b6aa42c0c8ad341ab1c354bb128ed9",
+      "privatePath": ".runtime/phase6-official/Exhibit A - JPS URT RFP Price Sheet.xlsx"
+    },
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/Exhibit%20C%20-%20JPS%20URT%20RFP%20-%20Standard%20Terms%20to%20be%20Incorporated%20into%20Vendor%20Form.docx",
+      "label": "Exhibit C - JPS URT RFP - Standard Terms to be Incorporated into Vendor Form.docx",
+      "robotsPermitted": true,
+      "sha256": "30a3e4fc39efd940042b26d4129d80798120da40293336ed75104325130960e6",
+      "privatePath": ".runtime/phase6-official/Exhibit C - JPS URT RFP - Standard Terms to be Incorporated into Vendor Form.docx"
+    },
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/Exhibit%20G%20-%20Supplemental%20Vendor%20Questionnaire%20for%20AI.docx",
+      "label": "Exhibit G - Supplemental Vendor Questionnaire for AI.docx",
+      "robotsPermitted": true,
+      "sha256": "db55f8efc5d2a2f67250b557b1c74d36be16b724ca66aea2b44b29170675d34a",
+      "privatePath": ".runtime/phase6-official/Exhibit G - Supplemental Vendor Questionnaire for AI.docx"
+    },
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/Exhibt%20G%20-%20Vendor%20Security%20%26%20Data%20Governance%20Questionnaire.docx",
+      "label": "Exhibt G - Vendor Security & Data Governance Questionnaire.docx",
+      "robotsPermitted": true,
+      "sha256": "1e1124afcf374d78e279ac156e4b397cb47331ba8eae9becec914b01ce335f7b",
+      "privatePath": ".runtime/phase6-official/Exhibt G - Vendor Security & Data Governance Questionnaire.docx"
+    },
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-09/Questions%20Submission%20Form_0.xlsx",
+      "label": "Questions Submission Form_0.xlsx",
+      "robotsPermitted": true,
+      "sha256": "cd146a31e314b5824520702e39cafb9dc1a5bc7c2b22884828c46d4e00d50d77",
+      "privatePath": ".runtime/phase6-official/Questions Submission Form_0.xlsx"
+    },
+    {
+      "url": "https://www.jpshealthnet.org/sites/default/files/2026-10/RFP_20261404054_URT_Addendum_1_Response_Date_Extension%20%283%29.docx",
+      "label": "RFP_20261404054_URT_Addendum_1_Response_Date_Extension (3).docx",
+      "robotsPermitted": true,
+      "sha256": "310e6c48a0ad92419fdd12e72b83da0a53b8020d13202fab17619c3dae095099",
+      "privatePath": ".runtime/phase6-official/RFP_20261404054_URT_Addendum_1_Response_Date_Extension (3).docx"
+    }
+  ],
+  "scope": "Current official public links/bytes; legal completeness and deadline confirmation remain owner responsibilities"
+}
