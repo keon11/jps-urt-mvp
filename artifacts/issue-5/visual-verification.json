@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-22T04:42:46.723649+00:00",
+  "method": "Actual PNGs opened and visually inspected by implementation agent after successful browser capture",
+  "images": [
+    {
+      "file": "artifacts/issue-2/issue5-live-20261022T044004Z/1440/queue.png",
+      "sha256": "ccc085aafc6a44029e87795c2914b459be509abc04693e5152022a0f449f814e"
+    },
+    {
+      "file": "artifacts/issue-2/issue5-live-20261022T044004Z/1920/ai-review.png",
+      "sha256": "cf72fd863357194fc9932e61d1ce7057954de36315c9452b7d6559190f1c2390"
+    },
+    {
+      "file": "artifacts/issue-2/issue5-live-20261022T044004Z/1920/policy-center.png",
+      "sha256": "1f5ffcd57e9eff17d3a108595aa96a6044cb9d48a9856d949f211f85e169354c"
+    },
+    {
+      "file": "artifacts/issue-5/issue5-live-20261022T044004Z/risk-1440.png",
+      "sha256": "c37ef588aaf841235b3db0c008f17a743dd90e05b1d6064849f8c408ef936344"
+    },
+    {
+      "file": "artifacts/issue-5/issue5-live-20261022T044004Z/synthea-workspace.png",
+      "sha256": "9721b7cd3fb15eea5a1cc1ff41e4cce4f0e90ce6bfe24e254a00308cfc76cc93"
+    },
+    {
+      "file": "artifacts/issue-2/issue5-fixture-1920-20261022T044112Z/fixture-preview-workstation.png",
+      "sha256": "8dddaad4619ca3802982e4d867888a0a4bdc483198fc810612c3c4803b72a87c"
+    }
+  ],
+  "observed": [
+    "Desktop encounter table and clinical evidence panes readable at captured widths",
+    "No visible Clarity UR branding or login credentials in inspected images",
+    "Fictional/illustrative and human-review boundaries visible",
+    "Governance evidence/role workflow and risk/internal-next-step distinction visible",
+    "Actual generated longitudinal histories clearly distinct from acute admission evidence",
+    "Static fixture clearly states backend/sign-in/AI/payer services disconnected"
+  ],
+  "limits": [
+    "Six selected images inspected; manifests hash all 31 live images",
+    "Long policy history and Synthea panels require vertical scrolling",
+    "Not founder UI approval, clinical usability validation or complete accessibility certification"
+  ]
+}

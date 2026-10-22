@@ -18,7 +18,11 @@ Grafana remains separate at http://localhost:3001/d/ur-synthetic-operations. Kee
 
 For the **read-only fictional frontend preview**, run `npm run test:preview`, then `npx vite preview --mode preview --host 127.0.0.1 --port 4173`. It uses no backend or credentials. Vercel project creation is currently denied with 403; no hosted preview is claimed.
 
-The current development branch is `dev/phase-4-enterprise-proof`. All eight demonstrations remain working. Issue #4 adds 16 actual Synthea-generated patients, 6,650 imported clinical resources, read-only Epic-compatible transport, source-linked documentation-risk review, and a measured one-hour bounded queue proof. Final local checks passed: 41 unit, 25 integration, 10 live browser tests, and fixture checks at both desktop widths. See [the current readiness report](docs/ISSUE-4-REPORT.md), [architecture/reuse inventory](docs/ISSUE-4-ARCHITECTURE.md) and [checkpoint restoration](docs/ISSUE-4-RESTORE.md). Epic/JPS authorization, payer agreements, independent clinical validation, hosted Vercel access and owner legal/commercial evidence remain external requirements.
+Current branch: `dev/phase-5-performance`. All eight demonstrations are preserved. Three full one-hour runs are retained. Reproduced baseline: 71.42 req/s, p95 535.06ms. Final CPU-budgeted queue: 265.85 req/s, p95 134.14ms, errors `{"502": 11, "TimeoutError": 45}`. Zero-timeout target met: **False**; all performance targets met: **False**. Failures remain part of the report. Final verification: 41 unit, 25 live integration, 10 browser tests and fixture preview at 1440/1920; restore, fault recovery, reconciliation, audit and npm audit evidence retained.
+
+See [the actual report](docs/ISSUE-5-REPORT.md), [measurement evidence](artifacts/issue-5/verification-summary.json), [architecture](docs/ISSUE-5-ARCHITECTURE.md) and [demonstration checklist](docs/ISSUE-5-DEMO-CHECKLIST.md). These are bounded local synthetic queue measurements on a shared four-CPU quota, not clinical accuracy, hospital capacity, an SLA or production readiness. Epic/JPS authorization, authorized payer criteria, independent clinical validation, owner legal/commercial evidence and Vercel permission remain external gates.
+
+
 
 ## Documentation and evidence
 

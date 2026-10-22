@@ -3,14 +3,37 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 repo_root=$(pwd)
+test -d node_modules/tsx || { echo "Run npm ci first" >&2; exit 1; }
+python3 scripts/prepare-performance-baseline.py
+declare -A run_started
+archive_root="$repo_root/.runtime/issue5-previous-artifacts/$(date -u +%Y%m%dT%H%M%SZ)-$$"
+archive_run(){
+ local label="$1"
+ if [ -d "artifacts/issue-5/$label" ]; then
+  mkdir -p "$archive_root"
+  mv "artifacts/issue-5/$label" "$archive_root/$label-$(date +%s%N)"
+ fi
+}
 python3 scripts/prepare-performance-baseline.py --first-optimized
 run_first(){ (cd "$repo_root/.runtime/phase5-first-optimized"; COMPOSE_FILE="$repo_root/compose.yaml" npx tsx scripts/benchmark.ts "$@"); }
 wait_run(){
  local label="$1"
- until python3 -c "import json,sys;sys.exit(0 if json.load(open('artifacts/issue-5/$label/hour-status.json')).get('state') in ['passed','failed'] else 1)" 2>/dev/null; do sleep 5; done
+ local checks=0
+ until python3 -c "import json,sys;sys.exit(0 if json.load(open('artifacts/issue-5/$label/hour-status.json')).get('state') in ['passed','failed'] else 1)" 2>/dev/null; do checks=$((checks+1)); if [ "$checks" -ge 60 ]; then echo "No terminal result after process completion: $label" >&2; exit 1; fi; sleep 5; done
+ if [ -n "${run_started[$label]:-}" ]; then
+  python3 -c "import json,datetime;r=json.load(open('artifacts/issue-5/$label/benchmark-results.json'));assert datetime.datetime.fromisoformat(r['startedAt'].replace('Z','+00:00')).timestamp()>=int('${run_started[$label]}'),'Stale prior-run result rejected'"
+ fi
  python3 -c "import json;r=json.load(open('artifacts/issue-5/$label/benchmark-results.json'));assert r.get('load',{}).get('seconds',0)>=(120 if '$label'=='probe' else 3600),r"
 }
 if [ ! -f .runtime/issue5-baseline-stage.done ]; then
+archive_run baseline
+run_started[baseline]=$(date +%s)
+(cd "$repo_root/.runtime/phase5-baseline"; COMPOSE_FILE="$repo_root/compose.yaml" npx tsx scripts/benchmark.ts --performance=baseline > "$repo_root/artifacts/issue-5/baseline-run.txt" 2>&1) &
+base_pid=$!
+( sleep 300; node scripts/profile-native-api.mjs baseline > artifacts/issue-5/baseline/native-profile.txt 2>&1 ) &
+base_profile_pid=$!
+wait "$base_pid" || true
+wait "$base_profile_pid" || true
 wait_run baseline
 python3 scripts/verify-soak-measurements.py --performance=baseline > artifacts/issue-5/baseline/raw-verification.txt
 python3 scripts/compress-performance-proof.py baseline
@@ -30,20 +53,28 @@ fi
 if [ ! -f .runtime/issue5-measurement-stage.done ]; then
 npx tsx scripts/profile-queue.ts --label=idle-original > artifacts/issue-5/profile-idle-original.txt
 npx tsx scripts/profile-queue.ts --after --label=query-only > artifacts/issue-5/profile-query-only.txt
+archive_run probe
+run_started[probe]=$(date +%s)
 run_first --performance=probe > artifacts/issue-5/probe-query-only.txt 2>&1 || true
 wait_run probe
 python3 scripts/compress-performance-proof.py probe
+archive_run probe-query-only
 mv artifacts/issue-5/probe artifacts/issue-5/probe-query-only
 npx tsx scripts/maintain-synthetic-queue.ts > artifacts/issue-5/maintenance.txt
 npx tsx scripts/queue-dataset-proof.ts maintained
 npx tsx scripts/profile-queue.ts --label=maintained-original > artifacts/issue-5/profile-maintained-original.txt
 npx tsx scripts/profile-queue.ts --after --label=maintained-optimized > artifacts/issue-5/profile-maintained-optimized.txt
 npx tsx scripts/verify-queue-equivalence.ts > artifacts/issue-5/queue-equivalence-after-maintenance.txt
+archive_run probe
+run_started[probe]=$(date +%s)
 run_first --performance=probe > artifacts/issue-5/probe-maintained.txt 2>&1 || true
 wait_run probe
 python3 scripts/compress-performance-proof.py probe
+archive_run probe-maintained
 mv artifacts/issue-5/probe artifacts/issue-5/probe-maintained
 # Both native profiling windows start about five minutes into their full run.
+archive_run optimized
+run_started[optimized]=$(date +%s)
 run_first --performance=optimized > artifacts/issue-5/optimized-run.txt 2>&1 &
 load_pid=$!
 ( sleep 300; node scripts/profile-native-api.mjs optimized > artifacts/issue-5/optimized/native-profile.txt 2>&1 ) &
@@ -63,14 +94,19 @@ fi
 if [ ! -f .runtime/issue5-budget-stage.done ]; then
 WORKLIST_POOL_MAX=2 npx tsx scripts/verify-queue-isolation.ts > artifacts/issue-5/queue-isolation.txt 2>&1
 npx tsx scripts/queue-dataset-proof.ts optimized-budgeted
+archive_run probe
+run_started[probe]=$(date +%s)
 WORKLIST_POOL_MAX=2 npx tsx scripts/benchmark.ts --performance=probe > artifacts/issue-5/probe-budgeted.txt 2>&1 || true
 wait_run probe
 python3 scripts/compress-performance-proof.py probe
+archive_run probe-budgeted
 mv artifacts/issue-5/probe artifacts/issue-5/probe-budgeted
 python3 -c "import json;r=json.load(open('artifacts/issue-5/probe-budgeted/benchmark-results.json'));assert r['load']['p95Ms']<500 and r['load']['throughputPerSecond']>=20 and not r['load']['errors'],r"
 git add services/api/src/worklist.ts services/api/src/server.ts scripts artifacts/issue-5 docs/ISSUE-5-ACCEPTANCE.md
 if ! git diff --cached --quiet; then git commit -m 'Issue 5: isolate queue read concurrency within measured CPU quota; preserve clinical pool'; fi
 git push origin dev/phase-5-performance
+archive_run optimized-budgeted
+run_started[optimized-budgeted]=$(date +%s)
 WORKLIST_POOL_MAX=2 npx tsx scripts/benchmark.ts --performance=optimized-budgeted > artifacts/issue-5/optimized-budgeted-run.txt 2>&1 &
 budget_pid=$!
 ( sleep 300; node scripts/profile-native-api.mjs optimized-budgeted > artifacts/issue-5/optimized-budgeted/native-profile.txt 2>&1 ) &

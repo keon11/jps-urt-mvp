@@ -1,5 +1,11 @@
 # Execution record
 
+## Issue #5 — measured performance (2026-10-22)
+
+Current branch: `dev/phase-5-performance`. All eight demonstrations are preserved. Three full one-hour runs are retained. Reproduced baseline: 71.42 req/s, p95 535.06ms. Final CPU-budgeted queue: 265.85 req/s, p95 134.14ms, errors `{"502": 11, "TimeoutError": 45}`. Zero-timeout target met: **False**; all performance targets met: **False**. Failures remain part of the report. Final verification: 41 unit, 25 live integration, 10 browser tests and fixture preview at 1440/1920; restore, fault recovery, reconciliation, audit and npm audit evidence retained.
+
+See [the actual report](ISSUE-5-REPORT.md), [measurement evidence](../artifacts/issue-5/verification-summary.json), [architecture](ISSUE-5-ARCHITECTURE.md) and [demonstration checklist](ISSUE-5-DEMO-CHECKLIST.md). These are bounded local synthetic queue measurements on a shared four-CPU quota, not clinical accuracy, hospital capacity, an SLA or production readiness. Epic/JPS authorization, authorized payer criteria, independent clinical validation, owner legal/commercial evidence and Vercel permission remain external gates. Earlier sections below are historical checkpoints.
+
 - Workspace inspection: empty; no existing projects modified.
 - Dedicated local repository and `dev/autonomous-mvp` branch created.
 - GitHub repository creation attempted; rejected: `Resource not accessible by integration (createRepository)`. No remote created and no default-branch merge performed.

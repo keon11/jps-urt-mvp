@@ -1,0 +1,363 @@
+{
+  "at": "2026-10-22T04:42:48.003141+00:00",
+  "classification": "LOCAL ENGINEERING / SYNTHETIC ONLY",
+  "tests": {
+    "unit": 41,
+    "integration": 25,
+    "browser": 10,
+    "fixtureWidths": [
+      1440,
+      1920
+    ]
+  },
+  "targets": {
+    "p95Under500Ms": true,
+    "zeroTimeouts": false,
+    "benchmarkGatesPassed": true,
+    "allPerformanceTargetsMet": false
+  },
+  "baseline": {
+    "startedAt": "2026-10-22T01:26:18.427Z",
+    "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+    "thresholds": {
+      "rows": 10000,
+      "sessions": 25,
+      "seconds": 3600,
+      "peakApiRssBytes": 1073741824,
+      "p95Ms": 1000,
+      "errorFraction": 0.01,
+      "minThroughput": 20,
+      "apiRecoverySeconds": 15,
+      "restoreSeconds": 120
+    },
+    "host": {
+      "node": "v24.19.0",
+      "logicalCPUs": 5,
+      "totalMemoryBytes": 18882674688
+    },
+    "database": "ur_issue2_1792593144631",
+    "restore": {
+      "target": "ur_issue2_verify_1792632378428",
+      "seconds": 0.72874075,
+      "originalBackupRestoreSeconds": 1.644887195,
+      "cases": 6,
+      "audit": {
+        "verified": true,
+        "events": 413,
+        "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+      }
+    },
+    "load": {
+      "requests": 257121,
+      "seconds": 3600.1125010270002,
+      "throughputPerSecond": 71.42026809624737,
+      "p50Ms": 332.2799680000171,
+      "p95Ms": 535.058738000007,
+      "p99Ms": 979.8216549999779,
+      "maxMs": 37416.73498199973,
+      "errors": {
+        "502": 22,
+        "TimeoutError": 399,
+        "TypeError": 1
+      },
+      "failedRequests": 422,
+      "errorFraction": 0.0016412506174135913,
+      "peakApiRssBytes": 285675520,
+      "apiAverageCpuPercent": 16.912527034260965,
+      "authenticationRenewals": 325,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "apiRestartSeconds": 2.6341407429999673,
+    "liveMvpUnchanged": true,
+    "passed": true
+  },
+  "firstOptimized": {
+    "startedAt": "2026-10-22T02:31:19.076Z",
+    "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+    "thresholds": {
+      "rows": 10000,
+      "sessions": 25,
+      "seconds": 3600,
+      "peakApiRssBytes": 1073741824,
+      "p95Ms": 500,
+      "errorFraction": 0.01,
+      "minThroughput": 20,
+      "apiRecoverySeconds": 15,
+      "restoreSeconds": 120
+    },
+    "host": {
+      "node": "v24.19.0",
+      "logicalCPUs": 5,
+      "totalMemoryBytes": 18882674688
+    },
+    "database": "ur_issue2_1792593144631",
+    "restore": {
+      "target": "ur_issue2_verify_1792636279077",
+      "seconds": 0.6174661650000001,
+      "originalBackupRestoreSeconds": 1.644887195,
+      "cases": 6,
+      "audit": {
+        "verified": true,
+        "events": 413,
+        "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+      }
+    },
+    "load": {
+      "requests": 1275453,
+      "seconds": 3600.040107144,
+      "throughputPerSecond": 354.28855291610853,
+      "p50Ms": 58.43968399986625,
+      "p95Ms": 121.50321300001815,
+      "p99Ms": 195.9916499999963,
+      "maxMs": 13705.22926199995,
+      "errors": {
+        "TimeoutError": 77,
+        "TypeError": 6
+      },
+      "failedRequests": 83,
+      "errorFraction": 6.507491847994399e-05,
+      "peakApiRssBytes": 290779136,
+      "apiAverageCpuPercent": 54.304117226930714,
+      "authenticationRenewals": 325,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "apiRestartSeconds": 2.23341970100021,
+    "liveMvpUnchanged": true,
+    "passed": true
+  },
+  "optimized": {
+    "startedAt": "2026-10-22T03:35:02.005Z",
+    "scope": "Authenticated paginated worklist API; 10,000 cloned fictional queue records in an isolated database. Not a clinical/FHIR population or a large-queue UI certification.",
+    "thresholds": {
+      "rows": 10000,
+      "sessions": 25,
+      "seconds": 3600,
+      "peakApiRssBytes": 1073741824,
+      "p95Ms": 500,
+      "errorFraction": 0.01,
+      "minThroughput": 20,
+      "apiRecoverySeconds": 15,
+      "restoreSeconds": 120
+    },
+    "host": {
+      "node": "v24.19.0",
+      "logicalCPUs": 5,
+      "totalMemoryBytes": 18882674688
+    },
+    "database": "ur_issue2_1792593144631",
+    "restore": {
+      "target": "ur_issue2_verify_1792640102006",
+      "seconds": 0.7767104119999999,
+      "originalBackupRestoreSeconds": 1.644887195,
+      "cases": 6,
+      "audit": {
+        "verified": true,
+        "events": 413,
+        "lastHash": "85b9799afc6d3c7d1d39e3da30efc5575ee25517c2078fdc42a47560a5cedca5"
+      }
+    },
+    "load": {
+      "requests": 957065,
+      "seconds": 3600.045603974,
+      "throughputPerSecond": 265.84802118715385,
+      "p50Ms": 84.74904099991545,
+      "p95Ms": 134.1443529999815,
+      "p99Ms": 222.03716199984774,
+      "maxMs": 27875.56946899998,
+      "errors": {
+        "502": 11,
+        "TimeoutError": 45
+      },
+      "failedRequests": 56,
+      "errorFraction": 5.851222226285571e-05,
+      "peakApiRssBytes": 289931264,
+      "apiAverageCpuPercent": 40.95864781191392,
+      "authenticationRenewals": 325,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "apiRestartSeconds": 1.898932984000072,
+    "liveMvpUnchanged": true,
+    "passed": true
+  },
+  "comparison": {
+    "throughputPercentChange": 272.2305002116371,
+    "p95PercentChange": -74.92904171579387,
+    "sameRecordedHardware": true,
+    "limits": "Single shared host, same fixed queue/sessions; optimized includes explicitly measured ordinary VACUUM/ANALYZE. Separate probes/plans attribute effects; no production/clinical capacity claim."
+  },
+  "restore": {
+    "createdAt": "2026-10-22T04:41:19.411Z",
+    "sourceDatabase": "ur",
+    "restoreDatabase": "ur_issue2_final_1792644079411",
+    "dumpPath": ".runtime/issue5-final-checkpoint.dump",
+    "publiclyDistributed": false,
+    "seconds": 2.852174399,
+    "tables": {
+      "audit": {
+        "rows": 924,
+        "sha256": "255426cc707365686d221d9c72bf7f90fc3f8b3e8faed6df414e28435b216c6d"
+      },
+      "authorization_intents": {
+        "rows": 119,
+        "sha256": "6dcc7c7d2b5b2960c5c6071c5b118592a5b5bd9bada95dab5924efa966cab462"
+      },
+      "cases": {
+        "rows": 6,
+        "sha256": "ed28e4d0f328aad6f99120895c2a2ecf7a3b160a58e97995f3c4a693a1c0cc2c"
+      },
+      "governance_commands": {
+        "rows": 285,
+        "sha256": "3e497fef35eb0da002dc14ed8afc5f1469f8b7392d9bc6c814e04f199404a965"
+      },
+      "idempotency": {
+        "rows": 30,
+        "sha256": "6a3a20ae7fd541aed85695e71b06700ae8b8487217646a32e266d4c962da1b49"
+      },
+      "internal_authorization_reviews": {
+        "rows": 33,
+        "sha256": "cba0200fd1e9b83d9aeb2cc58e53ce1e5cba34688a3fbe0511f6b0596bbfb3f4"
+      },
+      "policy_changes": {
+        "rows": 34,
+        "sha256": "d17a1c8702bc6cd9ebf2165de1bae59c24281306c6d9e20bdfaabc86262d05b0"
+      },
+      "policy_documents": {
+        "rows": 5,
+        "sha256": "7af5e29a9359a8397ded4765b7530105c92eec6d8b330f127610ea08e682597a"
+      },
+      "policy_publications": {
+        "rows": 32,
+        "sha256": "ff4d96cd2b7a63f1ba847613d4b2b6bb85670b465232604ef0187e18102920b4"
+      },
+      "policy_registry": {
+        "rows": 1,
+        "sha256": "d137d55815465fcb7b08bc000472918d685ce7f57ba38ba7938c5f637bc3919d"
+      }
+    },
+    "audit": {
+      "verified": true,
+      "events": 924,
+      "lastHash": "73f8904c5b996556aa84746d5d2d45f00116645aa87e582fde38d73e1e06ad10"
+    },
+    "dumpSha256": "e385e572b9ce4888715f9aa8200c6a3bdf99d1b014a74dd8e1a8000d12e310df",
+    "restoredApplicationReadVerified": true,
+    "passed": true
+  },
+  "faults": {
+    "at": "2026-10-22T04:35:50.124Z",
+    "scope": "Actual local synthetic FHIR and AI service stop/start; original source patient class remains unchanged.",
+    "fhirOutage": {
+      "httpStatus": 502,
+      "previousAssessmentPreserved": true,
+      "noFalseSuccessAudit": true,
+      "alertRaised": true
+    },
+    "fhirRecoverySeconds": 12.745083819,
+    "ruleEngineOutage": {
+      "httpStatus": 502,
+      "previousAssessmentPreserved": true,
+      "noFalseSuccessAudit": true,
+      "alertRaised": true
+    },
+    "ruleEngineRecoverySeconds": 105.168396253,
+    "aiOutage": {
+      "mode": "rules-fallback",
+      "seconds": 6.193565696000005,
+      "alertRaised": true
+    },
+    "aiRecoverySeconds": 1.533306814999989,
+    "recoveredClinicalReview": {
+      "mode": "local-model",
+      "seconds": 8.755941066999977
+    },
+    "requestMetricsObserved": true,
+    "tracing": {
+      "currentDrillOnly": true,
+      "rootSpans": 13,
+      "correlatedUpstreamSpans": 8,
+      "samples": [
+        {
+          "name": "http.request",
+          "traceId": "f7b854a86ff75b5f3b79af46cb0b6f3f",
+          "spanId": "946d5fb937abd3cc",
+          "attributes": {
+            "request.id": "5c94c5ba-ac4b-4d7f-8a7a-b5230701553e",
+            "http.request.method": "POST",
+            "http.route": "/api/cases/:id/reviews",
+            "http.response.status_code": 502
+          },
+          "status": {
+            "code": 2,
+            "message": "server_error"
+          },
+          "durationMs": 239.27629
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "940bb21d1cccd458fe5de4ed66f22508",
+          "spanId": "70976f4cc44f661b",
+          "parentSpanId": "3e079558a4a5d01d",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 1539.424426
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "940bb21d1cccd458fe5de4ed66f22508",
+          "spanId": "6fc441eeb912d960",
+          "parentSpanId": "3e079558a4a5d01d",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 1944.794163
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "940bb21d1cccd458fe5de4ed66f22508",
+          "spanId": "22af152c0e6e83d1",
+          "parentSpanId": "3e079558a4a5d01d",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 6638.419913
+        }
+      ],
+      "sourceContentExported": false
+    },
+    "passed": true
+  },
+  "reconciliation": {
+    "at": "2026-10-22T04:35:45.369Z",
+    "label": "after-repair",
+    "isolatedDatabase": "ur_issue2_1792593144631",
+    "threshold": "one FHIR Claim resource per logical event after database failure and retry",
+    "failedRequestStatuses": [
+      502,
+      502
+    ],
+    "createdResourceIds": [
+      "8fe274f6-6342-49cb-9cd8-ec3ff106463f"
+    ],
+    "resourceCountAfterTwoFailedAttempts": 1,
+    "noFalseSuccessAudit": true,
+    "changedPayloadReplayRejected": true,
+    "resourceCountAfterSuccessfulRetry": 1,
+    "committedLogicalEvents": 1,
+    "passed": true
+  },
+  "screenshots": "issue5-live-20261022T044004Z",
+  "externalBlockers": [
+    "Epic/JPS authorized tenant/client/scopes/permissions",
+    "Authorized payer/clinical criteria and agreements",
+    "Qualified independent clinical validation",
+    "Owner procurement/legal/insurance evidence",
+    "Vercel project permission/protection (prior 403)"
+  ]
+}

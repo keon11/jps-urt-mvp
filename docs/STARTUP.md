@@ -81,8 +81,12 @@ Prometheus exposition is available at `http://localhost:3000/metrics`. The optio
 - If an earlier failed initialization created only part of a database, inspect the specific initialization error; do not delete volumes containing review history as a routine fix.
 - A model download with the wrong digest is rejected. Rerun the downloader; it writes to a temporary file and verifies before replacing the model.
 - A missing/unavailable model is visibly labeled rules-only fallback. CQF/Medplum failures return errors rather than fabricated success.
-- No remote GitHub repository was created: the installed integration rejected `createRepository`. Work is committed locally on `dev/autonomous-mvp`; repository creation/push requires an appropriately authorized GitHub connection. No existing project was changed and no default branch was merged.
+- The existing GitHub repository is `keon11/jps-urt-mvp`. Current work uses `dev/phase-5-performance`; prior checkpoints remain preserved. Never merge the default branch as a startup or test step.
 
 ## Issue #4 engineering proof
 
 Current branch: `dev/phase-4-enterprise-proof`. See [readiness](ISSUE-4-REPORT.md) and [restore boundaries](ISSUE-4-RESTORE.md). The committed derived Synthea corpus is usable without Java/downloads. Regeneration requires Java 21: `npm run generate:synthea`. With services ready, `npm run test:synthea` performs full local generated-resource import and HAPI base validations; it does not contact authenticated Epic. `npm run test:denial-correctness` checks the synthetic workflow-flag corpus. `npm run test:hour` takes a real hour; run it separately from case-mutating tests and fault drills. `npm run prepare:readiness` preserves owner input and never submits a bid. All measured results retain synthetic/local scope.
+
+## Issue #5 performance proof
+
+Current branch: `dev/phase-5-performance`. See [performance architecture](ISSUE-5-ARCHITECTURE.md), [predeclared targets](ISSUE-5-ACCEPTANCE.md) and [demonstration checklist](ISSUE-5-DEMO-CHECKLIST.md). `WORKLIST_POOL_MAX` bounds the separate queue-read pool (default 2, allowed 1–8); the existing clinical/write pool remains eight. Graceful shutdown drains requests before closing both pools. This does not establish production sizing. The comparative campaign takes more than three hours and must not overlap integration/browser/fault tests. Isolated fixture maintenance is restricted to its local synthetic database. Raw failures remain evidence even when broad benchmark gates pass.

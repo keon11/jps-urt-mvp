@@ -1,0 +1,2 @@
+PASS: product/fixture/dependency source hashes match verification checkpoint.
+Rendered completed measurements and actual target status: {'p95Under500Ms': True, 'zeroTimeouts': False, 'benchmarkGatesPassed': True, 'allPerformanceTargetsMet': False}

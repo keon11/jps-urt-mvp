@@ -25,6 +25,7 @@ const durationSeconds=performanceRun==="probe"?120:hour?3600:extended?600:120;
 const p95Target=performanceRun?.startsWith("optimized")?500:1000;
 const outputDirectory=performanceRun?"artifacts/issue-5/"+performanceRun:hour?"artifacts/issue-4":extended?"artifacts/issue-3":"artifacts/issue-2";
 await mkdir(outputDirectory,{recursive:true});
+if(hour)await writeFile(outputDirectory+"/hour-status.json",JSON.stringify({state:"starting",at:new Date().toISOString()})+"\n");
 const rawSink=hour?createWriteStream(outputDirectory+"/soak-requests.jsonl"):undefined;
 rawSink?.setMaxListeners(60);
 const raw:{elapsedMs:number,session:number,status:string,durationMs:number}[]=[];

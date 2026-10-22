@@ -1,0 +1,23 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:browser
+> playwright test
+
+
+Running 10 tests using 1 worker
+
+(node:734495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:734495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/demo.spec.ts:38:1 › all eight synthetic utilization review scenarios work end to end (16.9s)
+  ✓   2 tests/browser/demo.spec.ts:213:1 › invalidated session returns to sign-in instead of leaving unusable controls (1.4s)
+  ✓   3 tests/browser/demo.spec.ts:239:1 › Grafana renders live aggregate reporting (4.6s)
+  ✓   4 tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1440px (3.9s)
+  ✓   5 tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1920px (3.8s)
+  ✓   6 tests/browser/governance.spec.ts:33:1 › policy governance and internal authorization buttons execute real role-restricted backend workflows (6.6s)
+  ✓   7 tests/browser/retry.spec.ts:3:1 › a failed payer-simulator click retries the same logical event identifier (2.7s)
+  ✓   8 tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1440px (1.5s)
+  ✓   9 tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1920px (1.2s)
+  ✓  10 tests/browser/risk.spec.ts:43:1 › operations browses actual derived Synthea histories without altering encounters (1.3s)
+
+  10 passed (50.4s)

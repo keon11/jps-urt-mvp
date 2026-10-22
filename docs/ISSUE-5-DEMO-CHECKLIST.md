@@ -7,7 +7,7 @@ Before presenting, select the verified Phase 5 commit and review its final measu
 3. Show Authorization Review evidence, missing information and separate internal next-step action. Explicitly state that internal approval is not insurer approval. Demonstrate duplicate/retry protection using the tested simulator, never a real payer.
 4. Show policy evidence and lifecycle with proposer/supervisor/clinical roles. Pending changes must not affect other reviewers; no private contract or official clinical rule is silently inferred/published.
 5. Open Operations → Synthea cohort. These are actual generated longitudinal histories and source hashes, not current acute-admission evidence, original complete charts or authenticated Epic charts.
-6. Open the Phase 5 before/after report. Quote only the actual bounded queue measurements, both durations, timeouts, max latency and hardware limitations. Do not call these clinical-inference throughput, real clinical accuracy, HA or an SLA. A zero-timeout goal is unmet if any timeout occurred.
+6. Open the Phase 5 before/after report. Quote only the actual bounded queue measurements, all three durations, timeouts, max latency and hardware limitations. Do not call these clinical-inference throughput, real clinical accuracy, HA or an SLA. A zero-timeout goal is unmet if any timeout occurred.
 7. Show the fresh desktop screenshots and read-only disconnected fixture preview. The fixture build has no live backend/AI/auth connection; hosted Vercel access is a separate permission gate.
 8. Keep the restore proof/private dump available to the operator. It covers application tables/audit and a restored worklist, not coordinated DR of every clinical/identity service. Avoid fault/load tests during a presentation.
 
