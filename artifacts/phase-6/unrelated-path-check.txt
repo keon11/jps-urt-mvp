@@ -1,0 +1,1 @@
+Hospital worktree and staging were clean at Phase 6 start; tracked unrelated Roblox/gravity path matches: 0.

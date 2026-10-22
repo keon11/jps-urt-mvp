@@ -2,8 +2,8 @@
 
 ## Mandatory scope
 Repository: keon11/jps-urt-mvp
-Working branch: dev/phase-5-performance (existing branch based on the verified Issue #2 checkpoint)
-Do not create another repository or branch. Never merge to main. Keep all data synthetic and do not expose public demo credentials.
+Working branch: dev/phase-6-submission-acceptance (existing branch based on the verified Issue #2 checkpoint)
+Do not create another repository. Phase 6 branch creation is explicitly authorized. Never merge to main. Keep all data synthetic and do not expose public demo credentials.
 Read GitHub issues #1 and #2, with issue #2 taking priority for new features and issue #1 for UI visual acceptance.
 
 ## Recursive work loop
@@ -37,7 +37,7 @@ If the coding environment is unavailable or Plan Mode prevents edits, state that
 
 ## Acceptance
 - Updated docs, dependency/license inventory, real screenshots, passing build/tests and honest gaps.
-- Commit and push to dev/phase-5-performance. No main merge.
+- Commit and push to dev/phase-6-submission-acceptance. No main merge.
 
 ## Issue #3 execution
 Issue #3 controls this sprint: deployable fixture preview, provenance and golden synthetic correctness corpus, FHIR sandbox conformance, longer measured reliability, and draft RFP preparation. Never submit or invent company/legal/clinical evidence.
@@ -47,3 +47,6 @@ Use Issue #4 for the current stage order and acceptance: Synthea/FHIR/SMART proo
 
 ## Issue #5
 Issue #5 controls current performance work. Preserve Phase 4 and all eight demonstrations. Profile first; predeclare targets; compare same-hardware 3600-second/25-session/10006-row bounded queue runs. Preserve raw failures. No cache, redundant infrastructure or weaker safety/auth checks without measured justification. Commit/push only this development branch; never merge main.
+
+## Phase 6
+The user authorizes final engineering acceptance and draft submission preparation. Preserve prior checkpoints; no main merge, submission, invented credentials/pricing, PHI or contractual commitments. Investigate residual timeouts honestly. Run comparable bounded diagnostics without claiming they supersede the Phase 5 one-hour failures. Finish source-quoted requirements, owner-dependent forms/pricing, fresh desktop checks and private restore proof.
