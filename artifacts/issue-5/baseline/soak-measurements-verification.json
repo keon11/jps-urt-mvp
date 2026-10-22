@@ -1,0 +1,13 @@
+{
+  "recomputed": true,
+  "requests": 257121,
+  "errors": {
+    "TimeoutError": 399,
+    "502": 22,
+    "TypeError": 1
+  },
+  "aggregateMatchesRaw": true,
+  "passed": true,
+  "performanceAcceptancePassed": true,
+  "zeroTimeoutTargetMet": false
+}

@@ -1,0 +1,94 @@
+{
+  "startedAt": "2026-10-22T01:31:17.548Z",
+  "endedAt": "2026-10-22T01:31:48.089Z",
+  "seconds": 30.302881,
+  "eventLoop": {
+    "p50Ms": 10.174463,
+    "p95Ms": 15.753215,
+    "p99Ms": 84.082687,
+    "maxMs": 162.791423
+  },
+  "topSampleCounts": [
+    [
+      "(idle) @ ",
+      14394
+    ],
+    [
+      "writev @ ",
+      424
+    ],
+    [
+      "run @ ",
+      203
+    ],
+    [
+      "stringify @ file:///workspace/hospital-ur-ai-mvp/node_modules/express/lib/response.js",
+      179
+    ],
+    [
+      "(program) @ ",
+      150
+    ],
+    [
+      "(garbage collector) @ ",
+      117
+    ],
+    [
+      "utf8Slice @ ",
+      110
+    ],
+    [
+      "toString @ node:buffer",
+      100
+    ],
+    [
+      " @ file:///workspace/hospital-ur-ai-mvp/.runtime/phase5-baseline/services/api/src/server.ts",
+      77
+    ],
+    [
+      "validateClaimsSet @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/lib/jwt_claims_set.js",
+      64
+    ],
+    [
+      "parse @ file:///workspace/hospital-ur-ai-mvp/node_modules/content-type/index.js",
+      49
+    ],
+    [
+      "emit @ node:events",
+      47
+    ],
+    [
+      "handle @ file:///workspace/hospital-ur-ai-mvp/node_modules/express/lib/application.js",
+      45
+    ],
+    [
+      "parseDataRowMessage @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg-protocol/dist/parser.js",
+      40
+    ],
+    [
+      "decode @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/util/base64url.js",
+      40
+    ],
+    [
+      "update @ ",
+      36
+    ],
+    [
+      "addFields @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg/lib/result.js",
+      34
+    ],
+    [
+      " @ ",
+      33
+    ],
+    [
+      " @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg/lib/connection.js",
+      32
+    ],
+    [
+      "decodeBase64 @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/lib/base64.js",
+      31
+    ]
+  ],
+  "scope": "30s sampled V8 profile/event-loop delay during 25-session load; inspector overhead present in both runs; no token/clinical variable capture"
+}
