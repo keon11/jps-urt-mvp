@@ -1,3 +1,4 @@
+const phase5=process.argv.includes('--issue-5');if(phase5)process.argv.push('--issue-4');
 import { randomUUID } from "node:crypto";
 import { writeFile } from "node:fs/promises";
 import assert from "node:assert/strict";
@@ -124,7 +125,7 @@ try {
   await c.db.end();
   await closeOriginal();
   await writeFile(
-    `artifacts/${(process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?(process.argv.includes("--issue-4")?"issue-4":"issue-3"):"issue-2"}/reconciliation-${label}.json`,
+    `artifacts/${(process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?(process.argv.includes("--issue-4")?(phase5?"issue-5":"issue-4"):"issue-3"):"issue-2"}/reconciliation-${label}.json`,
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

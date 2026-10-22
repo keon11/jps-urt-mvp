@@ -1,0 +1,94 @@
+{
+  "startedAt": "2026-10-22T01:24:35.002Z",
+  "endedAt": "2026-10-22T01:25:05.316Z",
+  "seconds": 30.254825,
+  "eventLoop": {
+    "p50Ms": 10.149887,
+    "p95Ms": 15.499263,
+    "p99Ms": 86.114303,
+    "maxMs": 2495.610879
+  },
+  "topSampleCounts": [
+    [
+      "(idle) @ ",
+      13830
+    ],
+    [
+      "writev @ ",
+      320
+    ],
+    [
+      "json @ file:///workspace/hospital-ur-ai-mvp/node_modules/express/lib/response.js",
+      135
+    ],
+    [
+      "run @ ",
+      135
+    ],
+    [
+      "(program) @ ",
+      114
+    ],
+    [
+      "toString @ node:buffer",
+      81
+    ],
+    [
+      "utf8Slice @ ",
+      75
+    ],
+    [
+      " @ file:///workspace/hospital-ur-ai-mvp/.runtime/phase5-baseline/services/api/src/server.ts",
+      54
+    ],
+    [
+      "validateClaimsSet @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/lib/jwt_claims_set.js",
+      44
+    ],
+    [
+      "parse @ file:///workspace/hospital-ur-ai-mvp/node_modules/content-type/index.js",
+      36
+    ],
+    [
+      "(garbage collector) @ ",
+      35
+    ],
+    [
+      "decode @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/util/base64url.js",
+      32
+    ],
+    [
+      "parseDataRowMessage @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg-protocol/dist/parser.js",
+      30
+    ],
+    [
+      "emit @ node:events",
+      30
+    ],
+    [
+      "handle @ file:///workspace/hospital-ur-ai-mvp/node_modules/express/lib/application.js",
+      27
+    ],
+    [
+      "parseRow @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg/lib/result.js",
+      26
+    ],
+    [
+      "insert @ node:internal/timers",
+      26
+    ],
+    [
+      "addFields @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg/lib/result.js",
+      25
+    ],
+    [
+      "flattenedVerify @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/jws/flattened/verify.js",
+      23
+    ],
+    [
+      "onStreamRead @ node:internal/stream_base_commons",
+      21
+    ]
+  ],
+  "scope": "30s sampled V8 profile/event-loop delay during 25-session load; inspector overhead present in both runs; no token/clinical variable capture"
+}

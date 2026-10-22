@@ -32,6 +32,6 @@
     "services/api/test/epic-fhir-adapter.test.ts": "20374b6da36722e73a8e5a179cc41bedbc2736267eefb4f090626b9bf99d2913",
     "services/api/test/fhir-conformance.test.ts": "c53bcb206173688c31982b679035d947efb8b9f94effacadc57778a63f444c9f",
     "services/api/test/foundation.test.ts": "a85da86ef28ad9825a0ab02379a3fb3c7b035119248e6ab5783b12c97b93efe6",
-    "scripts/benchmark.ts": "71b4266b7526ef76003c81e3295f806fc6f0b49173d8fc6cc13053b33810e1b6"
+    "scripts/benchmark.ts": "9c39184dee8a81381c85b674066219b54e246bad4141a87433b0186b3413b556"
   }
 }

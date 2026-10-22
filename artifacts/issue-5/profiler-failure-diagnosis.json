@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-22T01:24:04.599492+00:00",
+  "passed": false,
+  "failure": "Inspector cleanup timer used dynamic import without VM import callback; uncaught exception killed isolated read-only API. No working application data modified.",
+  "repair": "Use Node process.getBuiltinModule; assert actual event-loop values; benchmark stops loops when child exits and refuses short durations. Retain partial raw bytes losslessly compressed; never combine interrupted time."
+}

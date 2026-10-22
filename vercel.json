@@ -9,9 +9,10 @@
       "main": false,
       "dev/autonomous-mvp": false,
       "dev/desktop-hospital-workspace": false,
-      "dev/phase-4-enterprise-proof": true,
+      "dev/phase-4-enterprise-proof": false,
       "dev/issue-2-execution": false,
-      "dev/phase-3-validation": false
+      "dev/phase-3-validation": false,
+      "dev/phase-5-performance": true
     }
   },
   "headers": [
@@ -41,5 +42,5 @@
       ]
     }
   ],
-  "ignoreCommand": "if [ \"$VERCEL_GIT_COMMIT_REF\" = \"dev/phase-4-enterprise-proof\" ]; then exit 1; else exit 0; fi"
+  "ignoreCommand": "if [ \"$VERCEL_GIT_COMMIT_REF\" = \"dev/phase-5-performance\" ]; then exit 1; else exit 0; fi"
 }

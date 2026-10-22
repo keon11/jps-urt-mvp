@@ -1,0 +1,53 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ 24 independently specified synthetic payer cases enforce precedence, exceptions, dates, negatives and pending-rule isolation (7.989935ms)
+✔ unknown input and stale/suspended active context cannot authorize a next step (1.861815ms)
+✔ changed source context routes case risk to review instead of asserting a clear current assessment (0.194309ms)
+✔ read-only synthetic transport follows bounded same-endpoint pagination (45.108902ms)
+✔ expired tokens renew, 401 refreshes once, 403 denies and transient reads retry within bound (2.678744ms)
+✔ SSRF redirects, pagination loops and missing read authority fail closed (1.041817ms)
+✔ source identity, version change and stale information require reconciliation (1.691461ms)
+✔ expired provider token, wrong resource scope and privilege loss on renewal never dispatch an authorized read (1.198299ms)
+✔ a successful HTTP response with the wrong FHIR identity is rejected (1.21968ms)
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (25.670584ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (12.711179ms)
+✔ updated, stale and inconsistent source versions require reconciliation (8.61736ms)
+✔ default services are local and FHIR R4 adapters have separate endpoints (0.993541ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.480924ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (7.37022ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (2.841977ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (2.655802ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (18.200073ms)
+✔ malformed input fails closed with human review and never represents coverage (1.847416ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.463223ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (2.922932ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (11.351914ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (3.327321ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (35.077372ms)
+✔ official HTML never silently becomes an executable clinical rule (2.007011ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (5.677218ms)
+✔ official page changes remain unverified source comparisons with no activation (5.455857ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (4.070675ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.928916ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (0.960443ms)
+✔ missing physician documentation raises illustrative risk (0.355721ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (7.430649ms)
+✔ model responses with fabricated evidence are rejected (71.882572ms)
+✔ actual Synthea-derived varied cohort retains explicit synthetic origin and longitudinal clinical records (604.387152ms)
+✔ normalization reports missing references rather than silently asserting complete evidence (13.561826ms)
+✔ longitudinal Synthea records do not manufacture current acute-review evidence (7.229511ms)
+✔ cohort projection exposes real generated evidence with explicit read-only synthetic provenance (116.664327ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (1.32967ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.567953ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (1.621959ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (3.894475ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4660.794206

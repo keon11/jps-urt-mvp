@@ -1,0 +1,88 @@
+{
+  "startedAt": "2026-10-22T01:21:00.191Z",
+  "endedAt": "2026-10-22T01:21:30.373Z",
+  "seconds": 30.145721,
+  "topSampleCounts": [
+    [
+      "(idle) @ ",
+      16524
+    ],
+    [
+      "writev @ ",
+      372
+    ],
+    [
+      "run @ ",
+      135
+    ],
+    [
+      "(program) @ ",
+      126
+    ],
+    [
+      "stringify @ file:///workspace/hospital-ur-ai-mvp/node_modules/express/lib/response.js",
+      101
+    ],
+    [
+      "(garbage collector) @ ",
+      73
+    ],
+    [
+      "utf8Slice @ ",
+      70
+    ],
+    [
+      "toString @ node:buffer",
+      59
+    ],
+    [
+      "validateClaimsSet @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/lib/jwt_claims_set.js",
+      49
+    ],
+    [
+      " @ file:///workspace/hospital-ur-ai-mvp/.runtime/phase5-baseline/services/api/src/server.ts",
+      42
+    ],
+    [
+      "parse @ file:///workspace/hospital-ur-ai-mvp/node_modules/content-type/index.js",
+      38
+    ],
+    [
+      "flattenedVerify @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/jws/flattened/verify.js",
+      34
+    ],
+    [
+      "emit @ node:events",
+      31
+    ],
+    [
+      " @ ",
+      31
+    ],
+    [
+      "handle @ file:///workspace/hospital-ur-ai-mvp/node_modules/express/lib/application.js",
+      29
+    ],
+    [
+      "decode @ file:///workspace/hospital-ur-ai-mvp/node_modules/jose/dist/webapi/util/base64url.js",
+      28
+    ],
+    [
+      "parseDataRowMessage @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg-protocol/dist/parser.js",
+      28
+    ],
+    [
+      "SignJob @ ",
+      25
+    ],
+    [
+      "_handleDataRow @ file:///workspace/hospital-ur-ai-mvp/node_modules/pg/lib/client.js",
+      24
+    ],
+    [
+      "runMicrotasks @ ",
+      22
+    ]
+  ],
+  "scope": "30s sampled V8 profile/event-loop delay during 25-session load; inspector overhead present in both runs; no token/clinical variable capture"
+}

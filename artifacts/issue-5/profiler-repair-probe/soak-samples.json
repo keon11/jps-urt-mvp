@@ -1,0 +1,37 @@
+[
+  {
+    "elapsedSeconds": 15.009310200000002,
+    "responses": 1925,
+    "rssBytes": 185294848
+  },
+  {
+    "elapsedSeconds": 30.002015009,
+    "responses": 2817,
+    "rssBytes": 196567040
+  },
+  {
+    "elapsedSeconds": 45.00564558400001,
+    "responses": 3773,
+    "rssBytes": 197353472
+  },
+  {
+    "elapsedSeconds": 60.150018891,
+    "responses": 4256,
+    "rssBytes": 199581696
+  },
+  {
+    "elapsedSeconds": 75.14000937899999,
+    "responses": 4747,
+    "rssBytes": 199843840
+  },
+  {
+    "elapsedSeconds": 90.144786298,
+    "responses": 6408,
+    "rssBytes": 200499200
+  },
+  {
+    "elapsedSeconds": 117.05273228,
+    "responses": 6867,
+    "rssBytes": 186826752
+  }
+]

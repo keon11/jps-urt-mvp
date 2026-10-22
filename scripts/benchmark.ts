@@ -142,6 +142,7 @@ try {
     tokens.map(async (_token, i) => {
       let n = 0;
       while (performance.now() < end) {
+        if(child.exitCode!==null||child.signalCode!==null){result.interruption="Isolated API exited before the declared interval";break;}
         const t = performance.now();
         let status="unknown";
         try {
@@ -210,6 +211,7 @@ try {
     });
   assert(result.liveMvpUnchanged);
   result.passed =
+    result.load.seconds >= durationSeconds &&
     result.load.p95Ms < p95Target &&
     result.load.errorFraction < 0.01 &&
     result.load.throughputPerSecond >= 20 &&

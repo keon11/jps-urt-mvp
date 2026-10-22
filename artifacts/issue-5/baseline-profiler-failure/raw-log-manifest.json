@@ -1,0 +1,8 @@
+{
+  "rawSha256": "12e2a13c3ea3f876a68312f87f964e1c376833065e82c95e750425ec44a1f1cf",
+  "gzipSha256": "dde9ab5e980f92812d09c33761d54e0b089a4e394fe6590536cb2e9f6392b2de",
+  "rawBytes": 29740321,
+  "compressedBytes": 5613186,
+  "roundTripVerified": true,
+  "classification": "Every synthetic queue request status/latency retained; no tokens or clinical content"
+}
