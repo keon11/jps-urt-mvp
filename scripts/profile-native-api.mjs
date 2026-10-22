@@ -1,6 +1,6 @@
 // Built-in Node/V8 inspector. Only the isolated, read-only synthetic API is eligible.
 import fs from 'node:fs/promises';import{execFileSync}from'node:child_process';import assert from'node:assert/strict';
-const label=process.argv[2];assert(['baseline','optimized'].includes(label));
+const label=process.argv[2];assert(['baseline','optimized','optimized-budgeted'].includes(label));
 const pid=Number(execFileSync('fuser',['-n','tcp','3010'],{stdio:['ignore','pipe','ignore'],encoding:'utf8'}).trim());assert(Number.isInteger(pid)&&pid>1);
 assert((await fs.readFile('/proc/'+pid+'/environ','utf8')).split('\0').includes('BENCHMARK_READ_ONLY=true'));
 process.kill(pid,'SIGUSR1');let list;

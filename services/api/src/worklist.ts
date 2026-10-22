@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { pool } from "./db.js";
+import pg from "pg";
+import {config} from "./config.js";
+// Isolate queue reads from the existing clinical/write pool. This host's
+// measured CPU quota is four cores; two readers leave execution headroom.
+export const worklistPool=new pg.Pool({connectionString:config.database,
+ max:z.coerce.number().int().min(1).max(8).parse(process.env.WORKLIST_POOL_MAX??2),
+ connectionTimeoutMillis:5000});
 export const worklistQuery = z
   .object({
     limit: z.coerce.number().int().min(1).max(100).default(50),
@@ -24,7 +30,7 @@ export async function worklist(input: unknown) {
   const parsed=worklistQuery.parse(input);
   const {limit,offset}=parsed;
   const sql=worklistStatements(parsed);
-  const {rows}=await pool.query(sql.page,sql.pageValues);
-  const count=await pool.query(sql.count,sql.countValues);
+  const {rows}=await worklistPool.query(sql.page,sql.pageValues);
+  const count=await worklistPool.query(sql.count,sql.countValues);
   return {items:rows,total:count.rows[0].total,limit,offset,nextOffset:offset+rows.length<count.rows[0].total?offset+rows.length:null,syntheticOnly:true};
 }

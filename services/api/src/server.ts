@@ -2,7 +2,7 @@ import {syntheticCohort} from './synthetic-cohort.js';
 import {denialValidationReport,activeDocumentationRisk} from './denial-risk.js';
 import {correctnessReport} from './policy-correctness.js';
 import {tracer,context,trace,propagation,SpanStatusCode,closeTelemetry} from './telemetry.js';
-import {worklist} from './worklist.js';
+import {worklist,worklistPool} from './worklist.js';
 import {initGovernance,center,propose,transition,suspendPolicy,internalReviewContext,internalReview} from './policy-governance.js';
 import {initPolicyEvidence,policyEvidence} from './policy-intelligence.js';
 import express from 'express';
@@ -98,5 +98,9 @@ await initDb();
 await initPolicyEvidence();
 await initGovernance();
 const server=app.listen(config.port,process.env.BIND_HOST||'127.0.0.1',()=>console.log(`Synthetic UR demo listening on http://localhost:${config.port}`));
-async function shutdown(){server.close();await pool.end();await closeTelemetry();process.exit(0);}
+let closing=false;
+async function shutdown(){if(closing)return;closing=true;
+ await new Promise<void>((resolve,reject)=>server.close(err=>err?reject(err):resolve()));
+ await Promise.all([pool.end(),worklistPool.end()]);await closeTelemetry();process.exit(0);
+}
 process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

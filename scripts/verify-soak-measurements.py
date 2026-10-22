@@ -2,7 +2,7 @@
 import json,math,sys,gzip
 from pathlib import Path
 performance=next((a.split('=',1)[1] for a in sys.argv if a.startswith('--performance=')),None)
-assert performance in [None,'baseline','optimized']
+assert performance in [None,'baseline','optimized','optimized-budgeted']
 issue4='--issue-4' in sys.argv or performance is not None
 p=Path(__file__).resolve().parent.parent/(('artifacts/issue-5/'+performance) if performance else ('artifacts/issue-4' if issue4 else 'artifacts/issue-3'))
 r=json.loads((p/'benchmark-results.json').read_text());rawPath=p/'soak-requests.jsonl';raw=[json.loads(line) for line in (gzip.open(str(rawPath)+'.gz','rt') if not rawPath.exists() else rawPath.open()) if line.strip()]

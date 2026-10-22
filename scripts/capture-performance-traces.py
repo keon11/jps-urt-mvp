@@ -1,7 +1,7 @@
 """Preserve existing privacy-restricted OTel spans, with honest cumulative scope."""
 from pathlib import Path
 import json,gzip,hashlib,sys
-label=sys.argv[1];assert label in ['baseline','optimized']
+label=sys.argv[1];assert label in ['baseline','optimized','optimized-budgeted']
 p=Path('artifacts/issue-5')/label;raw=Path('.runtime/benchmark-traces.jsonl').read_bytes();spans=[]
 for line in raw.splitlines():
  if not line.strip():continue

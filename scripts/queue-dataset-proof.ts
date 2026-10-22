@@ -1,6 +1,6 @@
 import{createHash}from'node:crypto';import{writeFile,readFile}from'node:fs/promises';
 import{isolatedContext,closeOriginal}from'./reliability-context.js';
-const label=process.argv[2];if(!['baseline','maintained','optimized'].includes(label))throw Error('Invalid dataset proof label');
+const label=process.argv[2];if(!['baseline','maintained','optimized','optimized-budgeted'].includes(label))throw Error('Invalid dataset proof label');
 const c=await isolatedContext();
 const {rows}=await c.db.query("SELECT id,encode(sha256(convert_to(row_to_json(c)::text,'UTF8')),'hex') AS sha256 FROM cases c ORDER BY id");
 if(rows.length!==10006)throw Error('Comparable queue must contain exactly 10006 rows');
