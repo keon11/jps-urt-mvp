@@ -13,6 +13,7 @@ for label,r in [('baseline',b),('optimized',o)]:
  with gzip.open(raw,'rb') as f:assert hashlib.file_digest(f,'sha256').hexdigest()==m['rawSha256']
  assert read(label+'/native-profile-summary.json')['eventLoop']['p95Ms']>0
 assert b['host']==o['host']
+assert read('dataset-baseline.json')['sha256']==read('dataset-maintained.json')['sha256']==read('dataset-optimized.json')['sha256']
 eq=read('queue-equivalence.json');assert eq['passed'] and len(eq['checks'])==32
 fault=read('fault-recovery.json');restore=read('final-restore-proof.json');reconcile=read('reconciliation-after-repair.json')
 assert fault['passed'] and restore['passed'] and reconcile['passed']
@@ -55,7 +56,7 @@ Predeclared targets: each run >=3600s, same 10,006-row isolated queue, 25 synthe
 |---|---:|---:|---:|---:|---:|---:|---:|---|---:|
 {chr(10).join(rows)}
 
-Throughput change **{throughput:+.2f}%**; p95 change **{latency:+.2f}%**, compared with the newly reproduced original. Actual target status: **{json.dumps(goals)}**. Optimized errors/timeouts are reported above even if other gates pass. Observed zero in one interval is not a zero-failure guarantee. Raw rows are independently recomputed and retained losslessly compressed with SHA-256 round-trip proof. CPU/RSS samples and matched 30s V8/event-loop profiles are included in each run directory; their overhead is present in both runs.
+Throughput change **{throughput:+.2f}%**; p95 change **{latency:+.2f}%**, compared with the newly reproduced original. Actual target status: **{json.dumps(goals)}**. Optimized errors/timeouts are reported above even if other gates pass. Observed zero in one interval is not a zero-failure guarantee. Full ordered case-row hashes verify the same queue content before/after maintenance and optimized load. Raw rows are independently recomputed and retained losslessly compressed with SHA-256 round-trip proof. CPU/RSS samples and matched 30s V8/event-loop profiles are included in each run directory; their overhead is present in both runs.
 
 Historical Phase 4 was 71.0149 req/s, p95 626.116ms, 21 timeouts over 3600.160s. Compare against that as historical context, not a new controlled run. Recorded current hardware is {b['host']['logicalCPUs']} logical CPUs, {b['host']['totalMemoryBytes']/1073741824:.2f}GiB host RAM, {b['host']['node']}. Shared-host/OS scheduling remains uncontrolled. Optimization includes measured fixture maintenance; do not attribute the combined gain only to SQL. The driver and service run on the same host, so this is not WAN, clinical inference, legacy full-bundle UI, real clinician concurrency, HA or a production SLA.
 
