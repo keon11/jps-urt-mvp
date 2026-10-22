@@ -1,0 +1,273 @@
+# HELP ur_process_cpu_user_seconds_total Total user CPU time spent in seconds.
+# TYPE ur_process_cpu_user_seconds_total counter
+ur_process_cpu_user_seconds_total 221.890389
+
+# HELP ur_process_cpu_system_seconds_total Total system CPU time spent in seconds.
+# TYPE ur_process_cpu_system_seconds_total counter
+ur_process_cpu_system_seconds_total 42.936764
+
+# HELP ur_process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE ur_process_cpu_seconds_total counter
+ur_process_cpu_seconds_total 264.827153
+
+# HELP ur_process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE ur_process_start_time_seconds gauge
+ur_process_start_time_seconds 1792649866
+
+# HELP ur_process_resident_memory_bytes Resident memory size in bytes.
+# TYPE ur_process_resident_memory_bytes gauge
+ur_process_resident_memory_bytes 349540352
+
+# HELP ur_process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE ur_process_virtual_memory_bytes gauge
+ur_process_virtual_memory_bytes 37009453056
+
+# HELP ur_process_heap_bytes Process heap size in bytes.
+# TYPE ur_process_heap_bytes gauge
+ur_process_heap_bytes 1490030592
+
+# HELP ur_process_open_fds Number of open file descriptors.
+# TYPE ur_process_open_fds gauge
+ur_process_open_fds 58
+
+# HELP ur_process_max_fds Maximum number of open file descriptors.
+# TYPE ur_process_max_fds gauge
+ur_process_max_fds 16384
+
+# HELP ur_nodejs_eventloop_lag_seconds Lag of event loop in seconds.
+# TYPE ur_nodejs_eventloop_lag_seconds gauge
+ur_nodejs_eventloop_lag_seconds 0
+
+# HELP ur_nodejs_eventloop_lag_min_seconds The minimum recorded event loop delay.
+# TYPE ur_nodejs_eventloop_lag_min_seconds gauge
+ur_nodejs_eventloop_lag_min_seconds 0.000008704
+
+# HELP ur_nodejs_eventloop_lag_max_seconds The maximum recorded event loop delay.
+# TYPE ur_nodejs_eventloop_lag_max_seconds gauge
+ur_nodejs_eventloop_lag_max_seconds 1.151336447
+
+# HELP ur_nodejs_eventloop_lag_mean_seconds The mean of the recorded event loop delays.
+# TYPE ur_nodejs_eventloop_lag_mean_seconds gauge
+ur_nodejs_eventloop_lag_mean_seconds 0.012104058492245882
+
+# HELP ur_nodejs_eventloop_lag_stddev_seconds The standard deviation of the recorded event loop delays.
+# TYPE ur_nodejs_eventloop_lag_stddev_seconds gauge
+ur_nodejs_eventloop_lag_stddev_seconds 0.021570666070176107
+
+# HELP ur_nodejs_eventloop_lag_p50_seconds The 50th percentile of the recorded event loop delays.
+# TYPE ur_nodejs_eventloop_lag_p50_seconds gauge
+ur_nodejs_eventloop_lag_p50_seconds 0.010149887
+
+# HELP ur_nodejs_eventloop_lag_p90_seconds The 90th percentile of the recorded event loop delays.
+# TYPE ur_nodejs_eventloop_lag_p90_seconds gauge
+ur_nodejs_eventloop_lag_p90_seconds 0.011124735
+
+# HELP ur_nodejs_eventloop_lag_p99_seconds The 99th percentile of the recorded event loop delays.
+# TYPE ur_nodejs_eventloop_lag_p99_seconds gauge
+ur_nodejs_eventloop_lag_p99_seconds 0.052002815
+
+# HELP ur_nodejs_active_resources Number of active resources that are currently keeping the event loop alive, grouped by async resource type.
+# TYPE ur_nodejs_active_resources gauge
+ur_nodejs_active_resources{type="PipeWrap"} 2
+ur_nodejs_active_resources{type="TCPServerWrap"} 1
+ur_nodejs_active_resources{type="TCPSocketWrap"} 29
+ur_nodejs_active_resources{type="Timeout"} 2
+ur_nodejs_active_resources{type="Immediate"} 1
+
+# HELP ur_nodejs_active_resources_total Total number of active resources.
+# TYPE ur_nodejs_active_resources_total gauge
+ur_nodejs_active_resources_total 35
+
+# HELP ur_nodejs_active_handles Number of active libuv handles grouped by handle type. Every handle type is C++ class name.
+# TYPE ur_nodejs_active_handles gauge
+ur_nodejs_active_handles{type="Socket"} 31
+ur_nodejs_active_handles{type="Server"} 1
+
+# HELP ur_nodejs_active_handles_total Total number of active handles.
+# TYPE ur_nodejs_active_handles_total gauge
+ur_nodejs_active_handles_total 32
+
+# HELP ur_nodejs_active_requests Number of active libuv requests grouped by request type. Every request type is C++ class name.
+# TYPE ur_nodejs_active_requests gauge
+
+# HELP ur_nodejs_active_requests_total Total number of active requests.
+# TYPE ur_nodejs_active_requests_total gauge
+ur_nodejs_active_requests_total 0
+
+# HELP ur_nodejs_heap_size_total_bytes Process heap size from Node.js in bytes.
+# TYPE ur_nodejs_heap_size_total_bytes gauge
+ur_nodejs_heap_size_total_bytes 172085248
+
+# HELP ur_nodejs_heap_size_used_bytes Process heap size used from Node.js in bytes.
+# TYPE ur_nodejs_heap_size_used_bytes gauge
+ur_nodejs_heap_size_used_bytes 40041736
+
+# HELP ur_nodejs_external_memory_bytes Node.js external memory size in bytes.
+# TYPE ur_nodejs_external_memory_bytes gauge
+ur_nodejs_external_memory_bytes 7747895
+
+# HELP ur_nodejs_heap_space_size_total_bytes Process heap space size total from Node.js in bytes.
+# TYPE ur_nodejs_heap_space_size_total_bytes gauge
+ur_nodejs_heap_space_size_total_bytes{space="read_only"} 0
+ur_nodejs_heap_space_size_total_bytes{space="new"} 134217728
+ur_nodejs_heap_space_size_total_bytes{space="old"} 27668480
+ur_nodejs_heap_space_size_total_bytes{space="code"} 3407872
+ur_nodejs_heap_space_size_total_bytes{space="shared"} 0
+ur_nodejs_heap_space_size_total_bytes{space="trusted"} 4567040
+ur_nodejs_heap_space_size_total_bytes{space="shared_trusted"} 0
+ur_nodejs_heap_space_size_total_bytes{space="new_large_object"} 0
+ur_nodejs_heap_space_size_total_bytes{space="large_object"} 2060288
+ur_nodejs_heap_space_size_total_bytes{space="code_large_object"} 163840
+ur_nodejs_heap_space_size_total_bytes{space="shared_large_object"} 0
+ur_nodejs_heap_space_size_total_bytes{space="shared_trusted_large_object"} 0
+ur_nodejs_heap_space_size_total_bytes{space="trusted_large_object"} 0
+
+# HELP ur_nodejs_heap_space_size_used_bytes Process heap space size used from Node.js in bytes.
+# TYPE ur_nodejs_heap_space_size_used_bytes gauge
+ur_nodejs_heap_space_size_used_bytes{space="read_only"} 0
+ur_nodejs_heap_space_size_used_bytes{space="new"} 7465864
+ur_nodejs_heap_space_size_used_bytes{space="old"} 24431928
+ur_nodejs_heap_space_size_used_bytes{space="code"} 2773696
+ur_nodejs_heap_space_size_used_bytes{space="shared"} 0
+ur_nodejs_heap_space_size_used_bytes{space="trusted"} 3182176
+ur_nodejs_heap_space_size_used_bytes{space="shared_trusted"} 0
+ur_nodejs_heap_space_size_used_bytes{space="new_large_object"} 0
+ur_nodejs_heap_space_size_used_bytes{space="large_object"} 2035088
+ur_nodejs_heap_space_size_used_bytes{space="code_large_object"} 163584
+ur_nodejs_heap_space_size_used_bytes{space="shared_large_object"} 0
+ur_nodejs_heap_space_size_used_bytes{space="shared_trusted_large_object"} 0
+ur_nodejs_heap_space_size_used_bytes{space="trusted_large_object"} 0
+
+# HELP ur_nodejs_heap_space_size_available_bytes Process heap space size available from Node.js in bytes.
+# TYPE ur_nodejs_heap_space_size_available_bytes gauge
+ur_nodejs_heap_space_size_available_bytes{space="read_only"} 0
+ur_nodejs_heap_space_size_available_bytes{space="new"} 59638904
+ur_nodejs_heap_space_size_available_bytes{space="old"} 104824
+ur_nodejs_heap_space_size_available_bytes{space="code"} 633760
+ur_nodejs_heap_space_size_available_bytes{space="shared"} 0
+ur_nodejs_heap_space_size_available_bytes{space="trusted"} 1379536
+ur_nodejs_heap_space_size_available_bytes{space="shared_trusted"} 0
+ur_nodejs_heap_space_size_available_bytes{space="new_large_object"} 67108864
+ur_nodejs_heap_space_size_available_bytes{space="large_object"} 0
+ur_nodejs_heap_space_size_available_bytes{space="code_large_object"} 0
+ur_nodejs_heap_space_size_available_bytes{space="shared_large_object"} 0
+ur_nodejs_heap_space_size_available_bytes{space="shared_trusted_large_object"} 0
+ur_nodejs_heap_space_size_available_bytes{space="trusted_large_object"} 0
+
+# HELP ur_nodejs_version_info Node.js version info.
+# TYPE ur_nodejs_version_info gauge
+ur_nodejs_version_info{version="v24.19.0",major="24",minor="19",patch="0"} 1
+
+# HELP ur_nodejs_gc_duration_seconds Garbage collection duration by kind, one of major, minor, incremental or weakcb.
+# TYPE ur_nodejs_gc_duration_seconds histogram
+ur_nodejs_gc_duration_seconds_bucket{le="0.001",kind="minor"} 0
+ur_nodejs_gc_duration_seconds_bucket{le="0.01",kind="minor"} 77
+ur_nodejs_gc_duration_seconds_bucket{le="0.1",kind="minor"} 149
+ur_nodejs_gc_duration_seconds_bucket{le="1",kind="minor"} 151
+ur_nodejs_gc_duration_seconds_bucket{le="2",kind="minor"} 151
+ur_nodejs_gc_duration_seconds_bucket{le="5",kind="minor"} 151
+ur_nodejs_gc_duration_seconds_bucket{le="+Inf",kind="minor"} 151
+ur_nodejs_gc_duration_seconds_sum{kind="minor"} 2.535080321058632
+ur_nodejs_gc_duration_seconds_count{kind="minor"} 151
+ur_nodejs_gc_duration_seconds_bucket{le="0.001",kind="incremental"} 122
+ur_nodejs_gc_duration_seconds_bucket{le="0.01",kind="incremental"} 232
+ur_nodejs_gc_duration_seconds_bucket{le="0.1",kind="incremental"} 234
+ur_nodejs_gc_duration_seconds_bucket{le="1",kind="incremental"} 234
+ur_nodejs_gc_duration_seconds_bucket{le="2",kind="incremental"} 234
+ur_nodejs_gc_duration_seconds_bucket{le="5",kind="incremental"} 234
+ur_nodejs_gc_duration_seconds_bucket{le="+Inf",kind="incremental"} 234
+ur_nodejs_gc_duration_seconds_sum{kind="incremental"} 0.4556568820327519
+ur_nodejs_gc_duration_seconds_count{kind="incremental"} 234
+ur_nodejs_gc_duration_seconds_bucket{le="0.001",kind="major"} 0
+ur_nodejs_gc_duration_seconds_bucket{le="0.01",kind="major"} 211
+ur_nodejs_gc_duration_seconds_bucket{le="0.1",kind="major"} 233
+ur_nodejs_gc_duration_seconds_bucket{le="1",kind="major"} 235
+ur_nodejs_gc_duration_seconds_bucket{le="2",kind="major"} 235
+ur_nodejs_gc_duration_seconds_bucket{le="5",kind="major"} 235
+ur_nodejs_gc_duration_seconds_bucket{le="+Inf",kind="major"} 235
+ur_nodejs_gc_duration_seconds_sum{kind="major"} 2.321476235918702
+ur_nodejs_gc_duration_seconds_count{kind="major"} 235
+
+# HELP ur_cases Synthetic utilization review case counts
+# TYPE ur_cases gauge
+
+# HELP ur_http_request_duration_seconds HTTP request duration without source content or identity
+# TYPE ur_http_request_duration_seconds histogram
+ur_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="1",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="2",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="5",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="30",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="90",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_sum{method="GET",route="/health",status="2xx"} 0.00901488100000006
+ur_http_request_duration_seconds_count{method="GET",route="/health",status="2xx"} 1
+ur_http_request_duration_seconds_bucket{le="0.01",method="GET",route="/api/encounter-worklist",status="2xx"} 3
+ur_http_request_duration_seconds_bucket{le="0.05",method="GET",route="/api/encounter-worklist",status="2xx"} 60
+ur_http_request_duration_seconds_bucket{le="0.1",method="GET",route="/api/encounter-worklist",status="2xx"} 104967
+ur_http_request_duration_seconds_bucket{le="0.25",method="GET",route="/api/encounter-worklist",status="2xx"} 132092
+ur_http_request_duration_seconds_bucket{le="0.5",method="GET",route="/api/encounter-worklist",status="2xx"} 134532
+ur_http_request_duration_seconds_bucket{le="1",method="GET",route="/api/encounter-worklist",status="2xx"} 135859
+ur_http_request_duration_seconds_bucket{le="2",method="GET",route="/api/encounter-worklist",status="2xx"} 136302
+ur_http_request_duration_seconds_bucket{le="5",method="GET",route="/api/encounter-worklist",status="2xx"} 136460
+ur_http_request_duration_seconds_bucket{le="30",method="GET",route="/api/encounter-worklist",status="2xx"} 136460
+ur_http_request_duration_seconds_bucket{le="90",method="GET",route="/api/encounter-worklist",status="2xx"} 136460
+ur_http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/api/encounter-worklist",status="2xx"} 136460
+ur_http_request_duration_seconds_sum{method="GET",route="/api/encounter-worklist",status="2xx"} 14538.518179232737
+ur_http_request_duration_seconds_count{method="GET",route="/api/encounter-worklist",status="2xx"} 136460
+
+# HELP ur_worklist_stage_seconds Worklist acquire/query duration; no SQL, identity or clinical labels
+# TYPE ur_worklist_stage_seconds histogram
+ur_worklist_stage_seconds_bucket{le="0.001",stage="acquire",outcome="success"} 6
+ur_worklist_stage_seconds_bucket{le="0.005",stage="acquire",outcome="success"} 8
+ur_worklist_stage_seconds_bucket{le="0.01",stage="acquire",outcome="success"} 14
+ur_worklist_stage_seconds_bucket{le="0.025",stage="acquire",outcome="success"} 31
+ur_worklist_stage_seconds_bucket{le="0.05",stage="acquire",outcome="success"} 132
+ur_worklist_stage_seconds_bucket{le="0.1",stage="acquire",outcome="success"} 117396
+ur_worklist_stage_seconds_bucket{le="0.25",stage="acquire",outcome="success"} 132613
+ur_worklist_stage_seconds_bucket{le="0.5",stage="acquire",outcome="success"} 134824
+ur_worklist_stage_seconds_bucket{le="1",stage="acquire",outcome="success"} 135942
+ur_worklist_stage_seconds_bucket{le="2",stage="acquire",outcome="success"} 136325
+ur_worklist_stage_seconds_bucket{le="5",stage="acquire",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="30",stage="acquire",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="+Inf",stage="acquire",outcome="success"} 136460
+ur_worklist_stage_seconds_sum{stage="acquire",outcome="success"} 13195.465785446011
+ur_worklist_stage_seconds_count{stage="acquire",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="0.001",stage="page",outcome="success"} 0
+ur_worklist_stage_seconds_bucket{le="0.005",stage="page",outcome="success"} 80207
+ur_worklist_stage_seconds_bucket{le="0.01",stage="page",outcome="success"} 130509
+ur_worklist_stage_seconds_bucket{le="0.025",stage="page",outcome="success"} 135346
+ur_worklist_stage_seconds_bucket{le="0.05",stage="page",outcome="success"} 135767
+ur_worklist_stage_seconds_bucket{le="0.1",stage="page",outcome="success"} 135945
+ur_worklist_stage_seconds_bucket{le="0.25",stage="page",outcome="success"} 136335
+ur_worklist_stage_seconds_bucket{le="0.5",stage="page",outcome="success"} 136420
+ur_worklist_stage_seconds_bucket{le="1",stage="page",outcome="success"} 136453
+ur_worklist_stage_seconds_bucket{le="2",stage="page",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="5",stage="page",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="30",stage="page",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="+Inf",stage="page",outcome="success"} 136460
+ur_worklist_stage_seconds_sum{stage="page",outcome="success"} 859.5671248060127
+ur_worklist_stage_seconds_count{stage="page",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="0.001",stage="count",outcome="success"} 8936
+ur_worklist_stage_seconds_bucket{le="0.005",stage="count",outcome="success"} 133037
+ur_worklist_stage_seconds_bucket{le="0.01",stage="count",outcome="success"} 135534
+ur_worklist_stage_seconds_bucket{le="0.025",stage="count",outcome="success"} 136121
+ur_worklist_stage_seconds_bucket{le="0.05",stage="count",outcome="success"} 136216
+ur_worklist_stage_seconds_bucket{le="0.1",stage="count",outcome="success"} 136278
+ur_worklist_stage_seconds_bucket{le="0.25",stage="count",outcome="success"} 136414
+ur_worklist_stage_seconds_bucket{le="0.5",stage="count",outcome="success"} 136450
+ur_worklist_stage_seconds_bucket{le="1",stage="count",outcome="success"} 136459
+ur_worklist_stage_seconds_bucket{le="2",stage="count",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="5",stage="count",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="30",stage="count",outcome="success"} 136460
+ur_worklist_stage_seconds_bucket{le="+Inf",stage="count",outcome="success"} 136460
+ur_worklist_stage_seconds_sum{stage="count",outcome="success"} 282.5866972310029
+ur_worklist_stage_seconds_count{stage="count",outcome="success"} 136460
+
+# HELP ur_worklist_pool_waiting Waiting worklist connection requests
+# TYPE ur_worklist_pool_waiting gauge
+ur_worklist_pool_waiting 0

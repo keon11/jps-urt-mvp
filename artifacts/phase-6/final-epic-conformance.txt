@@ -1,0 +1,5 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:epic-conformance
+> tsx scripts/verify-epic-conformance.ts --phase-6
+
+Synthetic mappings: 6 passed; Epic runtime validation not performed; metadata status: 200

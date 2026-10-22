@@ -1,0 +1,42 @@
+[
+  {
+    "elapsedSeconds": 15.047394408,
+    "responses": 2249,
+    "rssBytes": 188383232
+  },
+  {
+    "elapsedSeconds": 30.020439805000002,
+    "responses": 5328,
+    "rssBytes": 191791104
+  },
+  {
+    "elapsedSeconds": 45.00909985,
+    "responses": 8791,
+    "rssBytes": 195461120
+  },
+  {
+    "elapsedSeconds": 60.004601701,
+    "responses": 12597,
+    "rssBytes": 262307840
+  },
+  {
+    "elapsedSeconds": 75.005238517,
+    "responses": 16826,
+    "rssBytes": 264536064
+  },
+  {
+    "elapsedSeconds": 90.01377992500001,
+    "responses": 20577,
+    "rssBytes": 265584640
+  },
+  {
+    "elapsedSeconds": 105.00843395800001,
+    "responses": 24144,
+    "rssBytes": 148860928
+  },
+  {
+    "elapsedSeconds": 120.005495452,
+    "responses": 28346,
+    "rssBytes": 187834368
+  }
+]

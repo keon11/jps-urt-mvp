@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-22T06:22:38.342Z",
+  "rows": 10006,
+  "sha256": "9c766483ac68bc0901b3fe2b484e3c2fef865dc5a8e1e64030ce1246e5bb2c94",
+  "allCaseFieldsIncluded": true,
+  "scope": "SHA-256 of ordered id/per-row full case SHA-256; actual source data stays private; no workflow mutation",
+  "matchesBaseline": null
+}

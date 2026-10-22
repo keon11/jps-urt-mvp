@@ -1,6 +1,6 @@
 import {createWriteStream} from "node:fs";
 import {once} from "node:events";
-import { performance } from "node:perf_hooks";
+import { performance, monitorEventLoopDelay } from "node:perf_hooks";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { cpus, totalmem } from "node:os";
 import assert from "node:assert/strict";
@@ -17,13 +17,15 @@ import { pool } from "../services/api/src/db.js";
 import { config } from "../services/api/src/config.js";
 import { login } from "../services/api/src/adapters.js";
 import { demonstrationPassword } from "../tests/browser/local-account.js";
+const phase6=process.argv.find(a=>a.startsWith('--phase6='))?.split('=')[1];
+if(phase6&&!['baseline','candidate','extended'].includes(phase6))throw Error('Invalid Phase 6 run label');
 const performanceRun=process.argv.find(a=>a.startsWith("--performance="))?.split("=")[1];
 if(performanceRun&&!['baseline','optimized','optimized-budgeted','probe'].includes(performanceRun))throw Error("Invalid performance run label");
-const hour=process.argv.includes("--hour")||!!performanceRun;
+const hour=process.argv.includes("--hour")||!!performanceRun||!!phase6;
 const extended=hour||process.argv.includes("--extended");
-const durationSeconds=performanceRun==="probe"?120:hour?3600:extended?600:120;
-const p95Target=performanceRun?.startsWith("optimized")?500:1000;
-const outputDirectory=performanceRun?"artifacts/issue-5/"+performanceRun:hour?"artifacts/issue-4":extended?"artifacts/issue-3":"artifacts/issue-2";
+const durationSeconds=phase6?(phase6==='extended'?600:120):performanceRun==="probe"?120:hour?3600:extended?600:120;
+const p95Target=phase6&&phase6!=='baseline'?500:performanceRun?.startsWith("optimized")?500:1000;
+const outputDirectory=phase6?'artifacts/phase-6/performance-'+phase6:performanceRun?"artifacts/issue-5/"+performanceRun:hour?"artifacts/issue-4":extended?"artifacts/issue-3":"artifacts/issue-2";
 await mkdir(outputDirectory,{recursive:true});
 if(hour)await writeFile(outputDirectory+"/hour-status.json",JSON.stringify({state:"starting",at:new Date().toISOString()})+"\n");
 const rawSink=hour?createWriteStream(outputDirectory+"/soak-requests.jsonl"):undefined;
@@ -32,6 +34,8 @@ const raw:{elapsedMs:number,session:number,status:string,durationMs:number}[]=[]
 const samples:{elapsedSeconds:number,responses:number,rssBytes:number}[]=[];
 const c = await isolatedContext();
 let child: any;
+const diagnostic={authentication:[] as {durationMs:number,outcome:string}[],errors:[] as {session:number,stage:string,name:string,elapsedMs:number}[]};
+const loopDelay=phase6==='extended'?monitorEventLoopDelay({resolution:20}):undefined;
 const result: any = {
   startedAt: new Date().toISOString(),
   scope:
@@ -139,15 +143,17 @@ try {
       "responses",
     );
   }, 15000);
+  loopDelay?.enable();
   await Promise.all(
     tokens.map(async (_token, i) => {
       let n = 0;
       while (performance.now() < end) {
         if(child.exitCode!==null||child.signalCode!==null){result.interruption="Isolated API exited before the declared interval";break;}
         const t = performance.now();
-        let status="unknown";
+        let status="unknown",stage="authentication";
         try {
-          if(Date.now()>=expiresAt[i]-30000){const session=await login("reviewer",demonstrationPassword());tokens[i]=session.access_token;expiresAt[i]=Date.now()+Number(session.expires_in)*1000;authenticationRenewals++;}
+          if(Date.now()>=expiresAt[i]-30000){const authStart=performance.now();let outcome='success';try{const session=await login("reviewer",demonstrationPassword());tokens[i]=session.access_token;expiresAt[i]=Date.now()+Number(session.expires_in)*1000;authenticationRenewals++;}catch(error){outcome='error';throw error;}finally{if(phase6==='extended')diagnostic.authentication.push({durationMs:performance.now()-authStart,outcome});}}
+          stage='worklist-fetch';
           const r = await fetch(
             `http://localhost:3010/api/encounter-worklist?limit=50&offset=${(i * 31 + n++ * 50) % 9950}`,
             { headers: auth(i), signal: AbortSignal.timeout(5000) },
@@ -159,6 +165,7 @@ try {
         } catch (e) {
           const key = (e as Error).name;
           status=key;
+          if(phase6==='extended'&&diagnostic.errors.length<10000)diagnostic.errors.push({session:i,stage,name:key,elapsedMs:performance.now()-begin});
           errors[key] = (errors[key] || 0) + 1;
         }
         const durationMs=performance.now()-t;
@@ -169,6 +176,8 @@ try {
     }),
   );
   clearInterval(timer);
+  loopDelay?.disable();
+  if(phase6==='extended')await writeFile(outputDirectory+'/stage-diagnostics.json',JSON.stringify({...diagnostic,driverEventLoop:{p95Ms:loopDelay!.percentile(95)/1e6,p99Ms:loopDelay!.percentile(99)/1e6,maxMs:loopDelay!.max/1e6},scope:'Driver event-loop histogram and renewal durations; error stages only; no token/identity/content. Additional diagnostics apply only to extended run, not the 120s controlled pair.'},null,2)+'\n');
   const seconds = (performance.now() - begin) / 1000,
     afterCpu = await proc();
   durations.sort((a, b) => a - b);
@@ -193,6 +202,10 @@ try {
     tokenValuesRecorded:false,
     sameRoleDistinctAuthenticationSessions: true,
   };
+  if(phase6&&phase6!=="baseline"){
+    const response=await fetch('http://localhost:3010/metrics',{signal:AbortSignal.timeout(15000)});
+    if(response.ok)await writeFile(outputDirectory+'/process-metrics.txt',await response.text());
+  }
   const recoveryStart = performance.now();
   await stopApi(child);
   child = await startApi(c.dsn, true);

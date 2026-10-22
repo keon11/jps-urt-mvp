@@ -1,0 +1,36 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:preview
+> npm run build:preview && node scripts/verify-preview.mjs && playwright test --config playwright.preview.config.ts
+
+
+> hospital-ur-ai-mvp@0.1.0 build:preview
+> tsc --noEmit && vite build --mode preview
+
+vite v7.3.7 building client environment for preview...
+transforming...
+✓ 1582 modules transformed.
+rendering chunks...
+computing gzip size...
+../../dist-preview/index.html                    0.48 kB │ gzip:  0.32 kB
+../../dist-preview/assets/index-PbV5PUbs.css    20.05 kB │ gzip:  4.89 kB
+../../dist-preview/assets/index-BVO15cPj.js    243.10 kB │ gzip: 74.93 kB
+../../dist-preview/assets/preview-Dt0uFpXr.js  375.00 kB │ gzip: 46.59 kB
+✓ built in 2.32s
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+false !== true
+
+    at file:///workspace/hospital-ur-ai-mvp/scripts/verify-preview.mjs:37:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

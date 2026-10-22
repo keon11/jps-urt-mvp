@@ -4,9 +4,9 @@ from hashlib import sha256
 from zipfile import ZipFile, ZIP_DEFLATED
 import json,subprocess,sys
 root=Path(__file__).resolve().parent.parent
-issue='issue-5' if '--issue-5' in sys.argv else 'issue-4'
+issue='phase-6' if '--phase-6' in sys.argv else 'issue-5' if '--issue-5' in sys.argv else 'issue-4'
 subprocess.run(['node','scripts/verify-preview.mjs'],cwd=root,check=True)
-subprocess.run(['node','scripts/source-fingerprint.mjs','--check']+(['--issue-5'] if issue=='issue-5' else []),cwd=root,check=True)
+subprocess.run(['node','scripts/source-fingerprint.mjs','--check']+(['--phase-6'] if issue=='phase-6' else ['--issue-5'] if issue=='issue-5' else []),cwd=root,check=True)
 build=root/'dist-preview';files=sorted(p for p in build.rglob('*') if p.is_file())
 assert files and (build/'index.html').is_file()
 assert all(p.suffix in ['.html','.js','.css','.svg','.png','.ico'] and not p.is_symlink() for p in files)

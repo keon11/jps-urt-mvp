@@ -2,7 +2,7 @@
 Official Exhibit A bytes are copied unchanged; template zeros are never vendor quotes.
 """
 from pathlib import Path
-import json,hashlib,shutil,importlib.metadata
+import json,hashlib,shutil,importlib.metadata,reportlab
 from xml.sax.saxutils import escape
 from openpyxl import Workbook,load_workbook
 from openpyxl.styles import Font,PatternFill,Alignment
@@ -10,6 +10,8 @@ from docx import Document
 from docx.shared import Pt
 from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,PageBreak
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 root=Path(__file__).resolve().parent.parent;out=root/'artifacts/phase-6';draft=root/'docs/submission'
 fresh=json.loads((out/'official-source-refresh.json').read_text());assert fresh['retrieved']
 price=next(a for a in fresh['attachments'] if 'Exhibit A' in a['label']);original=root/price['privatePath'];assert hashlib.sha256(original.read_bytes()).hexdigest()==price['sha256']
@@ -82,13 +84,18 @@ for i,(title,paras) in enumerate(sections):
  doc.add_heading(title,0 if i==0 else 1)
  for p in paras:doc.add_paragraph(p)
 docpath=out/'RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.docx';doc.save(docpath)
-styles=getSampleStyleSheet();story=[];pages=[]
+fontdir=Path(reportlab.__file__).parent/'fonts'
+pdfmetrics.registerFont(TTFont('Vera',str(fontdir/'Vera.ttf')));pdfmetrics.registerFont(TTFont('VeraBold',str(fontdir/'VeraBd.ttf')))
+styles=getSampleStyleSheet()
+for name in ['BodyText','Normal']:styles[name].fontName='Vera'
+for name in ['Heading1','Title']:styles[name].fontName='VeraBold'
+story=[];pages=[]
 for i,(title,paras) in enumerate(sections):
  if i:story.append(PageBreak())
  story.append(Paragraph(escape(title),styles['Title' if i==0 else 'Heading1']));story.append(Spacer(1,12))
  for p in paras:story.extend([Paragraph(escape(p),styles['BodyText']),Spacer(1,12)])
 def footer(c,d):
- pages.append(c.getPageNumber());c.saveState();c.setFont('Helvetica',8);c.drawString(36,24,'DRAFT / OWNER LEGAL ENTITY REQUIRED — RFP #20261404054');c.drawRightString(575,24,str(c.getPageNumber()));c.restoreState()
+ pages.append(c.getPageNumber());c.saveState();c.setFont('Vera',8);c.drawString(36,24,'DRAFT / OWNER LEGAL ENTITY REQUIRED — RFP #20261404054');c.drawRightString(575,24,str(c.getPageNumber()));c.restoreState()
 pdfpath=out/'RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.pdf';SimpleDocTemplate(str(pdfpath),topMargin=42,bottomMargin=45,leftMargin=42,rightMargin=42).build(story,onFirstPage=footer,onLaterPages=footer);assert max(pages)<=25
 manifest={'draftOnly':True,'readyToSubmit':False,'submitted':False,'signed':False,'actualVendorPricesEntered':False,'officialExhibitSha256':price['sha256'],'officialBytesUnchanged':official.read_bytes()==original.read_bytes(),'officialTemplateZerosAreNotVendorPrices':True,'internalCostInputsBlank':True,'formulasStructurallyVerified':True,'spreadsheetApplicationRecalculationExecuted':False,'pdfPages':max(pages),'executiveSummaryPDFPages':1,'docxPageLayoutValidated':False,'libraries':{p:importlib.metadata.version(p) for p in ['openpyxl','python-docx','reportlab']},'files':[{'file':str(p.relative_to(root)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [official,path,docpath,pdfpath]]}
 (out/'proposal-pricing-verification.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest,indent=2))

@@ -12,7 +12,8 @@
       "dev/phase-4-enterprise-proof": false,
       "dev/issue-2-execution": false,
       "dev/phase-3-validation": false,
-      "dev/phase-5-performance": true
+      "dev/phase-5-performance": false,
+      "dev/phase-6-submission-acceptance": true
     }
   },
   "headers": [
@@ -42,5 +43,5 @@
       ]
     }
   ],
-  "ignoreCommand": "if [ \"$VERCEL_GIT_COMMIT_REF\" = \"dev/phase-5-performance\" ]; then exit 1; else exit 0; fi"
+  "ignoreCommand": "if [ \"$VERCEL_GIT_COMMIT_REF\" = \"dev/phase-6-submission-acceptance\" ]; then exit 1; else exit 0; fi"
 }

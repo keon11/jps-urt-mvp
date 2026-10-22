@@ -1,0 +1,448 @@
+{
+  "corpusVersion": "1.0.1",
+  "corpusHash": "39a62714b23b3cec9db2c1eaf6df0f74f3e13c34930b6b1e3864d303f52e017d",
+  "labeling": "Expected outcomes specified as demonstration acceptance labels before evaluator execution; not independent clinical labels.",
+  "clinicalValidation": false,
+  "scope": "Synthetic allow-to-proceed classification only. Same-author acceptance labels, no clinical accuracy estimate.",
+  "results": [
+    {
+      "id": "complete",
+      "expected": {
+        "outcome": "complete",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "complete",
+        "reason": "supported",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "014062930819513b103a4b8df4f900a4d6df32d52ca2c98026b7659457f8b8bb"
+      }
+    },
+    {
+      "id": "missing-note",
+      "expected": {
+        "outcome": "needs-information",
+        "reason": "missing-evidence"
+      },
+      "actual": {
+        "outcome": "needs-information",
+        "reason": "missing-evidence",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "ea2b60c9bcb552862db050e2a87e14056f9ed58663924785249c808b7126736c"
+      }
+    },
+    {
+      "id": "unknown-note",
+      "expected": {
+        "outcome": "review",
+        "reason": "uncertain-evidence"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "uncertain-evidence",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "72c5b9265038569303a662af01fdd45cbd244439279a35dce5567c9b329912e6"
+      }
+    },
+    {
+      "id": "effective-first-day",
+      "expected": {
+        "outcome": "complete",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "complete",
+        "reason": "supported",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "bc7ef3abe78bc6a62affd9f37f60edf97d89e0086352f47d15b95ee10ddfc35a"
+      }
+    },
+    {
+      "id": "before-effective",
+      "expected": {
+        "outcome": "review",
+        "reason": "no-applicable-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "no-applicable-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [],
+        "inputHash": "b4ec3e21191226d273acbd91f186db861787c3b7e0bc0d38c554393c17fc78fb"
+      }
+    },
+    {
+      "id": "expiry-last-day",
+      "expected": {
+        "outcome": "complete",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "complete",
+        "reason": "supported",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "8945ce35fcee062e450e3ea003f6eea020ce5680bdb1cb1ad60597b8f07550f2"
+      }
+    },
+    {
+      "id": "after-expiry",
+      "expected": {
+        "outcome": "review",
+        "reason": "no-applicable-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "no-applicable-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [],
+        "inputHash": "5503be1c66534ade382cbadd333c1c0cc2930d26518175ed2587fafeb472703c"
+      }
+    },
+    {
+      "id": "different-plan",
+      "expected": {
+        "outcome": "review",
+        "reason": "no-applicable-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "no-applicable-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [],
+        "inputHash": "560bd65da271651ebb0fd6dcf73c418d8a3f659eee68c77543d25942d9040dd4"
+      }
+    },
+    {
+      "id": "missing-plan",
+      "expected": {
+        "outcome": "review",
+        "reason": "missing-context"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "missing-context",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [],
+        "inputHash": "0cab2a85b9c87240e1c6c12608cc8654bc1d60bcbcc56394761b32d01f189371"
+      }
+    },
+    {
+      "id": "recognized-exception",
+      "expected": {
+        "outcome": "exception",
+        "reason": "explicit-exception"
+      },
+      "actual": {
+        "outcome": "exception",
+        "reason": "explicit-exception",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "6b0e938f3a437e41e6ebc09d59f408049bef8d2b4f3708aa13073f71c8fb497b"
+      }
+    },
+    {
+      "id": "unrecognized-exception",
+      "expected": {
+        "outcome": "review",
+        "reason": "unverified-exception"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "unverified-exception",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "114fdbca28d871695c837190d75385150478b83ad7cbfc06c8831111228d0ace"
+      }
+    },
+    {
+      "id": "changed-evidence",
+      "expected": {
+        "outcome": "review",
+        "reason": "stale-evidence"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "stale-evidence",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "31767e2e9a24ccadc1dfad0f6120b9fdf7dbcefce973eac8ba130813364d6ff5"
+      }
+    },
+    {
+      "id": "changed-policy",
+      "expected": {
+        "outcome": "review",
+        "reason": "unverified-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "unverified-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "8d7945c6a28a6611965b70f5751144f8915e34fd5442401c6e1658cd2916c768"
+      }
+    },
+    {
+      "id": "ambiguous-terms",
+      "expected": {
+        "outcome": "review",
+        "reason": "ambiguous-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "ambiguous-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "8b75301001740de0352131f277a98be0fe1f94fe3749c1e804a144eaf05da944"
+      }
+    },
+    {
+      "id": "pending-approval",
+      "expected": {
+        "outcome": "review",
+        "reason": "unapproved-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "unapproved-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "8fb24db79d12d39a8daaccd9f6f4a4ed37b924bd1682728194dbb7a9632521b4"
+      }
+    },
+    {
+      "id": "missing-source",
+      "expected": {
+        "outcome": "review",
+        "reason": "unverified-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "unverified-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "3f726d903bd522f33d247d5f42b759db7408a8d5125ca7709065c9f3f0b54936"
+      }
+    },
+    {
+      "id": "invalid-calendar",
+      "expected": {
+        "outcome": "review",
+        "reason": "missing-context"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "missing-context",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [],
+        "inputHash": "a6b482cf757819c8388f1665ca0993571d44741fa163c36533b31e834285ea0f"
+      }
+    },
+    {
+      "id": "conflicting-rules",
+      "expected": {
+        "outcome": "review",
+        "reason": "conflicting-policy"
+      },
+      "actual": {
+        "outcome": "review",
+        "reason": "conflicting-policy",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          },
+          {
+            "id": "synthetic-conflict-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "7f31f9768a1de73a422c74e1557704576b4ba3c734455f8ff02c88dee4a78943"
+      }
+    },
+    {
+      "id": "negative-does-not-prove-violation",
+      "expected": {
+        "outcome": "needs-information",
+        "reason": "missing-evidence"
+      },
+      "actual": {
+        "outcome": "needs-information",
+        "reason": "missing-evidence",
+        "requiresHumanReview": true,
+        "coverageDetermination": false,
+        "syntheticOnly": true,
+        "engineVersion": "1.0.0",
+        "citations": [
+          {
+            "id": "synthetic-plan-docs-v1",
+            "version": "1",
+            "url": "urn:ur-demo:validation:policy-spec:v1",
+            "sha256": "909f96ece0172895b651f79a7aa3cdd59a98a7e813ea1bb81cdc6cc60e0e9e6c"
+          }
+        ],
+        "inputHash": "ea2b60c9bcb552862db050e2a87e14056f9ed58663924785249c808b7126736c"
+      }
+    }
+  ],
+  "metrics": {
+    "tp": 4,
+    "fp": 0,
+    "tn": 15,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1,
+    "sensitivity": 1,
+    "specificity": 1
+  },
+  "passed": true,
+  "at": "2026-10-22T06:31:14.105Z"
+}

@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 const run=process.argv[2];if(!run||!/^[a-zA-Z0-9_-]+$/.test(run))throw Error('Provide the screenshot run identifier');
-const issue=process.argv.includes('--issue-5')?'issue-5':process.argv.includes('--issue-4')?'issue-4':'issue-2';
+const issue=process.argv.includes('--phase-6')?'phase-6':process.argv.includes('--issue-5')?'issue-5':process.argv.includes('--issue-4')?'issue-4':'issue-2';
 const dir='artifacts/'+issue+'/'+run;
 async function walk(p){return(await Promise.all((await fs.readdir(p,{withFileTypes:true})).map(e=>e.isDirectory()?walk(p+'/'+e.name):[p+'/'+e.name]))).flat();}
 const images=[];for(const file of await walk(dir)){if(!file.endsWith('.png'))continue;const bytes=await fs.readFile(file);images.push({file,width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20),sha256:createHash('sha256').update(bytes).digest('hex')});}

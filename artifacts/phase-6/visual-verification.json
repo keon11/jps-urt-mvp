@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-22T06:40:26.144634+00:00",
+  "method": "Implementation agent opened actual captured PNGs after browser success",
+  "images": [
+    {
+      "file": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/queue.png",
+      "sha256": "ccc085aafc6a44029e87795c2914b459be509abc04693e5152022a0f449f814e"
+    },
+    {
+      "file": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/ai-review.png",
+      "sha256": "b19850e3b019a2b680a6d1064680b7bcceeda74b3704074c393ca3d101ef5cc9"
+    },
+    {
+      "file": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/policy-center.png",
+      "sha256": "ade333302b76588f5aca1dee401d4fd782fafbfce23ae850a2996960fd27f07a"
+    },
+    {
+      "file": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/internal-authorization.png",
+      "sha256": "f5baa0ad7475a84de04d1d740b94095e33ef57fac2aed873b80707e3b383deff"
+    },
+    {
+      "file": "artifacts/phase-6/phase6-live-20261022T063549Z/risk-1920.png",
+      "sha256": "d7fd4fcdfd226a79ce30967285e58ceef78c9de99a8939b74ee77a14eeaeb6dd"
+    },
+    {
+      "file": "artifacts/phase-6/phase6-live-20261022T063549Z/synthea-workspace.png",
+      "sha256": "7cb49eeb3df7b42ade37c73feed96dc281adc2394a49fdbff68bf0417d276dac"
+    },
+    {
+      "file": "artifacts/issue-2/phase6-fixture-1920-20261022T063831Z/fixture-preview-workstation.png",
+      "sha256": "3e5605e27d6527da2e17a56b1714d75e4819f08ca4041a3592e5f407a1f2992e"
+    }
+  ],
+  "observations": [
+    "Readable desktop encounter/evidence/workflow layout at captured 1440/1920 widths",
+    "No Clarity UR branding or displayed credentials in inspected images",
+    "Fictional/illustrative and human-decision boundaries visible",
+    "Policy evidence/history and internal authorization distinct from insurer action",
+    "Synthea longitudinal records explicitly not acute-admission criteria",
+    "Fixture banner explicitly disconnects backend/sign-in/AI/payer services"
+  ],
+  "limits": [
+    "Seven selected images inspected; live manifests hash all 31",
+    "Tall policy/history and Synthea views require vertical scrolling",
+    "Not founder visual approval or clinical usability/accessibility certification"
+  ]
+}

@@ -34,8 +34,9 @@ const config = JSON.parse(await readFile("vercel.json", "utf8"));
 assert.equal(config.outputDirectory, "dist-preview");
 assert.equal(config.buildCommand, "npm run build:preview");
 assert.equal(config.git.deploymentEnabled.main, false);
-assert.equal(config.git.deploymentEnabled["dev/phase-5-performance"],true);
-assert(config.ignoreCommand.includes("dev/phase-5-performance"));
+assert.equal(config.git.deploymentEnabled["dev/phase-6-submission-acceptance"],true);
+assert.equal(config.git.deploymentEnabled["dev/phase-5-performance"],false);
+assert(config.ignoreCommand.includes("dev/phase-6-submission-acceptance"));
 assert(!config.rewrites, "No backend rewrites allowed");
 assert(!config.functions, "No backend deployment allowed");
 const snapshot = JSON.parse(

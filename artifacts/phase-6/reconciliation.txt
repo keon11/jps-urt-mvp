@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-22T06:31:17.881Z",
+  "label": "after-repair",
+  "isolatedDatabase": "ur_issue2_1792593144631",
+  "threshold": "one FHIR Claim resource per logical event after database failure and retry",
+  "failedRequestStatuses": [
+    502,
+    502
+  ],
+  "createdResourceIds": [
+    "e103324b-1c70-4254-bb97-2a0201f2f6b3"
+  ],
+  "resourceCountAfterTwoFailedAttempts": 1,
+  "noFalseSuccessAudit": true,
+  "changedPayloadReplayRejected": true,
+  "resourceCountAfterSuccessfulRetry": 1,
+  "committedLogicalEvents": 1,
+  "passed": true
+}

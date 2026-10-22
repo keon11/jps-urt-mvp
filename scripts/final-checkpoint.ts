@@ -1,4 +1,4 @@
-const phase5=process.argv.includes('--issue-5');if(phase5)process.argv.push('--issue-4');
+const phase6=process.argv.includes('--phase-6');const phase5=phase6||process.argv.includes('--issue-5');if(phase5)process.argv.push('--issue-4');
 import { writeFile, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import pg from "pg";
@@ -35,7 +35,7 @@ async function snapshot(db: pg.Pool) {
 }
 const before = await snapshot(pool),
   audit = await verifyAudit(pool),
-  dump = (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?(process.argv.includes("--issue-4")?(phase5?".runtime/issue5-final-checkpoint.dump":".runtime/issue4-final-checkpoint.dump"):".runtime/issue3-final-checkpoint.dump"):".runtime/issue2-final-checkpoint.dump",
+  dump = (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?(process.argv.includes("--issue-4")?(phase6?".runtime/phase6-final-checkpoint.dump":phase5?".runtime/issue5-final-checkpoint.dump":".runtime/issue4-final-checkpoint.dump"):".runtime/issue3-final-checkpoint.dump"):".runtime/issue2-final-checkpoint.dump",
   target = "ur_issue2_final_" + Date.now();
 const url = new URL(config.database);
 let restored: pg.Pool | undefined, child: any;
@@ -88,7 +88,7 @@ try {
   if (restored) await restored.end();
   await pool.end();
   await writeFile(
-    (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?`artifacts/${process.argv.includes("--issue-4")?(phase5?"issue-5":"issue-4"):"issue-3"}/final-restore-proof.json`:"artifacts/issue-2/final-restore-proof.json",
+    (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?`artifacts/${process.argv.includes("--issue-4")?(phase6?"phase-6":phase5?"issue-5":"issue-4"):"issue-3"}/final-restore-proof.json`:"artifacts/issue-2/final-restore-proof.json",
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

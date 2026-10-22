@@ -1,0 +1,598 @@
+{
+  "corpusVersion": "1.0.0",
+  "corpusHash": "5c4469075e74fc5d3efe7ab43c329fa07ab76b69a7469ef4073a1411805d134b",
+  "classification": "SYNTHETIC ONLY",
+  "scope": "Synthetic acceptance labels specified before engine execution; no clinical/adjudication labels",
+  "classificationTask": "Synthetic workflow risk flags only; review-required is not a confirmed risk/violation. No adjudication labels.",
+  "clinicalValidation": false,
+  "calibration": {
+    "supported": false,
+    "reason": "Ordinal workflow flags; no adjudication probabilities or representative labeled insurer outcomes."
+  },
+  "metrics": {
+    "tp": 3,
+    "tn": 21,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1,
+    "specificity": 1
+  },
+  "results": [
+    {
+      "id": "complete",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "supported",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "c12acfa8815f922887074aafc302ca972588906374c27a6628523792eb6ce3d6"
+      }
+    },
+    {
+      "id": "missing-note",
+      "expected": {
+        "outcome": "documentation-risk",
+        "reason": "missing-document"
+      },
+      "actual": {
+        "outcome": "documentation-risk",
+        "reason": "missing-document",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "58e6f31c7aeebce60291f5fa01ba65478ae397d8e011a12a9321d4f3de5f9cee"
+      }
+    },
+    {
+      "id": "missing-auth",
+      "expected": {
+        "outcome": "authorization-risk",
+        "reason": "missing-authorization"
+      },
+      "actual": {
+        "outcome": "authorization-risk",
+        "reason": "missing-authorization",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "141b106ce61a41ffac4257344d8a943a585ae1b8c3f73e5d3e94ba173ce4bacb"
+      }
+    },
+    {
+      "id": "unknown-note",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "uncertain-evidence"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "uncertain-evidence",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "2fd982afea9e0b1c152b78034f0714d21507965a5aa6c3d184fe083e3e3fff23"
+      }
+    },
+    {
+      "id": "unknown-authorization",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "uncertain-evidence"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "uncertain-evidence",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "7ed81d311c781344cbba32d793e2ee0638a512366f5b4e6a827f9f1657a419b5"
+      }
+    },
+    {
+      "id": "private-contract-unknown",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unknown-contract"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "unknown-contract",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "920492a28bd3d8cad5644ed522c37142a3c248c18a800a10ef7de6d50c637b1f"
+      }
+    },
+    {
+      "id": "stale-source",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "stale-source"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "stale-source",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "5e7336ab37b097b5ed35c15f99221a60a1b8595252d18e0a78bef910da0f2ea3"
+      }
+    },
+    {
+      "id": "other-plan",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "36f18cb355ad55c23976fa495d1cf6914d3e28039614f489eaf4e8ac9b8b7ce9"
+      }
+    },
+    {
+      "id": "effective-inclusive",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "supported",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "a2aaf3b95fe6e961b417388e2797f7860e7023b08a0fb14429ad9fffe3e379e6"
+      }
+    },
+    {
+      "id": "pre-effective",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "2f7c49ce913d1cad9cfb5933c1452e59ea57308a361c4bac9a9bf91affc7db69"
+      }
+    },
+    {
+      "id": "expiry-inclusive",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "supported",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "02a413f2461ee91781eaa7fb1675910abacaef179694f9f0b34822628ffd5efb"
+      }
+    },
+    {
+      "id": "post-expiry",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "9526bf97b2412b3d916bb8f408910d1ae982bddd8b7dae605a1e288b12810ee3"
+      }
+    },
+    {
+      "id": "exception-waiver",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "verified-exception"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "verified-exception",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "ac729e7fb543692fcd4a81dc07ba232345e22ec1a2c6d0d2fbef3fc4c97fb80d"
+      }
+    },
+    {
+      "id": "unverified-exception",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unverified-exception"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "unverified-exception",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "068ab97c44ffd969cc7aa30a77a23187035b7481452fe308b5ac324a932039ee"
+      }
+    },
+    {
+      "id": "unapproved",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "cfc377a4140ea6ea1fb8f8c980cc208d3b0fbb3ac014b732af4caf7183ec4802"
+      }
+    },
+    {
+      "id": "no-clinical-approval",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "46028775700a38959d396b9614137bd633a047b4461ca8eecc7fffb24341b7eb"
+      }
+    },
+    {
+      "id": "no-supervisor-approval",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "no-approved-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [],
+        "inputHash": "89322a76f13b88bbbb3c3f44dcf374ffc1da06e17d3c91fe7af09cd2e9030450"
+      }
+    },
+    {
+      "id": "changed-policy",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unverified-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "unverified-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "8b02357b531afc0a941ce1d625c2340f922514edcf48aae07708cf19be80751a"
+      }
+    },
+    {
+      "id": "ambiguous-policy",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "unverified-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "unverified-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "5d58e20fa6193a0ca3518bac944c00ee9afbeaa2390d4ec2007749bb83466c25"
+      }
+    },
+    {
+      "id": "equal-priority-conflict",
+      "expected": {
+        "outcome": "review-required",
+        "reason": "conflicting-policy"
+      },
+      "actual": {
+        "outcome": "review-required",
+        "reason": "conflicting-policy",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          },
+          {
+            "id": "other",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "bb241847860ffa89aff4bf8968a33068ff9f68b3d796d910f889b38a067d7b9a"
+      }
+    },
+    {
+      "id": "explicit-priority",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "supported",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "other",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "2c0826577361a6ee6b7c1d37e13a2f07f478050cc730a15ab8152b05ed0b4d6c"
+      }
+    },
+    {
+      "id": "pending-isolation",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "supported",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "095be5326f77d12f42d337158f77d4f59ddd7fd3c0735a8fe01d61b4ac1a70c7"
+      }
+    },
+    {
+      "id": "wildcard-plan",
+      "expected": {
+        "outcome": "no-risk-identified",
+        "reason": "supported"
+      },
+      "actual": {
+        "outcome": "no-risk-identified",
+        "reason": "supported",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "36cb6c1b53ad185c7f415cda87b7574d56b3421c68cc0119672307188c6d5e0e"
+      }
+    },
+    {
+      "id": "plan-specific-precedence",
+      "expected": {
+        "outcome": "documentation-risk",
+        "reason": "missing-document"
+      },
+      "actual": {
+        "outcome": "documentation-risk",
+        "reason": "missing-document",
+        "syntheticOnly": true,
+        "humanReviewRequired": true,
+        "coverageDetermination": false,
+        "adjudicationProbability": null,
+        "calibrationSupported": false,
+        "explanation": "Illustrative documentation/authorization risk only; not a confirmed violation or insurer denial prediction.",
+        "citations": [
+          {
+            "id": "fictional-docs",
+            "version": "1",
+            "url": "urn:ur-demo:payer-spec:v1",
+            "sha256": "12dddc97ef0304587e2f5d596d420a2f5668ff30f9003e7c256f8f43f479abe4"
+          }
+        ],
+        "inputHash": "37c174905f47204e6fda2b282277a9341419ba3745e4977fd95784dd90cc559c"
+      }
+    }
+  ],
+  "passed": true
+}

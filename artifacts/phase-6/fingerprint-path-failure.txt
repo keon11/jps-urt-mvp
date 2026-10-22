@@ -1,0 +1,18 @@
+Verified lossless compressed raw proof: extended
+PASS: immutable API bytes match recorded fixed commit; harness hashes match recorded baseline. Existing snapshot is never overwritten.
+PASS: local synthetic API health/readiness verified.
+node:internal/fs/promises:697
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOENT: no such file or directory, open 'phase-6/source-fingerprint.json'
+    at async open (node:internal/fs/promises:697:25)
+    at async Object.writeFile (node:internal/fs/promises:1317:14)
+    at async file:///workspace/hospital-ur-ai-mvp/scripts/source-fingerprint.mjs:2:878 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'phase-6/source-fingerprint.json'
+}
+
+Node.js v24.19.0

@@ -25,15 +25,15 @@
     },
     {
       "file": "artifacts/phase-6/RFP20261404054_INTERNAL-PRICING_OWNER-INPUT.xlsx",
-      "sha256": "e7c8f4f6b176c7719198ccd94525bb5331607c1ab6d939aee4e198ca171806b5"
+      "sha256": "d7d393b32f8800c87c897ebcfd7af5afdb37e3448e31f96ef397d5c35813809b"
     },
     {
       "file": "artifacts/phase-6/RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.docx",
-      "sha256": "ee3b50aa48c97e898693863f6568e7f0bef66a8a62adb9c5c5173bf329736a63"
+      "sha256": "7218b7df83eb688947622afae8007bc3817780e8a41c1a0dea264f1834c539b0"
     },
     {
       "file": "artifacts/phase-6/RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.pdf",
-      "sha256": "90c7008fc18fb6636d76c29a5fb5b90d4066d7edf616b561c8f820fbdd978245"
+      "sha256": "3faf6ce7fa9a0b3a4373ade861e4843e492b1e68dd9110464e4f0f5e442bc18e"
     }
   ]
 }

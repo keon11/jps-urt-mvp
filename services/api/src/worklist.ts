@@ -1,5 +1,7 @@
 import { z } from "zod";
 import pg from "pg";
+import {Histogram,Gauge} from "prom-client";
+import {registry} from "./reporting.js";
 import {config} from "./config.js";
 // Isolate queue reads from the existing clinical/write pool. This host's
 // measured CPU quota is four cores; two readers leave execution headroom.
@@ -26,11 +28,23 @@ export function worklistStatements(input: {limit:number;offset:number;q:string})
  FROM page p JOIN cases c ON c.id=p.id ORDER BY p.queue_priority DESC,p.created_at,p.id`;
   return {page,pageValues:filtered?[search,limit,offset]:[limit,offset],count:`SELECT count(*)::int AS total FROM cases ${where}`,countValues:filtered?[search]:[]};
 }
-export async function worklist(input: unknown) {
+const stageDuration=new Histogram({name:'ur_worklist_stage_seconds',help:'Worklist acquire/query duration; no SQL, identity or clinical labels',labelNames:['stage','outcome'],buckets:[.001,.005,.01,.025,.05,.1,.25,.5,1,2,5,30],registers:[registry]});
+new Gauge({name:'ur_worklist_pool_waiting',help:'Waiting worklist connection requests',registers:[registry],collect(){this.set(worklistPool.waitingCount);}});
+async function timed<T>(stage:string,operation:()=>Promise<T>):Promise<T>{
+ const start=performance.now();let outcome='success';
+ try{return await operation();}catch(error){outcome='error';throw error;}
+ finally{stageDuration.observe({stage,outcome},(performance.now()-start)/1000);}
+}
+export async function worklist(input: unknown,db:{connect:()=>Promise<pg.PoolClient>}=worklistPool) {
   const parsed=worklistQuery.parse(input);
   const {limit,offset}=parsed;
   const sql=worklistStatements(parsed);
-  const {rows}=await worklistPool.query(sql.page,sql.pageValues);
-  const count=await worklistPool.query(sql.count,sql.countValues);
-  return {items:rows,total:count.rows[0].total,limit,offset,nextOffset:offset+rows.length<count.rows[0].total?offset+rows.length:null,syntheticOnly:true};
+  // One checkout for both unchanged statements avoids a second pool queue.
+  // Still fresh exact counts; no cached/approximate count or widened deadline.
+  const client=await timed('acquire',()=>db.connect());
+  try{
+    const {rows}=await timed('page',()=>client.query(sql.page,sql.pageValues));
+    const count=await timed('count',()=>client.query(sql.count,sql.countValues));
+    return {items:rows,total:count.rows[0].total,limit,offset,nextOffset:offset+rows.length<count.rows[0].total?offset+rows.length:null,syntheticOnly:true};
+  }finally{client.release();}
 }

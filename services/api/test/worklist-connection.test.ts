@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {worklist} from '../src/worklist.js';import type pg from 'pg';
+function fixture(failAt=0){let queries=0,releases=0,checkouts=0;return {db:{async connect(){checkouts++;return {async query(){queries++;if(queries===failAt)throw Error('injected read failure');return queries===1?{rows:[{id:'fictional'}]}:{rows:[{total:2}]};},release(){releases++;}} as unknown as pg.PoolClient;}},stats:()=>({queries,releases,checkouts})};}
+test('worklist checks out once, uses exact count and releases after both statements',async()=>{const f=fixture();const r=await worklist({limit:1},f.db);assert.equal(r.total,2);assert.equal(r.nextOffset,1);assert.deepEqual(f.stats(),{queries:2,releases:1,checkouts:1});});
+for(const stage of [1,2])test(`worklist releases the connection after statement ${stage} fails`,async()=>{const f=fixture(stage);await assert.rejects(()=>worklist({},f.db),/injected/);assert.equal(f.stats().releases,1);});
+test('invalid pagination never acquires a connection',async()=>{const f=fixture();await assert.rejects(()=>worklist({offset:-1},f.db));assert.equal(f.stats().checkouts,0);});

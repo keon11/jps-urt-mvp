@@ -1,0 +1,211 @@
+{
+  "authentication": [
+    {
+      "durationMs": 282.60046799998963,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 293.8525179999997,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 102.66619900002843,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 243.21447900001658,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 263.34665800002404,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1058.495682000008,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 904.7612910000025,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1668.9699489999912,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1613.438405999972,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1397.6535060000024,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1022.6780969999963,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2283.7103999999817,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2157.976563000004,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1789.0369039999787,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 1318.8580720000318,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2165.0714109999826,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2227.757152999984,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2338.8834560000105,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2406.455317999993,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2377.0242959999596,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2712.1280660000048,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2759.8726109999698,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2404.9795220000087,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2402.002692000009,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 2631.6657000000123,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 273.50259799999185,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 288.6749640000053,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 348.6862099999562,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 284.01141999999527,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 273.3970050000353,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 126.29475699993782,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 150.43570199992973,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 120.86726400000043,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 141.22401400003582,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 128.65208899998106,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 99.78638200007845,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 133.10266500001308,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 87.43344699998852,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 132.93092399998568,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 190.43533800006844,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 85.17142899997998,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 96.83944999997038,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 107.18523699999787,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 138.09794099989813,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 108.51122500002384,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 128.65633799997158,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 108.23629799997434,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 119.74270499998238,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 157.64635900000576,
+      "outcome": "success"
+    },
+    {
+      "durationMs": 191.19634899997618,
+      "outcome": "success"
+    }
+  ],
+  "errors": [],
+  "driverEventLoop": {
+    "p95Ms": 24.051711,
+    "p99Ms": 143.785983,
+    "maxMs": 903.872511
+  },
+  "scope": "Driver event-loop histogram and renewal durations; error stages only; no token/identity/content. Additional diagnostics apply only to extended run, not the 120s controlled pair."
+}

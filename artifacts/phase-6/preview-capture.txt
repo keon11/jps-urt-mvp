@@ -1,0 +1,5 @@
+
+> hospital-ur-ai-mvp@0.1.0 capture:preview
+> tsx scripts/capture-preview.ts
+
+Captured six classified fictional cases and read-only synthetic policy/authorization evidence; no credential values.

@@ -3,7 +3,7 @@ No branch reset, second repository, dependency installation or credentials creat
 """
 from pathlib import Path
 import subprocess,tarfile,io,json,hashlib,os,sys
-root=Path(__file__).resolve().parent.parent;first='--first-optimized' in sys.argv;dst=root/('.runtime/phase5-first-optimized' if first else '.runtime/phase5-baseline');base='2d86253b5dd214353f11177134d311568edf9800' if first else 'e9d00f6805bc1b58a77bcc135d568dd8c18fdd8e';manifest=root/('artifacts/issue-5/first-optimized-source-snapshot.json' if first else 'artifacts/issue-5/baseline-source.json')
+root=Path(__file__).resolve().parent.parent;phase6='--phase-6' in sys.argv;first='--first-optimized' in sys.argv;dst=root/('.runtime/phase6-baseline' if phase6 else '.runtime/phase5-first-optimized' if first else '.runtime/phase5-baseline');base='f121f8fd53dae9f787bdd36f47807930ec75eba4' if phase6 else '2d86253b5dd214353f11177134d311568edf9800' if first else 'e9d00f6805bc1b58a77bcc135d568dd8c18fdd8e';manifest=root/('artifacts/phase-6/baseline-reproduction-source.json' if phase6 else 'artifacts/issue-5/first-optimized-source-snapshot.json' if first else 'artifacts/issue-5/baseline-source.json')
 if not dst.exists():
  dst.mkdir(parents=True)
  raw=subprocess.check_output(['git','archive',base,'services','scripts','fixtures','tests/browser/local-account.ts','package.json','package-lock.json','tsconfig.json'],cwd=root)
@@ -16,7 +16,7 @@ if not dst.exists():
  (dst/'scripts/benchmark.ts').write_bytes((root/'scripts/benchmark.ts').read_bytes())
  for name in ['node_modules','.runtime','artifacts','docs','dist','infra']:os.symlink(root/name,dst/name,target_is_directory=True)
  files={str(p.relative_to(dst)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (dst/'services').rglob('*.ts')};files['scripts/benchmark.ts']=hashlib.sha256((dst/'scripts/benchmark.ts').read_bytes()).hexdigest()
- manifest.parent.mkdir(parents=True,exist_ok=True);manifest.write_text(json.dumps({'base':base,'scope':'Immutable fixed API source, same installed dependencies and comparable benchmark harness','sha256':files},indent=2)+'\n')
+ manifest.parent.mkdir(parents=True,exist_ok=True);manifest.write_text(json.dumps({'base':base,'scope':('Phase 6 future reproduction snapshot prepared after initial pair; not a contemporaneous capture of the original measurement directory' if phase6 else 'Immutable fixed API source, same installed dependencies and comparable benchmark harness'),'sha256':files},indent=2)+'\n')
 m=json.loads(manifest.read_text());assert m['base']==base
 for name,digest in m['sha256'].items():assert hashlib.sha256((dst/name).read_bytes()).hexdigest()==digest
 for p in (dst/'services').rglob('*.ts'):

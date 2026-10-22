@@ -1,0 +1,315 @@
+
+> hospital-ur-ai-mvp@0.1.0 test:browser
+> playwright test
+
+
+Running 10 tests using 1 worker
+
+(node:835046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 tests/browser/demo.spec.ts:38:1 › all eight synthetic utilization review scenarios work end to end (296ms)
+(node:835140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 tests/browser/demo.spec.ts:213:1 › invalidated session returns to sign-in instead of leaving unusable controls (236ms)
+(node:835235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 tests/browser/demo.spec.ts:239:1 › Grafana renders live aggregate reporting (4.4s)
+  ✘   4 tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1440px (222ms)
+(node:835405) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835405) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1920px (1.5s)
+(node:835541) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835541) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 tests/browser/governance.spec.ts:33:1 › policy governance and internal authorization buttons execute real role-restricted backend workflows (266ms)
+(node:835638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 tests/browser/retry.spec.ts:3:1 › a failed payer-simulator click retries the same logical event identifier (292ms)
+(node:835838) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835838) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1440px (335ms)
+(node:835944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:835944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1920px (269ms)
+(node:836038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:836038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 tests/browser/risk.spec.ts:43:1 › operations browses actual derived Synthea histories without altering encounters (241ms)
+
+
+  1) tests/browser/demo.spec.ts:38:1 › all eight synthetic utilization review scenarios work end to end 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      10 | }
+      11 | async function signIn(page: Page, role = "reviewer") {
+    > 12 |   await page.goto("/");
+         |              ^
+      13 |   await page.getByLabel("Demonstration role").selectOption(role);
+      14 |   await page
+      15 |     .getByLabel("Password", { exact: true })
+        at signIn (/workspace/hospital-ur-ai-mvp/tests/browser/demo.spec.ts:12:14)
+        at /workspace/hospital-ur-ai-mvp/tests/browser/demo.spec.ts:40:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/demo-all-eight-synthetic-u-3677f-w-scenarios-work-end-to-end/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/demo-all-eight-synthetic-u-3677f-w-scenarios-work-end-to-end/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/demo-all-eight-synthetic-u-3677f-w-scenarios-work-end-to-end/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/browser/demo.spec.ts:213:1 › invalidated session returns to sign-in instead of leaving unusable controls 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      10 | }
+      11 | async function signIn(page: Page, role = "reviewer") {
+    > 12 |   await page.goto("/");
+         |              ^
+      13 |   await page.getByLabel("Demonstration role").selectOption(role);
+      14 |   await page
+      15 |     .getByLabel("Password", { exact: true })
+        at signIn (/workspace/hospital-ur-ai-mvp/tests/browser/demo.spec.ts:12:14)
+        at /workspace/hospital-ur-ai-mvp/tests/browser/demo.spec.ts:235:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/demo-invalidated-session-r-e400e-f-leaving-unusable-controls/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/demo-invalidated-session-r-e400e-f-leaving-unusable-controls/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/demo-invalidated-session-r-e400e-f-leaving-unusable-controls/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1440px ─────────
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+       7 |   }) => {
+       8 |     await page.setViewportSize({ width, height: 1080 });
+    >  9 |     await page.goto("/");
+         |                ^
+      10 |     await page.getByLabel("Demonstration role").selectOption("admin");
+      11 |     await page
+      12 |       .getByLabel("Password", { exact: true })
+        at /workspace/hospital-ur-ai-mvp/tests/browser/desktop.spec.ts:9:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/desktop-desktop-acceptance-and-real-screenshots-at-1440px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/desktop-desktop-acceptance-and-real-screenshots-at-1440px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/desktop-desktop-acceptance-and-real-screenshots-at-1440px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1920px ─────────
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+       7 |   }) => {
+       8 |     await page.setViewportSize({ width, height: 1080 });
+    >  9 |     await page.goto("/");
+         |                ^
+      10 |     await page.getByLabel("Demonstration role").selectOption("admin");
+      11 |     await page
+      12 |       .getByLabel("Password", { exact: true })
+        at /workspace/hospital-ur-ai-mvp/tests/browser/desktop.spec.ts:9:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/desktop-desktop-acceptance-and-real-screenshots-at-1920px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/desktop-desktop-acceptance-and-real-screenshots-at-1920px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/desktop-desktop-acceptance-and-real-screenshots-at-1920px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) tests/browser/governance.spec.ts:33:1 › policy governance and internal authorization buttons execute real role-restricted backend workflows 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      3 | import { demonstrationPassword } from "./local-account";
+      4 | async function login(page: Page, role: string) {
+    > 5 |   await page.goto("/");
+        |              ^
+      6 |   await page.getByLabel("Demonstration role").selectOption(role);
+      7 |   await page
+      8 |     .getByLabel("Password", { exact: true })
+        at login (/workspace/hospital-ur-ai-mvp/tests/browser/governance.spec.ts:5:14)
+        at /workspace/hospital-ur-ai-mvp/tests/browser/governance.spec.ts:31:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/governance-policy-governan-7a550-estricted-backend-workflows/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/governance-policy-governan-7a550-estricted-backend-workflows/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/governance-policy-governan-7a550-estricted-backend-workflows/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) tests/browser/retry.spec.ts:3:1 › a failed payer-simulator click retries the same logical event identifier 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      4 |   page,
+      5 | }) => {
+    > 6 |   await page.goto("/");
+        |              ^
+      7 |   await page
+      8 |     .getByLabel("Password", { exact: true })
+      9 |     .fill(demonstrationPassword());
+        at /workspace/hospital-ur-ai-mvp/tests/browser/retry.spec.ts:6:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/retry-a-failed-payer-simul-0ea08-me-logical-event-identifier/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/retry-a-failed-payer-simul-0ea08-me-logical-event-identifier/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/retry-a-failed-payer-simul-0ea08-me-logical-event-identifier/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1440px 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      1 | import{test,expect}from'@playwright/test';import{demonstrationPassword}from'./local-account';import{screenshotRun}from'./artifact-run';
+    > 2 | for(const width of [1440,1920])test(`published documentation risk evidence renders without insurer determination at ${width}px`,async({page})=>{await page.setViewportSize({width,height:1080});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.getByLabel('Demonstration role').selectOption('reviewer');await page.getByLabel('Password',{exact:true}).fill(demonstrationPassword('reviewer'));await page.getByRole('button',{name:'Sign in to workspace'}).click();await page.getByRole('button',{name:'Open Maya Fictional'}).click();await page.getByRole('button',{name:'Authorization Review',exact:true}).click();await page.getByRole('button',{name:'Review risk evidence',exact:true}).click();await expect(page.getByText(/Review outcome:/)).toBeVisible();await expect(page.getByText('Human review required. Insurer contacted: no.',{exact:true})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:`artifacts/${screenshotRun.startsWith('phase6')?'phase-6':screenshotRun.startsWith('issue5')?'issue-5':'issue-4'}/${screenshotRun}/risk-${width}.png`,fullPage:true});expect(errors).toEqual([]);});
+        |                                                                                                                                                                                                                                                                                    ^
+      3 | test('operations browses actual derived Synthea histories without altering encounters',async({page})=>{await page.goto('/');await page.getByLabel('Demonstration role').selectOption('reviewer');await page.getByLabel('Password',{exact:true}).fill(demonstrationPassword('reviewer'));await page.getByRole('button',{name:'Sign in to workspace'}).click();await page.getByRole('button',{name:'Operations',exact:true}).click();await page.getByRole('button',{name:'Load Synthea cohort',exact:true}).click();await page.getByRole('button',{name:'View Synthea 1 Fictional',exact:true}).click();await expect(page.getByRole('heading',{name:'Recent generated diagnoses'})).toBeVisible();await expect(page.getByText('No current-admission recommendation is inferred from these historical records.',{exact:true})).toBeVisible();await page.screenshot({path:`artifacts/${screenshotRun.startsWith('phase6')?'phase-6':screenshotRun.startsWith('issue5')?'issue-5':'issue-4'}/${screenshotRun}/synthea-workspace.png`,fullPage:true});});
+      4 |
+        at /workspace/hospital-ur-ai-mvp/tests/browser/risk.spec.ts:2:276
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/risk-published-documentati-1cad1-rer-determination-at-1440px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/risk-published-documentati-1cad1-rer-determination-at-1440px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/risk-published-documentati-1cad1-rer-determination-at-1440px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1920px 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      1 | import{test,expect}from'@playwright/test';import{demonstrationPassword}from'./local-account';import{screenshotRun}from'./artifact-run';
+    > 2 | for(const width of [1440,1920])test(`published documentation risk evidence renders without insurer determination at ${width}px`,async({page})=>{await page.setViewportSize({width,height:1080});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.getByLabel('Demonstration role').selectOption('reviewer');await page.getByLabel('Password',{exact:true}).fill(demonstrationPassword('reviewer'));await page.getByRole('button',{name:'Sign in to workspace'}).click();await page.getByRole('button',{name:'Open Maya Fictional'}).click();await page.getByRole('button',{name:'Authorization Review',exact:true}).click();await page.getByRole('button',{name:'Review risk evidence',exact:true}).click();await expect(page.getByText(/Review outcome:/)).toBeVisible();await expect(page.getByText('Human review required. Insurer contacted: no.',{exact:true})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:`artifacts/${screenshotRun.startsWith('phase6')?'phase-6':screenshotRun.startsWith('issue5')?'issue-5':'issue-4'}/${screenshotRun}/risk-${width}.png`,fullPage:true});expect(errors).toEqual([]);});
+        |                                                                                                                                                                                                                                                                                    ^
+      3 | test('operations browses actual derived Synthea histories without altering encounters',async({page})=>{await page.goto('/');await page.getByLabel('Demonstration role').selectOption('reviewer');await page.getByLabel('Password',{exact:true}).fill(demonstrationPassword('reviewer'));await page.getByRole('button',{name:'Sign in to workspace'}).click();await page.getByRole('button',{name:'Operations',exact:true}).click();await page.getByRole('button',{name:'Load Synthea cohort',exact:true}).click();await page.getByRole('button',{name:'View Synthea 1 Fictional',exact:true}).click();await expect(page.getByRole('heading',{name:'Recent generated diagnoses'})).toBeVisible();await expect(page.getByText('No current-admission recommendation is inferred from these historical records.',{exact:true})).toBeVisible();await page.screenshot({path:`artifacts/${screenshotRun.startsWith('phase6')?'phase-6':screenshotRun.startsWith('issue5')?'issue-5':'issue-4'}/${screenshotRun}/synthea-workspace.png`,fullPage:true});});
+      4 |
+        at /workspace/hospital-ur-ai-mvp/tests/browser/risk.spec.ts:2:276
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/risk-published-documentati-3104c-rer-determination-at-1920px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/risk-published-documentati-3104c-rer-determination-at-1920px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/risk-published-documentati-3104c-rer-determination-at-1920px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) tests/browser/risk.spec.ts:43:1 › operations browses actual derived Synthea histories without altering encounters 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+    [2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+
+      1 | import{test,expect}from'@playwright/test';import{demonstrationPassword}from'./local-account';import{screenshotRun}from'./artifact-run';
+      2 | for(const width of [1440,1920])test(`published documentation risk evidence renders without insurer determination at ${width}px`,async({page})=>{await page.setViewportSize({width,height:1080});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.getByLabel('Demonstration role').selectOption('reviewer');await page.getByLabel('Password',{exact:true}).fill(demonstrationPassword('reviewer'));await page.getByRole('button',{name:'Sign in to workspace'}).click();await page.getByRole('button',{name:'Open Maya Fictional'}).click();await page.getByRole('button',{name:'Authorization Review',exact:true}).click();await page.getByRole('button',{name:'Review risk evidence',exact:true}).click();await expect(page.getByText(/Review outcome:/)).toBeVisible();await expect(page.getByText('Human review required. Insurer contacted: no.',{exact:true})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:`artifacts/${screenshotRun.startsWith('phase6')?'phase-6':screenshotRun.startsWith('issue5')?'issue-5':'issue-4'}/${screenshotRun}/risk-${width}.png`,fullPage:true});expect(errors).toEqual([]);});
+    > 3 | test('operations browses actual derived Synthea histories without altering encounters',async({page})=>{await page.goto('/');await page.getByLabel('Demonstration role').selectOption('reviewer');await page.getByLabel('Password',{exact:true}).fill(demonstrationPassword('reviewer'));await page.getByRole('button',{name:'Sign in to workspace'}).click();await page.getByRole('button',{name:'Operations',exact:true}).click();await page.getByRole('button',{name:'Load Synthea cohort',exact:true}).click();await page.getByRole('button',{name:'View Synthea 1 Fictional',exact:true}).click();await expect(page.getByRole('heading',{name:'Recent generated diagnoses'})).toBeVisible();await expect(page.getByText('No current-admission recommendation is inferred from these historical records.',{exact:true})).toBeVisible();await page.screenshot({path:`artifacts/${screenshotRun.startsWith('phase6')?'phase-6':screenshotRun.startsWith('issue5')?'issue-5':'issue-4'}/${screenshotRun}/synthea-workspace.png`,fullPage:true});});
+        |                                                                                                                   ^
+      4 |
+        at /workspace/hospital-ur-ai-mvp/tests/browser/risk.spec.ts:3:115
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/risk-operations-browses-ac-a6eb3-without-altering-encounters/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/risk-operations-browses-ac-a6eb3-without-altering-encounters/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/risk-operations-browses-ac-a6eb3-without-altering-encounters/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9 failed
+    tests/browser/demo.spec.ts:38:1 › all eight synthetic utilization review scenarios work end to end 
+    tests/browser/demo.spec.ts:213:1 › invalidated session returns to sign-in instead of leaving unusable controls 
+    tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1440px ──────────
+    tests/browser/desktop.spec.ts:5:3 › desktop acceptance and real screenshots at 1920px ──────────
+    tests/browser/governance.spec.ts:33:1 › policy governance and internal authorization buttons execute real role-restricted backend workflows 
+    tests/browser/retry.spec.ts:3:1 › a failed payer-simulator click retries the same logical event identifier 
+    tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1440px 
+    tests/browser/risk.spec.ts:4:35 › published documentation risk evidence renders without insurer determination at 1920px 
+    tests/browser/risk.spec.ts:43:1 › operations browses actual derived Synthea histories without altering encounters 
+  1 passed (31.8s)

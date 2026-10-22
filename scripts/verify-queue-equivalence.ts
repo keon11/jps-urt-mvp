@@ -12,5 +12,5 @@ for(const q of ['', 'Benchmark 1', 'Fictional', 'respiratory', '%', '_', '\\', "
   assert.deepEqual(b.rows,a.rows);assert.deepEqual(bc.rows,ac.rows);checks.push({q,offset,items:b.rows.length,total:bc.rows[0].total,passed:true});
  }
 }
-await writeFile('artifacts/issue-5/queue-equivalence.json',JSON.stringify({passed:true,scope:'Actual original vs optimized SQL on identical synthetic DB; empty, filtered, escaped wildcard and injection-literal searches, deep/end pages',checks},null,2)+'\n');
+await writeFile((process.argv.includes('--phase-6')?'artifacts/phase-6':'artifacts/issue-5')+'/queue-equivalence.json',JSON.stringify({passed:true,scope:'Actual original vs optimized SQL on identical synthetic DB; empty, filtered, escaped wildcard and injection-literal searches, deep/end pages',checks},null,2)+'\n');
 console.log('PASS:',checks.length,'exact page/count SQL comparisons.');await c.db.end();await closeOriginal();

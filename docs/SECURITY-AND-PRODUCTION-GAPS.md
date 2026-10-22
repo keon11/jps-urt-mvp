@@ -57,3 +57,9 @@ The private dump covers the application database, not coordinated recovery of Me
 ## Issue #5 measured-load boundary
 
 The queue optimization adds no auth/result cache, new dependency or remote service. Separate bounded read connections preserve the existing write pool. Shared-host one-hour measurements and an internal draft-write isolation check do not establish production throughput, multi-day stability, HA or clinical safety. Any residual timeouts remain an explicit failure against the zero-timeout target. The private application-only checkpoint is not coordinated off-host disaster recovery. [Actual measurements and remaining external gates](ISSUE-5-REPORT.md).
+
+## Phase 6 final acceptance boundary
+
+The worklist holds one dedicated read connection for the unchanged page/count statements and releases it after success or either failure. Auth, role checks, exact counts, human approval boundaries, read-pool maximum and clinical/write capacity are preserved. Fixed-cardinality acquisition/query metrics expose timings only; no SQL, identity, token or patient labels. Metrics for the isolated read-only benchmark skip whole-clinical-report loading, while ordinary application reporting remains unchanged.
+
+Short zero-error diagnostics do not erase the Phase 5 one-hour timeout failures. Root-cause reproduction/correlation on representative dedicated infrastructure, continuous load, resilience and coordinated DR remain production gates. Local application restore and audit proof are not immutable off-host backups of every FHIR/identity/model service. Official questionnaires, company facts, actual prices, BAA/insurance, legal certifications, clinical/payer permissions and signatory actions remain unapproved. Draft proposals and public blank forms are not commitments or attestations. The technical ZIP excludes runtime secrets, private dumps and the private Git bundle; it is not automatically an accepted RFP upload artifact.

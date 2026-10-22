@@ -1,0 +1,230 @@
+{
+  "passed": true,
+  "scope": "Actual original vs optimized SQL on identical synthetic DB; empty, filtered, escaped wildcard and injection-literal searches, deep/end pages",
+  "checks": [
+    {
+      "q": "",
+      "offset": 0,
+      "items": 50,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "",
+      "offset": 5000,
+      "items": 50,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "",
+      "offset": 10005,
+      "items": 1,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "",
+      "offset": 10006,
+      "items": 0,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "Benchmark 1",
+      "offset": 0,
+      "items": 50,
+      "total": 1112,
+      "passed": true
+    },
+    {
+      "q": "Benchmark 1",
+      "offset": 5000,
+      "items": 0,
+      "total": 1112,
+      "passed": true
+    },
+    {
+      "q": "Benchmark 1",
+      "offset": 10005,
+      "items": 0,
+      "total": 1112,
+      "passed": true
+    },
+    {
+      "q": "Benchmark 1",
+      "offset": 10006,
+      "items": 0,
+      "total": 1112,
+      "passed": true
+    },
+    {
+      "q": "Fictional",
+      "offset": 0,
+      "items": 50,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "Fictional",
+      "offset": 5000,
+      "items": 50,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "Fictional",
+      "offset": 10005,
+      "items": 1,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "Fictional",
+      "offset": 10006,
+      "items": 0,
+      "total": 10006,
+      "passed": true
+    },
+    {
+      "q": "respiratory",
+      "offset": 0,
+      "items": 1,
+      "total": 1,
+      "passed": true
+    },
+    {
+      "q": "respiratory",
+      "offset": 5000,
+      "items": 0,
+      "total": 1,
+      "passed": true
+    },
+    {
+      "q": "respiratory",
+      "offset": 10005,
+      "items": 0,
+      "total": 1,
+      "passed": true
+    },
+    {
+      "q": "respiratory",
+      "offset": 10006,
+      "items": 0,
+      "total": 1,
+      "passed": true
+    },
+    {
+      "q": "%",
+      "offset": 0,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "%",
+      "offset": 5000,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "%",
+      "offset": 10005,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "%",
+      "offset": 10006,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "_",
+      "offset": 0,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "_",
+      "offset": 5000,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "_",
+      "offset": 10005,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "_",
+      "offset": 10006,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "\\",
+      "offset": 0,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "\\",
+      "offset": 5000,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "\\",
+      "offset": 10005,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "\\",
+      "offset": 10006,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "' OR true --",
+      "offset": 0,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "' OR true --",
+      "offset": 5000,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "' OR true --",
+      "offset": 10005,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    },
+    {
+      "q": "' OR true --",
+      "offset": 10006,
+      "items": 0,
+      "total": 0,
+      "passed": true
+    }
+  ]
+}

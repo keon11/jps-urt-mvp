@@ -1,4 +1,4 @@
-const phase5=process.argv.includes('--issue-5');if(phase5)process.argv.push('--issue-4');
+const phase6=process.argv.includes('--phase-6');const phase5=phase6||process.argv.includes('--issue-5');if(phase5)process.argv.push('--issue-4');
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { writeFile, readFile } from "node:fs/promises";
@@ -181,7 +181,7 @@ try {
   );
   await pool.end();
   await writeFile(
-    (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?`artifacts/${process.argv.includes("--issue-4")?(phase5?"issue-5":"issue-4"):"issue-3"}/fault-recovery.json`:"artifacts/issue-2/fault-recovery.json",
+    (process.argv.includes("--issue-3")||process.argv.includes("--issue-4"))?`artifacts/${process.argv.includes("--issue-4")?(phase6?"phase-6":phase5?"issue-5":"issue-4"):"issue-3"}/fault-recovery.json`:"artifacts/issue-2/fault-recovery.json",
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));

@@ -1,0 +1,1 @@
+PASS: immutable API bytes match recorded fixed commit; harness hashes match recorded baseline. Existing snapshot is never overwritten.

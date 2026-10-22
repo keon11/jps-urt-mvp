@@ -1,0 +1,57 @@
+
+> hospital-ur-ai-mvp@0.1.0 test
+> tsx --test services/api/test/*.test.ts
+
+✔ 24 independently specified synthetic payer cases enforce precedence, exceptions, dates, negatives and pending-rule isolation (21.169509ms)
+✔ unknown input and stale/suspended active context cannot authorize a next step (2.592666ms)
+✔ changed source context routes case risk to review instead of asserting a clear current assessment (0.457351ms)
+✔ read-only synthetic transport follows bounded same-endpoint pagination (46.959877ms)
+✔ expired tokens renew, 401 refreshes once, 403 denies and transient reads retry within bound (5.212606ms)
+✔ SSRF redirects, pagination loops and missing read authority fail closed (1.839005ms)
+✔ source identity, version change and stale information require reconciliation (1.260118ms)
+✔ expired provider token, wrong resource scope and privilege loss on renewal never dispatch an authorized read (2.169466ms)
+✔ a successful HTTP response with the wrong FHIR identity is rejected (1.560413ms)
+✔ all six synthetic FHIR R4 bundles preserve identity and provenance (22.386835ms)
+✔ unsafe references, duplicate identities, missing synthetic labels and unsupported classes rejected (7.433615ms)
+✔ updated, stale and inconsistent source versions require reconciliation (4.983443ms)
+✔ default services are local and FHIR R4 adapters have separate endpoints (1.111026ms)
+✔ CQF adapter removes proprietary metadata without losing source version or changing the snapshot (0.420563ms)
+✔ all fixtures are synthetic with linked FHIR transaction resources (21.037092ms)
+✔ intake rejects altered bundles, missing markers and unknown payloads (1.690518ms)
+✔ canonical digest tolerates JSON key order, not modified clinical values (1.461958ms)
+✔ versioned independently specified synthetic expectations match candidate evaluator (14.963659ms)
+✔ malformed input fails closed with human review and never represents coverage (0.980852ms)
+✔ golden policy citations identify the owned specification bytes, not unrelated clinical evidence (0.567774ms)
+✔ missing source documents are unknown/missing, not confirmed clinical violations (2.110947ms)
+✔ candidate testing uses separate expected synthetic outcomes and never claims clinical validation (9.209918ms)
+✔ governance inputs reject arbitrary rules, undocumented actions and missing idempotency (2.370134ms)
+✔ policy revisions preserve bytes, dates, citations, tables and exact added requirement (32.559897ms)
+✔ official HTML never silently becomes an executable clinical rule (1.367581ms)
+✔ invalid dates, duplicate conditions and unrecognized predicates are rejected (4.78132ms)
+✔ official page changes remain unverified source comparisons with no activation (2.557243ms)
+✔ illustrative respiratory threshold and mismatch raise queue priority (10.536149ms)
+✔ stable inpatient case prompts observation and continued-stay reassessment (0.726754ms)
+✔ missing, stale, future and wrong-unit vitals prevent a clinical recommendation (1.10611ms)
+✔ missing physician documentation raises illustrative risk (0.554637ms)
+✔ unavailable model is explicitly labeled as rules-only fallback (13.046559ms)
+✔ model responses with fabricated evidence are rejected (64.534275ms)
+✔ actual Synthea-derived varied cohort retains explicit synthetic origin and longitudinal clinical records (858.704484ms)
+✔ normalization reports missing references rather than silently asserting complete evidence (29.368031ms)
+✔ longitudinal Synthea records do not manufacture current acute-review evidence (6.217195ms)
+✔ cohort projection exposes real generated evidence with explicit read-only synthetic provenance (210.001588ms)
+✔ authorization lifecycle handles pending, denial retry, partial approval and expiry (1.945911ms)
+✔ advisor overrides require an explicit reason, escalation and current evidence (0.642356ms)
+✔ illustrative notification clock marks late cases and respects logged notifications (1.937133ms)
+✔ worklist checks out once, uses exact count and releases after both statements (5.591762ms)
+✔ worklist releases the connection after statement 1 fails (1.441932ms)
+✔ worklist releases the connection after statement 2 fails (0.555226ms)
+✔ invalid pagination never acquires a connection (1.044337ms)
+✔ worklist bounds protect pagination and reject arbitrary query fields (4.697273ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4920.213071

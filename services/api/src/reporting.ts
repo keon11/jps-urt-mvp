@@ -14,4 +14,4 @@ export const registry=new Registry();
 collectDefaultMetrics({register:registry,prefix:'ur_'});
 const gauge=new Gauge({name:'ur_cases',help:'Synthetic utilization review case counts',labelNames:['category'],registers:[registry]});
 export const requestDuration=new Histogram({name:'ur_http_request_duration_seconds',help:'HTTP request duration without source content or identity',labelNames:['method','route','status'],buckets:[.01,.05,.1,.25,.5,1,2,5,30,90],registers:[registry]});
-export async function metrics(){const r=await report();for(const key of ['total','currentAssessments','staleAssessments','priority','reviewOverdue','notificationOverdue','escalated','reviewed'] as const)gauge.set({category:key},r[key]);return registry.metrics();}
+export async function metrics(){if(process.env.BENCHMARK_READ_ONLY==='true')return registry.metrics();const r=await report();for(const key of ['total','currentAssessments','staleAssessments','priority','reviewOverdue','notificationOverdue','escalated','reviewed'] as const)gauge.set({category:key},r[key]);return registry.metrics();}
