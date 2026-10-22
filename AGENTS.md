@@ -2,7 +2,7 @@
 
 ## Mandatory scope
 Repository: keon11/jps-urt-mvp
-Working branch: dev/phase-4-enterprise-proof (existing branch based on the verified Issue #2 checkpoint)
+Working branch: dev/phase-5-performance (existing branch based on the verified Issue #2 checkpoint)
 Do not create another repository or branch. Never merge to main. Keep all data synthetic and do not expose public demo credentials.
 Read GitHub issues #1 and #2, with issue #2 taking priority for new features and issue #1 for UI visual acceptance.
 
@@ -37,10 +37,13 @@ If the coding environment is unavailable or Plan Mode prevents edits, state that
 
 ## Acceptance
 - Updated docs, dependency/license inventory, real screenshots, passing build/tests and honest gaps.
-- Commit and push to dev/phase-4-enterprise-proof. No main merge.
+- Commit and push to dev/phase-5-performance. No main merge.
 
 ## Issue #3 execution
 Issue #3 controls this sprint: deployable fixture preview, provenance and golden synthetic correctness corpus, FHIR sandbox conformance, longer measured reliability, and draft RFP preparation. Never submit or invent company/legal/clinical evidence.
 
 ## Issue #4
 Use Issue #4 for the current stage order and acceptance: Synthea/FHIR/SMART proof, synthetic policy/denial correctness, one-hour minimum measured soak, desktop fixture preview and draft submission readiness. Preserve external-authentication/clinical/legal boundaries and all prior checkpoints.
+
+## Issue #5
+Issue #5 controls current performance work. Preserve Phase 4 and all eight demonstrations. Profile first; predeclare targets; compare same-hardware 3600-second/25-session/10006-row bounded queue runs. Preserve raw failures. No cache, redundant infrastructure or weaker safety/auth checks without measured justification. Commit/push only this development branch; never merge main.

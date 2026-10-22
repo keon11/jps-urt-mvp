@@ -1,7 +1,7 @@
 import {createWriteStream} from "node:fs";
 import {once} from "node:events";
 import { performance } from "node:perf_hooks";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { cpus, totalmem } from "node:os";
 import assert from "node:assert/strict";
 import pg from "pg";
@@ -17,10 +17,14 @@ import { pool } from "../services/api/src/db.js";
 import { config } from "../services/api/src/config.js";
 import { login } from "../services/api/src/adapters.js";
 import { demonstrationPassword } from "../tests/browser/local-account.js";
-const hour=process.argv.includes("--hour");
+const performanceRun=process.argv.find(a=>a.startsWith("--performance="))?.split("=")[1];
+if(performanceRun&&!['baseline','optimized','probe'].includes(performanceRun))throw Error("Invalid performance run label");
+const hour=process.argv.includes("--hour")||!!performanceRun;
 const extended=hour||process.argv.includes("--extended");
-const durationSeconds=hour?3600:extended?600:120;
-const outputDirectory=hour?"artifacts/issue-4":extended?"artifacts/issue-3":"artifacts/issue-2";
+const durationSeconds=performanceRun==="probe"?120:hour?3600:extended?600:120;
+const p95Target=performanceRun==="optimized"?500:1000;
+const outputDirectory=performanceRun?"artifacts/issue-5/"+performanceRun:hour?"artifacts/issue-4":extended?"artifacts/issue-3":"artifacts/issue-2";
+await mkdir(outputDirectory,{recursive:true});
 const rawSink=hour?createWriteStream(outputDirectory+"/soak-requests.jsonl"):undefined;
 rawSink?.setMaxListeners(60);
 const raw:{elapsedMs:number,session:number,status:string,durationMs:number}[]=[];
@@ -36,7 +40,7 @@ const result: any = {
     sessions: 25,
     seconds: durationSeconds,
     ...(hour?{peakApiRssBytes:1073741824}:{}),
-    p95Ms: 1000,
+    p95Ms: p95Target,
     errorFraction: 0.01,
     minThroughput: 20,
     apiRecoverySeconds: 15,
@@ -206,7 +210,7 @@ try {
     });
   assert(result.liveMvpUnchanged);
   result.passed =
-    result.load.p95Ms <= 1000 &&
+    result.load.p95Ms < p95Target &&
     result.load.errorFraction < 0.01 &&
     result.load.throughputPerSecond >= 20 &&
     result.apiRestartSeconds <= 15 &&
