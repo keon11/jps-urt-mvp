@@ -1,0 +1,574 @@
+{
+  "createdAt": "2026-10-22T06:45:07.027799+00:00",
+  "classification": "DRAFT TECHNICAL DEMONSTRATION TRANSFER; NOT A BID; NO PHI/CREDENTIALS/SIGNATURES",
+  "sourceCommitBeforePackaging": "abff54b7897e3c3cc1c7c78f90517111d28c7ce9",
+  "sourceFingerprintSha256": "3df6b5494dc3f317f1b02857fd49e0cbf74c399febb8ed5e928e6b503f67e0ff",
+  "privateRuntimeExcluded": true,
+  "submitted": false,
+  "readyToSubmit": false,
+  "files": [
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1440-20261022T063816Z/fixture-preview-audit.png",
+      "sha256": "91f1e635d2d5395760a636155972837c7c2ae46f50abb977d9655ea82c88eb1c"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1440-20261022T063816Z/fixture-preview-authorization.png",
+      "sha256": "524a5b028302113ddc96e585d7cd9f668b63a83efe519349bed535f0fbd52f7f"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1440-20261022T063816Z/fixture-preview-policy.png",
+      "sha256": "0d185c7604c70dae166672aff4f156414b4fee32a94b25d7c776923546ea50a0"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1440-20261022T063816Z/fixture-preview-workstation.png",
+      "sha256": "82465c8da1b099a73a3755d04ccb77f0b6e8a7a8afd3fca83632aee76b98565d"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1920-20261022T063831Z/fixture-preview-audit.png",
+      "sha256": "016900ed7b6f7a9a67f386a5da0b9e1c7c496ad74ba2aeee03a206a7682126eb"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1920-20261022T063831Z/fixture-preview-authorization.png",
+      "sha256": "fab631c071b82db1c1f2e913240b51e4adfd7abcccd806be1b316b60940ab2fe"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1920-20261022T063831Z/fixture-preview-policy.png",
+      "sha256": "1ddae4c0079c4c62942ec947dfe062aaa2ce2414f54142cdb7b223c92e7718a1"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-fixture-1920-20261022T063831Z/fixture-preview-workstation.png",
+      "sha256": "3e5605e27d6527da2e17a56b1714d75e4819f08ca4041a3592e5f407a1f2992e"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/00-review-queue.png",
+      "sha256": "ee5f38e750da17d45ffa376f8cf1f9864b4a4ce0e7a87af7ff09fc79927b441d"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/01-fhir-evidence.png",
+      "sha256": "904ccbf5dca16f986e77d01412c811f83f5e3c4f2a20f9a840af0b6697810ff8"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/02-ai-review.png",
+      "sha256": "f412584bdab8d62349b125156e8d9d2912c6525f849dfe9bbb9b180dc548c1d5"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/03-continued-stay.png",
+      "sha256": "2caeb3a5e462b19065e696ec5b020053ec0fdf1942582bb1712c8986c0f038fa"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/04-authorization.png",
+      "sha256": "c865ac8647f4cc06e28be280314ff66e5c9cd858edab4e86b7462187daaece50"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/05-denial-risk.png",
+      "sha256": "0ec1655368c3ca27cac1c298b288d430f4ede239b2806344dbe0624087c73ef5"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/06-physician-advisor.png",
+      "sha256": "aeea14e58668ef061479a406d5a684bcf6a927c7398ba7505272ed6be296cbf7"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/07-operations.png",
+      "sha256": "0c996b9c824e9c6e2de3c6dc72b70448eb6877e77a0872c41c4d81048c80ffe0"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/08-audit.png",
+      "sha256": "3f784ddf58f4394486ec618d432e3ae6b1da9a5b69137e3139dbf86909c55aeb"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/10-grafana.png",
+      "sha256": "f38ea24453472e1968a7dba7aa89668a0d23d79f09917128ab6bc0e2f59c4139"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/advisor.png",
+      "sha256": "a726390d7c1a2bb5ec6b62ef008c76c91954e6d00d2fa6e7465c16001b8c5ae4"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/ai-review.png",
+      "sha256": "7a241276c6c9660c3acc87c23a348305ab08d1c70ba8aaa56b4102b8f1d806f7"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/audit.png",
+      "sha256": "dbde59049e3b265055f98ef102e0f6617ba4fa4f2e36b8ff07883593a49d924a"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/authorization.png",
+      "sha256": "8d78280185c027c53426a8d5524eb15b6c36edb64005ef01a62e6690a590f85e"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/evidence.png",
+      "sha256": "dd319fb18889a190784f23a453eccd86aad9e2717e4b1add1680ca3cbb0bbeb5"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/internal-authorization.png",
+      "sha256": "f5baa0ad7475a84de04d1d740b94095e33ef57fac2aed873b80707e3b383deff"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/operations.png",
+      "sha256": "ec8ec1cc99af6c9f947f2f9db5622e92ae8ca98feaec59460893e00324d2184f"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/policy-center.png",
+      "sha256": "834f43531cc305a6523acd506131f90fdd0b741db8b9c498214c493cf9f57339"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1440/queue.png",
+      "sha256": "ccc085aafc6a44029e87795c2914b459be509abc04693e5152022a0f449f814e"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/advisor.png",
+      "sha256": "a84c9142d2cba586e2b99465e382cd00b56357a1a651ca89001d46d68c7e72ce"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/ai-review.png",
+      "sha256": "b19850e3b019a2b680a6d1064680b7bcceeda74b3704074c393ca3d101ef5cc9"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/audit.png",
+      "sha256": "1576c0c5b856764e681d9792b14b4ef5bbb06076de4003bc51a87fad8bb2c9d0"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/authorization.png",
+      "sha256": "a86152c119384af0daba50e9042b4801ddfa553d2694944fa32b62c2ee0b4793"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/evidence.png",
+      "sha256": "3940c1d584cf1b4b4486caf1a194cadb3caf05bcd44e5836ccc882134b12c8a6"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/internal-authorization.png",
+      "sha256": "b25610749fff95249276b1499c712947683285bd26d86b53b45c0ce5ad47bc0c"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/operations.png",
+      "sha256": "26ede0182d744c897426f484114c2e32c5f45199347b88c5e2effcb6583ecc4e"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/policy-center.png",
+      "sha256": "ade333302b76588f5aca1dee401d4fd782fafbfce23ae850a2996960fd27f07a"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/1920/queue.png",
+      "sha256": "9d56d76ffccd3eafc1a64a4378ba89a528e4e7d4afa6f8e103c03eaec03f87e5"
+    },
+    {
+      "path": "artifacts/issue-2/phase6-live-20261022T063549Z/manifest.json",
+      "sha256": "bc3e6542f9bbfac5a53163d31085fa442ba7109ff59bef6a7d16f260df57234d"
+    },
+    {
+      "path": "artifacts/phase-6/RFP20261404054_Exhibit-A_ORIGINAL-UNFILLED.xlsx",
+      "sha256": "9ef090e2e4544c2c38ac73ec9c4356a951b6aa42c0c8ad341ab1c354bb128ed9"
+    },
+    {
+      "path": "artifacts/phase-6/RFP20261404054_INTERNAL-PRICING_OWNER-INPUT.xlsx",
+      "sha256": "d7d393b32f8800c87c897ebcfd7af5afdb37e3448e31f96ef397d5c35813809b"
+    },
+    {
+      "path": "artifacts/phase-6/RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.docx",
+      "sha256": "7218b7df83eb688947622afae8007bc3817780e8a41c1a0dea264f1834c539b0"
+    },
+    {
+      "path": "artifacts/phase-6/RFP20261404054_OWNER-REQUIRED_PROPOSAL-DRAFT.pdf",
+      "sha256": "3faf6ce7fa9a0b3a4373ade861e4843e492b1e68dd9110464e4f0f5e442bc18e"
+    },
+    {
+      "path": "artifacts/phase-6/acceptance-summary.json",
+      "sha256": "6b48803da8cc9c7c68a87c00ccabfb49cd0ddd4ec3b77fd8412edb60a73ed4b8"
+    },
+    {
+      "path": "artifacts/phase-6/baseline-reproduction-check.txt",
+      "sha256": "1b4001138877a7c8b4c14a8654e6177ae12ccf533fdf9a665b40741810ff1d7b"
+    },
+    {
+      "path": "artifacts/phase-6/baseline-reproduction-source.json",
+      "sha256": "d73283697334c9b9a433fe63cfbfe9cadbbaf9098389f0802a4f7a2baefad555"
+    },
+    {
+      "path": "artifacts/phase-6/browser-first-failure.txt",
+      "sha256": "8031f4d6a50d3e8c81d6023e2025e80056e847a8921ce38e8a28ca92e0c332d6"
+    },
+    {
+      "path": "artifacts/phase-6/candidate-build.txt",
+      "sha256": "3ed3e5612f481b2f5d4b41d3d32200b30ef65cef390f1a1dfb5c9ddbd0884266"
+    },
+    {
+      "path": "artifacts/phase-6/candidate-unit.txt",
+      "sha256": "1b464b9f6373e074634fac626adf881d162cc103ef9b8892e48cd4820abd0997"
+    },
+    {
+      "path": "artifacts/phase-6/checkpoint-transfer.json",
+      "sha256": "9649937c796dd0148022ad17a72a77d1e68f04ce1a7ac84a076083a46a39e805"
+    },
+    {
+      "path": "artifacts/phase-6/dataset-end.json",
+      "sha256": "ef9b9d58a859458538dfc1ba2e1d8a20701b49319df4583d860d909a4faa4567"
+    },
+    {
+      "path": "artifacts/phase-6/dataset-end.txt",
+      "sha256": "1a44d96562b149c0fd71214d74573f43340ae3c781428bcb3a299777b6ca2c3f"
+    },
+    {
+      "path": "artifacts/phase-6/dataset-start.json",
+      "sha256": "5b44ca48849de7273a692eabc5d7ca951e8a1db795dee06ecde63a428b55a35e"
+    },
+    {
+      "path": "artifacts/phase-6/dataset-start.txt",
+      "sha256": "83ed053d6a717256f69033dab9c598a7870f7a22e447b1fad783ea14e0dccac2"
+    },
+    {
+      "path": "artifacts/phase-6/denial-validation.json",
+      "sha256": "b0b7fb826888a9214a6eeb19bc425252d9f86a44500a39e12ce2e3caf1740432"
+    },
+    {
+      "path": "artifacts/phase-6/deployment-config.txt",
+      "sha256": "c98ab5a55d4a368d4be2dfbe217f657a6972a4d099ad36e7d0a4dcc6409d2d7a"
+    },
+    {
+      "path": "artifacts/phase-6/document-tool-inventory.json",
+      "sha256": "fd8efeeb86dbb6ed4933314f37b47ccbf6f755ce5c713f41b620e58f056cca90"
+    },
+    {
+      "path": "artifacts/phase-6/epic-conformance.json",
+      "sha256": "d316f68ee4be63608afe1616d6223e99f2a3ca6ba0c608896ee38d3b01870e77"
+    },
+    {
+      "path": "artifacts/phase-6/fault-recovery.json",
+      "sha256": "141997d057ef6d5ed7263596ed27d27e1a99979ab4d18c4fc81d6e45e627f6af"
+    },
+    {
+      "path": "artifacts/phase-6/fault-recovery.txt",
+      "sha256": "141997d057ef6d5ed7263596ed27d27e1a99979ab4d18c4fc81d6e45e627f6af"
+    },
+    {
+      "path": "artifacts/phase-6/final-audit.txt",
+      "sha256": "ecfec48111ef1403715f16756a3f2fd71f7584683b3e610250acc3ff216e6ccf"
+    },
+    {
+      "path": "artifacts/phase-6/final-browser.txt",
+      "sha256": "804578384da5fbfb8631055e9cde8c938a4a7cc8dc268947a8bb5ce297313480"
+    },
+    {
+      "path": "artifacts/phase-6/final-build.txt",
+      "sha256": "c23544a47c2ab61d0018908446f7cd283587e76840932b24ae137edd5abf18cd"
+    },
+    {
+      "path": "artifacts/phase-6/final-denial.txt",
+      "sha256": "5ead7b87882a137c6920ca79e1665350afddf35cc9e8a96e8f941af857ee888b"
+    },
+    {
+      "path": "artifacts/phase-6/final-deployment-config.txt",
+      "sha256": "c98ab5a55d4a368d4be2dfbe217f657a6972a4d099ad36e7d0a4dcc6409d2d7a"
+    },
+    {
+      "path": "artifacts/phase-6/final-epic-conformance.txt",
+      "sha256": "52bc3f24f003a60675e671800332f470e32f41ca9628b67caa7e4336950066dd"
+    },
+    {
+      "path": "artifacts/phase-6/final-integration.txt",
+      "sha256": "eec1d240395c9c38dcb902d8095d3e9c1b091811dec50bb25f8c29f166801455"
+    },
+    {
+      "path": "artifacts/phase-6/final-npm-audit.json",
+      "sha256": "6d1494a50c8bffc682e2c0eaa1cf2847033e7f7cc49aa2005c93519f99353644"
+    },
+    {
+      "path": "artifacts/phase-6/final-policy.txt",
+      "sha256": "24505f809c3dcb46faf87bb5c8813e3072f5d99f64bcc9f0d820f0c010e69e5e"
+    },
+    {
+      "path": "artifacts/phase-6/final-preview-1440-results.json",
+      "sha256": "f024ddbfcafd61ce529057d92a129315aac4390f4164a505d3936c7cd70e85fa"
+    },
+    {
+      "path": "artifacts/phase-6/final-preview-1440.txt",
+      "sha256": "3dbe11b70779e98b11dae152e2b9396d60f1f447e1efdd774a6f911059440f35"
+    },
+    {
+      "path": "artifacts/phase-6/final-preview-1920-results.json",
+      "sha256": "601a69d3a2e236e3b9658ea67599d2bc440811b6bcd1e89ebea32993239d701f"
+    },
+    {
+      "path": "artifacts/phase-6/final-preview-1920.txt",
+      "sha256": "8afad6469c29371e922d484693eafd03160c067caed6569a904eff1760f2b280"
+    },
+    {
+      "path": "artifacts/phase-6/final-restore-proof.json",
+      "sha256": "5f80c4d95540d872d13cf87d1570ae3bf621447d0d63431a480bd06421ff8a54"
+    },
+    {
+      "path": "artifacts/phase-6/final-restore-proof.txt",
+      "sha256": "5f80c4d95540d872d13cf87d1570ae3bf621447d0d63431a480bd06421ff8a54"
+    },
+    {
+      "path": "artifacts/phase-6/final-unit.txt",
+      "sha256": "e8505c9bcca21f049fe3680b950a51ef12542eb31587a857598e122ad54568d6"
+    },
+    {
+      "path": "artifacts/phase-6/fingerprint-path-failure.txt",
+      "sha256": "77117dbcde4bfc165768ea5de9a52554242f982259c828d7d61945cda19bd9df"
+    },
+    {
+      "path": "artifacts/phase-6/fixture-frontend-manifest.json",
+      "sha256": "278ba130c90f898eb364f0aeedbcf8e26e9362fa03cbb78068ca85eb95202d70"
+    },
+    {
+      "path": "artifacts/phase-6/fixture-frontend-preview.zip",
+      "sha256": "f3d55707539680ff16450e03a2c1e8fff24fc32d04f07c66a842cc64ae5bac12"
+    },
+    {
+      "path": "artifacts/phase-6/frontend-package.txt",
+      "sha256": "0f1f63cc0ea64ce656cb779d3a7d4b200a1387481c912182da18b99aee5ab396"
+    },
+    {
+      "path": "artifacts/phase-6/official-source-refresh.json",
+      "sha256": "e88faa88305a1c53b1d70acac8df8bdbb63ce409d0bd215ff054dda6c468aa60"
+    },
+    {
+      "path": "artifacts/phase-6/official-source-refresh.txt",
+      "sha256": "e88faa88305a1c53b1d70acac8df8bdbb63ce409d0bd215ff054dda6c468aa60"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline/benchmark-results.json",
+      "sha256": "004c103c03596bbd8e0e23ae5ac042fc0bf179bfc1fc246b304f88cd90e4bbbb"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline/hour-status.json",
+      "sha256": "842f8138aad3bf7d8252bbddbd1cbb0c8ec9a7fc49d7e174ffb4d9663d9b67b5"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline/raw-log-manifest.json",
+      "sha256": "abc6d77d4062cf3f7b010b1b2c0fde525b70ba2405b3243bf1bf21cfb3e9ee3a"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline/soak-measurements-verification.json",
+      "sha256": "4fc15612007d351087c6be13a249129023d55cfdda16247324df1aeaa04212f8"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline/soak-requests.jsonl.gz",
+      "sha256": "5a70c160ecd5443d1dfc78b5909214a42421daf42201a836281766cf51b5af25"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline/soak-samples.json",
+      "sha256": "75219f2c9a1204e54f4cc3513e33d59f7a136bb73eedb12b2c7878b98bf27f15"
+    },
+    {
+      "path": "artifacts/phase-6/performance-baseline.txt",
+      "sha256": "a2fa22314d0f1b02daacef2efc603d448d907b5a3bb070f28f899c4020b31c84"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/benchmark-results.json",
+      "sha256": "7615ac228492ec843bada83bdcfa84d41589eef26c654116ed45ed37ad6e7d03"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/hour-status.json",
+      "sha256": "e68b8f15d36e9a6acf361f91b46ad39ab47e15bf597eb1e52515759956ee6632"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/process-metrics.txt",
+      "sha256": "cabfe0f369d8aeee0dfd6250341b94a9d76a6048796d90e092db86de5d880aca"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/raw-log-manifest.json",
+      "sha256": "b5a0df5410d1e16158260c8f7f36eec1c4142b61068e0a1aac82e54a92349346"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/soak-measurements-verification.json",
+      "sha256": "98a930f6c447f8b0a2a20f723e6d354eb6ad774d9c1a4e1b732b549eb625ff2c"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/soak-requests.jsonl.gz",
+      "sha256": "f913e867c35d5b51756c2c7d68ae3f381d99a6ed003960e71e88172a684ac84f"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate/soak-samples.json",
+      "sha256": "0a96a312f352bfce9ca4416c6cdb5159b20d3cfdbf8f88226e1b1174329b10b9"
+    },
+    {
+      "path": "artifacts/phase-6/performance-candidate.txt",
+      "sha256": "09959f94c77f26427b5ba523debca0544d445a6e21710d910da7b6a2778fa302"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/benchmark-results.json",
+      "sha256": "8effbec04b0c62b514add7759452969f21f29b6984c6e5d994a92f8c84782614"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/hour-status.json",
+      "sha256": "fcad9765b821a6b8c3a505ad823fe3c6af559584fb8894cb8f82a3e40651533d"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/process-metrics.txt",
+      "sha256": "95c2fe75f6480647e100f75ba83f79c8be990754ad549c7a487d95caff78d543"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/raw-log-manifest.json",
+      "sha256": "13d60a55612c041731be5a96a480f875a386ec5018e8e6afc976cd9fd14a6a5e"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/soak-measurements-verification.json",
+      "sha256": "1a2535fc387b4d52789690497886202dda1abad5d4884bc66537861be3e2a375"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/soak-requests.jsonl.gz",
+      "sha256": "8c847f7383c0e0741110cd7296cf21a50f43ff64ad0c1be9f500a9cd3b04f3e7"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/soak-samples.json",
+      "sha256": "a73821ed51a2b016ca9794e769ade30b8309d8b360a7c9ad2ebc4a237ed24450"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended/stage-diagnostics.json",
+      "sha256": "f9fb75317d02ba450daf1cf81f5abf7ec75439c733049fe2d6dc3c5b0aec473f"
+    },
+    {
+      "path": "artifacts/phase-6/performance-extended.txt",
+      "sha256": "5f93d0dc8b5924837c1f9649167157404027cf16088f2ef366192ce5e472a895"
+    },
+    {
+      "path": "artifacts/phase-6/phase6-live-20261022T063549Z/manifest.json",
+      "sha256": "7a3ed2dee32fe44993261e811510f2e214f8b8ec674a5772c54b02d87ba392b7"
+    },
+    {
+      "path": "artifacts/phase-6/phase6-live-20261022T063549Z/risk-1440.png",
+      "sha256": "37172666af5527756c1dcda46507e9d47e7ff4175a58439ea707f6c5152a0391"
+    },
+    {
+      "path": "artifacts/phase-6/phase6-live-20261022T063549Z/risk-1920.png",
+      "sha256": "d7fd4fcdfd226a79ce30967285e58ceef78c9de99a8939b74ee77a14eeaeb6dd"
+    },
+    {
+      "path": "artifacts/phase-6/phase6-live-20261022T063549Z/synthea-workspace.png",
+      "sha256": "7cb49eeb3df7b42ade37c73feed96dc281adc2394a49fdbff68bf0417d276dac"
+    },
+    {
+      "path": "artifacts/phase-6/policy-correctness.json",
+      "sha256": "74debd3d8568c69d1bb712299cad316f471bfb232c6702efa2aaa7c8523dc092"
+    },
+    {
+      "path": "artifacts/phase-6/preview-capture.txt",
+      "sha256": "3bd77932793bb7eca34e73214cc35c35154aff81d0543387170a08ce5326a592"
+    },
+    {
+      "path": "artifacts/phase-6/preview-first-failure.txt",
+      "sha256": "9d80078a30bfe6a26c29b52c08789b592969286a71c6876ecdc58462ea958e34"
+    },
+    {
+      "path": "artifacts/phase-6/proposal-pricing-build.txt",
+      "sha256": "e8b38b37a68f392fe152bc0bbd7007a1e66bb741a8bc2e63135cc7ab6aecc7c5"
+    },
+    {
+      "path": "artifacts/phase-6/proposal-pricing-verification.json",
+      "sha256": "e8b38b37a68f392fe152bc0bbd7007a1e66bb741a8bc2e63135cc7ab6aecc7c5"
+    },
+    {
+      "path": "artifacts/phase-6/query-equivalence.txt",
+      "sha256": "044cb258c618f6a4c39f454608ae827e1689ac4e34353b2592bb3fd0823aaddb"
+    },
+    {
+      "path": "artifacts/phase-6/queue-equivalence.json",
+      "sha256": "781c8bbf7ff5459fd1e5cde44748609005410c1929a5e70236b3d88673173957"
+    },
+    {
+      "path": "artifacts/phase-6/raw-verification.txt",
+      "sha256": "c2cc8663e27da17530a1647c4e114e8b090f02b79bf22b83693b492e9ada426b"
+    },
+    {
+      "path": "artifacts/phase-6/reconciliation-after-repair.json",
+      "sha256": "eb036827f48d80b074804c6c1f6634e5bc2e96bac1c06539cf4395ba93ed506e"
+    },
+    {
+      "path": "artifacts/phase-6/reconciliation.txt",
+      "sha256": "eb036827f48d80b074804c6c1f6634e5bc2e96bac1c06539cf4395ba93ed506e"
+    },
+    {
+      "path": "artifacts/phase-6/report-render.txt",
+      "sha256": "2afed69996be8f839db17c723f8b1f00fc4c35c33f8251d0dc75ac9afd595e83"
+    },
+    {
+      "path": "artifacts/phase-6/secret-scan.json",
+      "sha256": "452078f5673745d7670bac339096508da135e05f5cbe8d9e8f702e4a6d3dc222"
+    },
+    {
+      "path": "artifacts/phase-6/source-bundle-verification.txt",
+      "sha256": "6d91150f4a13d4543b7b8f5161ff921cb4fb04690ce42a9bc2300a2bb8bb97fc"
+    },
+    {
+      "path": "artifacts/phase-6/source-fingerprint.json",
+      "sha256": "3df6b5494dc3f317f1b02857fd49e0cbf74c399febb8ed5e928e6b503f67e0ff"
+    },
+    {
+      "path": "artifacts/phase-6/source-restore-smoke.json",
+      "sha256": "5262ed24f0f374eae23fdc77a1ddde0c6b23b6083da33225675e439e145a439a"
+    },
+    {
+      "path": "artifacts/phase-6/traceability-build.txt",
+      "sha256": "66dfcf7b44d51c3e928618dce00d285ffa41f20e220d96a6dd4b9392e75141f5"
+    },
+    {
+      "path": "artifacts/phase-6/traceability-verification.json",
+      "sha256": "83d1a844ffa8318dbbe506cabd6d402b03e5c901f1eba894b18e6867ceadd558"
+    },
+    {
+      "path": "artifacts/phase-6/unrelated-path-check.txt",
+      "sha256": "90c1ff4598ff991d304a1f64fc11356bf0db4e7f1f015198bbbf10135318e5bf"
+    },
+    {
+      "path": "artifacts/phase-6/vercel-status.json",
+      "sha256": "0a6f764b5b00d0c73876ba203150b2bc873f7dcb677905e8282d52000dfb7991"
+    },
+    {
+      "path": "artifacts/phase-6/visual-verification.json",
+      "sha256": "c7f5abbab235f77f5862caf827612c6264f76080d721c924f709a898a587e3c3"
+    },
+    {
+      "path": "docs/PHASE-6-ACCEPTANCE.md",
+      "sha256": "466a8656a7491bbcf5eb2f388e623c544ce048e90c473d43b3c7bf5c58d2a396"
+    },
+    {
+      "path": "docs/PHASE-6-EXECUTION.md",
+      "sha256": "dd2311f57d45601bb85faa80104d6493bfe6c7c24e2edd9caf39c8fe78a94bf7"
+    },
+    {
+      "path": "docs/PHASE-6-REPORT.md",
+      "sha256": "185f1c40d496bfebbf958bffb58d219b6cdb36ade39318888c75a7f1886d698f"
+    },
+    {
+      "path": "docs/PHASE-6-RESTORE.md",
+      "sha256": "8a6a54ef2e88384cb84924b3df2d2e610799ffffe489754aac5fdf876bbd8e90"
+    },
+    {
+      "path": "docs/licenses/bitstream-vera-license.txt",
+      "sha256": "3361d054759a2fc686a2c058be82deaf9c2e6fe549be9004d7935a6c1736315d"
+    },
+    {
+      "path": "docs/submission/IMPLEMENTATION-ROADMAP.md",
+      "sha256": "e45451010cb81c9b57e98a70acdc6edb87e61b546ad1e79a981982c6f557ac0a"
+    },
+    {
+      "path": "docs/submission/OFFICIAL-QUESTIONNAIRE-DRAFT.md",
+      "sha256": "36f38d84f094795f7acb5336ed87e7317795a97352e8b935635717cc1535fef2"
+    },
+    {
+      "path": "docs/submission/PHASE-6-PROPOSAL-DRAFT.md",
+      "sha256": "3a485cb5858c8c70c5c5890c0b7549d3820717206aa296ee2735e78affd8a912"
+    },
+    {
+      "path": "docs/submission/PHASE-6-TRACEABILITY.json",
+      "sha256": "423daf0a76e48552234f41cc17aeb0ff4e7f75eb97406cce5908b6b947a76882"
+    },
+    {
+      "path": "docs/submission/PHASE-6-TRACEABILITY.md",
+      "sha256": "0777b0f0ef682328ed5cc2afd0454690181f8e0149a583c245b1853449b32154"
+    },
+    {
+      "path": "docs/submission/PHASE-6-VENDOR-FORMS.md",
+      "sha256": "aa641b72306fb8b10a31dcb0c1a0c971987d0718cf547f90aaf46d0c5ba08716"
+    },
+    {
+      "path": "docs/submission/SECURITY-AI-DRAFT.md",
+      "sha256": "e130108c2d0ee8fe26c2b1f07ae38f498f3666130617ad606ad83095064e8cda"
+    }
+  ],
+  "archiveSha256": "6b15d87a8ca7f3144b94df312badce570c356fc7d4df958a6dd98ca8b0308934",
+  "archiveBytes": 13055029,
+  "allEntryHashesVerified": true
+}

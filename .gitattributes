@@ -1,1 +1,4 @@
 *.pdf binary
+# Preserve exact third-party license and failed-run transcript bytes.
+docs/licenses/bitstream-vera-license.txt -whitespace
+artifacts/phase-6/browser-first-failure.txt -whitespace

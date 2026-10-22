@@ -61,7 +61,7 @@ Final measured average stages (ms): acquire {stages['acquire']['meanMs']:.3f}, p
 
 Actual FHIR/CQF/AI readiness recovery: {f['fhirRecoverySeconds']:.2f}/{f['ruleEngineRecoverySeconds']:.2f}/{f['aiRecoverySeconds']:.2f}s. Failed FHIR/rule reviews preserved prior assessment without false success audit; labeled AI fallback and real inference recovery verified. Reconciliation retained one FHIR receipt and one logical committed event after retries; altered replay rejected.
 
-Private application restore verified {len(r['tables'])} table hashes, {r['audit']['events']} audit events and an authenticated restored worklist in {r['seconds']:.2f}s. It is not a coordinated/off-host restore of every FHIR/identity/model volume. [Restoration procedure](PHASE-6-RESTORE.md). Fresh [workstation manifest](../artifacts/issue-2/{run}/manifest.json) and [risk/Synthea manifest](../artifacts/phase-6/{run}/manifest.json); [Selected visual inspection and limits](../artifacts/phase-6/visual-verification.json).
+[Stable source/private transfer proof](../artifacts/phase-6/checkpoint-transfer.json) records the exact verified product commit and hashes; private files are excluded from the public ZIP. Private application restore verified {len(r['tables'])} table hashes, {r['audit']['events']} audit events and an authenticated restored worklist in {r['seconds']:.2f}s. It is not a coordinated/off-host restore of every FHIR/identity/model volume. [Restoration procedure](PHASE-6-RESTORE.md). Fresh [workstation manifest](../artifacts/issue-2/{run}/manifest.json) and [risk/Synthea manifest](../artifacts/phase-6/{run}/manifest.json); [Selected visual inspection and limits](../artifacts/phase-6/visual-verification.json).
 
 ## Draft submission deliverables — not ready to submit
 

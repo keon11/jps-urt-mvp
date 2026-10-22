@@ -7,7 +7,7 @@ summary=json.loads((p/'acceptance-summary.json').read_text());assert summary['en
 subprocess.run(['node','scripts/source-fingerprint.mjs','--phase-6','--check'],cwd=root,check=True)
 files=set()
 for pattern in ['docs/submission/PHASE-6-*','docs/submission/OFFICIAL-QUESTIONNAIRE-DRAFT.md','docs/submission/SECURITY-AI-DRAFT.md','docs/submission/IMPLEMENTATION-ROADMAP.md','docs/PHASE-6-*.md','docs/licenses/bitstream-vera-license.txt','artifacts/phase-6/RFP20261404054_*.xlsx','artifacts/phase-6/RFP20261404054_*.docx','artifacts/phase-6/RFP20261404054_*.pdf','artifacts/phase-6/*.json','artifacts/phase-6/*.txt','artifacts/phase-6/fixture-frontend-preview.zip','artifacts/phase-6/performance-*/*.json','artifacts/phase-6/performance-*/*.gz','artifacts/phase-6/performance-*/*.txt']:
- files.update(x for x in root.glob(pattern) if x.is_file() and x.name!='technical-package-manifest.json')
+ files.update(x for x in root.glob(pattern) if x.is_file() and x.name not in ['technical-package-manifest.json','technical-package.txt'])
 run=(root/'.runtime/phase6-live-run').read_text().strip()
 for issue in ['issue-2','phase-6']:files.update(x for x in (root/'artifacts'/issue/run).rglob('*') if x.suffix in ['.png','.json'])
 for d in (root/'artifacts/issue-2').glob('phase6-fixture-*'):files.update(x for x in d.glob('*.png'))

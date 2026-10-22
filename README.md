@@ -18,11 +18,13 @@ Grafana remains separate at http://localhost:3001/d/ur-synthetic-operations. Kee
 
 For the **read-only fictional frontend preview**, run `npm run test:preview`, then `npx vite preview --mode preview --host 127.0.0.1 --port 4173`. It uses no backend or credentials. Vercel project creation is currently denied with 403; no hosted preview is claimed.
 
-Current branch: `dev/phase-5-performance`. All eight demonstrations are preserved. Three full one-hour runs are retained. Reproduced baseline: 71.42 req/s, p95 535.06ms. Final CPU-budgeted queue: 265.85 req/s, p95 134.14ms, errors `{"502": 11, "TimeoutError": 45}`. Zero-timeout target met: **False**; all performance targets met: **False**. Failures remain part of the report. Final verification: 41 unit, 25 live integration, 10 browser tests and fixture preview at 1440/1920; restore, fault recovery, reconciliation, audit and npm audit evidence retained.
+Current branch: `dev/phase-6-submission-acceptance`. All eight synthetic demonstrations and the 1440/1920 desktop workstation remain working. Final checks passed **45 unit, 25 integration, 10 browser tests**, both fixture widths, build, synthetic policy/denial/FHIR checks, recovery, reconciliation, audit and dependency audit.
 
-See [the actual report](docs/ISSUE-5-REPORT.md), [measurement evidence](artifacts/issue-5/verification-summary.json), [architecture](docs/ISSUE-5-ARCHITECTURE.md) and [demonstration checklist](docs/ISSUE-5-DEMO-CHECKLIST.md). These are bounded local synthetic queue measurements on a shared four-CPU quota, not clinical accuracy, hospital capacity, an SLA or production readiness. Epic/JPS authorization, authorized payer criteria, independent clinical validation, owner legal/commercial evidence and Vercel permission remain external gates.
+The controlled 120s pair improved p95 from **178.97 to 132.24ms**, with zero errors in both intervals. The 600s follow-up recorded **136,459 requests, p95 156.35ms and zero errors**, including 50 renewals. These shorter diagnostics do **not** prove elimination of the Phase 5 one-hour timeouts or hospital-scale reliability.
 
+Prepared a source-quoted matrix covering 379 nonempty RFP paragraphs, an unsigned 8-page proposal PDF/editable DOCX, unchanged blank official Exhibit A, internal blank-input costing workbook, required vendor-form checklist and a hashed technical demonstration package. Actual prices, legal/company/reference/HUB facts, signatures, clinical/payer/Epic/JPS approvals and Vercel project/protection remain external. **Nothing submitted; production and bid readiness remain false.**
 
+See [the final report](docs/PHASE-6-REPORT.md), [restoration instructions](docs/PHASE-6-RESTORE.md), [source-paragraph matrix](docs/submission/PHASE-6-TRACEABILITY.md) and [founder actions](docs/submission/PHASE-6-VENDOR-FORMS.md). Stable product checkpoint: `abff54b7897e3c3cc1c7c78f90517111d28c7ce9`; private source bundle and application dump are separately verified and excluded from public packages.
 
 ## Documentation and evidence
 

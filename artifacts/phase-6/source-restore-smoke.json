@@ -1,0 +1,8 @@
+{
+  "restoredSourceCommit": "abff54b7897e3c3cc1c7c78f90517111d28c7ce9",
+  "privateBundleCloneExecuted": true,
+  "productFilesMatched": 48,
+  "allSourceHashesMatch": true,
+  "servicesStartedFromThisClone": false,
+  "limits": "Offline source-history restore into temporary separate directory; full multi-service cold restore not executed. App-only DB restore is separately verified."
+}

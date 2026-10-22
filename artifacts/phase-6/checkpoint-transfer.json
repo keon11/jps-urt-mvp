@@ -1,0 +1,17 @@
+{
+  "classification": "Private source-history and synthetic application database transfer; not included in public technical ZIP",
+  "sourceCommit": "abff54b7897e3c3cc1c7c78f90517111d28c7ce9",
+  "sourceBundle": {
+    "privatePath": ".runtime/phase6-source.bundle",
+    "sha256": "98d44a4053864524d28ecffb789b00971af790a1aeb9e5e7fa743804db0c58ad",
+    "bytes": 147990279,
+    "verified": true
+  },
+  "applicationDump": {
+    "privatePath": ".runtime/phase6-final-checkpoint.dump",
+    "sha256": "b8ed69da40651e091e6c071706c9536fe39c706ce9a193767b97feba541ee497",
+    "restoreVerified": true
+  },
+  "allServicesCoordinatedRestoreProven": false,
+  "restoreInstructions": "docs/PHASE-6-RESTORE.md"
+}

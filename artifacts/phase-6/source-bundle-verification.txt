@@ -1,0 +1,5 @@
+.runtime/phase6-source.bundle is okay
+The bundle contains this ref:
+abff54b7897e3c3cc1c7c78f90517111d28c7ce9 refs/heads/dev/phase-6-submission-acceptance
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1

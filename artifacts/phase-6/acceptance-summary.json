@@ -1,0 +1,272 @@
+{
+  "at": "2026-10-22T06:42:37.972773+00:00",
+  "classification": "SYNTHETIC LOCAL ENGINEERING; DRAFT SUBMISSION PREPARATION ONLY",
+  "engineeringChecksPassed": true,
+  "allProductionRequirementsMet": false,
+  "readyToSubmit": false,
+  "submitted": false,
+  "signed": false,
+  "tests": {
+    "unit": 45,
+    "liveIntegration": 25,
+    "liveBrowser": 10,
+    "fixtureWidths": [
+      1440,
+      1920
+    ]
+  },
+  "eightDemonstrationsPreserved": true,
+  "performance": {
+    "controlled120sBaseline": {
+      "requests": 28371,
+      "seconds": 120.05145935600001,
+      "throughputPerSecond": 236.32365780634765,
+      "p50Ms": 94.20334400000866,
+      "p95Ms": 178.97246300000006,
+      "p99Ms": 329.121100999997,
+      "maxMs": 559.4534440000007,
+      "errors": {},
+      "failedRequests": 0,
+      "errorFraction": 0,
+      "peakApiRssBytes": 265584640,
+      "apiAverageCpuPercent": 40.74086251210202,
+      "authenticationRenewals": 0,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "controlled120sCandidate": {
+      "requests": 31619,
+      "seconds": 120.106793252,
+      "throughputPerSecond": 263.2573824001706,
+      "p50Ms": 88.78756900000008,
+      "p95Ms": 132.24363499999163,
+      "p99Ms": 224.29749700000684,
+      "maxMs": 510.4525910000084,
+      "errors": {},
+      "failedRequests": 0,
+      "errorFraction": 0,
+      "peakApiRssBytes": 353009664,
+      "apiAverageCpuPercent": 41.62961864704302,
+      "authenticationRenewals": 0,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "extendedDiagnostic": {
+      "requests": 136459,
+      "seconds": 600.1113347290001,
+      "throughputPerSecond": 227.3894727577884,
+      "p50Ms": 86.54692499997327,
+      "p95Ms": 156.35407999996096,
+      "p99Ms": 654.4300210000365,
+      "maxMs": 4446.400106999994,
+      "errors": {},
+      "failedRequests": 0,
+      "errorFraction": 0,
+      "peakApiRssBytes": 353775616,
+      "apiAverageCpuPercent": 44.02183140221791,
+      "authenticationRenewals": 50,
+      "tokenValuesRecorded": false,
+      "sameRoleDistinctAuthenticationSessions": true
+    },
+    "extendedZeroErrors": true,
+    "oneHourTimeoutEliminationProven": false,
+    "stageMeans": {
+      "acquire": {
+        "completedSamples": 136460,
+        "meanMs": 96.6984155462847
+      },
+      "page": {
+        "completedSamples": 136460,
+        "meanMs": 6.299040926322824
+      },
+      "count": {
+        "completedSamples": 136460,
+        "meanMs": 2.0708390534295975
+      }
+    },
+    "renewalCalls": 50,
+    "renewalMaxMs": 2759.8726109999698,
+    "driverEventLoop": {
+      "p95Ms": 24.051711,
+      "p99Ms": 143.785983,
+      "maxMs": 903.872511
+    },
+    "limits": "One controlled short pair plus 600s instrumented follow-up. Prior three Phase 5 hours and their failures remain; no new hour or hospital SLA claimed."
+  },
+  "restoration": {
+    "createdAt": "2026-10-22T06:38:38.364Z",
+    "sourceDatabase": "ur",
+    "restoreDatabase": "ur_issue2_final_1792651118364",
+    "dumpPath": ".runtime/phase6-final-checkpoint.dump",
+    "publiclyDistributed": false,
+    "seconds": 3.476955212,
+    "tables": {
+      "audit": {
+        "rows": 1001,
+        "sha256": "16c805a08081521dd04abeaf63f4ef9935de4124f7fe77f24c8d24f54dd743d1"
+      },
+      "authorization_intents": {
+        "rows": 137,
+        "sha256": "e3654a69dd21b836a030433a529b217d15a59539ac8869dc4c8eee28821bedaf"
+      },
+      "cases": {
+        "rows": 6,
+        "sha256": "9038420866d6e5f3d1b69bb8707546067e461da68b3355887ecc2f523085d029"
+      },
+      "governance_commands": {
+        "rows": 319,
+        "sha256": "391c37c9fec57db44de72f25940de913f88dc55266feef5bafe413d80416b2f0"
+      },
+      "idempotency": {
+        "rows": 31,
+        "sha256": "3c344bfaa96fc8a6c84a4f1d818061cd37a68d8c8a7d5ac5dde78376f6f991e6"
+      },
+      "internal_authorization_reviews": {
+        "rows": 37,
+        "sha256": "a8671c1f256bb4937bfaeefee231c719aa0f57189d0309e583035824ddb32b38"
+      },
+      "policy_changes": {
+        "rows": 38,
+        "sha256": "11f23935bf27aed0bc68552e0c5ee05f94ccdbf6e72823a79eac98aa199aa563"
+      },
+      "policy_documents": {
+        "rows": 5,
+        "sha256": "7af5e29a9359a8397ded4765b7530105c92eec6d8b330f127610ea08e682597a"
+      },
+      "policy_publications": {
+        "rows": 36,
+        "sha256": "0bc481027175b6b91db1cc4823cf3fccca74ccf324b7b751e374fcc10b631f0d"
+      },
+      "policy_registry": {
+        "rows": 1,
+        "sha256": "d15c3efd06c138caa4a2c2c76bd47e1f0ff64ee4983b77d55afccdd979d00b81"
+      }
+    },
+    "audit": {
+      "verified": true,
+      "events": 1001,
+      "lastHash": "90ac15987dc00e378060110717921fe9bff1534b66f7673bd95fdb573b68a501"
+    },
+    "dumpSha256": "b8ed69da40651e091e6c071706c9536fe39c706ce9a193767b97feba541ee497",
+    "restoredApplicationReadVerified": true,
+    "passed": true
+  },
+  "faults": {
+    "at": "2026-10-22T06:31:22.574Z",
+    "scope": "Actual local synthetic FHIR and AI service stop/start; original source patient class remains unchanged.",
+    "fhirOutage": {
+      "httpStatus": 502,
+      "previousAssessmentPreserved": true,
+      "noFalseSuccessAudit": true,
+      "alertRaised": true
+    },
+    "fhirRecoverySeconds": 12.106399065000002,
+    "ruleEngineOutage": {
+      "httpStatus": 502,
+      "previousAssessmentPreserved": true,
+      "noFalseSuccessAudit": true,
+      "alertRaised": true
+    },
+    "ruleEngineRecoverySeconds": 73.605346551,
+    "aiOutage": {
+      "mode": "rules-fallback",
+      "seconds": 4.704165737000003,
+      "alertRaised": true
+    },
+    "aiRecoverySeconds": 1.521139691000004,
+    "recoveredClinicalReview": {
+      "mode": "local-model",
+      "seconds": 8.130752487999999
+    },
+    "requestMetricsObserved": true,
+    "tracing": {
+      "currentDrillOnly": true,
+      "rootSpans": 13,
+      "correlatedUpstreamSpans": 8,
+      "samples": [
+        {
+          "name": "http.request",
+          "traceId": "eec29d27a0fc3216281a66cc953ce43b",
+          "spanId": "387eb075453384ae",
+          "attributes": {
+            "request.id": "0c44eb05-b8ba-4d08-9edd-fb9c66780ec4",
+            "http.request.method": "POST",
+            "http.route": "/api/cases/:id/reviews",
+            "http.response.status_code": 502
+          },
+          "status": {
+            "code": 2,
+            "message": "server_error"
+          },
+          "durationMs": 78.313956
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "f0c8321e8f4ba29b0ad592eaeaa2a0de",
+          "spanId": "08bfede9eccf1146",
+          "parentSpanId": "cde7ec35325cc366",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 1709.751909
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "f0c8321e8f4ba29b0ad592eaeaa2a0de",
+          "spanId": "bb7874b6473a3c2d",
+          "parentSpanId": "cde7ec35325cc366",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 1711.589025
+        },
+        {
+          "name": "upstream.request",
+          "traceId": "f0c8321e8f4ba29b0ad592eaeaa2a0de",
+          "spanId": "250cbb82c8f7c002",
+          "parentSpanId": "cde7ec35325cc366",
+          "attributes": {},
+          "status": {
+            "code": 0
+          },
+          "durationMs": 6323.229736
+        }
+      ],
+      "sourceContentExported": false
+    },
+    "passed": true
+  },
+  "reconciliation": {
+    "at": "2026-10-22T06:31:17.881Z",
+    "label": "after-repair",
+    "isolatedDatabase": "ur_issue2_1792593144631",
+    "threshold": "one FHIR Claim resource per logical event after database failure and retry",
+    "failedRequestStatuses": [
+      502,
+      502
+    ],
+    "createdResourceIds": [
+      "e103324b-1c70-4254-bb97-2a0201f2f6b3"
+    ],
+    "resourceCountAfterTwoFailedAttempts": 1,
+    "noFalseSuccessAudit": true,
+    "changedPayloadReplayRejected": true,
+    "resourceCountAfterSuccessfulRetry": 1,
+    "committedLogicalEvents": 1,
+    "passed": true
+  },
+  "traceabilityParagraphs": 379,
+  "proposalPDFPages": 8,
+  "screenshots": "phase6-live-20261022T063549Z",
+  "externalBlockers": [
+    "Authentic entity/signatory/three references/HUB evidence/vendor registration",
+    "Authorized complete prices and commercial/legal/insurance/BAA review",
+    "Completed official B/D/F/G and contract/addendum approvals",
+    "Epic/JPS authorized sandbox access and hospital permissions",
+    "Authorized payer/clinical criteria and qualified independent clinical validation",
+    "Vercel project linkage and access/protection verification",
+    "Representative sustained capacity, timeout-root-cause reproduction and enterprise HA/DR/security assurance"
+  ]
+}

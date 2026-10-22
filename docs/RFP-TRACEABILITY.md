@@ -1,5 +1,7 @@
 # RFP traceability
 
+Latest complete source-paragraph inventory: [Phase 6 matrix](submission/PHASE-6-TRACEABILITY.md) and [machine citations/facets](submission/PHASE-6-TRACEABILITY.json). The earlier summary below is not the complete requirement inventory. Source coverage does not establish legal or production compliance; each gap and owner action remains explicit.
+
 Public source: https://www.jpshealthnet.org/rfp/utilization-review-technology-and-optimization-partner-urt
 
 The original RFP and Addendum 1 were retrieved on 2026-10-20. Source URLs and hashes of the original DOCX bytes are in `sources/provenance.json`; extracted text is retained for review. Addendum 1 extends the response deadline to November 3, 2026 at 2 p.m. CST. This software is a demonstration, not a submitted proposal or acceptance of contractual terms.

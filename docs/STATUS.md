@@ -1,5 +1,15 @@
 # Execution record
 
+## Phase 6 — latest verified engineering checkpoint
+
+Current branch: `dev/phase-6-submission-acceptance`. All eight synthetic demonstrations and the 1440/1920 desktop workstation remain working. Final checks passed **45 unit, 25 integration, 10 browser tests**, both fixture widths, build, synthetic policy/denial/FHIR checks, recovery, reconciliation, audit and dependency audit.
+
+The controlled 120s pair improved p95 from **178.97 to 132.24ms**, with zero errors in both intervals. The 600s follow-up recorded **136,459 requests, p95 156.35ms and zero errors**, including 50 renewals. These shorter diagnostics do **not** prove elimination of the Phase 5 one-hour timeouts or hospital-scale reliability.
+
+Prepared a source-quoted matrix covering 379 nonempty RFP paragraphs, an unsigned 8-page proposal PDF/editable DOCX, unchanged blank official Exhibit A, internal blank-input costing workbook, required vendor-form checklist and a hashed technical demonstration package. Actual prices, legal/company/reference/HUB facts, signatures, clinical/payer/Epic/JPS approvals and Vercel project/protection remain external. **Nothing submitted; production and bid readiness remain false.**
+
+See [the final report](PHASE-6-REPORT.md), [restoration instructions](PHASE-6-RESTORE.md), [source-paragraph matrix](submission/PHASE-6-TRACEABILITY.md) and [founder actions](submission/PHASE-6-VENDOR-FORMS.md). Stable product checkpoint: `abff54b7897e3c3cc1c7c78f90517111d28c7ce9`; private source bundle and application dump are separately verified and excluded from public packages. Earlier sections below are historical checkpoints.
+
 ## Issue #5 — measured performance (2026-10-22)
 
 Current branch: `dev/phase-5-performance`. All eight demonstrations are preserved. Three full one-hour runs are retained. Reproduced baseline: 71.42 req/s, p95 535.06ms. Final CPU-budgeted queue: 265.85 req/s, p95 134.14ms, errors `{"502": 11, "TimeoutError": 45}`. Zero-timeout target met: **False**; all performance targets met: **False**. Failures remain part of the report. Final verification: 41 unit, 25 live integration, 10 browser tests and fixture preview at 1440/1920; restore, fault recovery, reconciliation, audit and npm audit evidence retained.

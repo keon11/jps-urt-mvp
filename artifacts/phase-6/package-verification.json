@@ -1,0 +1,9 @@
+{
+  "archiveSha256": "6b15d87a8ca7f3144b94df312badce570c356fc7d4df958a6dd98ca8b0308934",
+  "entriesVerifiedAgainstCurrentFilesAndArchive": 140,
+  "textEntriesCredentialScanned": 93,
+  "findings": 0,
+  "privateRuntimeExcluded": true,
+  "publicFixtureAssetsSeparatelyCredentialScanned": true,
+  "classification": "Transfer integrity and bounded credential-pattern check, not security certification"
+}
